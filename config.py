@@ -112,4 +112,4 @@ DUP_SIMILARITY = 0.55
 # 생존 신호: 매일 이 시각(KST)대 실행에서 '정상 작동 중' 메시지를 1회 보냅니다.
 # 알림이 안 오는 게 '사고가 없어서'인지 '시스템이 죽어서'인지 구분하기 위함.
 HEARTBEAT_ENABLED = True
-HEARTBEAT_HOUR_KST = 8
+HEARTBEAT_HOUR_KST = 15
