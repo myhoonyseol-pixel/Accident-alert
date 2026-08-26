@@ -169,8 +169,11 @@ def fetch_rss(url: str, label: str):
             pub = None
             if getattr(e, "published_parsed", None):
                 pub = datetime(*e.published_parsed[:6], tzinfo=timezone.utc)
+            raw_title = clean(getattr(e, "title", ""))
             out.append({
-                "title": clean(getattr(e, "title", "")),
+                # 구글 뉴스 제목의 "- 매체명" 꼬리를 여기서 뗍니다.
+                "title": (filters.strip_source_tail(raw_title)
+                          if label == "구글뉴스" else raw_title),
                 "summary": clean(getattr(e, "summary", "")),
                 "link": getattr(e, "link", ""),
                 "published": pub,
@@ -263,15 +266,50 @@ def send_kakao(token: str, text: str, link: str = "", button: str = "기사 보�
     return True
 
 
-def format_alert(item, place, hits, confidence):
+def resolve_link(url: str) -> str:
+    """구글 뉴스 경유 주소를 실제 기사 주소로 풀어냅니다.
+
+    실패하면 원래 주소를 그대로 씁니다. 구글 링크도 누르면 기사로 넘어가긴 하므로
+    여기서 실패해도 알림 자체는 정상입니다.
+    """
+    if not getattr(config, "RESOLVE_LINKS", True):
+        return url
+    if "news.google.com" not in url:
+        return url
+    try:
+        r = requests.get(
+            url,
+            timeout=getattr(config, "RESOLVE_TIMEOUT", 6),
+            allow_redirects=True,
+            headers={"User-Agent": "Mozilla/5.0"},
+        )
+        final = r.url or url
+        # 구글 안에서만 맴돌면 실패로 봅니다.
+        if "google.com" in final:
+            m = re.search(r'data-n-au="(https?://[^"]+)"', r.text)
+            if m:
+                return html.unescape(m.group(1))
+            return url
+        return final
+    except Exception as e:                              # noqa: BLE001
+        print(f"[link] 원문 주소 확인 실패, 구글 링크 사용: {e}", file=sys.stderr)
+        return url
+
+
+def format_alert(item, place, hits, confidence, link):
     when = (item["published"].astimezone(KST).strftime("%m/%d %H:%M")
             if item["published"] else "시각미상")
     mark = "🚨" if confidence == "strong" else "⚠️"
     tag = place if confidence == "strong" else f"{place}(추정)"
+    # 제목에 "- 매체명" 꼬리가 남아 있으면 카카오톡이 그 도메인을 링크로 만들어
+    # 기사가 아니라 언론사 홈페이지로 가버립니다. 아래 [수집] 단계에서 이미 뗐지만
+    # 혹시 남아 있으면 여기서 한 번 더 정리합니다.
+    title = filters.strip_source_tail(item["title"])[:80]
     return (f"{mark} 사고 속보 감지\n"
             f"[{tag} · {'/'.join(hits[:3])}]\n\n"
-            f"{item['title'][:80]}\n\n"
-            f"{when} · {item['source']}")
+            f"{title}\n\n"
+            f"{when} · {item['source']}\n"
+            f"▼ 원문 기사\n{link}")
 
 
 # ── 메인 ─────────────────────────────────────────────────────
@@ -298,9 +336,9 @@ def pick_candidates(state):
 
         # 같은 사고를 다른 매체가 쓴 기사인지 확인
         toks = filters.tokenize(item["title"])
-        if any(filters.similarity(toks, prev) >= config.DUP_SIMILARITY
-               for prev in recent_tokens):
+        if filters.is_duplicate(config, toks, recent_tokens):
             seen[key] = {"ts": now_utc().timestamp(), "tok": sorted(toks)}
+            print(f"[중복] {item['title'][:50]}", file=sys.stderr)
             continue
 
         recent_tokens.append(toks)
@@ -356,7 +394,8 @@ def main():
         picked.sort(key=lambda c: c[0]["published"] or datetime.min.replace(tzinfo=timezone.utc),
                     reverse=True)
         for item, place, hits, confidence in picked[:config.MAX_SEND_PER_RUN]:
-            send_kakao(token, format_alert(item, place, hits, confidence), item["link"])
+            link = resolve_link(item["link"])
+            send_kakao(token, format_alert(item, place, hits, confidence, link), link)
             time.sleep(0.3)
         extra = len(picked) - config.MAX_SEND_PER_RUN
         if extra > 0:

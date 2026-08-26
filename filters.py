@@ -49,6 +49,14 @@ def match(cfg, title, summary=""):
     """
     title = title or ""
     summary = summary or ""
+
+    # 0) 함정 단어를 먼저 지운다.
+    #    한국어는 띄어쓰기가 없어 기관명 속에 키워드가 숨는다.
+    #    '대전도시공사' → 전도(사고) + 공사(맥락) 로 오인되어 홍보 기사가 발송된 적 있음.
+    for trap in getattr(cfg, "TRAP_WORDS", ()):
+        title = title.replace(trap, " ")
+        summary = summary.replace(trap, " ")
+
     text = f"{title} {summary}"
 
     # 1) 제외어 판정은 '제목'만 본다.
@@ -72,6 +80,48 @@ def match(cfg, title, summary=""):
         return weak, hits, "weak"
 
     return None
+
+
+# 구글 뉴스 RSS 제목은 항상 "기사제목 - 매체명" 형태로 끝납니다.
+# 이 꼬리를 떼지 않으면 카카오톡이 본문 속 매체 도메인(ctnews.kr 등)을
+# 자동으로 링크로 만들어, 기사가 아니라 언론사 홈페이지로 가버립니다.
+_SOURCE_TAIL_RE = re.compile(r"\s+[-–—]\s+[^-–—]{1,40}$")
+
+
+def strip_source_tail(title: str) -> str:
+    return _SOURCE_TAIL_RE.sub("", title or "").strip()
+
+
+# 사고 기사라면 거의 다 들어있는 흔한 말들.
+# 중복 판정에서 '겹쳤다'로 쳐주면 서로 다른 사고가 한 건으로 묶여버립니다.
+_COMMON_DOMAIN = {
+    "공사장", "공사현장", "건설현장", "신축현장", "작업현장", "사업장",
+    "사망", "부상", "숨진", "작업자", "크레인", "붕괴", "추락", "화재",
+    "매몰", "끼임", "전도", "낙하", "폭발", "중대재해", "아파트", "근처",
+}
+
+
+def distinctive(tokens: set) -> set:
+    """그 사고를 특정해 주는 단어만 남깁니다 (지역명, 회사명, 시설명 등)."""
+    return {t for t in tokens if t not in _COMMON_DOMAIN and not t.isdigit()}
+
+
+def is_duplicate(cfg, tokens: set, previous: list) -> bool:
+    """이미 보낸 기사와 같은 사고인지 판정합니다.
+
+    두 가지로 봅니다.
+      1) 제목 전체가 비슷하다 (자카드 유사도)
+      2) 그 사고를 특정하는 고유한 단어가 여러 개 겹친다
+    2번이 있어야 제목 표현이 크게 달라도 같은 사고를 잡아냅니다.
+    """
+    min_shared = getattr(cfg, "DUP_MIN_SHARED", 3)
+    mine = distinctive(tokens)
+    for prev in previous:
+        if similarity(tokens, prev) >= cfg.DUP_SIMILARITY:
+            return True
+        if min_shared and len(mine & distinctive(prev)) >= min_shared:
+            return True
+    return False
 
 
 def tokenize(title: str) -> set:
