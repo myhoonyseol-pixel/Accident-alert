@@ -331,7 +331,9 @@ def resolve_link(url: str) -> str:
     실패하면 원래 주소를 그대로 씁니다. 구글 링크도 누르면 기사로 넘어가긴 하므로
     여기서 실패해도 알림 자체는 정상입니다.
     """
-    if not getattr(config, "RESOLVE_LINKS", True):
+    # 기본은 끕니다. 버튼은 앱에 등록한 도메인으로만 동작하므로,
+    # 항상 news.google.com 을 유지해야 모든 기사에서 버튼이 뜹니다.
+    if not getattr(config, "RESOLVE_LINKS", False):
         return url
     if "news.google.com" not in url:
         return url
