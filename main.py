@@ -16,6 +16,7 @@ from datetime import datetime, timedelta, timezone
 
 import requests
 
+import ai_judge
 import config
 import filters
 
@@ -44,6 +45,35 @@ KAKAO_REFRESH_TOKEN = env("KAKAO_REFRESH_TOKEN")
 # 앱에서 Client Secret을 '사용함'으로 켰다면 토큰 갱신 때 반드시 함께 보내야 합니다.
 # 빠뜨리면 KOE010(Bad client credentials)으로 갱신이 실패합니다.
 KAKAO_CLIENT_SECRET = env("KAKAO_CLIENT_SECRET", required=False)
+
+
+def load_recipients():
+    """받는 사람 목록을 만듭니다.
+
+    '나에게 보내기'는 각자가 앱에 동의하면 그 사람 토큰으로 그 사람에게
+    보낼 수 있습니다(카카오 공식: 일반 사용자도 사용 가능, 검수 불필요).
+    동의한 본인에게만 가므로 정당한 방식입니다.
+
+    KAKAO_REFRESH_TOKEN        본인 (필수)
+    KAKAO_REFRESH_TOKENS       추가 인원 (선택). 줄바꿈이나 콤마로 구분.
+                               "이름=토큰" 형식이면 로그에 이름이 찍힙니다.
+                                 김과장=q3lj8n...
+                                 박차장=a8fk2p...
+    """
+    people = [("본인", KAKAO_REFRESH_TOKEN)]
+    extra = os.environ.get("KAKAO_REFRESH_TOKENS", "").strip()
+    for chunk in re.split(r"[,\n]+", extra):
+        chunk = chunk.strip()
+        if not chunk:
+            continue
+        if "=" in chunk:
+            label, tok = chunk.split("=", 1)
+            label, tok = label.strip(), tok.strip()
+        else:
+            label, tok = f"수신자{len(people)}", chunk
+        if tok:
+            people.append((label, tok))
+    return people
 
 
 def clean(text: str) -> str:
@@ -200,11 +230,11 @@ def collect():
 
 
 # ── 카카오 발송 ──────────────────────────────────────────────
-def get_access_token():
+def get_access_token(refresh_token=None, label="본인", critical=True):
     payload = {
         "grant_type": "refresh_token",
         "client_id": KAKAO_REST_KEY,
-        "refresh_token": KAKAO_REFRESH_TOKEN,
+        "refresh_token": refresh_token or KAKAO_REFRESH_TOKEN,
     }
     if KAKAO_CLIENT_SECRET:
         payload["client_secret"] = KAKAO_CLIENT_SECRET
@@ -222,29 +252,56 @@ def get_access_token():
             print("GitHub Secrets에 KAKAO_CLIENT_SECRET 을 등록해야 합니다.", file=sys.stderr)
             print("(앱 › 일반 › 플랫폼 키 › REST API 키 › 클라이언트 시크릿)", file=sys.stderr)
             print("!" * 64, file=sys.stderr)
-            sys.exit(1)
+            if critical:
+                sys.exit(1)
+            return None
         r.raise_for_status()
     except SystemExit:
         raise
     except Exception as e:                              # noqa: BLE001
-        # 여기서 죽으면 카카오로 알릴 방법이 없습니다.
-        # 워크플로를 실패시켜 GitHub이 메일을 보내게 만듭니다.
         print("!" * 64, file=sys.stderr)
-        print("카카오 토큰 갱신 실패 — 알림이 중단됩니다.", file=sys.stderr)
-        print("refresh_token 만료가 가장 흔한 원인입니다.", file=sys.stderr)
-        print("get_token.py 를 다시 돌려 새 토큰을 발급하고", file=sys.stderr)
-        print("GitHub Secrets의 KAKAO_REFRESH_TOKEN 을 교체하세요.", file=sys.stderr)
+        print(f"[{label}] 카카오 토큰 갱신 실패 — 이 사람에게는 알림이 안 갑니다.",
+              file=sys.stderr)
+        print("refresh_token 만료(약 60일)가 가장 흔한 원인입니다.", file=sys.stderr)
+        print("get_token.py 로 새 토큰을 받아 해당 Secret을 교체하세요.", file=sys.stderr)
         print(f"원인: {e}", file=sys.stderr)
         print("!" * 64, file=sys.stderr)
-        sys.exit(1)
+        # 본인 토큰이 죽으면 알릴 방법이 없으므로 워크플로를 실패시켜
+        # GitHub이 메일을 보내게 합니다. 다른 사람 토큰은 경고만 하고 넘어갑니다.
+        if critical:
+            sys.exit(1)
+        return None
 
     data = r.json()
     if data.get("refresh_token"):
         print("=" * 64)
-        print("[중요] 새 refresh_token 발급됨. GitHub Secret을 교체하세요:")
+        print(f"[중요] {label} 의 새 refresh_token 발급됨. Secret을 교체하세요:")
         print(data["refresh_token"])
         print("=" * 64)
     return data["access_token"], int(data.get("refresh_token_expires_in", 0))
+
+
+def broadcast(text: str, link: str = "") -> int:
+    """받는 사람 전원에게 보냅니다.
+
+    한 사람의 토큰이 죽어도 나머지에게는 정상 발송합니다.
+    """
+    sent = 0
+    for label, refresh in load_recipients():
+        got = get_access_token(refresh, label, critical=(label == "본인"))
+        if not got:
+            continue
+        token, ttl = got
+        if send_kakao(token, text, link):
+            sent += 1
+        else:
+            print(f"[kakao] {label} 발송 실패", file=sys.stderr)
+        # 만료가 임박하면 그 사람에게 직접 알립니다.
+        if 0 < ttl < 14 * 86400:
+            send_kakao(token, f"🔑 카카오 토큰 만료 {ttl // 86400}일 남음 ({label})\n"
+                              f"만료되면 이 알림이 끊깁니다. 담당자에게 알려주세요.")
+        time.sleep(0.3)
+    return sent
 
 
 def send_kakao(token: str, text: str, link: str = "", button: str = "기사 보기"):
@@ -296,11 +353,28 @@ def resolve_link(url: str) -> str:
         return url
 
 
+def casualty_level(item):
+    """인명피해 표현이 있으면 1, 없으면 0.
+
+    초기 속보는 "인명피해 확인 중"처럼 사상자가 아직 안 적힌 경우가 많아
+    이걸 발송 조건으로 걸지는 않습니다. 여러 건이 동시에 잡혔을 때
+    사람이 다친 건을 먼저 보내기 위한 순서용입니다.
+    """
+    text = f"{item.get('title','')} {item.get('summary','')}"
+    return 1 if any(w in text for w in getattr(config, "CASUALTY_WORDS", ())) else 0
+
+
 def format_alert(item, place, hits, confidence, link):
     when = (item["published"].astimezone(KST).strftime("%m/%d %H:%M")
             if item["published"] else "시각미상")
-    mark = "🚨" if confidence == "strong" else "⚠️"
-    tag = place if confidence == "strong" else f"{place}(추정)"
+    if confidence == "company":
+        mark, tag = "🔴", f"{place} · 주요건설사"
+    elif confidence == "strong":
+        mark, tag = "🚨", place
+    else:
+        mark, tag = "⚠️", f"{place}(추정)"
+    if not casualty_level(item):
+        tag += " · 피해규모 미확인"
     # 제목에 "- 매체명" 꼬리가 남아 있으면 카카오톡이 그 도메인을 링크로 만들어
     # 기사가 아니라 언론사 홈페이지로 가버립니다. 아래 [수집] 단계에서 이미 뗐지만
     # 혹시 남아 있으면 여기서 한 번 더 정리합니다.
@@ -348,8 +422,8 @@ def pick_candidates(state):
     return picked
 
 
-def maybe_heartbeat(state, token):
-    """하루 한 번 '살아있음'을 알립니다.
+def maybe_heartbeat(state):
+    """하루 한 번 '살아있음'을 수신자 전원에게 알립니다.
 
     이게 없으면 알림이 없는 게 '사고가 없어서'인지
     '시스템이 죽어서'인지 구분할 수 없습니다.
@@ -362,11 +436,11 @@ def maybe_heartbeat(state, token):
         return False
     if now_kst.hour != config.HEARTBEAT_HOUR_KST:
         return False
-    ok = send_kakao(token, f"✅ 사고속보 감시 정상 작동 중\n{now_kst:%Y-%m-%d %H:%M} 기준\n"
-                           f"어제부터 지금까지 새 속보 없음.")
-    if ok:
+    sent = broadcast(f"✅ 사고속보 감시 정상 작동 중\n{now_kst:%Y-%m-%d %H:%M} 기준\n"
+                     f"어제부터 지금까지 새 속보 없음.")
+    if sent:
         state["last_heartbeat"] = today
-    return ok
+    return bool(sent)
 
 
 def main():
@@ -383,31 +457,43 @@ def main():
         print("첫 실행: 시드만 저장하고 발송하지 않음")
         return
 
+    # AI 최종 판정 — 키워드가 걸러낸 후보만 넘깁니다.
+    # 후보가 없으면 호출 자체가 없으므로 조용한 날은 비용 0원입니다.
+    if picked:
+        cap = getattr(config, "AI_MAX_CANDIDATES", 20)
+        if len(picked) > cap:
+            print(f"후보 {len(picked)}건 중 상한 {cap}건만 AI 판단", file=sys.stderr)
+            picked = picked[:cap]
+        picked = ai_judge.judge(picked, config)
+        print(f"AI 판정 후 {len(picked)}건")
+
     need_token = bool(picked) or config.HEARTBEAT_ENABLED
     if not need_token:
         save_state(state)
         return
 
-    token, refresh_ttl = get_access_token()
+    people = load_recipients()
+    print(f"수신자 {len(people)}명: {', '.join(n for n, _ in people)}")
 
     if picked:
-        picked.sort(key=lambda c: c[0]["published"] or datetime.min.replace(tzinfo=timezone.utc),
-                    reverse=True)
+        # 인명피해가 확인된 건을 먼저, 그다음 최신순.
+        # 상한(MAX_SEND_PER_RUN)에 걸려 잘릴 때 사람이 다친 건이 밀리지 않도록.
+        picked.sort(
+            key=lambda c: (
+                casualty_level(c[0]),
+                c[0]["published"] or datetime.min.replace(tzinfo=timezone.utc),
+            ),
+            reverse=True,
+        )
         for item, place, hits, confidence in picked[:config.MAX_SEND_PER_RUN]:
             link = resolve_link(item["link"])
-            send_kakao(token, format_alert(item, place, hits, confidence, link), link)
-            time.sleep(0.3)
+            n = broadcast(format_alert(item, place, hits, confidence, link), link)
+            print(f"발송 {n}/{len(people)}명 — {item['title'][:40]}")
         extra = len(picked) - config.MAX_SEND_PER_RUN
         if extra > 0:
             print(f"{extra}건은 상한으로 미발송(다음 실행에서 중복 제외됨)")
     else:
-        maybe_heartbeat(state, token)
-
-    # 토큰 만료가 임박하면 카톡으로 미리 알립니다.
-    if 0 < refresh_ttl < 14 * 86400:
-        send_kakao(token, f"🔑 카카오 토큰 만료 {refresh_ttl // 86400}일 남음\n"
-                          f"GitHub Actions 로그에서 새 refresh_token을 확인해\n"
-                          f"Secrets를 교체하세요. 방치하면 알림이 끊깁니다.")
+        maybe_heartbeat(state)
 
     save_state(state)
 

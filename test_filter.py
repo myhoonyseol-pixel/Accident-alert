@@ -9,8 +9,10 @@ import sys
 
 import filters
 
-# TRUE  = 반드시 받아야 하는 사고
-# FALSE = 오면 안 되는 노이즈
+# TRUE  = 반드시 받아야 하는 사고 (키워드가 반드시 통과시켜야 함)
+# FALSE = 키워드가 반드시 걸러야 하는 노이즈
+# AI    = 키워드는 통과시키되 AI가 걸러야 하는 것 (통계·칼럼·기획 등 의미 판단)
+#         키워드로 막으려 하지 마세요. 예전에 그러다 진짜 사고를 버렸습니다.
 SAMPLES = [
     # ── 진짜 받아야 하는 것 ──────────────────────────────
     ("TRUE",  "아파트 신축현장서 거푸집 붕괴…근로자 2명 매몰"),
@@ -34,7 +36,7 @@ SAMPLES = [
     ("FALSE", "중대재해처벌법 시행 3년, 사업장 안전점검 강화 방침"),
     ("FALSE", "고용부, 취약 사업장 특별점검 실시…추락 예방 집중"),
     ("FALSE", "건설사 주가 급락, 사망사고 여파에 투자심리 위축"),
-    ("FALSE", "지난해 산재 사망 598명…건설업 사업장 비중 최다"),
+    ("AI",    "지난해 산재 사망 598명…건설업 사업장 비중 최다"),
     ("FALSE", "무단횡단 보행자 차량 충돌…현장서 사망"),
     ("FALSE", "축제 현장 부스 전도 사고, 관람객 2명 경상"),
     ("FALSE", "건설현장 추락 예방 캠페인 전개…안전모 착용 결의"),
@@ -61,7 +63,7 @@ SAMPLES = [
     ("FALSE", "포스코이앤씨, 중대재해 예방 캠페인 출범"),
     ("FALSE", "대우건설 사망사고 관련 대표이사 구속 기소"),
     ("FALSE", "롯데건설 아파트 분양 완판…계약률 100%"),
-    ("FALSE", "지난해 10대 건설사 사망사고 집계…현대건설 최다"),
+    ("AI",    "지난해 10대 건설사 사망사고 집계…현대건설 최다"),
     ("FALSE", "DL이앤씨 스마트 안전관리 시스템 도입"),
 
     # ── 해외 사고는 제외. 단 국내 건설사 시공 현장이면 발송 ──
@@ -75,6 +77,22 @@ SAMPLES = [
     # 국내 현장의 외국인 근로자 사고 — 국적 표현 때문에 해외로 오인되면 안 됨
     ("TRUE",  "평택 아파트 신축현장서 중국인 근로자 추락 사망"),
     ("TRUE",  "김포 공사장서 베트남 국적 작업자 매몰…구조 작업 중"),
+
+    # ── 한국 지명 속에 나라 이름이 숨은 경우 (해외로 오인하면 안 됨) ──
+    # 구[미국]가산단(경북 구미) 을 '미국'으로 읽어 진짜 사고를 버렸던 실제 사례
+    ("TRUE",  "구미국가산단 공장 공사장서 추락사고…50대 일용직 근로자 숨져"),
+    ("TRUE",  "대구 공사현장 중국산 자재 낙하…1명 부상"),
+    ("FALSE", "미국 뉴욕 공사장 크레인 전도…2명 사망"),
+
+    # ── 통계·기획·법적절차 기사 (실제 웹검색에서 무더기로 걸렸던 것들) ──
+    ("AI",    "건설현장 사망사고 역대 최저, 정부 성과인가 착시인가"),
+    ("AI",    "건설 현장에서 발생한 사망사고…관리자 책임은 어디까지? [이인혁의 판례 읽기]"),
+    ("AI",    "아파트 공사장 추락 사망, DL건설 압수수색"),
+    ("AI",    "검단신도시 아파트 건설현장 붕괴사고 - 나무위키"),
+    ("AI",    "[중처법 3년 무용지물] ①끊이지 않는 건설현장 '중대재해'"),
+    ("AI",    "사고 끊이지 않는 건설현장…중대재해법 이대로 괜찮나"),
+    ("AI",    "잇따른 중대재해 사망사고…건설업계 '살얼음판'"),
+    ("AI",    "대형건설사 중대재해 사망자 늘었다…최다 사망사고 어디?"),
 
     # ── 속보 형태: 회사명도 '현장'이란 말도 없는 사고 직후 기사 ──
     # 이게 이 시스템의 핵심 목적입니다. 정보가 가장 적을 때 잡아야 합니다.
@@ -120,36 +138,46 @@ DUP_GROUP = [
 
 def evaluate(cfg, label):
     tp = fp = fn = 0
+    to_ai = 0
     problems = []
     for expect, title in SAMPLES:
-        got = filters.match(cfg, title)
-        fired = got is not None
+        fired = filters.match(cfg, title) is not None
         if expect == "TRUE":
             if fired:
                 tp += 1
             else:
                 fn += 1
                 problems.append(("놓침", title))
+        elif expect == "AI":
+            if fired:
+                to_ai += 1            # 설계대로 AI에게 넘어감
+            # 키워드 단계에서 이미 걸렸다면 그것도 정상입니다.
+            # (AI 호출을 아끼는 것이므로 문제가 아님)
         else:
             if fired:
                 fp += 1
-                problems.append((f"오탐:{got[0]}", title))
+                problems.append(("오탐", title))
 
     n_true = sum(1 for e, _ in SAMPLES if e == "TRUE")
-    n_false = len(SAMPLES) - n_true
-    noise_rate = round(fp / (tp + fp) * 100) if (tp + fp) else 0
+    n_false = sum(1 for e, _ in SAMPLES if e == "FALSE")
+    n_ai = sum(1 for e, _ in SAMPLES if e == "AI")
 
     print(f"\n{'=' * 68}\n{label}\n{'=' * 68}")
-    print(f"  받아야 할 사고 {n_true}건 중 감지  : {tp}건  (놓침 {fn}건)")
-    print(f"  걸러야 할 노이즈 {n_false}건 중 오탐: {fp}건")
-    print(f"  → 알림이 100건 오면 그중 약 {noise_rate}%가 헛알림")
+    print("  [1차 그물 — 키워드]")
+    print(f"    받아야 할 사고 {n_true}건 중 감지  : {tp}건  (놓침 {fn}건)")
+    print(f"    걸러야 할 노이즈 {n_false}건 중 오탐: {fp}건")
+    print()
+    print("  [2차 판정 — AI]")
+    print(f"    의미 판단 케이스 {n_ai}건 중 {to_ai}건이 AI로 넘어감")
+    print(f"    나머지 {n_ai - to_ai}건은 키워드 단계에서 이미 걸러짐 (AI 호출 절약)")
+    print("    ※ 이런 기사를 키워드로 막으려 하면 진짜 사고까지 버립니다")
     if problems:
-        print("  문제 사례:")
+        print("\n  문제 사례:")
         for kind, t in problems:
-            print(f"    [{kind:11}] {t}")
+            print(f"    [{kind}] {t}")
     else:
-        print("  문제 사례 없음")
-    return noise_rate
+        print("\n  문제 사례 없음")
+    return fp
 
 
 def check_dedup(cfg):
