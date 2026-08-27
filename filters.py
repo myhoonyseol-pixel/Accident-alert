@@ -31,6 +31,10 @@ _SYNONYMS = {
     "매몰돼": "매몰", "고립": "매몰",
     "근로자": "작업자", "노동자": "작업자", "인부": "작업자",
     "타워크레인": "크레인",
+    # 같은 곳을 가리키는 말은 한 단어로 모읍니다.
+    # A사는 '공사현장', B사는 '신축현장'으로 써도 같은 사고로 인식되게.
+    "공사현장": "건설현장", "신축현장": "건설현장", "공사장": "건설현장",
+    "작업현장": "건설현장", "시공현장": "건설현장", "건축현장": "건설현장",
 }
 
 
@@ -40,6 +44,33 @@ def _normalize(tok: str) -> str:
             tok = tok[: -len(p)]
             break
     return _SYNONYMS.get(tok, tok)
+
+
+# 국적 표현은 해외 기사 신호가 아닙니다.
+# "중국인 근로자", "베트남 국적 작업자" 는 국내 현장에서 매우 흔합니다.
+# 나라 이름을 보기 전에 이 형태를 먼저 지웁니다.
+_NATIONALITY_RE = re.compile(
+    r"(필리핀|베트남|중국|태국|미얀마|캄보디아|라오스|인도네시아|몽골|네팔|"
+    r"스리랑카|우즈베키스탄|카자흐스탄|방글라데시|파키스탄|러시아|미국|일본)"
+    r"\s*(인|계|국적|어)"
+)
+
+
+def is_foreign(cfg, text: str) -> bool:
+    """해외에서 난 사고 기사인가.
+
+    국내 건설사 이름이 함께 나오면 해외 현장이라도 우리가 알아야 하므로
+    이 함수의 판정과 무관하게 호출부에서 살려둡니다.
+    """
+    cleaned = _NATIONALITY_RE.sub(" ", text)
+    if any(s in cleaned for s in getattr(cfg, "FOREIGN_SIGNALS", ())):
+        return True
+    return any(p in cleaned for p in getattr(cfg, "FOREIGN_PLACES", ()))
+
+
+def has_company(cfg, text: str) -> bool:
+    packed = re.sub(r"\s+", "", text)
+    return any(c in packed for c in getattr(cfg, "COMPANY_WORDS", ()))
 
 
 def match(cfg, title, summary=""):
@@ -69,13 +100,38 @@ def match(cfg, title, summary=""):
     if not hits:
         return None
 
-    # 3) 장소 판정 — STRONG은 단독 통과
-    strong = next((w for w in cfg.STRONG_PLACE_WORDS if w in text), None)
+    # 2-2) 해외 사고는 제외한다.
+    #      단 국내 건설사가 시공 중인 해외 현장 사고는 우리가 알아야 하므로 남긴다.
+    if is_foreign(cfg, text) and not has_company(cfg, text):
+        return None
+
+    # 3) 장소 판정 — 띄어쓰기를 없앤 문장으로 본다.
+    #    매체마다 '공사현장' / '공사 현장' 이 갈려서, 그대로 두면 같은 사고를 놓칩니다.
+    #    (사고 키워드는 원문 그대로 본다. 띄어쓰기를 지우면 '안전 도모' → '안전도모'
+    #     안에서 '전도'가 튀어나오는 식의 새 오탐이 생기기 때문.)
+    packed = re.sub(r"\s+", "", text)
+
+    strong = next((w for w in cfg.STRONG_PLACE_WORDS if w in packed), None)
     if strong:
         return strong, hits, "strong"
 
+    # 3-2) 속보 대응 — '공사 중', '갱폼' 같은 건설 작업 표현.
+    #      사고 직후 속보에는 '현장'도 회사명도 없이 이것만 나옵니다.
+    #      ("[속보] 9층 건물 공사 중 붕괴…1명 사망")
+    #      띄어쓰기가 의미를 가르므로(도로공사 중부 vs 공사 중) 원문으로 봅니다.
+    work = next((w for w in getattr(cfg, "WORK_WORDS", ()) if w in text), None)
+    if work:
+        return work, hits, "strong"
+
+    # 3-3) 장소 표현이 없어도 주요 건설사 이름이 나오면 건설 사고로 봅니다.
+    #      재해개요형 기사("갱폼 인상 작업 중 근로자 추락 사망")에는 '현장'이라는
+    #      말이 아예 없는 경우가 많은데, 시공사 이름은 거의 항상 실립니다.
+    corp = next((w for w in getattr(cfg, "COMPANY_WORDS", ()) if w in packed), None)
+    if corp:
+        return corp, hits, "company"
+
     # 4) WEAK은 산업/건설 맥락이 함께 있을 때만 통과
-    weak = next((w for w in cfg.WEAK_PLACE_WORDS if w in text), None)
+    weak = next((w for w in cfg.WEAK_PLACE_WORDS if w in packed), None)
     if weak and any(c in text for c in cfg.CONTEXT_WORDS):
         return weak, hits, "weak"
 
@@ -86,6 +142,9 @@ def match(cfg, title, summary=""):
 # 이 꼬리를 떼지 않으면 카카오톡이 본문 속 매체 도메인(ctnews.kr 등)을
 # 자동으로 링크로 만들어, 기사가 아니라 언론사 홈페이지로 가버립니다.
 _SOURCE_TAIL_RE = re.compile(r"\s+[-–—]\s+[^-–—]{1,40}$")
+
+# '공사 현장' → '공사현장' 처럼, 띄어 쓴 장소 표현을 붙여줍니다.
+_SPACED_PLACE_RE = re.compile(r"(공사|신축|건설|작업|시공|건축|철거|재개발|재건축)\s+현장")
 
 
 def strip_source_tail(title: str) -> str:
@@ -129,8 +188,12 @@ def tokenize(title: str) -> set:
 
     조사를 떼고 유의어를 통일해서, 표현이 달라도 같은 사고로 인식되게 합니다.
     """
+    # '공사 현장' 처럼 띄어 쓴 것을 '공사현장' 으로 붙여 한 단어로 셉니다.
+    # 안 그러면 '현장'이 흔한 말로 버려지면서 같은 사고인 걸 못 알아봅니다.
+    title = _SPACED_PLACE_RE.sub(r"\1현장", title or "")
+
     out = set()
-    for raw in _TOKEN_RE.findall(title or ""):
+    for raw in _TOKEN_RE.findall(title):
         tok = _normalize(raw)
         if tok and tok not in _STOPWORDS and len(tok) >= 2:
             out.add(tok)
