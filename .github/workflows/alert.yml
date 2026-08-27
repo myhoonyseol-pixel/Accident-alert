@@ -2,7 +2,6 @@ name: accident-news-alert
 
 on:
   schedule:
-    # 매시 7분. 정각은 전 세계 작업이 몰려 가장 밀리는 시각이라 피합니다.
     - cron: "7 * * * *"
   workflow_dispatch: {}
 
@@ -11,14 +10,12 @@ permissions:
 
 concurrency:
   group: accident-alert
-  # 새로 깨어나면 돌고 있던 루프를 대체합니다.
-  # 상태는 매 회차마다 저장하므로 잃어봐야 한 회차뿐입니다.
   cancel-in-progress: true
 
 jobs:
   poll:
     runs-on: ubuntu-latest
-    timeout-minutes: 350          # 5시간 50분 (GitHub 작업 한도 6시간)
+    timeout-minutes: 350
     steps:
       - uses: actions/checkout@v4
 
@@ -33,13 +30,15 @@ jobs:
         env:
           KAKAO_REST_API_KEY: ${{ secrets.KAKAO_REST_API_KEY }}
           KAKAO_REFRESH_TOKEN: ${{ secrets.KAKAO_REFRESH_TOKEN }}
+          KAKAO_REFRESH_TOKENS: ${{ secrets.KAKAO_REFRESH_TOKENS }}
           KAKAO_CLIENT_SECRET: ${{ secrets.KAKAO_CLIENT_SECRET }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           NAVER_CLIENT_ID: ${{ secrets.NAVER_CLIENT_ID }}
           NAVER_CLIENT_SECRET: ${{ secrets.NAVER_CLIENT_SECRET }}
         run: |
           set -u
-          INTERVAL=1200                         # 20분
-          DEADLINE=$(( $(date +%s) + 330*60 ))  # 5시간 30분 뒤 종료
+          INTERVAL=1200
+          DEADLINE=$(( $(date +%s) + 330*60 ))
           ROUND=0
 
           git config user.name  "github-actions"
