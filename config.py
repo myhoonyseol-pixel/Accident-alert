@@ -246,7 +246,7 @@ AI_MODEL = "claude-haiku-4-5-20251001"
 AI_TIMEOUT = 30
 AI_MAX_CANDIDATES = 20       # 한 번에 판단할 최대 건수 (비용 폭주 방지)
 
-MAX_AGE_HOURS = 12           # 이보다 오래된 기사는 무시
+MAX_AGE_HOURS = 72           # 이보다 오래된 기사는 무시
 MAX_SEND_PER_RUN = 5         # 한 번에 너무 많이 쏘지 않도록 상한
 STATE_RETENTION_DAYS = 7     # 중복 방지용 기록 보관 기간
 
