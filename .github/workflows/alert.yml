@@ -2,7 +2,8 @@ name: accident-news-alert
 
 on:
   schedule:
-    - cron: "*/20 * * * *"
+    # 매시 7분. 정각은 전 세계 작업이 몰려 가장 밀리는 시각이라 피합니다.
+    - cron: "7 * * * *"
   workflow_dispatch: {}
 
 permissions:
@@ -10,12 +11,14 @@ permissions:
 
 concurrency:
   group: accident-alert
-  cancel-in-progress: false
+  # 새로 깨어나면 돌고 있던 루프를 대체합니다.
+  # 상태는 매 회차마다 저장하므로 잃어봐야 한 회차뿐입니다.
+  cancel-in-progress: true
 
 jobs:
   poll:
     runs-on: ubuntu-latest
-    timeout-minutes: 8
+    timeout-minutes: 350          # 5시간 50분 (GitHub 작업 한도 6시간)
     steps:
       - uses: actions/checkout@v4
 
@@ -26,25 +29,46 @@ jobs:
 
       - run: pip install -r requirements.txt
 
-      - name: Run poller
+      - name: Poll loop
         env:
           KAKAO_REST_API_KEY: ${{ secrets.KAKAO_REST_API_KEY }}
           KAKAO_REFRESH_TOKEN: ${{ secrets.KAKAO_REFRESH_TOKEN }}
           KAKAO_CLIENT_SECRET: ${{ secrets.KAKAO_CLIENT_SECRET }}
           NAVER_CLIENT_ID: ${{ secrets.NAVER_CLIENT_ID }}
           NAVER_CLIENT_SECRET: ${{ secrets.NAVER_CLIENT_SECRET }}
-        run: python main.py
-
-      - name: Persist state
-        if: always()
         run: |
-          git config user.name "github-actions"
+          set -u
+          INTERVAL=1200                         # 20분
+          DEADLINE=$(( $(date +%s) + 330*60 ))  # 5시간 30분 뒤 종료
+          ROUND=0
+
+          git config user.name  "github-actions"
           git config user.email "actions@github.com"
-          git add state/seen.json || exit 0
-          git diff --staged --quiet && exit 0
-          git commit -m "chore: update seen state [skip ci]"
-          for i in 1 2 3; do
-            git pull --rebase --autostash && git push && exit 0
-            echo "push 재시도 $i"; sleep 5
+
+          while :; do
+            ROUND=$((ROUND+1))
+            echo "──────── ${ROUND}회차  $(TZ=Asia/Seoul date '+%m-%d %H:%M KST') ────────"
+
+            if ! python main.py; then
+              echo "::error::감시 스크립트 실패 — 루프를 멈춥니다."
+              echo "카카오 토큰 만료(KOE010)가 가장 흔한 원인입니다. 위 로그를 확인하세요."
+              exit 1
+            fi
+
+            git add state/seen.json 2>/dev/null || true
+            if ! git diff --staged --quiet 2>/dev/null; then
+              git commit -q -m "chore: update seen state [skip ci]"
+              for i in 1 2 3; do
+                if git pull --rebase --autostash -q && git push -q; then break; fi
+                echo "push 재시도 $i"; sleep 5
+              done
+            fi
+
+            NOW=$(date +%s)
+            REMAIN=$(( DEADLINE - NOW ))
+            if [ "$REMAIN" -le "$INTERVAL" ]; then
+              echo "예정 시간 종료. 다음 실행이 이어받습니다."
+              break
+            fi
+            sleep "$INTERVAL"
           done
-          echo "::warning::상태 파일 저장 실패"
