@@ -305,6 +305,8 @@ def broadcast(text: str, link: str = "") -> int:
 
 
 def send_kakao(token: str, text: str, link: str = "", button: str = "기사 보기"):
+    # text 는 190자까지만 들어갑니다. 링크는 여기 넣지 말고 web_url 로 보내세요.
+    # (web_url 은 길이 제한이 없어 긴 구글 뉴스 주소도 온전히 전달됩니다)
     payload = {"object_type": "text", "text": text[:190]}
     if link:
         payload["link"] = {"web_url": link, "mobile_web_url": link}
@@ -341,13 +343,20 @@ def resolve_link(url: str) -> str:
             headers={"User-Agent": "Mozilla/5.0"},
         )
         final = r.url or url
-        # 구글 안에서만 맴돌면 실패로 봅니다.
-        if "google.com" in final:
-            m = re.search(r'data-n-au="(https?://[^"]+)"', r.text)
+        if "google.com" not in final:
+            return final
+        # 구글 안에서만 맴돌면 페이지에서 실제 기사 주소를 찾아봅니다.
+        for pat in (r'data-n-au="(https?://[^"]+)"',
+                    r'<c-wiz[^>]*data-p="[^"]*?(https?://[^"&\\]+)',
+                    r'rel="canonical"\s+href="(https?://(?!news\.google)[^"]+)"',
+                    r'url=(https?://(?!news\.google)[^"\'&<]+)'):
+            m = re.search(pat, r.text)
             if m:
-                return html.unescape(m.group(1))
-            return url
-        return final
+                found = html.unescape(m.group(1))
+                if "google.com" not in found:
+                    return found
+        # 못 찾아도 구글 주소를 그대로 씁니다. 눌러보면 기사로 넘어갑니다.
+        return url
     except Exception as e:                              # noqa: BLE001
         print(f"[link] 원문 주소 확인 실패, 구글 링크 사용: {e}", file=sys.stderr)
         return url
@@ -379,11 +388,15 @@ def format_alert(item, place, hits, confidence, link):
     # 기사가 아니라 언론사 홈페이지로 가버립니다. 아래 [수집] 단계에서 이미 뗐지만
     # 혹시 남아 있으면 여기서 한 번 더 정리합니다.
     title = filters.strip_source_tail(item["title"])[:80]
+    # ⚠️ 본문에 링크를 넣지 마세요.
+    #    카카오 텍스트 메시지는 190자 제한인데 구글 뉴스 주소는 250자가 넘습니다.
+    #    실제로 링크가 88자 잘려 눌러도 400 오류가 났습니다.
+    #    링크는 아래 send_kakao 의 '기사 보기' 버튼에 실립니다(길이 제한 없음).
     return (f"{mark} 사고 속보 감지\n"
             f"[{tag} · {'/'.join(hits[:3])}]\n\n"
             f"{title}\n\n"
             f"{when} · {item['source']}\n"
-            f"▼ 원문 기사\n{link}")
+            f"↓ 아래 [기사 보기] 를 누르세요")
 
 
 # ── 메인 ─────────────────────────────────────────────────────
