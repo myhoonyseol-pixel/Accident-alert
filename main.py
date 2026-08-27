@@ -19,6 +19,8 @@ import requests
 import ai_judge
 import config
 import filters
+import mailer
+import telegram
 
 try:
     import feedparser
@@ -281,11 +283,23 @@ def get_access_token(refresh_token=None, label="본인", critical=True):
     return data["access_token"], int(data.get("refresh_token_expires_in", 0))
 
 
-def broadcast(text: str, link: str = "") -> int:
-    """받는 사람 전원에게 보냅니다.
+def broadcast(text: str, link: str = "", subject: str = "") -> int:
+    """받는 사람 전원에게 카카오톡 + 이메일로 보냅니다.
 
     한 사람의 토큰이 죽어도 나머지에게는 정상 발송합니다.
+    이메일은 카카오톡 '나에게 보내기'에 푸시 알림이 안 뜨는 문제를 메웁니다.
     """
+    # 알림이 확실한 통로부터 내보냅니다.
+    # 카카오톡 '나에게 보내기'는 푸시가 안 뜨므로 마지막입니다.
+    if telegram.enabled(config):
+        telegram.send(text, link, config)
+
+    if mailer.enabled(config):
+        body = text.replace("↓ 아래 [기사 보기] 를 누르세요", "")
+        if link:
+            body = body.rstrip() + f"\n\n▼ 원문 기사\n{link}"
+        mailer.send(subject or "[안전속보] 건설현장 사고 감지", body.strip(), config)
+
     sent = 0
     for label, refresh in load_recipients():
         got = get_access_token(refresh, label, critical=(label == "본인"))
@@ -452,7 +466,8 @@ def maybe_heartbeat(state):
     if now_kst.hour != config.HEARTBEAT_HOUR_KST:
         return False
     sent = broadcast(f"✅ 사고속보 감시 정상 작동 중\n{now_kst:%Y-%m-%d %H:%M} 기준\n"
-                     f"어제부터 지금까지 새 속보 없음.")
+                     f"어제부터 지금까지 새 속보 없음.",
+                     subject="[안전속보] 감시 시스템 정상 작동 중")
     if sent:
         state["last_heartbeat"] = today
     return bool(sent)
@@ -502,7 +517,9 @@ def main():
         )
         for item, place, hits, confidence in picked[:config.MAX_SEND_PER_RUN]:
             link = resolve_link(item["link"])
-            n = broadcast(format_alert(item, place, hits, confidence, link), link)
+            title = filters.strip_source_tail(item["title"])[:70]
+            n = broadcast(format_alert(item, place, hits, confidence, link), link,
+                          subject=f"[안전속보] {title}")
             print(f"발송 {n}/{len(people)}명 — {item['title'][:40]}")
         extra = len(picked) - config.MAX_SEND_PER_RUN
         if extra > 0:
