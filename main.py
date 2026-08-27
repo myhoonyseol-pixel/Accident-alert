@@ -19,8 +19,37 @@ import requests
 import ai_judge
 import config
 import filters
-import mailer
-import telegram
+
+
+class _Disabled:
+    """선택 기능 모듈이 없을 때 자리를 대신합니다.
+
+    이메일이나 텔레그램을 안 쓰는 사람이 해당 파일을 안 올려도
+    시스템 전체가 죽지 않도록 하기 위한 장치입니다.
+    (실제로 mailer.py 를 안 올려 ModuleNotFoundError 로 전체가 멈춘 적 있음)
+    """
+
+    def __init__(self, name):
+        self._name = name
+
+    def enabled(self, cfg):
+        return False
+
+    def send(self, *a, **kw):
+        return 0
+
+
+try:
+    import mailer
+except ImportError:
+    print("[안내] mailer.py 가 없어 이메일 발송을 건너뜁니다.", file=sys.stderr)
+    mailer = _Disabled("mailer")
+
+try:
+    import telegram
+except ImportError:
+    print("[안내] telegram.py 가 없어 텔레그램 발송을 건너뜁니다.", file=sys.stderr)
+    telegram = _Disabled("telegram")
 
 try:
     import feedparser
