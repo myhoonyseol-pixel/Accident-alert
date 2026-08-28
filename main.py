@@ -128,7 +128,18 @@ def load_state():
         if not isinstance(v, dict):
             state["seen"][k] = {"ts": v, "tok": []}
     state.setdefault("last_heartbeat", "")
+    state.setdefault("events", [])
+    # 생존신호 이후 몇 건을 보냈는지. "새 속보 없음"이 거짓말이 되지 않게 셉니다.
+    state.setdefault("sent_since_heartbeat", 0)
     return state
+
+
+def recent_events(state):
+    """최근 보낸 사고 목록. AI에게 '이거 후속 아니야?'를 묻기 위해 넘깁니다."""
+    cutoff = (now_utc() - timedelta(days=getattr(config, "EVENT_MEMORY_DAYS", 5))).timestamp()
+    fresh = [e for e in state.get("events", []) if e.get("ts", 0) > cutoff]
+    state["events"] = fresh[-getattr(config, "EVENT_MEMORY_MAX", 15):]
+    return state["events"]
 
 
 def save_state(state):
@@ -418,9 +429,20 @@ def casualty_level(item):
     return 1 if any(w in text for w in getattr(config, "CASUALTY_WORDS", ())) else 0
 
 
-def format_alert(item, place, hits, confidence, link):
+def format_alert(item, place, hits, confidence, link, verdict=None):
     when = (item["published"].astimezone(KST).strftime("%m/%d %H:%M")
             if item["published"] else "시각미상")
+    verdict = verdict or {}
+    if verdict.get("v") == "update":
+        # 이미 알린 사고인데 새 사실이 밝혀진 경우.
+        # 같은 내용의 재탕 기사는 여기까지 오지 않고 AI가 걸러냅니다.
+        chg = verdict.get("chg", "").strip()
+        head = f"🔄 속보 업데이트\n[{chg}]" if chg else "🔄 속보 업데이트"
+        title = filters.strip_source_tail(item["title"])[:80]
+        return (f"{head}\n\n{title}\n\n"
+                f"{when} · {item['source']}\n"
+                f"↓ 아래 [기사 보기] 를 누르세요")
+
     if confidence == "company":
         mark, tag = "🔴", f"{place} · 주요건설사"
     elif confidence == "strong":
@@ -492,13 +514,27 @@ def maybe_heartbeat(state):
     today = now_kst.strftime("%Y-%m-%d")
     if state.get("last_heartbeat") == today:
         return False
-    if now_kst.hour != config.HEARTBEAT_HOUR_KST:
+    # 지정 시각 '이후 첫 회차'에 보냅니다.
+    #
+    # 예전에는 `hour != 지정시각` 이면 건너뛰었는데, 그러면 그 한 시간 동안
+    # 실행이 한 번도 없었을 때(루프 재시작·지연) 그날 생존 신호가 아예 안 갑니다.
+    # 사용자는 시스템이 죽은 줄 알게 되죠. 그래서 '이후'로 바꿨습니다.
+    if now_kst.hour < config.HEARTBEAT_HOUR_KST:
         return False
-    sent = broadcast(f"✅ 사고속보 감시 정상 작동 중\n{now_kst:%Y-%m-%d %H:%M} 기준\n"
-                     f"어제부터 지금까지 새 속보 없음.",
+    # ⚠️ "새 속보 없음"은 사실일 때만 써야 합니다.
+    #    이 회차에 보낼 게 없다고 해서 오늘 아무 일 없었던 게 아닙니다.
+    #    (07:00에 사고 알림을 보내고 08:10에 "없음"이라고 보낸 적 있음)
+    n = state.get("sent_since_heartbeat", 0)
+    if n:
+        line = f"지난 24시간 동안 {n}건 발송됨."
+    else:
+        line = "지난 24시간 동안 새 속보 없음."
+
+    sent = broadcast(f"✅ 사고속보 감시 정상 작동 중\n{now_kst:%Y-%m-%d %H:%M} 기준\n{line}",
                      subject="[안전속보] 감시 시스템 정상 작동 중")
     if sent:
         state["last_heartbeat"] = today
+        state["sent_since_heartbeat"] = 0
     return bool(sent)
 
 
@@ -523,7 +559,30 @@ def main():
         if len(picked) > cap:
             print(f"후보 {len(picked)}건 중 상한 {cap}건만 AI 판단", file=sys.stderr)
             picked = picked[:cap]
-        picked = ai_judge.judge(picked, config)
+
+        events = recent_events(state)
+        picked = ai_judge.judge(picked, config, events)
+
+        # 같은 사고의 후속 알림은 상한을 둡니다.
+        # 대형 사고는 후속 기사가 수십 건 쏟아지는데, 새 사실이 있는 건만
+        # AI가 걸러주더라도 그것만으로 여러 번일 수 있기 때문입니다.
+        limit = getattr(config, "EVENT_MAX_UPDATES", 2)
+        filtered = []
+        for item, place, hits, conf, verdict in picked:
+            if verdict.get("v") != "update":
+                filtered.append((item, place, hits, conf, verdict))
+                continue
+            idx = verdict.get("e", -1)
+            ev = events[idx] if isinstance(idx, int) and 0 <= idx < len(events) else None
+            if ev is None:
+                filtered.append((item, place, hits, conf, verdict))
+            elif ev.get("updates", 0) < limit:
+                ev["updates"] = ev.get("updates", 0) + 1
+                filtered.append((item, place, hits, conf, verdict))
+            else:
+                print(f"[후속상한] {item['title'][:40]} — 이 사고는 이미 "
+                      f"{limit}회 후속 발송", file=sys.stderr)
+        picked = filtered
         print(f"AI 판정 후 {len(picked)}건")
 
     need_token = bool(picked) or config.HEARTBEAT_ENABLED
@@ -544,12 +603,22 @@ def main():
             ),
             reverse=True,
         )
-        for item, place, hits, confidence in picked[:config.MAX_SEND_PER_RUN]:
+        for item, place, hits, confidence, verdict in picked[:config.MAX_SEND_PER_RUN]:
             link = resolve_link(item["link"])
             title = filters.strip_source_tail(item["title"])[:70]
-            n = broadcast(format_alert(item, place, hits, confidence, link), link,
-                          subject=f"[안전속보] {title}")
+            n = broadcast(format_alert(item, place, hits, confidence, link, verdict),
+                          link, subject=f"[안전속보] {title}")
             print(f"발송 {n}/{len(people)}명 — {item['title'][:40]}")
+            state["sent_since_heartbeat"] = state.get("sent_since_heartbeat", 0) + 1
+            # 새 사고면 '이미 보낸 사고' 목록에 올립니다.
+            if verdict.get("v") == "new":
+                state["events"].append({
+                    "ts": now_utc().timestamp(),
+                    "when": (item["published"] or now_utc()).astimezone(KST)
+                            .strftime("%m/%d %H:%M"),
+                    "title": filters.strip_source_tail(item["title"])[:90],
+                    "updates": 0,
+                })
         extra = len(picked) - config.MAX_SEND_PER_RUN
         if extra > 0:
             print(f"{extra}건은 상한으로 미발송(다음 실행에서 중복 제외됨)")
