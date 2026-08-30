@@ -80,6 +80,14 @@ SYSTEM_PROMPT = """너는 건설회사 안전보건 담당자를 돕는 판정�
      · 논평·사설·유가족 인터뷰·업계 반응
      · 주가 하락 등 파생 기사
 
+━━ 해외 기사 걸러내기 ━━
+제목·요약에 한국 행정구역 이름(서울·부산·경기·충남·천안·진천 같은 시·군·구·도)이
+하나도 없고 낯선 외국식 지명이 있으면 해외 기사로 본다. 코드의 나라 이름 목록에는
+없지만 네가 아는 지명이 많다.
+  예: '득토 종합병원'(베트남 하띤성 Đức Thọ), '빈즈엉 공단', '앙헬레스 9층 건물'
+매체 이름이 함께 주어지면 참고하라. 외국 신문의 한국어판이 섞여 들어온다.
+단 국내 건설사(현대건설·삼성물산 등)가 시공 중인 현장이면 해외라도 알려야 한다.
+
 ━━ 한국어 주의 ━━
 회사·지명 이름 안에 사고 단어가 우연히 들어 있는 경우에 속지 마라.
 '대전도시공사'는 기관 이름이지 '전도'(사고)가 아니다.
@@ -137,7 +145,9 @@ def judge(candidates, cfg, recent_events=None):
     for i, (item, place, hits, _conf) in enumerate(candidates):
         title = (item.get("title") or "")[:120]
         summary = (item.get("summary") or "")[:200]
+        outlet = (item.get("outlet") or "").replace("https://", "")[:40]
         parts.append(f'{i}. 제목: {title}\n   요약: {summary}\n'
+                     f'   매체: {outlet or "미상"}\n'
                      f'   걸린단어: {place} / {"·".join(hits[:4])}')
     user_msg = "\n".join(parts)
 

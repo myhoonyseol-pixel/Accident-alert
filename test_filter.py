@@ -214,6 +214,43 @@ def check_real_case(cfg):
     return detected, sent
 
 
+# 매체 도메인으로 해외 기사를 걸러내는지 확인합니다.
+# 2026-08-29 실제 오탐: 베트남 라오동신문 한국어판(ko.laodong.vn)의
+# "득토 종합병원 건설 현장에서 화재 발생"이 발송됐습니다.
+# '득토'(하띤성 Đức Thọ)는 나라 이름 목록에 없고 '현지시간'도 안 붙었는데,
+# 제목에 '건설 현장'이 있어 장소 그물에 걸렸습니다.
+OUTLET_CASES = [
+    # (제목, 매체주소, 통과해야 하는가, 설명)
+    ("득토 종합병원 건설 현장에서 화재 발생",
+     "https://ko.laodong.vn", False, "베트남 매체 한국어판 — 실제 오탐"),
+    ("하노이 아파트 공사장서 추락…1명 사망",
+     "https://ko.laodong.vn", False, "해외 매체"),
+    ("삼성물산 시공 현장 신축공사 중 붕괴…2명 매몰",
+     "https://ko.laodong.vn", True, "국내 건설사면 해외 매체라도 발송"),
+    ("천안 콘크리트 공장서 근로자 1명 숨져…거푸집 부재 전도",
+     "https://www.yna.co.kr", True, "국내 기사"),
+    ("충북 진천 공사현장서 토사 무너져 1명 매몰",
+     "https://news.kbs.co.kr", True, "국내 기사"),
+    ("울산 아파트 신축 공사 현장 붕괴…작업자 3명 경상",
+     "https://www.ytn.co.kr", True, "국내 기사"),
+]
+
+
+def check_outlet(cfg):
+    print("\n" + "=" * 76)
+    print("해외 매체 차단 (구글 뉴스가 알려주는 매체 주소로 판정)")
+    print("=" * 76)
+    bad = 0
+    for title, outlet, expect, note in OUTLET_CASES:
+        got = filters.match(cfg, title, "", outlet) is not None
+        if got != expect:
+            bad += 1
+        mark = "OK  " if got == expect else "FAIL"
+        print(f"  {mark} [{'발송' if got else '차단'}] {title[:34]:<36} {note}")
+    print(f"  → {len(OUTLET_CASES)}건 중 오류 {bad}건")
+    return bad
+
+
 if __name__ == "__main__":
     name = sys.argv[1] if len(sys.argv) > 1 else "config"
     cfg = importlib.import_module(name)
@@ -222,3 +259,4 @@ if __name__ == "__main__":
     if name == "config":
         check_dedup(cfg)
         check_real_case(cfg)
+        check_outlet(cfg)

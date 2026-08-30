@@ -46,26 +46,55 @@ def _normalize(tok: str) -> str:
     return _SYNONYMS.get(tok, tok)
 
 
-# 국적 표현은 해외 기사 신호가 아닙니다.
-# "중국인 근로자", "베트남 국적 작업자" 는 국내 현장에서 매우 흔합니다.
-# 나라 이름을 보기 전에 이 형태를 먼저 지웁니다.
-_NATIONALITY_RE = re.compile(
-    r"(필리핀|베트남|중국|태국|미얀마|캄보디아|라오스|인도네시아|몽골|네팔|"
-    r"스리랑카|우즈베키스탄|카자흐스탄|방글라데시|파키스탄|러시아|미국|일본)"
-    r"\s*(인|계|국적|어)"
-)
+# 나라 이름을 그냥 문자열 포함으로 찾으면 한국 지명에 걸립니다.
+#   구[미국]가산단(경북 구미) → '미국'
+#   [중국]집 화재, [일본]식 주점 → 국내 기사인데 해외로 오인
+# 그래서 앞뒤를 함께 봅니다.
+#   앞: 한글이 붙어 있으면 다른 단어의 일부다 → 무시   (구미국가산단, 재미교포)
+#   뒤: 국적·물건을 뜻하는 말이 오면 해외 기사가 아니다 → 무시
+#       (중국인 근로자, 베트남 국적 작업자, 중국산 자재)
+_FOREIGN_TAIL = r"(?!\s*(?:인|계|국적|어|산|집|제|식|풍|말|교포|동포))"
+_foreign_cache = {}
+
+
+def _foreign_re(cfg):
+    places = tuple(getattr(cfg, "FOREIGN_PLACES", ()))
+    if not places:
+        return None
+    if places not in _foreign_cache:
+        # 긴 이름부터 맞춰야 '인도네시아'가 '인도'로 잘리지 않습니다.
+        alt = "|".join(re.escape(p) for p in sorted(places, key=len, reverse=True))
+        _foreign_cache[places] = re.compile(rf"(?<![가-힣])(?:{alt}){_FOREIGN_TAIL}")
+    return _foreign_cache[places]
 
 
 def is_foreign(cfg, text: str) -> bool:
     """해외에서 난 사고 기사인가.
 
-    국내 건설사 이름이 함께 나오면 해외 현장이라도 우리가 알아야 하므로
-    이 함수의 판정과 무관하게 호출부에서 살려둡니다.
+    국내 건설사 이름이 함께 나오면 해외 현장이라도 우리가 알아야 하므로,
+    이 판정과 별개로 호출부에서 살려둡니다.
     """
-    cleaned = _NATIONALITY_RE.sub(" ", text)
-    if any(s in cleaned for s in getattr(cfg, "FOREIGN_SIGNALS", ())):
+    if any(s in text for s in getattr(cfg, "FOREIGN_SIGNALS", ())):
         return True
-    return any(p in cleaned for p in getattr(cfg, "FOREIGN_PLACES", ()))
+    rx = _foreign_re(cfg)
+    return bool(rx and rx.search(text))
+
+
+def is_foreign_outlet(cfg, outlet: str) -> bool:
+    """기사를 쓴 매체가 외국 매체인가.
+
+    구글 뉴스 RSS는 항목마다 <source url="..."> 로 매체 주소를 함께 줍니다.
+    지명은 목록으로 다 막을 수 없지만 매체 도메인은 고정이라 확실합니다.
+    (ko.laodong.vn = 베트남 라오동신문 한국어판)
+    """
+    host = re.sub(r"^https?://", "", (outlet or "").lower()).split("/")[0]
+    host = host.split(":")[0].strip().rstrip(".")
+    if not host:
+        return False
+    for d in getattr(cfg, "FOREIGN_OUTLET_DOMAINS", ()):
+        if host == d or host.endswith("." + d):
+            return True
+    return any(host.endswith(t) for t in getattr(cfg, "FOREIGN_OUTLET_TLDS", ()))
 
 
 def has_company(cfg, text: str) -> bool:
@@ -73,10 +102,11 @@ def has_company(cfg, text: str) -> bool:
     return any(c in packed for c in getattr(cfg, "COMPANY_WORDS", ()))
 
 
-def match(cfg, title, summary=""):
+def match(cfg, title, summary="", outlet=""):
     """조건을 만족하면 (장소단어, 사고단어목록, 신뢰도) 반환, 아니면 None.
 
     신뢰도: 'strong' = 건설현장이 명시됨 / 'weak' = 맥락으로 추정
+    outlet: 기사를 쓴 매체 주소 (구글 뉴스 RSS가 알려줍니다). 없으면 빈 문자열.
     """
     title = title or ""
     summary = summary or ""
@@ -100,9 +130,12 @@ def match(cfg, title, summary=""):
     if not hits:
         return None
 
-    # 2-2) 해외 사고는 제외한다.
+    # 2-2) 해외 사고는 제외한다. 두 가지로 본다.
+    #        · 본문에 나라 이름이나 '현지시간' 같은 표현이 있는가
+    #        · 기사를 쓴 매체가 외국 매체인가  ← 지명 목록에 없는 지명을 잡는다
     #      단 국내 건설사가 시공 중인 해외 현장 사고는 우리가 알아야 하므로 남긴다.
-    if is_foreign(cfg, text) and not has_company(cfg, text):
+    if (is_foreign(cfg, text) or is_foreign_outlet(cfg, outlet)) \
+            and not has_company(cfg, text):
         return None
 
     # 3) 장소 판정 — 띄어쓰기를 없앤 문장으로 본다.

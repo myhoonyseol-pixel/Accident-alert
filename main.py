@@ -242,6 +242,14 @@ def fetch_rss(url: str, label: str):
             if getattr(e, "published_parsed", None):
                 pub = datetime(*e.published_parsed[:6], tzinfo=timezone.utc)
             raw_title = clean(getattr(e, "title", ""))
+            # 구글 뉴스는 항목마다 <source url="..."> 로 어느 매체가 썼는지 알려줍니다.
+            # 이걸로 외국 매체(ko.laodong.vn 등)를 걸러냅니다.
+            src = getattr(e, "source", None) or {}
+            outlet = ""
+            try:
+                outlet = src.get("href", "") or ""
+            except AttributeError:
+                outlet = getattr(src, "href", "") or ""
             out.append({
                 # 구글 뉴스 제목의 "- 매체명" 꼬리를 여기서 뗍니다.
                 "title": (filters.strip_source_tail(raw_title)
@@ -250,6 +258,7 @@ def fetch_rss(url: str, label: str):
                 "link": getattr(e, "link", ""),
                 "published": pub,
                 "source": label,
+                "outlet": outlet,
             })
     except Exception as exc:                            # noqa: BLE001
         print(f"[rss] {url}: {exc}", file=sys.stderr)
@@ -479,7 +488,8 @@ def pick_candidates(state):
         if not fresh(item["published"]):
             continue
 
-        m = filters.match(config, item["title"], item["summary"])
+        m = filters.match(config, item["title"], item["summary"],
+                          item.get("outlet", ""))
         if not m:
             continue
         place, hits, confidence = m
