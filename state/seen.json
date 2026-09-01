@@ -604,10 +604,22 @@
     "쓰러져",
     "창원"
    ]
+  },
+  "dbba746329deab08": {
+   "ts": 1788301054.736412,
+   "tok": [
+    "60",
+    "교량",
+    "보수",
+    "사망",
+    "안전상황실",
+    "작업자",
+    "창원"
+   ]
   }
  },
  "initialized": true,
- "last_heartbeat": "2026-09-01",
+ "last_heartbeat": "2026-09-02",
  "events": [
   {
    "ts": 1787962242.656228,
@@ -652,5 +664,5 @@
    "updates": 0
   }
  ],
- "sent_since_heartbeat": 3
+ "sent_since_heartbeat": 0
 }
