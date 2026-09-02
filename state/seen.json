@@ -1215,6 +1215,83 @@
     "중대재해",
     "평택사업장"
    ]
+  },
+  "36cf569005aaf11d": {
+   "ts": 1788340765.981835,
+   "tok": [
+    "60",
+    "건설현장",
+    "내촌초",
+    "아래",
+    "작업자",
+    "추락",
+    "홍천"
+   ]
+  },
+  "3a73adcdcb3bb76d": {
+   "ts": 1788340765.989037,
+   "tok": [
+    "당진제철소",
+    "배관",
+    "산소공장",
+    "없어",
+    "인명피해",
+    "폭발",
+    "현대제철",
+    "화재"
+   ]
+  },
+  "f6961a0b257f5dab": {
+   "ts": 1788340765.989395,
+   "tok": [
+    "24",
+    "대피",
+    "사건",
+    "세탁공장",
+    "안성",
+    "원곡면",
+    "전원",
+    "직원",
+    "화재"
+   ]
+  },
+  "a64cd118322b2d69": {
+   "ts": 1788340765.989785,
+   "tok": [
+    "당진",
+    "부지",
+    "산소공장",
+    "없어",
+    "인명피해",
+    "폭발",
+    "현대제철",
+    "화재"
+   ]
+  },
+  "06be2133030bd71d": {
+   "ts": 1788340765.990955,
+   "tok": [
+    "당진",
+    "대피",
+    "모두",
+    "산소공장",
+    "직원들",
+    "현대제철",
+    "협력사",
+    "화재"
+   ]
+  },
+  "a7613ab6f631e4f8": {
+   "ts": 1788340765.991255,
+   "tok": [
+    "당진제철소",
+    "산소공장",
+    "없어",
+    "인명피해",
+    "폭발",
+    "현대제철",
+    "화재"
+   ]
   }
  },
  "initialized": true,
@@ -1277,7 +1354,7 @@
     "현대제철"
    ],
    "link": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE1kWWR4RXRpNFVmZlpoYlJzLU83bnRBb1JLODY0M2pZWGM0Q2RZU25nUER2Z0tLNVF3am5zbmFiaHhCZ3FhRGhrcG9GQ0RadDJqYVMtN3lzUEdZNml2WVA2cw?oc=5",
-   "reports": 12,
+   "reports": 15,
    "spread": true
   },
   {
@@ -1318,7 +1395,7 @@
     "홍천"
    ],
    "link": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE1CNVlhOU1UNnVpQktaRkVpVkI2RnV4a29UOHFTZUtCRnNjZ3ZfakVfV25XMmVzQTMyTXp3U1VEVXR6MHhUamlmcGxwMXdkemZfWDVha1VmVllLZTDSAWBBVV95cUxQSVc5YWlwVDRlQkd0eXB5TUM3R0VvOUFKWmpGWFQ5cWJHOXNWYjBSV3Bab2VFcXI0RVBkQXFIZ1pJMVQ2TVBZZ1RPRG5BVGtucnotQ0Q5U3VCT21FclctZVQ?oc=5",
-   "reports": 1
+   "reports": 2
   }
  ],
  "sent_since_heartbeat": 4
