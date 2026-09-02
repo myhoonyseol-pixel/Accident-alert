@@ -1655,6 +1655,20 @@
     "폭발",
     "현대제철"
    ]
+  },
+  "df2c86fc77bfa603": {
+   "ts": 1788377886.704712,
+   "tok": [
+    "경기",
+    "공장",
+    "만에",
+    "부속품",
+    "시간여",
+    "안경",
+    "양주",
+    "진화",
+    "화재"
+   ]
   }
  },
  "initialized": true,
@@ -1759,7 +1773,26 @@
    ],
    "link": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE1CNVlhOU1UNnVpQktaRkVpVkI2RnV4a29UOHFTZUtCRnNjZ3ZfakVfV25XMmVzQTMyTXp3U1VEVXR6MHhUamlmcGxwMXdkemZfWDVha1VmVllLZTDSAWBBVV95cUxQSVc5YWlwVDRlQkd0eXB5TUM3R0VvOUFKWmpGWFQ5cWJHOXNWYjBSV3Bab2VFcXI0RVBkQXFIZ1pJMVQ2TVBZZ1RPRG5BVGtucnotQ0Q5U3VCT21FclctZVQ?oc=5",
    "reports": 3
+  },
+  {
+   "ts": 1788377891.047875,
+   "when": "09/03 03:18",
+   "title": "경기 양주 안경 부속품 공장 화재...1시간여 만에 진화",
+   "updates": 0,
+   "tok": [
+    "경기",
+    "공장",
+    "만에",
+    "부속품",
+    "시간여",
+    "안경",
+    "양주",
+    "진화",
+    "화재"
+   ],
+   "link": "https://news.google.com/rss/articles/CBMiXkFVX3lxTE9pOThyTE5faE1veHdBVHFoY2hwRExYSE9uLW9SaC1vQVVwM18wUGZMWWFGNG95LVNPcnVoNXNoZ2VUczV6cWhkSWtTbzE4elpWYkZDdTRjYXEwQUN2NHc?oc=5",
+   "reports": 1
   }
  ],
- "sent_since_heartbeat": 4
+ "sent_since_heartbeat": 5
 }
