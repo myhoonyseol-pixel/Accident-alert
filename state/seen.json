@@ -1706,6 +1706,18 @@
     "없어",
     "제조"
    ]
+  },
+  "b4461201991cab4b": {
+   "ts": 1788393435.673607,
+   "tok": [
+    "부속품",
+    "안경",
+    "양주",
+    "없어",
+    "인명피해",
+    "제조공장",
+    "화재"
+   ]
   }
  },
  "initialized": true,
@@ -1828,7 +1840,7 @@
     "화재"
    ],
    "link": "https://news.google.com/rss/articles/CBMiXkFVX3lxTE9pOThyTE5faE1veHdBVHFoY2hwRExYSE9uLW9SaC1vQVVwM18wUGZMWWFGNG95LVNPcnVoNXNoZ2VUczV6cWhkSWtTbzE4elpWYkZDdTRjYXEwQUN2NHc?oc=5",
-   "reports": 2
+   "reports": 3
   }
  ],
  "sent_since_heartbeat": 0
