@@ -1152,6 +1152,69 @@
     "폭발",
     "현대제철"
    ]
+  },
+  "5e4e22dd3817ed0d": {
+   "ts": 1788337194.890329,
+   "tok": [
+    "60",
+    "건설현장",
+    "내촌초",
+    "부상",
+    "아래",
+    "작업자",
+    "추락해",
+    "홍천"
+   ]
+  },
+  "6e092365a9a44f5f": {
+   "ts": 1788337194.897089,
+   "tok": [
+    "26",
+    "대피",
+    "세탁공장",
+    "안성",
+    "전원",
+    "직원",
+    "화재"
+   ]
+  },
+  "af1cecbb98f648d2": {
+   "ts": 1788337194.898534,
+   "tok": [
+    "당진",
+    "배관",
+    "산소공장",
+    "쇼츠",
+    "없어",
+    "인명피해",
+    "천지",
+    "폭발",
+    "현대제철"
+   ]
+  },
+  "70551ddb71e5ad42": {
+   "ts": 1788337194.899152,
+   "tok": [
+    "당진제철소",
+    "산소공장",
+    "없어",
+    "인명피해",
+    "폭발사고",
+    "현대제철"
+   ]
+  },
+  "65f8206d2dd5df74": {
+   "ts": 1788337194.901698,
+   "tok": [
+    "고양",
+    "논의",
+    "대책",
+    "만도",
+    "의원",
+    "이기대",
+    "중대재해",
+    "평택사업장"
+   ]
   }
  },
  "initialized": true,
@@ -1214,7 +1277,7 @@
     "현대제철"
    ],
    "link": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE1kWWR4RXRpNFVmZlpoYlJzLU83bnRBb1JLODY0M2pZWGM0Q2RZU25nUER2Z0tLNVF3am5zbmFiaHhCZ3FhRGhrcG9GQ0RadDJqYVMtN3lzUEdZNml2WVA2cw?oc=5",
-   "reports": 10,
+   "reports": 12,
    "spread": true
   },
   {
@@ -1238,7 +1301,25 @@
    ],
    "link": "https://news.google.com/rss/articles/CBMiSEFVX3lxTE9lbUZtU3BMNllLWlNuNVBWSWZQaUJ2SVpaNzJIaGZWQ092dzhmdXdiczY0WlE0Q1BKaEJsejNEUnF4WmszUElxVg?oc=5",
    "reports": 1
+  },
+  {
+   "ts": 1788337199.962975,
+   "when": "09/02 16:59",
+   "title": "홍천 내촌초 공사현장서 60대 작업자 1.5ｍ 아래 추락해 중상",
+   "updates": 0,
+   "tok": [
+    "60",
+    "건설현장",
+    "내촌초",
+    "부상",
+    "아래",
+    "작업자",
+    "추락해",
+    "홍천"
+   ],
+   "link": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE1CNVlhOU1UNnVpQktaRkVpVkI2RnV4a29UOHFTZUtCRnNjZ3ZfakVfV25XMmVzQTMyTXp3U1VEVXR6MHhUamlmcGxwMXdkemZfWDVha1VmVllLZTDSAWBBVV95cUxQSVc5YWlwVDRlQkd0eXB5TUM3R0VvOUFKWmpGWFQ5cWJHOXNWYjBSV3Bab2VFcXI0RVBkQXFIZ1pJMVQ2TVBZZ1RPRG5BVGtucnotQ0Q5U3VCT21FclctZVQ?oc=5",
+   "reports": 1
   }
  ],
- "sent_since_heartbeat": 3
+ "sent_since_heartbeat": 4
 }
