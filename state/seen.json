@@ -1028,6 +1028,31 @@
     "폭발",
     "현대제철"
    ]
+  },
+  "d78634b5d14af508": {
+   "ts": 1788331764.456137,
+   "tok": [
+    "건설현장",
+    "도로",
+    "사망",
+    "승용차",
+    "운전자",
+    "입건",
+    "작업자",
+    "합천"
+   ]
+  },
+  "cd411de0a8359532": {
+   "ts": 1788331764.460364,
+   "tok": [
+    "당진",
+    "배관",
+    "산소공장",
+    "없어",
+    "인명피해",
+    "폭발",
+    "현대제철"
+   ]
   }
  },
  "initialized": true,
@@ -1090,7 +1115,8 @@
     "현대제철"
    ],
    "link": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE1kWWR4RXRpNFVmZlpoYlJzLU83bnRBb1JLODY0M2pZWGM0Q2RZU25nUER2Z0tLNVF3am5zbmFiaHhCZ3FhRGhrcG9GQ0RadDJqYVMtN3lzUEdZNml2WVA2cw?oc=5",
-   "reports": 5
+   "reports": 6,
+   "spread": true
   },
   {
    "ts": 1788325655.606674,
@@ -1115,5 +1141,5 @@
    "reports": 1
   }
  ],
- "sent_since_heartbeat": 2
+ "sent_since_heartbeat": 3
 }
