@@ -1089,6 +1089,29 @@
     "폭발",
     "화약"
    ]
+  },
+  "941715ef62be176c": {
+   "ts": 1788334758.382649,
+   "tok": [
+    "당진제철소",
+    "배관",
+    "산소",
+    "원인",
+    "조사",
+    "폭발",
+    "현대제철",
+    "화재"
+   ]
+  },
+  "01d8ec96887c85b8": {
+   "ts": 1788334758.384344,
+   "tok": [
+    "당진제철소",
+    "산소공장",
+    "이틀째",
+    "폭발",
+    "현대제철"
+   ]
   }
  },
  "initialized": true,
@@ -1151,7 +1174,7 @@
     "현대제철"
    ],
    "link": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE1kWWR4RXRpNFVmZlpoYlJzLU83bnRBb1JLODY0M2pZWGM0Q2RZU25nUER2Z0tLNVF3am5zbmFiaHhCZ3FhRGhrcG9GQ0RadDJqYVMtN3lzUEdZNml2WVA2cw?oc=5",
-   "reports": 7,
+   "reports": 8,
    "spread": true
   },
   {
