@@ -1472,6 +1472,31 @@
     "인명피해",
     "화재"
    ]
+  },
+  "51a54d619c83d51c": {
+   "ts": 1788351598.845714,
+   "tok": [
+    "건설현장",
+    "부상",
+    "아래",
+    "작업자",
+    "추락해",
+    "홍천"
+   ]
+  },
+  "586454e00800dd1f": {
+   "ts": 1788351598.853583,
+   "tok": [
+    "공장",
+    "산소",
+    "없어",
+    "인명",
+    "폭발",
+    "피해",
+    "현대제철",
+    "협력사",
+    "화재"
+   ]
   }
  },
  "initialized": true,
@@ -1534,7 +1559,7 @@
     "현대제철"
    ],
    "link": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE1kWWR4RXRpNFVmZlpoYlJzLU83bnRBb1JLODY0M2pZWGM0Q2RZU25nUER2Z0tLNVF3am5zbmFiaHhCZ3FhRGhrcG9GQ0RadDJqYVMtN3lzUEdZNml2WVA2cw?oc=5",
-   "reports": 19,
+   "reports": 20,
    "spread": true
   },
   {
@@ -1575,7 +1600,7 @@
     "홍천"
    ],
    "link": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE1CNVlhOU1UNnVpQktaRkVpVkI2RnV4a29UOHFTZUtCRnNjZ3ZfakVfV25XMmVzQTMyTXp3U1VEVXR6MHhUamlmcGxwMXdkemZfWDVha1VmVllLZTDSAWBBVV95cUxQSVc5YWlwVDRlQkd0eXB5TUM3R0VvOUFKWmpGWFQ5cWJHOXNWYjBSV3Bab2VFcXI0RVBkQXFIZ1pJMVQ2TVBZZ1RPRG5BVGtucnotQ0Q5U3VCT21FclctZVQ?oc=5",
-   "reports": 2
+   "reports": 3
   }
  ],
  "sent_since_heartbeat": 4
