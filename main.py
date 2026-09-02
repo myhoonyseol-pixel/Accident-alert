@@ -250,11 +250,17 @@ def fetch_rss(url: str, label: str):
                 outlet = src.get("href", "") or ""
             except AttributeError:
                 outlet = getattr(src, "href", "") or ""
+            # 구글 뉴스의 '요약'은 실제로는 「제목 + 매체명」입니다. 정보가 하나도
+            # 없는데, 거기 붙은 매체 이름이 사고 키워드로 오인됩니다.
+            #   "…공사현장 꼼꼼 점검   경상매일신문"  →  '경상'(가벼운 부상)으로 판정
+            #   → 도의원 현장점검 홍보 기사가 사고 속보로 발송됨 (2026-08-31)
+            # 그래서 구글 뉴스는 요약을 아예 버립니다. 잃는 정보가 없습니다.
+            summary = "" if label == "구글뉴스" else clean(getattr(e, "summary", ""))
             out.append({
                 # 구글 뉴스 제목의 "- 매체명" 꼬리를 여기서 뗍니다.
                 "title": (filters.strip_source_tail(raw_title)
                           if label == "구글뉴스" else raw_title),
-                "summary": clean(getattr(e, "summary", "")),
+                "summary": summary,
                 "link": getattr(e, "link", ""),
                 "published": pub,
                 "source": label,
@@ -456,6 +462,8 @@ def format_alert(item, place, hits, confidence, link, verdict=None):
         mark, tag = "🔴", f"{place} · 주요건설사"
     elif confidence == "strong":
         mark, tag = "🚨", place
+    elif confidence == "plant":
+        mark, tag = "🚨", f"{place} · 사업장"
     else:
         mark, tag = "⚠️", f"{place}(추정)"
     if not casualty_level(item):
@@ -476,7 +484,23 @@ def format_alert(item, place, hits, confidence, link, verdict=None):
 
 
 # ── 메인 ─────────────────────────────────────────────────────
-def pick_candidates(state):
+def bump_report(events, toks):
+    """이 기사가 이미 보낸 사고 중 하나와 같은 사건이면 보도 수를 1 올립니다.
+
+    사회적 파장을 재는 자리입니다. AI에게 "이거 크게 될 사고야?"라고
+    물어봐야 알 수 있는 게 아니라, 몇 개 매체가 붙었는지 세면 됩니다.
+    """
+    best, score = None, 0.0
+    for ev in events:
+        s = filters.same_event(config, toks, set(ev.get("tok", [])))
+        if s > score:
+            best, score = ev, s
+    if best is not None:
+        best["reports"] = best.get("reports", 1) + 1
+    return best
+
+
+def pick_candidates(state, events):
     """조건에 맞고 아직 안 보낸 기사만 골라냅니다."""
     seen = state["seen"]
     recent_tokens = [set(v.get("tok", [])) for v in seen.values() if v.get("tok")]
@@ -500,6 +524,9 @@ def pick_candidates(state):
 
         # 같은 사고를 다른 매체가 쓴 기사인지 확인
         toks = filters.tokenize(item["title"])
+        # 중복이든 아니든, 이미 보낸 사고의 기사라면 보도 수를 센다.
+        # 중복 기사는 '버리는 것'이 아니라 '파장의 크기'라는 정보다.
+        bump_report(events, toks)
         if filters.is_duplicate(config, toks, recent_tokens):
             seen[key] = {"ts": now_utc().timestamp(), "tok": sorted(toks)}
             print(f"[중복] {item['title'][:50]}", file=sys.stderr)
@@ -510,6 +537,36 @@ def pick_candidates(state):
         picked.append((item, place, hits, confidence))
 
     return picked
+
+
+def maybe_spread(events):
+    """매체가 몰린 사고를 골라냅니다. 사고당 한 번만."""
+    if not getattr(config, "SPREAD_ENABLED", False):
+        return []
+    base = getattr(config, "SPREAD_THRESHOLD", 6)
+    hot = getattr(config, "SPREAD_HOT_THRESHOLD", 4)
+    hot_words = getattr(config, "SPREAD_HOT_WORDS", ())
+    out = []
+    for ev in events:
+        if ev.get("spread"):
+            continue
+        title = ev.get("title", "")
+        # '참사'·'분향소' 같은 말이 붙었다면 이미 사회적 사안이다. 기준을 낮춘다.
+        need = hot if any(w in title for w in hot_words) else base
+        n = ev.get("reports", 1)
+        if n >= need:
+            ev["spread"] = True
+            out.append(ev)
+    return out[:getattr(config, "SPREAD_MAX_PER_RUN", 2)]
+
+
+def format_spread(ev):
+    n = ev.get("reports", 1)
+    return (f"📢 보도 확산\n"
+            f"[{n}개 매체가 보도 중]\n\n"
+            f"{ev.get('title','')}\n\n"
+            f"최초 알림 {ev.get('when','')}\n"
+            f"↓ 아래 [기사 보기] 를 누르세요")
 
 
 def maybe_heartbeat(state):
@@ -552,7 +609,8 @@ def main():
     state = load_state()
     first_run = not state.get("initialized")
 
-    picked = pick_candidates(state)
+    events = recent_events(state)
+    picked = pick_candidates(state, events)
     print(f"신규 매칭 {len(picked)}건 (first_run={first_run})")
 
     if first_run:
@@ -570,7 +628,6 @@ def main():
             print(f"후보 {len(picked)}건 중 상한 {cap}건만 AI 판단", file=sys.stderr)
             picked = picked[:cap]
 
-        events = recent_events(state)
         picked = ai_judge.judge(picked, config, events)
 
         # 같은 사고의 후속 알림은 상한을 둡니다.
@@ -595,7 +652,8 @@ def main():
         picked = filtered
         print(f"AI 판정 후 {len(picked)}건")
 
-    need_token = bool(picked) or config.HEARTBEAT_ENABLED
+    spreading = maybe_spread(events)
+    need_token = bool(picked) or bool(spreading) or config.HEARTBEAT_ENABLED
     if not need_token:
         save_state(state)
         return
@@ -628,11 +686,25 @@ def main():
                             .strftime("%m/%d %H:%M"),
                     "title": filters.strip_source_tail(item["title"])[:90],
                     "updates": 0,
+                    # 아래 둘은 보도 확산 집계용입니다.
+                    "tok": sorted(filters.tokenize(item["title"])),
+                    "link": link,
+                    "reports": 1,
                 })
         extra = len(picked) - config.MAX_SEND_PER_RUN
         if extra > 0:
             print(f"{extra}건은 상한으로 미발송(다음 실행에서 중복 제외됨)")
-    else:
+
+    # 매체가 몰린 사고 알림. 새 속보 발송 여부와 무관하게 보냅니다.
+    for ev in spreading:
+        link = ev.get("link", "")
+        n = broadcast(format_spread(ev), link,
+                      subject=f"[안전속보] 보도 확산 — {ev.get('title','')[:50]}")
+        print(f"[확산] {ev.get('reports')}개 매체 — {ev.get('title','')[:40]} "
+              f"(발송 {n}/{len(people)}명)")
+        state["sent_since_heartbeat"] = state.get("sent_since_heartbeat", 0) + 1
+
+    if not picked and not spreading:
         maybe_heartbeat(state)
 
     save_state(state)

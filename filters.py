@@ -163,6 +163,14 @@ def match(cfg, title, summary="", outlet=""):
     if corp:
         return corp, hits, "company"
 
+    # 3-4) 제조업 공장·물류창고. 건설현장은 아니지만 우리 관심 범위입니다.
+    #      '화재·폭발이면 인명피해 없어도 / 그 밖엔 사망·중상일 때만' 이라는
+    #      조건은 여기서 따지지 않고 AI에게 맡깁니다. 키워드로 가르면
+    #      "인명피해 확인 중" 같은 초기 속보를 놓치기 때문입니다.
+    plant = next((w for w in getattr(cfg, "PLANT_PLACE_WORDS", ()) if w in packed), None)
+    if plant:
+        return plant, hits, "plant"
+
     # 4) WEAK은 산업/건설 맥락이 함께 있을 때만 통과
     weak = next((w for w in cfg.WEAK_PLACE_WORDS if w in packed), None)
     if weak and any(c in text for c in cfg.CONTEXT_WORDS):
@@ -214,6 +222,23 @@ def is_duplicate(cfg, tokens: set, previous: list) -> bool:
         if min_shared and len(mine & distinctive(prev)) >= min_shared:
             return True
     return False
+
+
+def same_event(cfg, tokens: set, prev: set) -> float:
+    """두 제목이 같은 사고인가. 같으면 유사도(0~1), 아니면 0.
+
+    is_duplicate 와 판정 기준은 같지만, '예/아니오'가 아니라 **어느 사고와**
+    겹쳤는지 골라내야 할 때 씁니다(보도 확산 집계).
+    """
+    if not prev:
+        return 0.0
+    s = similarity(tokens, prev)
+    if s >= cfg.DUP_SIMILARITY:
+        return s
+    min_shared = getattr(cfg, "DUP_MIN_SHARED", 3)
+    if min_shared and len(distinctive(tokens) & distinctive(prev)) >= min_shared:
+        return max(s, 0.01)      # 기준은 넘었으니 0이 아닌 값을 준다
+    return 0.0
 
 
 def tokenize(title: str) -> set:
