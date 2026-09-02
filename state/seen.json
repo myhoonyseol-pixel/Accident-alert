@@ -1497,6 +1497,44 @@
     "협력사",
     "화재"
    ]
+  },
+  "51381866cf066d4a": {
+   "ts": 1788351924.943732,
+   "tok": [
+    "감식",
+    "공장",
+    "발화",
+    "사상",
+    "천안",
+    "추정",
+    "층서",
+    "화재"
+   ]
+  },
+  "1e20e67fba44f330": {
+   "ts": 1788351924.944423,
+   "tok": [
+    "공장",
+    "놀랐어요",
+    "대피",
+    "불길에",
+    "안경부속",
+    "양주",
+    "주민",
+    "화재"
+   ]
+  },
+  "f2d49bb79d8f229f": {
+   "ts": 1788351924.946307,
+   "tok": [
+    "당진제철소",
+    "산소공장",
+    "없어",
+    "인명피해",
+    "폭발",
+    "현대제철",
+    "현장영상"
+   ]
   }
  },
  "initialized": true,
@@ -1559,7 +1597,7 @@
     "현대제철"
    ],
    "link": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE1kWWR4RXRpNFVmZlpoYlJzLU83bnRBb1JLODY0M2pZWGM0Q2RZU25nUER2Z0tLNVF3am5zbmFiaHhCZ3FhRGhrcG9GQ0RadDJqYVMtN3lzUEdZNml2WVA2cw?oc=5",
-   "reports": 20,
+   "reports": 21,
    "spread": true
   },
   {
