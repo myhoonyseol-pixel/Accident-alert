@@ -1112,6 +1112,46 @@
     "폭발",
     "현대제철"
    ]
+  },
+  "a4d9cf44502d22f2": {
+   "ts": 1788335977.149346,
+   "tok": [
+    "감식",
+    "공장",
+    "리포트",
+    "밸브",
+    "사망",
+    "점검",
+    "집중",
+    "천안",
+    "화재"
+   ]
+  },
+  "fd93d7566832c50b": {
+   "ts": 1788335977.151452,
+   "tok": [
+    "당진제철소",
+    "산소공장",
+    "없어",
+    "인명피해",
+    "폭발",
+    "현대제철",
+    "협력사"
+   ]
+  },
+  "146c9373b3b3d890": {
+   "ts": 1788335977.151882,
+   "tok": [
+    "당진제철소",
+    "배관",
+    "산소공장",
+    "생산",
+    "없어",
+    "인명",
+    "차질",
+    "폭발",
+    "현대제철"
+   ]
   }
  },
  "initialized": true,
@@ -1174,7 +1214,7 @@
     "현대제철"
    ],
    "link": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE1kWWR4RXRpNFVmZlpoYlJzLU83bnRBb1JLODY0M2pZWGM0Q2RZU25nUER2Z0tLNVF3am5zbmFiaHhCZ3FhRGhrcG9GQ0RadDJqYVMtN3lzUEdZNml2WVA2cw?oc=5",
-   "reports": 8,
+   "reports": 10,
    "spread": true
   },
   {
