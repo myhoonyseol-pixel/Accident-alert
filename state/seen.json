@@ -1535,6 +1535,31 @@
     "현대제철",
     "현장영상"
    ]
+  },
+  "64b9a704538a3f41": {
+   "ts": 1788356422.120531,
+   "tok": [
+    "건물",
+    "공장",
+    "소실",
+    "양주",
+    "없어",
+    "완진",
+    "은현면",
+    "인명피해",
+    "화재"
+   ]
+  },
+  "d70de905faf65d5b": {
+   "ts": 1788356422.12231,
+   "tok": [
+    "당진제철소",
+    "산소공장",
+    "없어",
+    "인명피해",
+    "폭발",
+    "현대제철"
+   ]
   }
  },
  "initialized": true,
@@ -1597,7 +1622,7 @@
     "현대제철"
    ],
    "link": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE1kWWR4RXRpNFVmZlpoYlJzLU83bnRBb1JLODY0M2pZWGM0Q2RZU25nUER2Z0tLNVF3am5zbmFiaHhCZ3FhRGhrcG9GQ0RadDJqYVMtN3lzUEdZNml2WVA2cw?oc=5",
-   "reports": 21,
+   "reports": 22,
    "spread": true
   },
   {
@@ -1620,7 +1645,7 @@
     "화재"
    ],
    "link": "https://news.google.com/rss/articles/CBMiSEFVX3lxTE9lbUZtU3BMNllLWlNuNVBWSWZQaUJ2SVpaNzJIaGZWQ092dzhmdXdiczY0WlE0Q1BKaEJsejNEUnF4WmszUElxVg?oc=5",
-   "reports": 2
+   "reports": 3
   },
   {
    "ts": 1788337199.962975,
