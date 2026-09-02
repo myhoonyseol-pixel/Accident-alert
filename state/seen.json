@@ -1692,6 +1692,20 @@
     "와르르",
     "화재"
    ]
+  },
+  "61a32b4ada838430": {
+   "ts": 1788392216.845711,
+   "tok": [
+    "경기",
+    "공장",
+    "부상",
+    "부속품",
+    "사람",
+    "안경",
+    "양주",
+    "없어",
+    "제조"
+   ]
   }
  },
  "initialized": true,
@@ -1814,7 +1828,7 @@
     "화재"
    ],
    "link": "https://news.google.com/rss/articles/CBMiXkFVX3lxTE9pOThyTE5faE1veHdBVHFoY2hwRExYSE9uLW9SaC1vQVVwM18wUGZMWWFGNG95LVNPcnVoNXNoZ2VUczV6cWhkSWtTbzE4elpWYkZDdTRjYXEwQUN2NHc?oc=5",
-   "reports": 1
+   "reports": 2
   }
  ],
  "sent_since_heartbeat": 0
