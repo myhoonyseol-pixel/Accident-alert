@@ -1632,6 +1632,19 @@
     "천안",
     "화재"
    ]
+  },
+  "e515288b451d35fe": {
+   "ts": 1788365082.744986,
+   "tok": [
+    "당진",
+    "배관",
+    "산소공장",
+    "없어",
+    "작업자",
+    "폭발",
+    "피해",
+    "현대제철"
+   ]
   }
  },
  "initialized": true,
@@ -1694,7 +1707,7 @@
     "현대제철"
    ],
    "link": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE1kWWR4RXRpNFVmZlpoYlJzLU83bnRBb1JLODY0M2pZWGM0Q2RZU25nUER2Z0tLNVF3am5zbmFiaHhCZ3FhRGhrcG9GQ0RadDJqYVMtN3lzUEdZNml2WVA2cw?oc=5",
-   "reports": 23,
+   "reports": 24,
    "spread": true
   },
   {
