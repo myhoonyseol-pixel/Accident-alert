@@ -1669,6 +1669,17 @@
     "진화",
     "화재"
    ]
+  },
+  "c81cf476eff7fd52": {
+   "ts": 1788387545.541698,
+   "tok": [
+    "당진",
+    "산소공장",
+    "없어",
+    "인명피해",
+    "폭발사고",
+    "현대제철"
+   ]
   }
  },
  "initialized": true,
@@ -1731,7 +1742,7 @@
     "현대제철"
    ],
    "link": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE1kWWR4RXRpNFVmZlpoYlJzLU83bnRBb1JLODY0M2pZWGM0Q2RZU25nUER2Z0tLNVF3am5zbmFiaHhCZ3FhRGhrcG9GQ0RadDJqYVMtN3lzUEdZNml2WVA2cw?oc=5",
-   "reports": 24,
+   "reports": 25,
    "spread": true
   },
   {
