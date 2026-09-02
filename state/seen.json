@@ -1350,6 +1350,32 @@
     "폭발",
     "현대제철"
    ]
+  },
+  "1356b26f5e702ea0": {
+   "ts": 1788344413.243812,
+   "tok": [
+    "남부소방",
+    "앞두고",
+    "울산",
+    "울산공장",
+    "점검",
+    "추석",
+    "케미칼",
+    "화재예방"
+   ]
+  },
+  "9e31b01612f1f4fa": {
+   "ts": 1788344413.24588,
+   "tok": [
+    "당진",
+    "부지",
+    "산소공장",
+    "상황",
+    "없어",
+    "인명피해",
+    "폭발",
+    "현대제철"
+   ]
   }
  },
  "initialized": true,
@@ -1412,7 +1438,7 @@
     "현대제철"
    ],
    "link": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE1kWWR4RXRpNFVmZlpoYlJzLU83bnRBb1JLODY0M2pZWGM0Q2RZU25nUER2Z0tLNVF3am5zbmFiaHhCZ3FhRGhrcG9GQ0RadDJqYVMtN3lzUEdZNml2WVA2cw?oc=5",
-   "reports": 17,
+   "reports": 18,
    "spread": true
   },
   {
