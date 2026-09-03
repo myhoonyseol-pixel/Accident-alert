@@ -2512,6 +2512,33 @@
     "하청",
     "현대건설"
    ]
+  },
+  "a75b0c0a826ff128": {
+   "ts": 1788472721.874234,
+   "tok": [
+    "30",
+    "금속주조공장",
+    "기계",
+    "끼임",
+    "남성",
+    "사망",
+    "청하",
+    "포항"
+   ]
+  },
+  "0370a9a7472daa4c": {
+   "ts": 1788472721.876819,
+   "tok": [
+    "20",
+    "공장",
+    "공주",
+    "누출",
+    "대피",
+    "아황산가스",
+    "여명",
+    "작업자",
+    "탄천산단"
+   ]
   }
  },
  "initialized": true,
@@ -2656,7 +2683,26 @@
    "link": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE1FNmprMFVaYkQxLVBWNnBXTEZOY1hYc18xazJ0TzRSYVB3VWZucnJpX0hBaHZaYVl0dHRySnJXWVNKd3RaZ18yc2IyTHRpcDVHYmJmNzR3WHZCY2hWRnZNNm9rcnljNEk?oc=5",
    "reports": 3,
    "casualty": true
+  },
+  {
+   "ts": 1788472726.692695,
+   "when": "09/04 06:41",
+   "title": "포항 청하 금속주조공장서 기계 끼임…30대 남성 숨져",
+   "updates": 0,
+   "tok": [
+    "30",
+    "금속주조공장",
+    "기계",
+    "끼임",
+    "남성",
+    "사망",
+    "청하",
+    "포항"
+   ],
+   "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE40MXRKMDBKNmUtMEdsdmxpYm4teHFPMDFEY0hVUmxZVVRPSFZrR3BHVUg4SUE1MjdQekh4U3pqcDFVOXNIbHdfUnlCek1uVkpTUFRCVjFMTWhZUQ?oc=5",
+   "reports": 1,
+   "casualty": true
   }
  ],
- "sent_since_heartbeat": 3
+ "sent_since_heartbeat": 4
 }
