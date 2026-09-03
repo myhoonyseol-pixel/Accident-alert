@@ -2012,6 +2012,44 @@
     "통행",
     "화재"
    ]
+  },
+  "faecc1c5e42cabd9": {
+   "ts": 1788419142.792038,
+   "tok": [
+    "당진공장",
+    "배관",
+    "산소탱크",
+    "없어",
+    "인명피해",
+    "폭발",
+    "현대제철"
+   ]
+  },
+  "d37129e379689fd6": {
+   "ts": 1788419142.793342,
+   "tok": [
+    "78",
+    "개통",
+    "만에",
+    "물류센터",
+    "봉수대",
+    "전면",
+    "쿠팡",
+    "화재"
+   ]
+  },
+  "23c92193d7f27af6": {
+   "ts": 1788419142.793885,
+   "tok": [
+    "개통",
+    "물류센터",
+    "봉수대",
+    "인천",
+    "전면",
+    "쿠팡",
+    "통제된",
+    "화재"
+   ]
   }
  },
  "initialized": true,
@@ -2068,7 +2106,7 @@
     "현대제철"
    ],
    "link": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE1kWWR4RXRpNFVmZlpoYlJzLU83bnRBb1JLODY0M2pZWGM0Q2RZU25nUER2Z0tLNVF3am5zbmFiaHhCZ3FhRGhrcG9GQ0RadDJqYVMtN3lzUEdZNml2WVA2cw?oc=5",
-   "reports": 27,
+   "reports": 28,
    "spread": true
   },
   {
