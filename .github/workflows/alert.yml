@@ -1,7 +1,18 @@
 name: accident-news-alert
 
+# ─────────────────────────────────────────────────────────────
+# 왜 이런 구조인가
+# ─────────────────────────────────────────────────────────────
+# GitHub 무료 스케줄러는 짧은 주기를 지키지 않습니다. 실제로 */20 로
+# 걸었더니 8시간에 4번만 돌았고, 밤 11시27분 이후 13시간이 비었습니다.
+# 그래서 "20분마다 깨워달라"고 부탁하는 대신,
+# 한 번 깨어나면 스스로 5시간 30분 동안 20분마다 확인하도록 했습니다.
+# (Public 저장소는 실행 시간이 무제한 무료라 비용은 0원입니다)
+# ─────────────────────────────────────────────────────────────
+
 on:
   schedule:
+    # 매시 7분. 정각은 전 세계 작업이 몰려 가장 밀리는 시각이라 피합니다.
     - cron: "7 * * * *"
   workflow_dispatch: {}
 
@@ -10,12 +21,16 @@ permissions:
 
 concurrency:
   group: accident-alert
+  # 새로 깨어나면 돌고 있던 루프를 대체합니다.
+  # 상태는 매 회차마다 저장하므로 잃어봐야 한 회차뿐입니다.
+  # 다만 취소 신호가 즉시 도달하지 않아 잠시 두 실행이 겹칩니다.
+  # 그래서 아래 루프에서 매 회차 최신 기록을 먼저 받아옵니다.
   cancel-in-progress: true
 
 jobs:
   poll:
     runs-on: ubuntu-latest
-    timeout-minutes: 350
+    timeout-minutes: 350          # 5시간 50분 (GitHub 작업 한도 6시간)
     steps:
       - uses: actions/checkout@v4
 
@@ -42,8 +57,8 @@ jobs:
           NAVER_CLIENT_SECRET: ${{ secrets.NAVER_CLIENT_SECRET }}
         run: |
           set -u
-          INTERVAL=1200
-          DEADLINE=$(( $(date +%s) + 330*60 ))
+          INTERVAL=1200                       # 20분
+          DEADLINE=$(( $(date +%s) + 330*60 ))  # 5시간 30분 뒤 종료
           ROUND=0
 
           git config user.name  "github-actions"
@@ -53,12 +68,26 @@ jobs:
             ROUND=$((ROUND+1))
             echo "──────── ${ROUND}회차  $(TZ=Asia/Seoul date '+%m-%d %H:%M KST') ────────"
 
+            # 다른 실행이 방금 남긴 기록을 먼저 받아옵니다.
+            #
+            # 이게 없으면 '시작할 때 내려받은 낡은 기록'으로 판단합니다.
+            # 시계 알람으로 새 실행이 뜨는 순간 옛 실행이 아직 살아 있는데,
+            # 새 실행은 그 전 시점의 파일을 들고 있어서 옛 실행이 방금 보낸
+            # 알림을 모릅니다. 실제로 2026-09-03 07:18 과 07:19 에 생존신호가
+            # 두 번 갔습니다. 사고 알림도 같은 이유로 두 번 갈 수 있습니다.
+            #
+            # 실패해도 감시는 계속 돌아야 하므로 루프를 멈추지 않습니다.
+            # 알림이 하나 겹치는 것보다 감시가 멈추는 게 훨씬 위험합니다.
+            git pull --rebase --autostash -q || echo "기록 동기화 실패 — 이번 회차는 로컬 기록으로 진행"
+
             if ! python main.py; then
               echo "::error::감시 스크립트 실패 — 루프를 멈춥니다."
               echo "카카오 토큰 만료(KOE010)가 가장 흔한 원인입니다. 위 로그를 확인하세요."
               exit 1
             fi
 
+            # 이미 보낸 기사 기록을 저장소에 남깁니다.
+            # 이 컴퓨터는 끝나면 사라지므로, 안 남기면 다음에 같은 사고를 또 보냅니다.
             git add state/seen.json 2>/dev/null || true
             if ! git diff --staged --quiet 2>/dev/null; then
               git commit -q -m "chore: update seen state [skip ci]"
