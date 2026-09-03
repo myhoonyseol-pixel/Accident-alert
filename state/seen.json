@@ -2303,6 +2303,17 @@
     "천안공장",
     "화재"
    ]
+  },
+  "b7b37bc5a1282c01": {
+   "ts": 1788438341.249221,
+   "tok": [
+    "50",
+    "건설현장",
+    "샤힌프로젝트",
+    "울산",
+    "작업자",
+    "추락"
+   ]
   }
  },
  "initialized": true,
@@ -2445,7 +2456,7 @@
     "추락해"
    ],
    "link": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE1FNmprMFVaYkQxLVBWNnBXTEZOY1hYc18xazJ0TzRSYVB3VWZucnJpX0hBaHZaYVl0dHRySnJXWVNKd3RaZ18yc2IyTHRpcDVHYmJmNzR3WHZCY2hWRnZNNm9rcnljNEk?oc=5",
-   "reports": 2,
+   "reports": 3,
    "casualty": true
   }
  ],
