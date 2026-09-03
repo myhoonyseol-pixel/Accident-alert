@@ -453,7 +453,11 @@ def format_alert(item, place, hits, confidence, link, verdict=None):
         # 같은 내용의 재탕 기사는 여기까지 오지 않고 AI가 걸러냅니다.
         chg = verdict.get("chg", "").strip()
         head = f"🔄 속보 업데이트\n[{chg}]" if chg else "🔄 속보 업데이트"
-        title = filters.strip_source_tail(item["title"])[:80]
+        # item["title"] 은 수집 단계(fetch_rss)에서 이미 매체명을 뗀 값입니다.
+        # 여기서 또 떼면 실제 제목에 든 하이픈(부제 구분 등)까지 함께 잘려나갑니다.
+        # (2026-09-02 "상주소식 - 공장서 화재…인명피해 없어 - 경북신문" 이
+        #  두 번 잘려서 "상주소식"만 남아 발송된 사고)
+        title = item["title"][:80]
         return (f"{head}\n\n{title}\n\n"
                 f"{when} · {item['source']}\n"
                 f"↓ 아래 [기사 보기] 를 누르세요")
@@ -468,10 +472,9 @@ def format_alert(item, place, hits, confidence, link, verdict=None):
         mark, tag = "⚠️", f"{place}(추정)"
     if not casualty_level(item):
         tag += " · 피해규모 미확인"
-    # 제목에 "- 매체명" 꼬리가 남아 있으면 카카오톡이 그 도메인을 링크로 만들어
-    # 기사가 아니라 언론사 홈페이지로 가버립니다. 아래 [수집] 단계에서 이미 뗐지만
-    # 혹시 남아 있으면 여기서 한 번 더 정리합니다.
-    title = filters.strip_source_tail(item["title"])[:80]
+    # item["title"] 은 수집 단계(fetch_rss)에서 이미 "- 매체명" 꼬리를 뗀 값입니다.
+    # 여기서 다시 떼면 안 됩니다 — 위 update 분기와 같은 이유입니다.
+    title = item["title"][:80]
     # ⚠️ 본문에 링크를 넣지 마세요.
     #    카카오 텍스트 메시지는 190자 제한인데 구글 뉴스 주소는 250자가 넘습니다.
     #    실제로 링크가 88자 잘려 눌러도 400 오류가 났습니다.
@@ -544,6 +547,7 @@ def maybe_spread(events):
     if not getattr(config, "SPREAD_ENABLED", False):
         return []
     base = getattr(config, "SPREAD_THRESHOLD", 6)
+    base_no_casualty = getattr(config, "SPREAD_THRESHOLD_NO_CASUALTY", base)
     hot = getattr(config, "SPREAD_HOT_THRESHOLD", 4)
     hot_words = getattr(config, "SPREAD_HOT_WORDS", ())
     out = []
@@ -551,8 +555,12 @@ def maybe_spread(events):
         if ev.get("spread"):
             continue
         title = ev.get("title", "")
+        # 인명피해가 확인 안 된 사고(주로 화재·폭발)는 임계치를 높입니다.
+        # 대기업 이름값 때문에 매체 수만 통신사 배급으로 빨리 차기 때문입니다.
+        need = base if ev.get("casualty") else base_no_casualty
         # '참사'·'분향소' 같은 말이 붙었다면 이미 사회적 사안이다. 기준을 낮춘다.
-        need = hot if any(w in title for w in hot_words) else base
+        if any(w in title for w in hot_words):
+            need = hot
         n = ev.get("reports", 1)
         if n >= need:
             ev["spread"] = True
@@ -673,7 +681,7 @@ def main():
         )
         for item, place, hits, confidence, verdict in picked[:config.MAX_SEND_PER_RUN]:
             link = resolve_link(item["link"])
-            title = filters.strip_source_tail(item["title"])[:70]
+            title = item["title"][:70]      # 이미 수집 단계에서 매체명을 뗀 값
             n = broadcast(format_alert(item, place, hits, confidence, link, verdict),
                           link, subject=f"[안전속보] {title}")
             print(f"발송 {n}/{len(people)}명 — {item['title'][:40]}")
@@ -684,12 +692,13 @@ def main():
                     "ts": now_utc().timestamp(),
                     "when": (item["published"] or now_utc()).astimezone(KST)
                             .strftime("%m/%d %H:%M"),
-                    "title": filters.strip_source_tail(item["title"])[:90],
+                    "title": item["title"][:90],   # 이미 수집 단계에서 매체명을 뗀 값
                     "updates": 0,
-                    # 아래 둘은 보도 확산 집계용입니다.
+                    # 아래는 보도 확산 집계용입니다.
                     "tok": sorted(filters.tokenize(item["title"])),
                     "link": link,
                     "reports": 1,
+                    "casualty": bool(casualty_level(item)),
                 })
         extra = len(picked) - config.MAX_SEND_PER_RUN
         if extra > 0:
