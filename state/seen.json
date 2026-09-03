@@ -2102,6 +2102,18 @@
     "합작공장",
     "현대차"
    ]
+  },
+  "de8a82df6d7a70f6": {
+   "ts": 1788422413.097656,
+   "tok": [
+    "당진제철소",
+    "배관",
+    "산소공장",
+    "없어",
+    "인명피해",
+    "폭발",
+    "현대제철"
+   ]
   }
  },
  "initialized": true,
@@ -2158,7 +2170,7 @@
     "현대제철"
    ],
    "link": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE1kWWR4RXRpNFVmZlpoYlJzLU83bnRBb1JLODY0M2pZWGM0Q2RZU25nUER2Z0tLNVF3am5zbmFiaHhCZ3FhRGhrcG9GQ0RadDJqYVMtN3lzUEdZNml2WVA2cw?oc=5",
-   "reports": 29,
+   "reports": 30,
    "spread": true
   },
   {
