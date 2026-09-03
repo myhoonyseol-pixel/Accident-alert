@@ -1862,6 +1862,56 @@
     "추락",
     "층서"
    ]
+  },
+  "9e1fecf3af19beb0": {
+   "ts": 1788406298.395964,
+   "tok": [
+    "당진제철소",
+    "산소공장",
+    "없어",
+    "인명피해",
+    "폭발",
+    "현대제철"
+   ]
+  },
+  "9aee0706f83e0bfa": {
+   "ts": 1788406298.39669,
+   "tok": [
+    "공사하던",
+    "베란다",
+    "사망",
+    "아파트",
+    "창틀",
+    "추락해"
+   ]
+  },
+  "51da7298bc3173ff": {
+   "ts": 1788406298.397272,
+   "tok": [
+    "공사하던",
+    "베란다",
+    "새시",
+    "아파트",
+    "인천",
+    "추락"
+   ]
+  },
+  "ee425fb081e9220f": {
+   "ts": 1788406298.399655,
+   "tok": [
+    "SPI",
+    "노란우산공제회",
+    "물류센터",
+    "미래에셋",
+    "블라인드",
+    "석남동",
+    "여파에",
+    "운신",
+    "좁아진",
+    "코어",
+    "펀드",
+    "화재"
+   ]
   }
  },
  "initialized": true,
@@ -1918,7 +1968,7 @@
     "현대제철"
    ],
    "link": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE1kWWR4RXRpNFVmZlpoYlJzLU83bnRBb1JLODY0M2pZWGM0Q2RZU25nUER2Z0tLNVF3am5zbmFiaHhCZ3FhRGhrcG9GQ0RadDJqYVMtN3lzUEdZNml2WVA2cw?oc=5",
-   "reports": 26,
+   "reports": 27,
    "spread": true
   },
   {
