@@ -2050,6 +2050,58 @@
     "통제된",
     "화재"
    ]
+  },
+  "c63ee4ed005f2125": {
+   "ts": 1788419976.741217,
+   "tok": [
+    "공장",
+    "공장화재",
+    "사망",
+    "압수수색",
+    "입건",
+    "천안",
+    "회사"
+   ]
+  },
+  "d79a0382852c836d": {
+   "ts": 1788419976.742578,
+   "tok": [
+    "당진",
+    "산소공장",
+    "생산",
+    "없어",
+    "인명피해",
+    "차질",
+    "폭발",
+    "현대제철",
+    "협력사"
+   ]
+  },
+  "bfbdf5c7cd9b6b17": {
+   "ts": 1788419976.743697,
+   "tok": [
+    "개통",
+    "물류센터",
+    "봉수대",
+    "인천",
+    "전면",
+    "쿠팡",
+    "통제됐던",
+    "화재"
+   ]
+  },
+  "3551bc9724c705f4": {
+   "ts": 1788419976.744972,
+   "tok": [
+    "배터리",
+    "사망",
+    "엔솔",
+    "의혹",
+    "인니",
+    "작업자",
+    "합작공장",
+    "현대차"
+   ]
   }
  },
  "initialized": true,
@@ -2106,7 +2158,7 @@
     "현대제철"
    ],
    "link": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE1kWWR4RXRpNFVmZlpoYlJzLU83bnRBb1JLODY0M2pZWGM0Q2RZU25nUER2Z0tLNVF3am5zbmFiaHhCZ3FhRGhrcG9GQ0RadDJqYVMtN3lzUEdZNml2WVA2cw?oc=5",
-   "reports": 28,
+   "reports": 29,
    "spread": true
   },
   {
