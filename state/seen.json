@@ -1718,6 +1718,42 @@
     "제조공장",
     "화재"
    ]
+  },
+  "57429767e9c080c9": {
+   "ts": 1788404392.907669,
+   "tok": [
+    "당진제철소",
+    "땅까지",
+    "소리에",
+    "쾅쾅",
+    "폭발",
+    "현대제철",
+    "흔들렸다"
+   ]
+  },
+  "3af927a8177ad4c3": {
+   "ts": 1788404392.910665,
+   "tok": [
+    "공장",
+    "만에",
+    "사상구",
+    "시간",
+    "진화",
+    "화재"
+   ]
+  },
+  "6cbfaba3f85c4565": {
+   "ts": 1788404392.911372,
+   "tok": [
+    "당진제철소",
+    "산소공장",
+    "생산",
+    "없어",
+    "인명피해",
+    "차질",
+    "폭발",
+    "현대제철"
+   ]
   }
  },
  "initialized": true,
@@ -1774,7 +1810,7 @@
     "현대제철"
    ],
    "link": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE1kWWR4RXRpNFVmZlpoYlJzLU83bnRBb1JLODY0M2pZWGM0Q2RZU25nUER2Z0tLNVF3am5zbmFiaHhCZ3FhRGhrcG9GQ0RadDJqYVMtN3lzUEdZNml2WVA2cw?oc=5",
-   "reports": 25,
+   "reports": 26,
    "spread": true
   },
   {
@@ -1834,7 +1870,7 @@
     "화재"
    ],
    "link": "https://news.google.com/rss/articles/CBMiXkFVX3lxTE9pOThyTE5faE1veHdBVHFoY2hwRExYSE9uLW9SaC1vQVVwM18wUGZMWWFGNG95LVNPcnVoNXNoZ2VUczV6cWhkSWtTbzE4elpWYkZDdTRjYXEwQUN2NHc?oc=5",
-   "reports": 3
+   "reports": 4
   }
  ],
  "sent_since_heartbeat": 0
