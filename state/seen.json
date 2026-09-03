@@ -2139,6 +2139,52 @@
     "통제된",
     "화재"
    ]
+  },
+  "8bcb3a165f157515": {
+   "ts": 1788424897.362036,
+   "tok": [
+    "50",
+    "건설현장",
+    "사망",
+    "샤힌프로젝트",
+    "울산",
+    "추락해"
+   ]
+  },
+  "cb5c633a9eafca04": {
+   "ts": 1788424897.36254,
+   "tok": [
+    "50",
+    "건설현장",
+    "도장공",
+    "샤힌프로젝트",
+    "울산",
+    "추락"
+   ]
+  },
+  "d5d7a4965c3b9c67": {
+   "ts": 1788424897.363158,
+   "tok": [
+    "50",
+    "샤힌",
+    "울산",
+    "작업자",
+    "추락",
+    "프로젝트"
+   ]
+  },
+  "97b508f3beee6233": {
+   "ts": 1788424897.364,
+   "tok": [
+    "50",
+    "건설현장",
+    "에쓰오일",
+    "울산",
+    "원청",
+    "추락",
+    "하청노동자",
+    "현대건설"
+   ]
   }
  },
  "initialized": true,
@@ -2272,7 +2318,24 @@
    "link": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE9ZTnRqWHp3OGw5ZzFodlhfSTdGNVRZMDBlNmlqXzZ4THViWXZESDg0aWgtNWxpZG80NmYwTkRYRDBHXzhZWG5YWnNjbjAxUkJ6cy1N?oc=5",
    "reports": 1,
    "casualty": true
+  },
+  {
+   "ts": 1788424902.370959,
+   "when": "09/03 17:33",
+   "title": "울산 샤힌프로젝트 공사 현장서 50대 추락해 숨져",
+   "updates": 0,
+   "tok": [
+    "50",
+    "건설현장",
+    "사망",
+    "샤힌프로젝트",
+    "울산",
+    "추락해"
+   ],
+   "link": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE1FNmprMFVaYkQxLVBWNnBXTEZOY1hYc18xazJ0TzRSYVB3VWZucnJpX0hBaHZaYVl0dHRySnJXWVNKd3RaZ18yc2IyTHRpcDVHYmJmNzR3WHZCY2hWRnZNNm9rcnljNEk?oc=5",
+   "reports": 1,
+   "casualty": true
   }
  ],
- "sent_since_heartbeat": 1
+ "sent_since_heartbeat": 2
 }
