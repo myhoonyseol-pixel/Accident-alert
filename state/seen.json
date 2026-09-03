@@ -2341,6 +2341,17 @@
     "화재",
     "화재안전시설"
    ]
+  },
+  "497fa681b53de8ac": {
+   "ts": 1788447723.110753,
+   "tok": [
+    "공사하던",
+    "베란다",
+    "사망",
+    "아파트",
+    "인천",
+    "추락해"
+   ]
   }
  },
  "initialized": true,
@@ -2466,7 +2477,7 @@
     "인천"
    ],
    "link": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE9ZTnRqWHp3OGw5ZzFodlhfSTdGNVRZMDBlNmlqXzZ4THViWXZESDg0aWgtNWxpZG80NmYwTkRYRDBHXzhZWG5YWnNjbjAxUkJ6cy1N?oc=5",
-   "reports": 1,
+   "reports": 2,
    "casualty": true
   },
   {
