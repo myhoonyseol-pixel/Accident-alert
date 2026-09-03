@@ -2185,6 +2185,32 @@
     "하청노동자",
     "현대건설"
    ]
+  },
+  "bd7d591a4e372443": {
+   "ts": 1788426120.102532,
+   "tok": [
+    "50",
+    "건설현장",
+    "사망",
+    "석유화학설비",
+    "울산",
+    "작업자",
+    "추락해"
+   ]
+  },
+  "55b0f59d47bd5d1d": {
+   "ts": 1788426120.103648,
+   "tok": [
+    "50",
+    "건설현장",
+    "사망",
+    "에쓰오일",
+    "울산",
+    "작업자",
+    "추락",
+    "하청",
+    "현대건설"
+   ]
   }
  },
  "initialized": true,
@@ -2333,7 +2359,7 @@
     "추락해"
    ],
    "link": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE1FNmprMFVaYkQxLVBWNnBXTEZOY1hYc18xazJ0TzRSYVB3VWZucnJpX0hBaHZaYVl0dHRySnJXWVNKd3RaZ18yc2IyTHRpcDVHYmJmNzR3WHZCY2hWRnZNNm9rcnljNEk?oc=5",
-   "reports": 1,
+   "reports": 2,
    "casualty": true
   }
  ],
