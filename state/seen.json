@@ -3600,6 +3600,52 @@
     "진화",
     "화재"
    ]
+  },
+  "c6efdca14844c561": {
+   "ts": 1788527111.984466,
+   "tok": [
+    "건설현장",
+    "사망",
+    "샤힌",
+    "에틸렌시설",
+    "울산",
+    "작업자",
+    "추락"
+   ]
+  },
+  "8fe78b5ef344e628": {
+   "ts": 1788527111.99508,
+   "tok": [
+    "LED",
+    "고령군",
+    "공장",
+    "없이",
+    "인명피해",
+    "잡혀",
+    "화재"
+   ]
+  },
+  "7be4bc21fc46c242": {
+   "ts": 1788527111.99575,
+   "tok": [
+    "LED",
+    "경북",
+    "고령군",
+    "없어",
+    "인명피해",
+    "제조공장",
+    "화재"
+   ]
+  },
+  "fa5aa16f42a5cf8f": {
+   "ts": 1788527111.996938,
+   "tok": [
+    "발생한",
+    "제조공장",
+    "파주",
+    "필름",
+    "화재"
+   ]
   }
  },
  "initialized": true,
@@ -3673,7 +3719,7 @@
     "화재"
    ],
    "link": "https://news.google.com/rss/articles/CBMiSEFVX3lxTE9lbUZtU3BMNllLWlNuNVBWSWZQaUJ2SVpaNzJIaGZWQ092dzhmdXdiczY0WlE0Q1BKaEJsejNEUnF4WmszUElxVg?oc=5",
-   "reports": 6
+   "reports": 7
   },
   {
    "ts": 1788337199.962975,
