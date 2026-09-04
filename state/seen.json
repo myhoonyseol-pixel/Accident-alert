@@ -3742,10 +3742,24 @@
     "필름공장",
     "화재"
    ]
+  },
+  "1d947ae152641fe1": {
+   "ts": 1788560236.700093,
+   "tok": [
+    "공장",
+    "남양주",
+    "부품",
+    "새벽",
+    "작업",
+    "진행",
+    "진화",
+    "컴퓨터",
+    "화재"
+   ]
   }
  },
  "initialized": true,
- "last_heartbeat": "2026-09-04",
+ "last_heartbeat": "2026-09-05",
  "events": [
   {
    "ts": 1788131453.847408,
@@ -3940,5 +3954,5 @@
    "casualty": false
   }
  ],
- "sent_since_heartbeat": 2
+ "sent_since_heartbeat": 0
 }
