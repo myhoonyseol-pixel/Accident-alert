@@ -3458,6 +3458,53 @@
     "파주",
     "화재"
    ]
+  },
+  "ea1ec377aed22d37": {
+   "ts": 1788519631.394443,
+   "tok": [
+    "개진면",
+    "고령",
+    "공장",
+    "반도체",
+    "우회",
+    "차량",
+    "화재"
+   ]
+  },
+  "1c85eeee99d9866b": {
+   "ts": 1788519631.39534,
+   "tok": [
+    "고령군",
+    "당국",
+    "반도체공장",
+    "소방",
+    "진화",
+    "화재"
+   ]
+  },
+  "b9fe3a14a4cedf6c": {
+   "ts": 1788519631.396024,
+   "tok": [
+    "경북",
+    "고령군",
+    "당국",
+    "반도체공장",
+    "소방",
+    "진화",
+    "화재"
+   ]
+  },
+  "8d29ed8906fc3726": {
+   "ts": 1788519631.396607,
+   "tok": [
+    "당진제철소",
+    "배관",
+    "사건사고",
+    "산소공장",
+    "폭발",
+    "한주",
+    "현대제철"
+   ]
   }
  },
  "initialized": true,
@@ -3508,7 +3555,7 @@
     "현대제철"
    ],
    "link": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE1kWWR4RXRpNFVmZlpoYlJzLU83bnRBb1JLODY0M2pZWGM0Q2RZU25nUER2Z0tLNVF3am5zbmFiaHhCZ3FhRGhrcG9GQ0RadDJqYVMtN3lzUEdZNml2WVA2cw?oc=5",
-   "reports": 30,
+   "reports": 31,
    "spread": true
   },
   {
@@ -3637,7 +3684,24 @@
    "link": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE53NkdnSjlDcV93c2puM0JjVy1qU1FVaUV6WE1PcVc1ZzhPTUlNSG5JNUVyMzdDNXk4WU5LWUp2bzAyRlUxVjJBaXlfTlM0WnZtQXVQRA?oc=5",
    "reports": 1,
    "casualty": false
+  },
+  {
+   "ts": 1788519635.487723,
+   "when": "09/04 19:43",
+   "title": "고령군 반도체공장 화재…소방 당국, 진화 중",
+   "updates": 0,
+   "tok": [
+    "고령군",
+    "당국",
+    "반도체공장",
+    "소방",
+    "진화",
+    "화재"
+   ],
+   "link": "https://news.google.com/rss/articles/CBMieEFVX3lxTFB2Q0ZPWmVYanFQMndOemY0czNadWR2NkN2Um9CLUhhUWhaZk5tMTdhbmw2cUtNSjZXWTc4ZnRPbzBYR0J5aF9HZS1qVnJkcm9LZWFFc3hFM0JoNVNzcHE2ZXI3X0JsQU1xQ2xyNHh4cEJBNzh4OUJ2Qw?oc=5",
+   "reports": 1,
+   "casualty": false
   }
  ],
- "sent_since_heartbeat": 1
+ "sent_since_heartbeat": 2
 }
