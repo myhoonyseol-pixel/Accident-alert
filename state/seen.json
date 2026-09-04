@@ -3347,6 +3347,33 @@
     "추석",
     "화재안전"
    ]
+  },
+  "40e5595ec7b90818": {
+   "ts": 1788511262.961841,
+   "tok": [
+    "농어촌공사",
+    "만든다",
+    "없는",
+    "중대재해",
+    "진천지사"
+   ]
+  },
+  "02848e08875ba7c3": {
+   "ts": 1788511262.966698,
+   "tok": [
+    "경기",
+    "단계",
+    "대응",
+    "만에",
+    "발생한",
+    "시간",
+    "제조공장",
+    "진화",
+    "파주",
+    "필름",
+    "한때",
+    "화재"
+   ]
   }
  },
  "initialized": true,
@@ -3457,7 +3484,7 @@
     "화재"
    ],
    "link": "https://news.google.com/rss/articles/CBMiXkFVX3lxTE9pOThyTE5faE1veHdBVHFoY2hwRExYSE9uLW9SaC1vQVVwM18wUGZMWWFGNG95LVNPcnVoNXNoZ2VUczV6cWhkSWtTbzE4elpWYkZDdTRjYXEwQUN2NHc?oc=5",
-   "reports": 4
+   "reports": 5
   },
   {
    "ts": 1788408743.923601,
