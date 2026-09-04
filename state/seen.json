@@ -3434,6 +3434,18 @@
     "톺아보기",
     "화재"
    ]
+  },
+  "71c2695e8b3f95a3": {
+   "ts": 1788516007.168547,
+   "tok": [
+    "사망",
+    "샤힌프로젝트",
+    "울산",
+    "작업자",
+    "추락해",
+    "하청",
+    "현대건설"
+   ]
   }
  },
  "initialized": true,
@@ -3576,7 +3588,7 @@
     "추락해"
    ],
    "link": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE1FNmprMFVaYkQxLVBWNnBXTEZOY1hYc18xazJ0TzRSYVB3VWZucnJpX0hBaHZaYVl0dHRySnJXWVNKd3RaZ18yc2IyTHRpcDVHYmJmNzR3WHZCY2hWRnZNNm9rcnljNEk?oc=5",
-   "reports": 4,
+   "reports": 5,
    "casualty": true
   },
   {
