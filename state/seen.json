@@ -3756,6 +3756,30 @@
     "컴퓨터",
     "화재"
    ]
+  },
+  "d490c60a42afdb37": {
+   "ts": 1788562681.521389,
+   "tok": [
+    "건설현장",
+    "경고등",
+    "사망",
+    "산업안전",
+    "샤힌프로젝트",
+    "올해",
+    "울산"
+   ]
+  },
+  "f5ba835b68eea5c8": {
+   "ts": 1788562681.524577,
+   "tok": [
+    "경기",
+    "공장",
+    "남양주",
+    "다량",
+    "연기",
+    "주의",
+    "화재"
+   ]
   }
  },
  "initialized": true,
@@ -3952,7 +3976,25 @@
    "link": "https://news.google.com/rss/articles/CBMieEFVX3lxTFB2Q0ZPWmVYanFQMndOemY0czNadWR2NkN2Um9CLUhhUWhaZk5tMTdhbmw2cUtNSjZXWTc4ZnRPbzBYR0J5aF9HZS1qVnJkcm9LZWFFc3hFM0JoNVNzcHE2ZXI3X0JsQU1xQ2xyNHh4cEJBNzh4OUJ2Qw?oc=5",
    "reports": 2,
    "casualty": false
+  },
+  {
+   "ts": 1788562685.771685,
+   "when": "09/05 07:44",
+   "title": "경기도 남양주 공장서 화재…\"다량 연기 주의\"",
+   "updates": 0,
+   "tok": [
+    "경기",
+    "공장",
+    "남양주",
+    "다량",
+    "연기",
+    "주의",
+    "화재"
+   ],
+   "link": "https://news.google.com/rss/articles/CBMieEFVX3lxTFBVbFZ6NlJncTZMS2tBUkNIZFFXTllQU3lackl2ZllTQnRySlI5TUlIMlg4WDFHT3I4MFAybEVlVkUzMTJwNkhIak80TzVuZWYtOElBMnNRbW5OMGZVT29iSDFxSlA5T0xReEJaTDhUTThQd3hnR21nSA?oc=5",
+   "reports": 1,
+   "casualty": false
   }
  ],
- "sent_since_heartbeat": 0
+ "sent_since_heartbeat": 1
 }
