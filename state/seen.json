@@ -2862,6 +2862,52 @@
     "파주",
     "화재"
    ]
+  },
+  "3fe1e2b7b9306061": {
+   "ts": 1788489530.779136,
+   "tok": [
+    "사망",
+    "샤힌프로젝트",
+    "울산",
+    "작업자",
+    "중대재해",
+    "추락해",
+    "현대건설"
+   ]
+  },
+  "f76846630fa4cf6f": {
+   "ts": 1788489530.779749,
+   "tok": [
+    "건설공사현장",
+    "울산",
+    "중대재해",
+    "현대건설"
+   ]
+  },
+  "a9575c409f20781b": {
+   "ts": 1788489530.786237,
+   "tok": [
+    "공장",
+    "내부",
+    "단계",
+    "대응",
+    "대피",
+    "인원",
+    "파주",
+    "화재"
+   ]
+  },
+  "b578bc4da1d56d48": {
+   "ts": 1788489530.786947,
+   "tok": [
+    "공장",
+    "공주",
+    "누출",
+    "아황산가스",
+    "없어",
+    "인명피해",
+    "충남"
+   ]
   }
  },
  "initialized": true,
@@ -2935,7 +2981,7 @@
     "화재"
    ],
    "link": "https://news.google.com/rss/articles/CBMiSEFVX3lxTE9lbUZtU3BMNllLWlNuNVBWSWZQaUJ2SVpaNzJIaGZWQ092dzhmdXdiczY0WlE0Q1BKaEJsejNEUnF4WmszUElxVg?oc=5",
-   "reports": 3
+   "reports": 4
   },
   {
    "ts": 1788337199.962975,
@@ -3004,7 +3050,7 @@
     "추락해"
    ],
    "link": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE1FNmprMFVaYkQxLVBWNnBXTEZOY1hYc18xazJ0TzRSYVB3VWZucnJpX0hBaHZaYVl0dHRySnJXWVNKd3RaZ18yc2IyTHRpcDVHYmJmNzR3WHZCY2hWRnZNNm9rcnljNEk?oc=5",
-   "reports": 3,
+   "reports": 4,
    "casualty": true
   },
   {
