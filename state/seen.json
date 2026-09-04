@@ -2812,6 +2812,56 @@
     "작업자",
     "탄천산단"
    ]
+  },
+  "51b475caa00e07e6": {
+   "ts": 1788488171.639907,
+   "tok": [
+    "건설현장",
+    "샤힌",
+    "수립",
+    "울산",
+    "작업자",
+    "재발방지대책",
+    "추락",
+    "현대건설"
+   ]
+  },
+  "66780c9c83b0f57a": {
+   "ts": 1788488171.645063,
+   "tok": [
+    "30",
+    "금속주조공장",
+    "기계",
+    "끼임",
+    "사망",
+    "산업안전",
+    "작업자",
+    "정비하던",
+    "중대재해",
+    "포항"
+   ]
+  },
+  "d84a63498b7ed603": {
+   "ts": 1788488171.647151,
+   "tok": [
+    "경기",
+    "공장",
+    "탄현면",
+    "파주",
+    "화재"
+   ]
+  },
+  "adc52002cf00cf78": {
+   "ts": 1788488171.647668,
+   "tok": [
+    "공장",
+    "금송리",
+    "우회",
+    "인근",
+    "차량",
+    "파주",
+    "화재"
+   ]
   }
  },
  "initialized": true,
@@ -2973,9 +3023,25 @@
     "포항"
    ],
    "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE40MXRKMDBKNmUtMEdsdmxpYm4teHFPMDFEY0hVUmxZVVRPSFZrR3BHVUg4SUE1MjdQekh4U3pqcDFVOXNIbHdfUnlCek1uVkpTUFRCVjFMTWhZUQ?oc=5",
-   "reports": 1,
+   "reports": 2,
    "casualty": true
+  },
+  {
+   "ts": 1788488175.832946,
+   "when": "09/04 11:05",
+   "title": "[속보] 경기 파주 탄현면 공장서 화재 발생",
+   "updates": 0,
+   "tok": [
+    "경기",
+    "공장",
+    "탄현면",
+    "파주",
+    "화재"
+   ],
+   "link": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE53NkdnSjlDcV93c2puM0JjVy1qU1FVaUV6WE1PcVc1ZzhPTUlNSG5JNUVyMzdDNXk4WU5LWUp2bzAyRlUxVjJBaXlfTlM0WnZtQXVQRA?oc=5",
+   "reports": 1,
+   "casualty": false
   }
  ],
- "sent_since_heartbeat": 0
+ "sent_since_heartbeat": 1
 }
