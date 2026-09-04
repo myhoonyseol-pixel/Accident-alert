@@ -3561,6 +3561,45 @@
     "인명피해",
     "탄천산단"
    ]
+  },
+  "fe58fc9d32f1992f": {
+   "ts": 1788525892.038513,
+   "tok": [
+    "건설현장",
+    "샤힌",
+    "에틸렌시설",
+    "울산",
+    "작업자",
+    "추락",
+    "현대건설"
+   ]
+  },
+  "fa3e0b5794208165": {
+   "ts": 1788525892.049684,
+   "tok": [
+    "LED",
+    "경북",
+    "고령군",
+    "공장",
+    "소방당국",
+    "진화",
+    "화재"
+   ]
+  },
+  "90cbf72e845e96e5": {
+   "ts": 1788525892.050657,
+   "tok": [
+    "LED",
+    "경북",
+    "고령군",
+    "공장",
+    "당국",
+    "소방",
+    "제조",
+    "조명",
+    "진화",
+    "화재"
+   ]
   }
  },
  "initialized": true,
@@ -3755,7 +3794,7 @@
     "화재"
    ],
    "link": "https://news.google.com/rss/articles/CBMieEFVX3lxTFB2Q0ZPWmVYanFQMndOemY0czNadWR2NkN2Um9CLUhhUWhaZk5tMTdhbmw2cUtNSjZXWTc4ZnRPbzBYR0J5aF9HZS1qVnJkcm9LZWFFc3hFM0JoNVNzcHE2ZXI3X0JsQU1xQ2xyNHh4cEJBNzh4OUJ2Qw?oc=5",
-   "reports": 1,
+   "reports": 2,
    "casualty": false
   }
  ],
