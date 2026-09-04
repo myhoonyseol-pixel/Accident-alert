@@ -3548,6 +3548,19 @@
     "출범하자",
     "폭발"
    ]
+  },
+  "0a8221d8e9aa6289": {
+   "ts": 1788523176.693713,
+   "tok": [
+    "가스",
+    "공장",
+    "공주",
+    "누출",
+    "삼산화황",
+    "없어",
+    "인명피해",
+    "탄천산단"
+   ]
   }
  },
  "initialized": true,
@@ -3621,7 +3634,7 @@
     "화재"
    ],
    "link": "https://news.google.com/rss/articles/CBMiSEFVX3lxTE9lbUZtU3BMNllLWlNuNVBWSWZQaUJ2SVpaNzJIaGZWQ092dzhmdXdiczY0WlE0Q1BKaEJsejNEUnF4WmszUElxVg?oc=5",
-   "reports": 5
+   "reports": 6
   },
   {
    "ts": 1788337199.962975,
