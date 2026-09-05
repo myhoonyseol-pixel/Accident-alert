@@ -3825,6 +3825,32 @@
     "부상",
     "소방관"
    ]
+  },
+  "cebcc2a725f7aa6d": {
+   "ts": 1788575886.552828,
+   "tok": [
+    "개동",
+    "공장",
+    "남양주",
+    "부상",
+    "부품",
+    "전소",
+    "컴퓨터",
+    "화재"
+   ]
+  },
+  "4639bd4ddfd767f4": {
+   "ts": 1788575886.553311,
+   "tok": [
+    "경기",
+    "공장",
+    "남양주",
+    "부상",
+    "부품",
+    "소방대원",
+    "제조",
+    "컴퓨터"
+   ]
   }
  },
  "initialized": true,
@@ -4031,7 +4057,7 @@
     "화재"
    ],
    "link": "https://news.google.com/rss/articles/CBMieEFVX3lxTFBVbFZ6NlJncTZMS2tBUkNIZFFXTllQU3lackl2ZllTQnRySlI5TUlIMlg4WDFHT3I4MFAybEVlVkUzMTJwNkhIak80TzVuZWYtOElBMnNRbW5OMGZVT29iSDFxSlA5T0xReEJaTDhUTThQd3hnR21nSA?oc=5",
-   "reports": 3,
+   "reports": 4,
    "casualty": false
   }
  ],
