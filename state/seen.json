@@ -3763,6 +3763,16 @@
     "부상",
     "소방대원"
    ]
+  },
+  "4cdf671b13e905ac": {
+   "ts": 1788569357.333162,
+   "tok": [
+    "공장",
+    "남양주",
+    "다량",
+    "연기",
+    "화재"
+   ]
   }
  },
  "initialized": true,
@@ -3969,7 +3979,7 @@
     "화재"
    ],
    "link": "https://news.google.com/rss/articles/CBMieEFVX3lxTFBVbFZ6NlJncTZMS2tBUkNIZFFXTllQU3lackl2ZllTQnRySlI5TUlIMlg4WDFHT3I4MFAybEVlVkUzMTJwNkhIak80TzVuZWYtOElBMnNRbW5OMGZVT29iSDFxSlA5T0xReEJaTDhUTThQd3hnR21nSA?oc=5",
-   "reports": 1,
+   "reports": 2,
    "casualty": false
   }
  ],
