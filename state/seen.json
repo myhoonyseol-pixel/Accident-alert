@@ -3815,6 +3815,16 @@
     "컴퓨터",
     "화재"
    ]
+  },
+  "2dfd5f7362416ccb": {
+   "ts": 1788574666.845968,
+   "tok": [
+    "경기",
+    "공장",
+    "남양주",
+    "부상",
+    "소방관"
+   ]
   }
  },
  "initialized": true,
@@ -4021,7 +4031,7 @@
     "화재"
    ],
    "link": "https://news.google.com/rss/articles/CBMieEFVX3lxTFBVbFZ6NlJncTZMS2tBUkNIZFFXTllQU3lackl2ZllTQnRySlI5TUlIMlg4WDFHT3I4MFAybEVlVkUzMTJwNkhIak80TzVuZWYtOElBMnNRbW5OMGZVT29iSDFxSlA5T0xReEJaTDhUTThQd3hnR21nSA?oc=5",
-   "reports": 2,
+   "reports": 3,
    "casualty": false
   }
  ],
