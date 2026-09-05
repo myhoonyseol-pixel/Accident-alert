@@ -3910,6 +3910,35 @@
     "해체",
     "호명읍"
    ]
+  },
+  "feb65277cf97f8c9": {
+   "ts": 1788599818.733047,
+   "tok": [
+    "40",
+    "cnews",
+    "com",
+    "남성",
+    "병원",
+    "부상",
+    "예천군",
+    "이송",
+    "작업",
+    "타워크레",
+    "해체",
+    "호명읍"
+   ]
+  },
+  "399f42b92959b4f4": {
+   "ts": 1788599818.737868,
+   "tok": [
+    "공장",
+    "공장화재",
+    "방안",
+    "사람",
+    "살리",
+    "안전강화",
+    "안전한"
+   ]
   }
  },
  "initialized": true,
@@ -4137,7 +4166,7 @@
     "호명읍"
    ],
    "link": "https://news.google.com/rss/articles/CBMiaEFVX3lxTFBKWWVYM2VRd3JMRlVOaVd0X3RMS0RPRFZaYmJFU0FuWEtMajkzbzV5MWRIWk5zU0lfSmhXdHFpTndfTXpWQ3Z4MDBLSjlGZXREcEVLd3ptSk9xTjB2YzloVmR5cXZGczBy?oc=5",
-   "reports": 1,
+   "reports": 2,
    "casualty": true
   }
  ],
