@@ -3966,6 +3966,29 @@
     "중국",
     "한국"
    ]
+  },
+  "60845f4993d217b7": {
+   "ts": 1788615421.966258,
+   "tok": [
+    "고소작업차",
+    "구서동",
+    "도색",
+    "부산",
+    "부상",
+    "전도"
+   ]
+  },
+  "58c10ee098b085fb": {
+   "ts": 1788615421.969095,
+   "tok": [
+    "공장",
+    "남양주",
+    "부상",
+    "부품",
+    "새벽시간",
+    "소방관",
+    "컴퓨터"
+   ]
   }
  },
  "initialized": true,
@@ -4189,7 +4212,24 @@
    "link": "https://news.google.com/rss/articles/CBMiaEFVX3lxTFBKWWVYM2VRd3JMRlVOaVd0X3RMS0RPRFZaYmJFU0FuWEtMajkzbzV5MWRIWk5zU0lfSmhXdHFpTndfTXpWQ3Z4MDBLSjlGZXREcEVLd3ptSk9xTjB2YzloVmR5cXZGczBy?oc=5",
    "reports": 2,
    "casualty": true
+  },
+  {
+   "ts": 1788615426.529279,
+   "when": "09/05 18:46",
+   "title": "부산 구서동 도색 현장서 3.5t 고소작업차 전도…3명 부상",
+   "updates": 0,
+   "tok": [
+    "고소작업차",
+    "구서동",
+    "도색",
+    "부산",
+    "부상",
+    "전도"
+   ],
+   "link": "https://news.google.com/rss/articles/CBMiWEFVX3lxTFA2QXBiNGRaeGtqdnZpVnQ5bGpjYnBONUwzaGUzcHczRWlGZkFObmw3VmF5SHFFTHhodG5RMHU3N3ZReTNWWVc2MUd2ZXFWZFFocmI0YWNRRVfSAWhBVV95cUxQWjA0WjRCVmFMX2EwOENtY25YcmhXRk5IclNjR1NfWURVSWkwa2dMMlR1SVNMY0pUVHJzWDdSaHRYd1NraGlwS1ZVSldrWlNpajdfSExnOGFWQjIxVXNIM0ZMWXVROXZyYw?oc=5",
+   "reports": 1,
+   "casualty": true
   }
  ],
- "sent_since_heartbeat": 3
+ "sent_since_heartbeat": 4
 }
