@@ -3895,6 +3895,21 @@
     "전소",
     "컴퓨터"
    ]
+  },
+  "7cc9ac26521f1132": {
+   "ts": 1788598739.340953,
+   "tok": [
+    "40",
+    "남성",
+    "병원",
+    "부상",
+    "예천군",
+    "이송",
+    "작업",
+    "타워크레",
+    "해체",
+    "호명읍"
+   ]
   }
  },
  "initialized": true,
@@ -4103,7 +4118,28 @@
    "link": "https://news.google.com/rss/articles/CBMieEFVX3lxTFBVbFZ6NlJncTZMS2tBUkNIZFFXTllQU3lackl2ZllTQnRySlI5TUlIMlg4WDFHT3I4MFAybEVlVkUzMTJwNkhIak80TzVuZWYtOElBMnNRbW5OMGZVT29iSDFxSlA5T0xReEJaTDhUTThQd3hnR21nSA?oc=5",
    "reports": 4,
    "casualty": false
+  },
+  {
+   "ts": 1788598743.270808,
+   "when": "09/05 17:55",
+   "title": "예천군 호명읍 타워크레인 해체 작업 중 부상…40대 남성 병원 이송",
+   "updates": 0,
+   "tok": [
+    "40",
+    "남성",
+    "병원",
+    "부상",
+    "예천군",
+    "이송",
+    "작업",
+    "타워크레",
+    "해체",
+    "호명읍"
+   ],
+   "link": "https://news.google.com/rss/articles/CBMiaEFVX3lxTFBKWWVYM2VRd3JMRlVOaVd0X3RMS0RPRFZaYmJFU0FuWEtMajkzbzV5MWRIWk5zU0lfSmhXdHFpTndfTXpWQ3Z4MDBLSjlGZXREcEVLd3ptSk9xTjB2YzloVmR5cXZGczBy?oc=5",
+   "reports": 1,
+   "casualty": true
   }
  ],
- "sent_since_heartbeat": 1
+ "sent_since_heartbeat": 2
 }
