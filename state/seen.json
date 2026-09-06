@@ -4135,6 +4135,21 @@
     "사망",
     "폭발"
    ]
+  },
+  "433e4787927742bb": {
+   "ts": 1788718617.261705,
+   "tok": [
+    "건설",
+    "고개",
+    "붕괴",
+    "아산",
+    "연신",
+    "옹벽",
+    "용화체육공원",
+    "인재",
+    "총체적",
+    "하이스"
+   ]
   }
  },
  "initialized": true,
@@ -4357,7 +4372,28 @@
    "link": "https://news.google.com/rss/articles/CBMiWEFVX3lxTFA2QXBiNGRaeGtqdnZpVnQ5bGpjYnBONUwzaGUzcHczRWlGZkFObmw3VmF5SHFFTHhodG5RMHU3N3ZReTNWWVc2MUd2ZXFWZFFocmI0YWNRRVfSAWhBVV95cUxQWjA0WjRCVmFMX2EwOENtY25YcmhXRk5IclNjR1NfWURVSWkwa2dMMlR1SVNMY0pUVHJzWDdSaHRYd1NraGlwS1ZVSldrWlNpajdfSExnOGFWQjIxVXNIM0ZMWXVROXZyYw?oc=5",
    "reports": 1,
    "casualty": true
+  },
+  {
+   "ts": 1788718621.246798,
+   "when": "09/06 16:33",
+   "title": "아산 용화체육공원 옹벽 붕괴 ‘총체적 인재’…하이스·GS건설 연신 고개 ‘푹’",
+   "updates": 0,
+   "tok": [
+    "건설",
+    "고개",
+    "붕괴",
+    "아산",
+    "연신",
+    "옹벽",
+    "용화체육공원",
+    "인재",
+    "총체적",
+    "하이스"
+   ],
+   "link": "https://news.google.com/rss/articles/CBMia0FVX3lxTE40RUZYejNKY0tFT2lKa2E1V1FIMmRwN1hTQ2VKMmFMYjlpdzk1OWdyVjFLS1BybFA3cjFVSFJpWk5mU1NJYVpsRGxwOXF2WEpuOHpCMGl3aU5Zc1lsM191QTl2dllLenY2SnBB?oc=5",
+   "reports": 1,
+   "casualty": false
   }
  ],
- "sent_since_heartbeat": 0
+ "sent_since_heartbeat": 1
 }
