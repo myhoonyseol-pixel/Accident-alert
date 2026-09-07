@@ -255,7 +255,13 @@ def fetch_rss(url: str, label: str):
             #   "…공사현장 꼼꼼 점검   경상매일신문"  →  '경상'(가벼운 부상)으로 판정
             #   → 도의원 현장점검 홍보 기사가 사고 속보로 발송됨 (2026-08-31)
             # 그래서 구글 뉴스는 요약을 아예 버립니다. 잃는 정보가 없습니다.
-            summary = "" if label == "구글뉴스" else clean(getattr(e, "summary", ""))
+            if label == "구글뉴스":
+                summary = ""
+            else:
+                # 언론사 RSS는 진짜 기사 앞부분이 들어옵니다. 판정에 도움이 되지만
+                # 전문이 통째로 오면 엉뚱한 단어까지 걸려 오탐이 늘어납니다.
+                summary = clean(getattr(e, "summary", ""))
+                summary = summary[:getattr(config, "RSS_SUMMARY_LIMIT", 300)]
             out.append({
                 # 구글 뉴스 제목의 "- 매체명" 꼬리를 여기서 뗍니다.
                 "title": (filters.strip_source_tail(raw_title)
@@ -509,34 +515,56 @@ def pick_candidates(state, events):
     recent_tokens = [set(v.get("tok", [])) for v in seen.values() if v.get("tok")]
     picked = []
 
+    # ── 1단계 · 키워드를 통과한 기사를 모두 모읍니다 ──────────────
+    # 곧바로 거르지 않고 한 번 모으는 이유는, 이번 회차에 같은 사고를
+    # 몇 개 매체가 동시에 다루는지 세기 위해서입니다. 그 숫자를 AI에게
+    # 넘기면 "9곳이 함께 쓰는 걸 보니 실제 사고구나"를 판단에 쓸 수 있습니다.
+    matched = []
     for item in collect():
         if not item["title"] or not item["link"]:
             continue
         if not fresh(item["published"]):
             continue
-
         m = filters.match(config, item["title"], item["summary"],
                           item.get("outlet", ""))
         if not m:
             continue
-        place, hits, confidence = m
+        matched.append((item, m, filters.tokenize(item["title"])))
 
+    def coverage(toks):
+        """이번 회차에 같은 사고를 다룬 기사 수 (자기 자신 포함)."""
+        return sum(1 for _, _, t in matched if filters.same_event(config, toks, t))
+
+    # ── 2단계 · 중복을 걸러내고 후보를 확정합니다 ────────────────
+    for item, (place, hits, confidence), toks in matched:
         key = article_key(item["title"], item["link"])
         if key in seen:
             continue
 
-        # 같은 사고를 다른 매체가 쓴 기사인지 확인
-        toks = filters.tokenize(item["title"])
-        # 중복이든 아니든, 이미 보낸 사고의 기사라면 보도 수를 센다.
+        # 이미 보낸 사고의 기사라면 보도 수를 센다.
         # 중복 기사는 '버리는 것'이 아니라 '파장의 크기'라는 정보다.
-        bump_report(events, toks)
+        ev = bump_report(events, toks)
+
         if filters.is_duplicate(config, toks, recent_tokens):
+            # 중복이어도 곧바로 버리지 않습니다.
+            # 시공사 이름이 새로 밝혀졌거나 부상이 사망으로 바뀐 기사는
+            # AI가 'update' 로 판정할 기회를 줘야 합니다. 예전에는 여기서
+            # 버려져서 AI에게 도달조차 못 했습니다.
+            fact = filters.new_fact(config, item["title"],
+                                    ev.get("title", "")) if ev else None
             seen[key] = {"ts": now_utc().timestamp(), "tok": sorted(toks)}
-            print(f"[중복] {item['title'][:50]}", file=sys.stderr)
+            if not fact:
+                print(f"[중복] {item['title'][:50]}", file=sys.stderr)
+                continue
+            print(f"[후속?] {item['title'][:44]} — {fact}", file=sys.stderr)
+            item["followup_hint"] = fact
+            item["coverage"] = coverage(toks)
+            picked.append((item, place, hits, confidence))
             continue
 
         recent_tokens.append(toks)
         seen[key] = {"ts": now_utc().timestamp(), "tok": sorted(toks)}
+        item["coverage"] = coverage(toks)
         picked.append((item, place, hits, confidence))
 
     return picked

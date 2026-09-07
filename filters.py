@@ -260,6 +260,41 @@ def same_event(cfg, tokens: set, prev: set) -> float:
     return 0.0
 
 
+_DEATH_WORDS = ("사망", "숨져", "숨진", "숨졌", "숨을 거", "목숨", "참변", "사망자", "끝내")
+
+
+def new_fact(cfg, new_title: str, old_title: str):
+    """이미 보낸 사고의 후속인데 '새 사실'이 보이는가. 보이면 그 내용, 아니면 None.
+
+    왜 필요한가
+    -----------
+    지금 순서가 [키워드 중복 판정] → [AI 판정] 입니다. 중복이면 그 자리에서
+    버리므로, 제목이 원본과 비슷한 후속 기사는 AI에게 도달조차 못 합니다.
+    그래서 'update' 로 분류될 기회가 없습니다.
+
+      원본  울산 아파트 신축현장서 슬라브 붕괴…작업자 3명 부상
+      후속  울산 아파트 공사현장 슬라브 붕괴…시공사는 ○○건설
+            → 시공사가 밝혀졌는데 중복으로 버려짐
+
+    그래서 버리기 직전에 이 함수로 한 번 더 봅니다. 단어 비교뿐이라
+    비용이 들지 않고, 담당자가 실제로 원하는 두 가지만 정확히 겨냥합니다.
+    최종 판단은 그대로 AI가 합니다 — 여기서는 '넘길지 말지'만 정합니다.
+    """
+    new_p = re.sub(r"\s+", "", new_title or "")
+    old_p = re.sub(r"\s+", "", old_title or "")
+
+    # 1) 시공사·원청 이름이 처음 등장했다
+    for c in getattr(cfg, "COMPANY_WORDS", ()):
+        if c in new_p and c not in old_p:
+            return f"시공사 이름 등장({c})"
+
+    # 2) 부상 보도였는데 사망 표현이 새로 나왔다
+    if any(d in new_p for d in _DEATH_WORDS) and not any(d in old_p for d in _DEATH_WORDS):
+        return "사망 표현 등장"
+
+    return None
+
+
 def tokenize(title: str) -> set:
     """제목에서 의미 있는 단어만 뽑아냅니다. 매체 간 중복 판정용.
 
