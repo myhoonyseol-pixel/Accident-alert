@@ -4056,51 +4056,26 @@
     "청년",
     "하반기"
    ]
+  },
+  "557f0511d893fde8": {
+   "ts": 1788758315.549787,
+   "tok": [
+    "48",
+    "공개하라",
+    "내용",
+    "만도",
+    "몰라",
+    "산재",
+    "원인",
+    "유족",
+    "일째",
+    "조사"
+   ]
   }
  },
  "initialized": true,
  "last_heartbeat": "2026-09-07",
  "events": [
-  {
-   "ts": 1788325653.480821,
-   "when": "09/02 11:35",
-   "title": "현대제철 당진제철소 산소 배관 폭발…인명피해 없어",
-   "updates": 0,
-   "tok": [
-    "당진제철소",
-    "배관",
-    "산소",
-    "없어",
-    "인명피해",
-    "폭발",
-    "현대제철"
-   ],
-   "link": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE1kWWR4RXRpNFVmZlpoYlJzLU83bnRBb1JLODY0M2pZWGM0Q2RZU25nUER2Z0tLNVF3am5zbmFiaHhCZ3FhRGhrcG9GQ0RadDJqYVMtN3lzUEdZNml2WVA2cw?oc=5",
-   "reports": 31,
-   "spread": true
-  },
-  {
-   "ts": 1788325655.606674,
-   "when": "09/02 08:20",
-   "title": "상주소식",
-   "updates": 0,
-   "tok": [
-    "건조기",
-    "공장",
-    "상주",
-    "상주소식",
-    "소실",
-    "없어",
-    "인명피해",
-    "일부",
-    "제조공장",
-    "창고",
-    "헌신동",
-    "화재"
-   ],
-   "link": "https://news.google.com/rss/articles/CBMiSEFVX3lxTE9lbUZtU3BMNllLWlNuNVBWSWZQaUJ2SVpaNzJIaGZWQ092dzhmdXdiczY0WlE0Q1BKaEJsejNEUnF4WmszUElxVg?oc=5",
-   "reports": 7
-  },
   {
    "ts": 1788337199.962975,
    "when": "09/02 16:59",
