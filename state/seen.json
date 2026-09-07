@@ -4069,29 +4069,26 @@
     "제조업체",
     "중대재해"
    ]
+  },
+  "4829f5b35b709c3e": {
+   "ts": 1788769287.084613,
+   "tok": [
+    "836",
+    "강훈식",
+    "대책",
+    "마련",
+    "산재",
+    "신속히",
+    "실효적",
+    "연평균",
+    "최근",
+    "환경미화원"
+   ]
   }
  },
  "initialized": true,
  "last_heartbeat": "2026-09-07",
  "events": [
-  {
-   "ts": 1788337199.962975,
-   "when": "09/02 16:59",
-   "title": "홍천 내촌초 공사현장서 60대 작업자 1.5ｍ 아래 추락해 중상",
-   "updates": 0,
-   "tok": [
-    "60",
-    "건설현장",
-    "내촌초",
-    "부상",
-    "아래",
-    "작업자",
-    "추락해",
-    "홍천"
-   ],
-   "link": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE1CNVlhOU1UNnVpQktaRkVpVkI2RnV4a29UOHFTZUtCRnNjZ3ZfakVfV25XMmVzQTMyTXp3U1VEVXR6MHhUamlmcGxwMXdkemZfWDVha1VmVllLZTDSAWBBVV95cUxQSVc5YWlwVDRlQkd0eXB5TUM3R0VvOUFKWmpGWFQ5cWJHOXNWYjBSV3Bab2VFcXI0RVBkQXFIZ1pJMVQ2TVBZZ1RPRG5BVGtucnotQ0Q5U3VCT21FclctZVQ?oc=5",
-   "reports": 3
-  },
   {
    "ts": 1788377891.047875,
    "when": "09/03 03:18",
