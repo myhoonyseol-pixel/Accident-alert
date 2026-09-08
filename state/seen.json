@@ -4825,6 +4825,17 @@
     "잠수부",
     "하청업체"
    ]
+  },
+  "dbe48036ef9045e2": {
+   "ts": 1788903171.665837,
+   "tok": [
+    "경주",
+    "공장",
+    "부상",
+    "사망",
+    "안전상황실",
+    "폭발사고"
+   ]
   }
  },
  "initialized": true,
@@ -4993,7 +5004,7 @@
     "함께"
    ],
    "link": "https://news.google.com/rss/articles/CBMiW0FVX3lxTFAtUURjYnh6OEd6Ui1KaVJQZ3ktV2dYbnYxVnN1NjZ4bEhsT1dNd21aVmo3S1hlR28wdllWSXpONWJOWTBCRExaMjVoallSQkQ4UU10UVYyQWxYRUnSAWBBVV95cUxQbkR2eVUzRWdyVTNyeEhLZXB2ZFdxaW9ZZ3RQLWxZal9OTnQtMU5FcGs4OHo4a2UtWGdndEUxbjVnOXBTVHdxN1dtNGtwWTlSRkFKdXRMZS0xXzBSTVhjOU8?oc=5",
-   "reports": 16,
+   "reports": 17,
    "casualty": true
   }
  ],
