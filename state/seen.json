@@ -1,16 +1,5 @@
 {
  "seen": {
-  "a6e0d4646154ac02": {
-   "ts": 1788250767.844984,
-   "tok": [
-    "건설현장",
-    "발전소",
-    "실종",
-    "추정",
-    "피해입",
-    "한국"
-   ]
-  },
   "f65749a85728e0ab": {
    "ts": 1788252050.825773,
    "tok": [
@@ -4614,6 +4603,45 @@
     "해체",
     "화재"
    ]
+  },
+  "844847c94f8d3003": {
+   "ts": 1788855699.158279,
+   "tok": [
+    "경주",
+    "공장",
+    "부상",
+    "사망",
+    "폭발",
+    "화재"
+   ]
+  },
+  "1d2a41600bdc0f4f": {
+   "ts": 1788855699.159037,
+   "tok": [
+    "경주",
+    "공장",
+    "부상",
+    "사망",
+    "폐기물",
+    "폭발",
+    "함께",
+    "화재"
+   ]
+  },
+  "64b599f2ab962828": {
+   "ts": 1788855699.159792,
+   "tok": [
+    "경기도의원",
+    "공업지역",
+    "근거",
+    "마련",
+    "산업단지",
+    "예방",
+    "재해",
+    "지원",
+    "한영수",
+    "화재"
+   ]
   }
  },
  "initialized": true,
@@ -4799,7 +4827,7 @@
     "함께"
    ],
    "link": "https://news.google.com/rss/articles/CBMiW0FVX3lxTFAtUURjYnh6OEd6Ui1KaVJQZ3ktV2dYbnYxVnN1NjZ4bEhsT1dNd21aVmo3S1hlR28wdllWSXpONWJOWTBCRExaMjVoallSQkQ4UU10UVYyQWxYRUnSAWBBVV95cUxQbkR2eVUzRWdyVTNyeEhLZXB2ZFdxaW9ZZ3RQLWxZal9OTnQtMU5FcGs4OHo4a2UtWGdndEUxbjVnOXBTVHdxN1dtNGtwWTlSRkFKdXRMZS0xXzBSTVhjOU8?oc=5",
-   "reports": 12,
+   "reports": 14,
    "casualty": true
   }
  ],
