@@ -4550,6 +4550,45 @@
     "폭발",
     "해체"
    ]
+  },
+  "8528f80c796ea02b": {
+   "ts": 1788851466.636078,
+   "tok": [
+    "경주",
+    "공장",
+    "부상",
+    "사망",
+    "작업자",
+    "폭발",
+    "화재"
+   ]
+  },
+  "b80c5d003288222b": {
+   "ts": 1788851466.636998,
+   "tok": [
+    "광적면",
+    "부상",
+    "양주",
+    "제조공장",
+    "철강",
+    "폭발"
+   ]
+  },
+  "96c84e2936ad8db3": {
+   "ts": 1788851466.638013,
+   "tok": [
+    "경기도의회",
+    "공업지역",
+    "근거",
+    "마련",
+    "산업단지",
+    "예방",
+    "의원",
+    "재해",
+    "지원",
+    "한영수",
+    "화재"
+   ]
   }
  },
  "initialized": true,
@@ -4735,7 +4774,7 @@
     "함께"
    ],
    "link": "https://news.google.com/rss/articles/CBMiW0FVX3lxTFAtUURjYnh6OEd6Ui1KaVJQZ3ktV2dYbnYxVnN1NjZ4bEhsT1dNd21aVmo3S1hlR28wdllWSXpONWJOWTBCRExaMjVoallSQkQ4UU10UVYyQWxYRUnSAWBBVV95cUxQbkR2eVUzRWdyVTNyeEhLZXB2ZFdxaW9ZZ3RQLWxZal9OTnQtMU5FcGs4OHo4a2UtWGdndEUxbjVnOXBTVHdxN1dtNGtwWTlSRkFKdXRMZS0xXzBSTVhjOU8?oc=5",
-   "reports": 11,
+   "reports": 12,
    "casualty": true
   }
  ],
