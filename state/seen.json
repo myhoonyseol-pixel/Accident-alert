@@ -4487,6 +4487,15 @@
     "처리공장",
     "폐기물"
    ]
+  },
+  "9251a441c3517113": {
+   "ts": 1788848680.492644,
+   "tok": [
+    "경주",
+    "공장",
+    "부상",
+    "사망"
+   ]
   }
  },
  "initialized": true,
@@ -4672,7 +4681,7 @@
     "함께"
    ],
    "link": "https://news.google.com/rss/articles/CBMiW0FVX3lxTFAtUURjYnh6OEd6Ui1KaVJQZ3ktV2dYbnYxVnN1NjZ4bEhsT1dNd21aVmo3S1hlR28wdllWSXpONWJOWTBCRExaMjVoallSQkQ4UU10UVYyQWxYRUnSAWBBVV95cUxQbkR2eVUzRWdyVTNyeEhLZXB2ZFdxaW9ZZ3RQLWxZal9OTnQtMU5FcGs4OHo4a2UtWGdndEUxbjVnOXBTVHdxN1dtNGtwWTlSRkFKdXRMZS0xXzBSTVhjOU8?oc=5",
-   "reports": 9,
+   "reports": 10,
    "casualty": true
   }
  ],
