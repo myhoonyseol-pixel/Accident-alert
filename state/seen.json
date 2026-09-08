@@ -4310,6 +4310,29 @@
     "해체",
     "화재"
    ]
+  },
+  "b608ffa824e456be": {
+   "ts": 1788845661.8882,
+   "tok": [
+    "경주",
+    "공장",
+    "부상",
+    "사망",
+    "산소용접기",
+    "폭발",
+    "화재"
+   ]
+  },
+  "2069aefa441f41d8": {
+   "ts": 1788845661.88896,
+   "tok": [
+    "경주",
+    "공장",
+    "부상",
+    "사망",
+    "프레스기계",
+    "해체"
+   ]
   }
  },
  "initialized": true,
@@ -4495,7 +4518,7 @@
     "함께"
    ],
    "link": "https://news.google.com/rss/articles/CBMiW0FVX3lxTFAtUURjYnh6OEd6Ui1KaVJQZ3ktV2dYbnYxVnN1NjZ4bEhsT1dNd21aVmo3S1hlR28wdllWSXpONWJOWTBCRExaMjVoallSQkQ4UU10UVYyQWxYRUnSAWBBVV95cUxQbkR2eVUzRWdyVTNyeEhLZXB2ZFdxaW9ZZ3RQLWxZal9OTnQtMU5FcGs4OHo4a2UtWGdndEUxbjVnOXBTVHdxN1dtNGtwWTlSRkFKdXRMZS0xXzBSTVhjOU8?oc=5",
-   "reports": 5,
+   "reports": 7,
    "casualty": true
   }
  ],
