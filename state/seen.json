@@ -4839,27 +4839,8 @@
   }
  },
  "initialized": true,
- "last_heartbeat": "2026-09-08",
+ "last_heartbeat": "2026-09-09",
  "events": [
-  {
-   "ts": 1788472726.692695,
-   "when": "09/04 06:41",
-   "title": "포항 청하 금속주조공장서 기계 끼임…30대 남성 숨져",
-   "updates": 0,
-   "tok": [
-    "30",
-    "금속주조공장",
-    "기계",
-    "끼임",
-    "남성",
-    "사망",
-    "청하",
-    "포항"
-   ],
-   "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE40MXRKMDBKNmUtMEdsdmxpYm4teHFPMDFEY0hVUmxZVVRPSFZrR3BHVUg4SUE1MjdQekh4U3pqcDFVOXNIbHdfUnlCek1uVkpTUFRCVjFMTWhZUQ?oc=5",
-   "reports": 2,
-   "casualty": true
-  },
   {
    "ts": 1788488175.832946,
    "when": "09/04 11:05",
@@ -5008,5 +4989,5 @@
    "casualty": true
   }
  ],
- "sent_since_heartbeat": 2
+ "sent_since_heartbeat": 0
 }
