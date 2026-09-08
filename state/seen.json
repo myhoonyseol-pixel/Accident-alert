@@ -4660,6 +4660,14 @@
     "제재금",
     "현대산업개발"
    ]
+  },
+  "5aaeadd7680ba0c2": {
+   "ts": 1788862852.041039,
+   "tok": [
+    "경주",
+    "공장",
+    "폭발"
+   ]
   }
  },
  "initialized": true,
@@ -4828,7 +4836,7 @@
     "함께"
    ],
    "link": "https://news.google.com/rss/articles/CBMiW0FVX3lxTFAtUURjYnh6OEd6Ui1KaVJQZ3ktV2dYbnYxVnN1NjZ4bEhsT1dNd21aVmo3S1hlR28wdllWSXpONWJOWTBCRExaMjVoallSQkQ4UU10UVYyQWxYRUnSAWBBVV95cUxQbkR2eVUzRWdyVTNyeEhLZXB2ZFdxaW9ZZ3RQLWxZal9OTnQtMU5FcGs4OHo4a2UtWGdndEUxbjVnOXBTVHdxN1dtNGtwWTlSRkFKdXRMZS0xXzBSTVhjOU8?oc=5",
-   "reports": 14,
+   "reports": 15,
    "casualty": true
   }
  ],
