@@ -4110,6 +4110,31 @@
     "중량물",
     "중처법"
    ]
+  },
+  "355de154c89d8774": {
+   "ts": 1788835840.728304,
+   "tok": [
+    "공시",
+    "급등",
+    "기업주식정보",
+    "배경",
+    "상승",
+    "장중",
+    "중대재해",
+    "촉각",
+    "현대건설"
+   ]
+  },
+  "f68b92b82c2f6e32": {
+   "ts": 1788835840.729121,
+   "tok": [
+    "공장",
+    "다량",
+    "덕우리",
+    "연기",
+    "화성",
+    "화재"
+   ]
   }
  },
  "initialized": true,
@@ -4215,7 +4240,7 @@
     "화재"
    ],
    "link": "https://news.google.com/rss/articles/CBMieEFVX3lxTFBVbFZ6NlJncTZMS2tBUkNIZFFXTllQU3lackl2ZllTQnRySlI5TUlIMlg4WDFHT3I4MFAybEVlVkUzMTJwNkhIak80TzVuZWYtOElBMnNRbW5OMGZVT29iSDFxSlA5T0xReEJaTDhUTThQd3hnR21nSA?oc=5",
-   "reports": 4,
+   "reports": 5,
    "casualty": false
   },
   {
