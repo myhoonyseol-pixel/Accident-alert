@@ -4199,6 +4199,93 @@
     "폐기물처리장",
     "후진"
    ]
+  },
+  "8f8c148c1e3ddb79": {
+   "ts": 1788843999.359955,
+   "tok": [
+    "공장",
+    "사망",
+    "엔솔",
+    "위반",
+    "이의제기",
+    "전자",
+    "제재에",
+    "중대"
+   ]
+  },
+  "0e88c15b25da83df": {
+   "ts": 1788843999.360691,
+   "tok": [
+    "경주",
+    "부상",
+    "사망",
+    "폐기물공장",
+    "폭발",
+    "프레스",
+    "해체하던",
+    "화재"
+   ]
+  },
+  "23824f4cfa6c8bd9": {
+   "ts": 1788843999.361462,
+   "tok": [
+    "경주",
+    "공장",
+    "부상",
+    "사망",
+    "설비",
+    "해체",
+    "화재"
+   ]
+  },
+  "30c547f8233552b9": {
+   "ts": 1788843999.362193,
+   "tok": [
+    "경주",
+    "공장",
+    "기계",
+    "부상",
+    "사망",
+    "폭발",
+    "해체",
+    "화재"
+   ]
+  },
+  "5305dc81891c297a": {
+   "ts": 1788843999.362987,
+   "tok": [
+    "경주",
+    "부상",
+    "숨지고",
+    "작업자",
+    "폐기물공장",
+    "폭발",
+    "화재"
+   ]
+  },
+  "78d4a2898d2d9d3d": {
+   "ts": 1788843999.36385,
+   "tok": [
+    "경주",
+    "부상",
+    "사망",
+    "작업자",
+    "처리공장",
+    "폐기물",
+    "폭발"
+   ]
+  },
+  "436719410471a3ce": {
+   "ts": 1788843999.364635,
+   "tok": [
+    "경주",
+    "공장",
+    "부상",
+    "사건수첩",
+    "사망",
+    "폭발",
+    "함께"
+   ]
   }
  },
  "initialized": true,
@@ -4384,7 +4471,7 @@
     "함께"
    ],
    "link": "https://news.google.com/rss/articles/CBMiW0FVX3lxTFAtUURjYnh6OEd6Ui1KaVJQZ3ktV2dYbnYxVnN1NjZ4bEhsT1dNd21aVmo3S1hlR28wdllWSXpONWJOWTBCRExaMjVoallSQkQ4UU10UVYyQWxYRUnSAWBBVV95cUxQbkR2eVUzRWdyVTNyeEhLZXB2ZFdxaW9ZZ3RQLWxZal9OTnQtMU5FcGs4OHo4a2UtWGdndEUxbjVnOXBTVHdxN1dtNGtwWTlSRkFKdXRMZS0xXzBSTVhjOU8?oc=5",
-   "reports": 2,
+   "reports": 4,
    "casualty": true
   }
  ],
