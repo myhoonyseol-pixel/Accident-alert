@@ -4174,6 +4174,31 @@
     "폭발",
     "함께"
    ]
+  },
+  "34eb7e64ae3fe435": {
+   "ts": 1788843068.576426,
+   "tok": [
+    "경주",
+    "공장",
+    "부상",
+    "숨지고",
+    "폭발",
+    "화재"
+   ]
+  },
+  "cade245056765507": {
+   "ts": 1788843068.577237,
+   "tok": [
+    "굴착기",
+    "끼임",
+    "사망",
+    "사이",
+    "작업자",
+    "차량",
+    "파주",
+    "폐기물처리장",
+    "후진"
+   ]
   }
  },
  "initialized": true,
@@ -4342,7 +4367,7 @@
     "화물차"
    ],
    "link": "https://news.google.com/rss/articles/CBMiYEFVX3lxTFAwRXE4UW93aXdnQzkwS2E2R09QVkdWdWtKbUVyYUFTTjF3V0lSYmpXWlFFeXgyTFlwb3hXU3dZbEFQWGF0YXJYUEQ0b3JlRDBTVHo3WEFDQkpsN253NkIyTg?oc=5",
-   "reports": 1,
+   "reports": 2,
    "casualty": true
   },
   {
@@ -4359,7 +4384,7 @@
     "함께"
    ],
    "link": "https://news.google.com/rss/articles/CBMiW0FVX3lxTFAtUURjYnh6OEd6Ui1KaVJQZ3ktV2dYbnYxVnN1NjZ4bEhsT1dNd21aVmo3S1hlR28wdllWSXpONWJOWTBCRExaMjVoallSQkQ4UU10UVYyQWxYRUnSAWBBVV95cUxQbkR2eVUzRWdyVTNyeEhLZXB2ZFdxaW9ZZ3RQLWxZal9OTnQtMU5FcGs4OHo4a2UtWGdndEUxbjVnOXBTVHdxN1dtNGtwWTlSRkFKdXRMZS0xXzBSTVhjOU8?oc=5",
-   "reports": 1,
+   "reports": 2,
    "casualty": true
   }
  ],
