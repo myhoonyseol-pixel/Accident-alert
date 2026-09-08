@@ -4286,6 +4286,30 @@
     "폭발",
     "함께"
    ]
+  },
+  "30f93ea371114a42": {
+   "ts": 1788844736.428227,
+   "tok": [
+    "경주",
+    "공장",
+    "부상",
+    "사망",
+    "폭발",
+    "화재"
+   ]
+  },
+  "128f6d9388b41013": {
+   "ts": 1788844736.429046,
+   "tok": [
+    "경주",
+    "기계",
+    "부상",
+    "사망",
+    "폐기물공장",
+    "폭발",
+    "해체",
+    "화재"
+   ]
   }
  },
  "initialized": true,
@@ -4471,7 +4495,7 @@
     "함께"
    ],
    "link": "https://news.google.com/rss/articles/CBMiW0FVX3lxTFAtUURjYnh6OEd6Ui1KaVJQZ3ktV2dYbnYxVnN1NjZ4bEhsT1dNd21aVmo3S1hlR28wdllWSXpONWJOWTBCRExaMjVoallSQkQ4UU10UVYyQWxYRUnSAWBBVV95cUxQbkR2eVUzRWdyVTNyeEhLZXB2ZFdxaW9ZZ3RQLWxZal9OTnQtMU5FcGs4OHo4a2UtWGdndEUxbjVnOXBTVHdxN1dtNGtwWTlSRkFKdXRMZS0xXzBSTVhjOU8?oc=5",
-   "reports": 4,
+   "reports": 5,
    "casualty": true
   }
  ],
