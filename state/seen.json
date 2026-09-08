@@ -4005,6 +4005,46 @@
     "천안",
     "호두과자"
    ]
+  },
+  "3591dc10002f1532": {
+   "ts": 1788831266.596286,
+   "tok": [
+    "40",
+    "굴착기",
+    "끼임",
+    "사망",
+    "사이에",
+    "작업자",
+    "파주",
+    "폐기물처리장",
+    "화물차"
+   ]
+  },
+  "671538d9258880a4": {
+   "ts": 1788831266.596826,
+   "tok": [
+    "공장",
+    "관리",
+    "리스크",
+    "비상",
+    "사망",
+    "씨에스윈드",
+    "안전",
+    "작업자",
+    "포르투갈",
+    "풍력타워"
+   ]
+  },
+  "487c7ba5c3308666": {
+   "ts": 1788831266.5973,
+   "tok": [
+    "40",
+    "남성",
+    "사망",
+    "작업하던",
+    "파주",
+    "폐기물처리업체"
+   ]
   }
  },
  "initialized": true,
@@ -4171,7 +4211,27 @@
    "link": "https://news.google.com/rss/articles/CBMia0FVX3lxTE40RUZYejNKY0tFT2lKa2E1V1FIMmRwN1hTQ2VKMmFMYjlpdzk1OWdyVjFLS1BybFA3cjFVSFJpWk5mU1NJYVpsRGxwOXF2WEpuOHpCMGl3aU5Zc1lsM191QTl2dllLenY2SnBB?oc=5",
    "reports": 1,
    "casualty": false
+  },
+  {
+   "ts": 1788831271.680523,
+   "when": "09/08 10:25",
+   "title": "파주 폐기물처리장서 40대 작업자 사망…굴착기와 화물차 사이에 끼여",
+   "updates": 0,
+   "tok": [
+    "40",
+    "굴착기",
+    "끼임",
+    "사망",
+    "사이에",
+    "작업자",
+    "파주",
+    "폐기물처리장",
+    "화물차"
+   ],
+   "link": "https://news.google.com/rss/articles/CBMiYEFVX3lxTFAwRXE4UW93aXdnQzkwS2E2R09QVkdWdWtKbUVyYUFTTjF3V0lSYmpXWlFFeXgyTFlwb3hXU3dZbEFQWGF0YXJYUEQ0b3JlRDBTVHo3WEFDQkpsN253NkIyTg?oc=5",
+   "reports": 1,
+   "casualty": true
   }
  ],
- "sent_since_heartbeat": 0
+ "sent_since_heartbeat": 1
 }
