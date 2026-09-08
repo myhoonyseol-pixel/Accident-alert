@@ -4169,22 +4169,6 @@
  "last_heartbeat": "2026-09-08",
  "events": [
   {
-   "ts": 1788408743.923601,
-   "when": "09/03 06:52",
-   "title": "인천 아파트 베란다 공사하다가…2명 사망",
-   "updates": 0,
-   "tok": [
-    "공사하다",
-    "베란다",
-    "사망",
-    "아파트",
-    "인천"
-   ],
-   "link": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE9ZTnRqWHp3OGw5ZzFodlhfSTdGNVRZMDBlNmlqXzZ4THViWXZESDg0aWgtNWxpZG80NmYwTkRYRDBHXzhZWG5YWnNjbjAxUkJ6cy1N?oc=5",
-   "reports": 2,
-   "casualty": true
-  },
-  {
    "ts": 1788424902.370959,
    "when": "09/03 17:33",
    "title": "울산 샤힌프로젝트 공사 현장서 50대 추락해 숨져",
