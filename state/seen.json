@@ -1,17 +1,5 @@
 {
  "seen": {
-  "f65749a85728e0ab": {
-   "ts": 1788252050.825773,
-   "tok": [
-    "60",
-    "교량",
-    "보수",
-    "사망",
-    "쓰러져",
-    "작업자",
-    "창원"
-   ]
-  },
   "8780af22f3cb0f9e": {
    "ts": 1788256838.875544,
    "tok": [
@@ -4656,28 +4644,26 @@
     "작업자",
     "회장"
    ]
+  },
+  "99d1b29c2111565b": {
+   "ts": 1788857560.602436,
+   "tok": [
+    "60",
+    "끝내",
+    "사망",
+    "수중",
+    "심정지",
+    "앞바다",
+    "인양",
+    "인천",
+    "작업하던",
+    "잠수사"
+   ]
   }
  },
  "initialized": true,
  "last_heartbeat": "2026-09-08",
  "events": [
-  {
-   "ts": 1788424902.370959,
-   "when": "09/03 17:33",
-   "title": "울산 샤힌프로젝트 공사 현장서 50대 추락해 숨져",
-   "updates": 1,
-   "tok": [
-    "50",
-    "건설현장",
-    "사망",
-    "샤힌프로젝트",
-    "울산",
-    "추락해"
-   ],
-   "link": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE1FNmprMFVaYkQxLVBWNnBXTEZOY1hYc18xazJ0TzRSYVB3VWZucnJpX0hBaHZaYVl0dHRySnJXWVNKd3RaZ18yc2IyTHRpcDVHYmJmNzR3WHZCY2hWRnZNNm9rcnljNEk?oc=5",
-   "reports": 5,
-   "casualty": true
-  },
   {
    "ts": 1788472726.692695,
    "when": "09/04 06:41",
