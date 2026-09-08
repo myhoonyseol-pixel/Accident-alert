@@ -4407,6 +4407,39 @@
     "폭발",
     "화재"
    ]
+  },
+  "1332c3abac5f6e63": {
+   "ts": 1788847515.807112,
+   "tok": [
+    "경주",
+    "공장",
+    "뉴스",
+    "부상",
+    "사망",
+    "폐기물",
+    "폭발"
+   ]
+  },
+  "ccf641abbe1683ff": {
+   "ts": 1788847515.807896,
+   "tok": [
+    "경주",
+    "공장",
+    "부상",
+    "사망",
+    "폭발",
+    "프레스",
+    "해체"
+   ]
+  },
+  "380f5ca8c908413f": {
+   "ts": 1788847515.808639,
+   "tok": [
+    "경주",
+    "공장",
+    "폭발",
+    "화재"
+   ]
   }
  },
  "initialized": true,
@@ -4592,7 +4625,7 @@
     "함께"
    ],
    "link": "https://news.google.com/rss/articles/CBMiW0FVX3lxTFAtUURjYnh6OEd6Ui1KaVJQZ3ktV2dYbnYxVnN1NjZ4bEhsT1dNd21aVmo3S1hlR28wdllWSXpONWJOWTBCRExaMjVoallSQkQ4UU10UVYyQWxYRUnSAWBBVV95cUxQbkR2eVUzRWdyVTNyeEhLZXB2ZFdxaW9ZZ3RQLWxZal9OTnQtMU5FcGs4OHo4a2UtWGdndEUxbjVnOXBTVHdxN1dtNGtwWTlSRkFKdXRMZS0xXzBSTVhjOU8?oc=5",
-   "reports": 7,
+   "reports": 9,
    "casualty": true
   }
  ],
