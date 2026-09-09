@@ -1,52 +1,5 @@
 {
  "seen": {
-  "78f18707e69c58de": {
-   "ts": 1788328677.68899,
-   "tok": [
-    "당진",
-    "부지",
-    "산소공장",
-    "없어",
-    "인명피해",
-    "폭발",
-    "현대제철"
-   ]
-  },
-  "c0563b9a729ef390": {
-   "ts": 1788328677.690016,
-   "tok": [
-    "공장",
-    "구본영",
-    "부지사",
-    "애도",
-    "천안",
-    "피해자",
-    "화재"
-   ]
-  },
-  "a10f5771607191dd": {
-   "ts": 1788328677.690189,
-   "tok": [
-    "당진제철소",
-    "산소공장",
-    "없어",
-    "인명피해",
-    "현대제철",
-    "화재"
-   ]
-  },
-  "fc9093e7d6e9ed87": {
-   "ts": 1788328677.690652,
-   "tok": [
-    "당진제철소",
-    "산소공장",
-    "생산차질",
-    "없어",
-    "인명피해",
-    "폭발",
-    "현대제철"
-   ]
-  },
   "d78634b5d14af508": {
    "ts": 1788331764.456137,
    "tok": [
@@ -4586,6 +4539,17 @@
     "현대중공업",
     "현장점검"
    ]
+  },
+  "b78d660839a35589": {
+   "ts": 1788933877.901373,
+   "tok": [
+    "부산",
+    "부상",
+    "사다리차량",
+    "아파트",
+    "창호작업",
+    "추락"
+   ]
   }
  },
  "initialized": true,
@@ -4721,7 +4685,24 @@
    "link": "https://news.google.com/rss/articles/CBMiW0FVX3lxTFAtUURjYnh6OEd6Ui1KaVJQZ3ktV2dYbnYxVnN1NjZ4bEhsT1dNd21aVmo3S1hlR28wdllWSXpONWJOWTBCRExaMjVoallSQkQ4UU10UVYyQWxYRUnSAWBBVV95cUxQbkR2eVUzRWdyVTNyeEhLZXB2ZFdxaW9ZZ3RQLWxZal9OTnQtMU5FcGs4OHo4a2UtWGdndEUxbjVnOXBTVHdxN1dtNGtwWTlSRkFKdXRMZS0xXzBSTVhjOU8?oc=5",
    "reports": 17,
    "casualty": true
+  },
+  {
+   "ts": 1788933882.291665,
+   "when": "09/09 14:58",
+   "title": "부산 아파트 창호작업 중 사다리차량서 4명 추락…중경상",
+   "updates": 0,
+   "tok": [
+    "부산",
+    "부상",
+    "사다리차량",
+    "아파트",
+    "창호작업",
+    "추락"
+   ],
+   "link": "https://www.newsis.com/view/NISX20260909_0003782811",
+   "reports": 1,
+   "casualty": true
   }
  ],
- "sent_since_heartbeat": 0
+ "sent_since_heartbeat": 1
 }
