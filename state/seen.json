@@ -4911,22 +4911,6 @@
  "last_heartbeat": "2026-09-09",
  "events": [
   {
-   "ts": 1788488175.832946,
-   "when": "09/04 11:05",
-   "title": "[속보] 경기 파주 탄현면 공장서 화재 발생",
-   "updates": 0,
-   "tok": [
-    "경기",
-    "공장",
-    "탄현면",
-    "파주",
-    "화재"
-   ],
-   "link": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE53NkdnSjlDcV93c2puM0JjVy1qU1FVaUV6WE1PcVc1ZzhPTUlNSG5JNUVyMzdDNXk4WU5LWUp2bzAyRlUxVjJBaXlfTlM0WnZtQXVQRA?oc=5",
-   "reports": 1,
-   "casualty": false
-  },
-  {
    "ts": 1788519635.487723,
    "when": "09/04 19:43",
    "title": "고령군 반도체공장 화재…소방 당국, 진화 중",
