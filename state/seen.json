@@ -4064,29 +4064,22 @@
     "자력",
     "화재"
    ]
+  },
+  "9f9ff385a43768b9": {
+   "ts": 1788995062.917255,
+   "tok": [
+    "50",
+    "부상",
+    "상주",
+    "장작",
+    "제조공장",
+    "캠핑용"
+   ]
   }
  },
  "initialized": true,
  "last_heartbeat": "2026-09-10",
  "events": [
-  {
-   "ts": 1788562685.771685,
-   "when": "09/05 07:44",
-   "title": "경기도 남양주 공장서 화재…\"다량 연기 주의\"",
-   "updates": 0,
-   "tok": [
-    "경기",
-    "공장",
-    "남양주",
-    "다량",
-    "연기",
-    "주의",
-    "화재"
-   ],
-   "link": "https://news.google.com/rss/articles/CBMieEFVX3lxTFBVbFZ6NlJncTZMS2tBUkNIZFFXTllQU3lackl2ZllTQnRySlI5TUlIMlg4WDFHT3I4MFAybEVlVkUzMTJwNkhIak80TzVuZWYtOElBMnNRbW5OMGZVT29iSDFxSlA5T0xReEJaTDhUTThQd3hnR21nSA?oc=5",
-   "reports": 5,
-   "casualty": false
-  },
   {
    "ts": 1788598743.270808,
    "when": "09/05 17:55",
