@@ -3111,10 +3111,20 @@
     "하청노동자",
     "현대중공업"
    ]
+  },
+  "438bee918fa78a5d": {
+   "ts": 1789164221.864485,
+   "tok": [
+    "Pic",
+    "뉴시스",
+    "보는",
+    "사진",
+    "일주일"
+   ]
   }
  },
  "initialized": true,
- "last_heartbeat": "2026-09-11",
+ "last_heartbeat": "2026-09-12",
  "events": [
   {
    "ts": 1788831271.680523,
@@ -3247,5 +3257,5 @@
    "casualty": true
   }
  ],
- "sent_since_heartbeat": 4
+ "sent_since_heartbeat": 0
 }
