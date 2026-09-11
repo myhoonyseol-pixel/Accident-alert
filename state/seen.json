@@ -3114,6 +3114,19 @@
     "전남광주",
     "철제"
    ]
+  },
+  "7b843e3b2fd4d453": {
+   "ts": 1789147088.342706,
+   "tok": [
+    "노동부",
+    "사망",
+    "올해",
+    "이어",
+    "재감독",
+    "특별감독",
+    "하청노동자",
+    "현대중공업"
+   ]
   }
  },
  "initialized": true,
@@ -3250,7 +3263,26 @@
    "link": "https://www.yna.co.kr/view/AKR20260911170900054",
    "reports": 3,
    "casualty": true
+  },
+  {
+   "ts": 1789147094.741074,
+   "when": "09/11 19:00",
+   "title": "올해 하청노동자 5명 숨진 HD현대중공업…노동부, 특별감독 이어 재감독까지",
+   "updates": 0,
+   "tok": [
+    "노동부",
+    "사망",
+    "올해",
+    "이어",
+    "재감독",
+    "특별감독",
+    "하청노동자",
+    "현대중공업"
+   ],
+   "link": "https://www.safety1stnews.com/news/articleView.html?idxno=8498",
+   "reports": 1,
+   "casualty": true
   }
  ],
- "sent_since_heartbeat": 3
+ "sent_since_heartbeat": 4
 }
