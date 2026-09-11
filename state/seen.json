@@ -3458,6 +3458,19 @@
     "화상",
     "화재"
    ]
+  },
+  "df1de0fcdbbddc63": {
+   "ts": 1789113036.593654,
+   "tok": [
+    "60",
+    "건물",
+    "남성",
+    "마포구",
+    "사망",
+    "외벽",
+    "작업자",
+    "추락"
+   ]
   }
  },
  "initialized": true,
@@ -3537,7 +3550,26 @@
    "link": "https://www.newsis.com/view/NISX20260909_0003782811",
    "reports": 1,
    "casualty": true
+  },
+  {
+   "ts": 1789113040.581223,
+   "when": "09/11 16:40",
+   "title": "마포구 5층 건물 외벽서 작업자 추락…60대 남성 숨져",
+   "updates": 0,
+   "tok": [
+    "60",
+    "건물",
+    "남성",
+    "마포구",
+    "사망",
+    "외벽",
+    "작업자",
+    "추락"
+   ],
+   "link": "https://www.newsis.com/view/NISX20260911_0003786309",
+   "reports": 1,
+   "casualty": true
   }
  ],
- "sent_since_heartbeat": 0
+ "sent_since_heartbeat": 1
 }
