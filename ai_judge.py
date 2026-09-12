@@ -36,11 +36,22 @@ skip 이 왜 따로 필요한가
 -----------
 AI 호출이 실패하면 **전부 새 사고로 보고 발송**합니다(fail-open).
 헛알림 하나보다 사고 하나를 놓치는 게 훨씬 위험하기 때문입니다.
+
+다만 이게 조용히 일어나면 안 됩니다. 2026-09-12 02:17 에 답을 읽다 실패해
+AI 검증이 통째로 꺼진 채 "올해 하청노동자 5명 숨진 HD현대중공업…노동부
+특별감독" 기사가 나갔는데, 받는 쪽에서는 AI가 승인한 건지 그냥 새어나온
+건지 구분할 방법이 없었습니다. 그래서 실패하면 세 가지를 합니다.
+
+  1) AI가 실제로 뭐라고 답했는지 로그에 남긴다 (안 남기면 원인을 못 봅니다)
+  2) 한 번 더 물어본다 (실패했을 때만이라 평소 비용은 그대로입니다)
+  3) 그래도 안 되면 판정에 ai="fail" 을 달아 보낸다
+     → main.py 가 알림에 '⚠️ AI 미검증' 을 붙입니다
 """
 import json
 import os
 import re
 import sys
+import time
 
 import requests
 
@@ -195,13 +206,61 @@ new 로 한다. 놓치는 것이 헛알림보다 위험하다.
 
 
 def _extract_json(text: str):
-    text = text.strip()
+    """AI 답에서 **첫 번째로 완성된** JSON 배열만 꺼냅니다.
+
+    왜 '첫 번째'이고 '완성된' 인가
+    ---------------------------
+    예전 코드는 첫 '[' 부터 **마지막** ']' 까지 통째로 잘라 썼습니다.
+
+        start, end = text.find("["), text.rfind("]")
+
+    AI가 답만 주고 끝내면 문제가 없습니다. 그런데 답 뒤에 설명을 한 줄
+    덧붙이거나 배열을 한 번 더 출력하면, 그 뒷부분의 ']' 까지 끌려와서
+    읽기가 통째로 실패합니다. 2026-09-12 02:17 에 실제로 이렇게 터졌습니다.
+
+        [{"i":0,"v":"...","e":-1,"why":"...","chg":""}]   ← 55자, 정상
+        (AI가 여기서 안 멈추고 한 줄 더 씀)                  ← 56번째 글자
+        → Extra data: line 2 column 1 (char 56)
+
+    첫 줄만 읽었으면 아무 문제가 없었습니다. 그런데 읽기가 실패하면
+    '전부 발송'으로 넘어가기 때문에, 이 한 글자 때문에 AI 검증이 사라진 채
+    기사가 나갔습니다. 그래서 괄호 짝을 세어 배열이 닫히는 순간 멈추고,
+    **뒤에 무엇이 붙든 무시합니다.**
+
+    문자열 안의 괄호에 속지 않도록 따옴표 안쪽은 세지 않습니다.
+    제목에 '[속보]' 같은 대괄호가 들어오는 일이 실제로 있습니다.
+    """
+    text = (text or "").strip()
     if text.startswith("```"):
         text = re.sub(r"^```(?:json)?\s*|\s*```$", "", text, flags=re.S)
-    start, end = text.find("["), text.rfind("]")
-    if start == -1 or end == -1:
-        raise ValueError(f"JSON 배열을 찾을 수 없음: {text[:120]}")
-    return json.loads(text[start:end + 1])
+
+    start = text.find("[")
+    if start == -1:
+        raise ValueError(f"JSON 배열을 찾을 수 없음: {text[:150]}")
+
+    depth = 0
+    in_str = False      # 지금 따옴표 안에 있는가
+    escaped = False     # 바로 앞 글자가 역슬래시였는가
+    for i in range(start, len(text)):
+        ch = text[i]
+        if in_str:
+            if escaped:
+                escaped = False
+            elif ch == "\\":
+                escaped = True
+            elif ch == '"':
+                in_str = False
+            continue
+        if ch == '"':
+            in_str = True
+        elif ch in "[{":
+            depth += 1
+        elif ch in "]}":
+            depth -= 1
+            if depth == 0:                      # 바깥 배열이 닫혔다
+                return json.loads(text[start:i + 1])
+
+    raise ValueError(f"배열이 끝나지 않음: {text[:150]}")
 
 
 def judge(candidates, cfg, recent_events=None):
@@ -221,8 +280,11 @@ def judge(candidates, cfg, recent_events=None):
 
     api_key = os.environ.get("ANTHROPIC_API_KEY", "").strip()
     if not api_key:
+        # AI_ENABLED=False 는 일부러 끈 것이므로 표시하지 않지만,
+        # 열쇠가 없는 건 의도한 상태가 아니므로 미검증으로 표시합니다.
         print("[ai] ANTHROPIC_API_KEY 가 없어 AI 판정을 건너뜁니다", file=sys.stderr)
-        return [(c[0], c[1], c[2], c[3], {"v": "new", "e": -1, "chg": ""})
+        return [(c[0], c[1], c[2], c[3],
+                 {"v": "new", "e": -1, "chg": "", "ai": "fail"})
                 for c in candidates]
 
     parts = []
@@ -251,29 +313,49 @@ def judge(candidates, cfg, recent_events=None):
         parts.append(line)
     user_msg = "\n".join(parts)
 
-    try:
-        r = requests.post(
-            API_URL,
-            headers={
-                "x-api-key": api_key,
-                "anthropic-version": API_VERSION,
-                "content-type": "application/json",
-            },
-            json={
-                "model": getattr(cfg, "AI_MODEL", "claude-haiku-4-5-20251001"),
-                "max_tokens": 1200,
-                "system": SYSTEM_PROMPT,
-                "messages": [{"role": "user", "content": user_msg}],
-            },
-            timeout=getattr(cfg, "AI_TIMEOUT", 30),
-        )
-        if r.status_code != 200:
-            raise RuntimeError(f"HTTP {r.status_code}: {r.text[:200]}")
-        body = r.json()
-        verdicts = _extract_json(body["content"][0]["text"])
-    except Exception as e:                              # noqa: BLE001
-        print(f"[ai] 판정 실패 — 거르지 않고 전부 발송합니다: {e}", file=sys.stderr)
-        return [(c[0], c[1], c[2], c[3], {"v": "new", "e": -1, "chg": ""})
+    # 두 번까지 시도합니다. 실패했을 때만 한 번 더 부르는 것이라
+    # 평소 비용은 그대로입니다. 일시적인 통신 오류나 AI가 형식을 어긴
+    # 경우는 다시 물으면 대개 해결됩니다.
+    body, verdicts, raw, last_err = None, None, "", None
+    for attempt in (1, 2):
+        try:
+            r = requests.post(
+                API_URL,
+                headers={
+                    "x-api-key": api_key,
+                    "anthropic-version": API_VERSION,
+                    "content-type": "application/json",
+                },
+                json={
+                    "model": getattr(cfg, "AI_MODEL", "claude-haiku-4-5-20251001"),
+                    "max_tokens": 1200,
+                    "system": SYSTEM_PROMPT,
+                    "messages": [{"role": "user", "content": user_msg}],
+                },
+                timeout=getattr(cfg, "AI_TIMEOUT", 30),
+            )
+            if r.status_code != 200:
+                raise RuntimeError(f"HTTP {r.status_code}: {r.text[:200]}")
+            body = r.json()
+            raw = (body.get("content") or [{}])[0].get("text", "") or ""
+            verdicts = _extract_json(raw)
+            break
+        except Exception as e:                          # noqa: BLE001
+            last_err = e
+            print(f"[ai] {attempt}차 시도 실패: {e}", file=sys.stderr)
+            # AI가 실제로 뭐라고 답했는지 남깁니다. 이게 없으면 다음에
+            # 같은 일이 나도 원인을 짚을 수 없습니다.
+            if raw:
+                print(f"[ai] AI 원문 ↓\n{raw[:500]}", file=sys.stderr)
+            raw = ""
+            if attempt == 1:
+                time.sleep(2)
+
+    if verdicts is None:
+        print(f"[ai] 판정 실패 — 거르지 않고 전부 발송합니다(⚠️ AI 미검증 표시): "
+              f"{last_err}", file=sys.stderr)
+        return [(c[0], c[1], c[2], c[3],
+                 {"v": "new", "e": -1, "chg": "", "ai": "fail"})
                 for c in candidates]
 
     by_i = {}

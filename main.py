@@ -454,6 +454,11 @@ def format_alert(item, place, hits, confidence, link, verdict=None):
     when = (item["published"].astimezone(KST).strftime("%m/%d %H:%M")
             if item["published"] else "시각미상")
     verdict = verdict or {}
+    # AI 판정이 실패해 걸러지지 않은 채 온 기사입니다.
+    # 이 표시가 없으면 받는 쪽에서 'AI가 승인한 것'과 '그냥 새어나온 것'을
+    # 구분할 수 없습니다. 2026-09-12 02:17 에 실제로 그런 일이 있었습니다.
+    warn = "\n\n⚠️ AI 미검증 (판정 실패로 그대로 전달)" if verdict.get("ai") == "fail" else ""
+
     if verdict.get("v") == "update":
         # 이미 알린 사고인데 새 사실이 밝혀진 경우.
         # 같은 내용의 재탕 기사는 여기까지 오지 않고 AI가 걸러냅니다.
@@ -466,7 +471,7 @@ def format_alert(item, place, hits, confidence, link, verdict=None):
         title = item["title"][:80]
         return (f"{head}\n\n{title}\n\n"
                 f"{when} · {item['source']}\n"
-                f"↓ 아래 [기사 보기] 를 누르세요")
+                f"↓ 아래 [기사 보기] 를 누르세요{warn}")
 
     if confidence == "company":
         mark, tag = "🔴", f"{place} · 주요건설사"
@@ -489,7 +494,7 @@ def format_alert(item, place, hits, confidence, link, verdict=None):
             f"[{tag} · {'/'.join(hits[:3])}]\n\n"
             f"{title}\n\n"
             f"{when} · {item['source']}\n"
-            f"↓ 아래 [기사 보기] 를 누르세요")
+            f"↓ 아래 [기사 보기] 를 누르세요{warn}")
 
 
 # ── 메인 ─────────────────────────────────────────────────────
