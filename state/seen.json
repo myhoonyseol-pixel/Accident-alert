@@ -3037,23 +3037,6 @@
  "last_heartbeat": "2026-09-13",
  "events": [
   {
-   "ts": 1788842127.756584,
-   "when": "09/08 13:23",
-   "title": "경주 공장서 폭발과 함께 불…1명 사망·2명 중상",
-   "updates": 0,
-   "tok": [
-    "경주",
-    "공장",
-    "부상",
-    "사망",
-    "폭발",
-    "함께"
-   ],
-   "link": "https://news.google.com/rss/articles/CBMiW0FVX3lxTFAtUURjYnh6OEd6Ui1KaVJQZ3ktV2dYbnYxVnN1NjZ4bEhsT1dNd21aVmo3S1hlR28wdllWSXpONWJOWTBCRExaMjVoallSQkQ4UU10UVYyQWxYRUnSAWBBVV95cUxQbkR2eVUzRWdyVTNyeEhLZXB2ZFdxaW9ZZ3RQLWxZal9OTnQtMU5FcGs4OHo4a2UtWGdndEUxbjVnOXBTVHdxN1dtNGtwWTlSRkFKdXRMZS0xXzBSTVhjOU8?oc=5",
-   "reports": 17,
-   "casualty": true
-  },
-  {
    "ts": 1788933882.291665,
    "when": "09/09 14:58",
    "title": "부산 아파트 창호작업 중 사다리차량서 4명 추락…중경상",
