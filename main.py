@@ -17,7 +17,12 @@ from datetime import datetime, timedelta, timezone
 import requests
 
 import ai_judge
-import ai_judge_gpt
+try:
+    import ai_judge_gpt
+except ImportError:
+    ai_judge_gpt = None
+    print("[안내] ai_judge_gpt.py 가 없어 GPT 비교 판정을 건너뜁니다.", file=sys.stderr)
+
 import config
 import filters
 
@@ -345,6 +350,95 @@ def get_access_token(refresh_token=None, label="본인", critical=True):
     return data["access_token"], int(data.get("refresh_token_expires_in", 0))
 
 
+
+def _gpt_telegram_ready():
+    """GPT 비교용 Telegram 설정이 모두 있는지 확인합니다."""
+    return bool(
+        ai_judge_gpt is not None
+        and os.environ.get("OPENAI_API_KEY", "").strip()
+        and os.environ.get("TELEGRAM_BOT_TOKEN", "").strip()
+        and os.environ.get("GPT_TELEGRAM_CHAT_ID", "").strip()
+    )
+
+
+def send_gpt_telegram(text: str) -> bool:
+    """GPT 비교방에만 메시지를 보냅니다. 기존 Claude Telegram 방과 완전히 별도입니다."""
+    token = os.environ.get("TELEGRAM_BOT_TOKEN", "").strip()
+    chat_id = os.environ.get("GPT_TELEGRAM_CHAT_ID", "").strip()
+    if not token or not chat_id:
+        return False
+    try:
+        r = requests.post(
+            f"https://api.telegram.org/bot{token}/sendMessage",
+            json={
+                "chat_id": chat_id,
+                "text": text[:4000],
+                "disable_web_page_preview": True,
+            },
+            timeout=15,
+        )
+        if not r.ok:
+            print(f"[gpt-telegram] 발송 실패 HTTP {r.status_code}: {r.text[:200]}",
+                  file=sys.stderr)
+            return False
+        return True
+    except Exception as e:  # noqa: BLE001
+        print(f"[gpt-telegram] 발송 실패: {e}", file=sys.stderr)
+        return False
+
+
+def format_gpt_compare(item, verdict):
+    """GPT 비교방에 표시할 메시지."""
+    decision = verdict.get("decision", "ERROR")
+    detail = verdict.get("type", "ERROR")
+    reason = verdict.get("why", "") or "-"
+    model = verdict.get("model", "")
+    chg = verdict.get("chg", "")
+
+    if decision == "ALERT":
+        head = "🔴 ALERT"
+    elif decision == "NO_ALERT":
+        head = "⚪ NO_ALERT"
+    else:
+        head = "🟡 ERROR"
+
+    title = (item.get("title") or "")[:180]
+    source = item.get("source", "")
+    pub = item.get("published")
+    when = pub.astimezone(KST).strftime("%m/%d %H:%M") if pub else "시각미상"
+    link = item.get("link", "")
+
+    lines = [
+        "🤖 GPT 비교판정",
+        "",
+        head,
+        f"유형: {detail}",
+        f"제목: {title}",
+        f"이유: {reason}",
+    ]
+    if chg:
+        lines.append(f"변경: {chg}")
+    lines.append(f"시각: {when} · {source}")
+    if model:
+        lines.append(f"모델: {model}")
+    if link:
+        lines.extend(["", "▼ 원문 기사", link])
+    return "\n".join(lines)
+
+
+def send_gpt_results(results):
+    """GPT가 본 후보를 ALERT/NO_ALERT 구분 없이 모두 비교방으로 보냅니다."""
+    if not results:
+        return 0
+    sent = 0
+    for item, _place, _hits, _confidence, verdict in results:
+        if send_gpt_telegram(format_gpt_compare(item, verdict)):
+            sent += 1
+        time.sleep(0.15)
+    print(f"[gpt-telegram] {sent}/{len(results)}건 비교방 발송")
+    return sent
+
+
 def broadcast(text: str, link: str = "", subject: str = "") -> int:
     """받는 사람 전원에게 카카오톡 + 이메일로 보냅니다.
 
@@ -647,82 +741,13 @@ def maybe_heartbeat(state):
     return bool(sent)
 
 
-def send_gpt_comparison(text: str, link: str = "") -> bool:
-    """GPT 비교 결과를 별도 Telegram 방으로 보냅니다.
-
-    기존 Claude 알림 방에는 영향을 주지 않습니다.
-    필요한 Secrets:
-      OPENAI_API_KEY
-      GPT_COMPARE_TELEGRAM_BOT_TOKEN (없으면 기존 TELEGRAM_BOT_TOKEN 사용)
-      GPT_COMPARE_TELEGRAM_CHAT_ID
-    """
-    chat_id = os.environ.get("GPT_COMPARE_TELEGRAM_CHAT_ID", "").strip()
-    if not chat_id:
-        return False
-
-    token = (
-        os.environ.get("GPT_COMPARE_TELEGRAM_BOT_TOKEN", "").strip()
-        or os.environ.get("TELEGRAM_BOT_TOKEN", "").strip()
-    )
-    if not token:
-        print("[gpt] 비교방 Telegram Bot Token이 없어 발송 생략", file=sys.stderr)
-        return False
-
-    payload = {"chat_id": chat_id, "text": text[:4000]}
-    if link:
-        payload["disable_web_page_preview"] = False
-
-    try:
-        r = requests.post(
-            f"https://api.telegram.org/bot{token}/sendMessage",
-            json=payload,
-            timeout=10,
-        )
-        if r.status_code != 200:
-            print(f"[gpt] 비교방 Telegram 발송 실패: {r.status_code} {r.text}",
-                  file=sys.stderr)
-            return False
-        return True
-    except Exception as e:
-        print(f"[gpt] 비교방 Telegram 발송 실패: {e}", file=sys.stderr)
-        return False
-
-
-def format_gpt_comparison(item, place, hits, confidence, result):
-    decision = result.get("decision", "ERROR")
-    typ = result.get("type", "ERROR")
-    reason = result.get("reason", "")
-    title = item.get("title", "")
-    published = item.get("published")
-    if published:
-        when = published.astimezone(KST).strftime("%m/%d %H:%M")
-    else:
-        when = ""
-
-    icon = "🔴" if decision == "ALERT" else ("⚪" if decision == "NO_ALERT" else "⚠️")
-    lines = [
-        f"{icon} GPT 판정: {decision}",
-        f"세부: {typ}",
-        f"제목: {title[:180]}",
-    ]
-    if when:
-        lines.append(f"시각: {when}")
-    if place:
-        lines.append(f"분류: {place}")
-    if reason:
-        lines.append(f"근거: {reason[:500]}")
-    if item.get("link"):
-        lines.append(f"기사: {item['link']}")
-    return "\n".join(lines)
-
-
-
 def main():
     state = load_state()
     first_run = not state.get("initialized")
 
     events = recent_events(state)
     picked = pick_candidates(state, events)
+    gpt_results = []
     print(f"신규 매칭 {len(picked)}건 (first_run={first_run})")
 
     if first_run:
@@ -733,29 +758,35 @@ def main():
         return
 
     # AI 최종 판정 — 키워드가 걸러낸 후보만 넘깁니다.
-    # Claude와 GPT가 동일한 후보를 독립적으로 판단하도록 합니다.
+    # 후보가 없으면 호출 자체가 없으므로 조용한 날은 비용 0원입니다.
     if picked:
         cap = getattr(config, "AI_MAX_CANDIDATES", 20)
         if len(picked) > cap:
             print(f"후보 {len(picked)}건 중 상한 {cap}건만 AI 판단", file=sys.stderr)
             picked = picked[:cap]
 
-        # ── GPT 비교판정 ─────────────────────────────────────
-        # GPT 결과는 Claude의 실제 발송 여부에 영향을 주지 않습니다.
-        gpt_results = ai_judge_gpt.judge_gpt(picked, events)
-        if gpt_results:
-            print(f"[gpt] 비교 판정 {len(gpt_results)}건")
-            for gi in gpt_results:
-                item, place, hits, conf, gres = gi
-                send_gpt_comparison(
-                    format_gpt_comparison(item, place, hits, conf, gres),
-                    item.get("link", "") if isinstance(item, dict) else "",
-                )
+        # 같은 후보 묶음을 GPT에도 독립적으로 보냅니다.
+        # GPT 결과는 아래 Claude의 picked 값을 절대 바꾸지 않습니다.
+        gpt_candidates = list(picked)
+        if _gpt_telegram_ready():
+            gpt_results = ai_judge_gpt.judge(gpt_candidates, config, events)
+        else:
+            missing = []
+            if ai_judge_gpt is None:
+                missing.append("ai_judge_gpt.py")
+            if not os.environ.get("OPENAI_API_KEY", "").strip():
+                missing.append("OPENAI_API_KEY")
+            if not os.environ.get("TELEGRAM_BOT_TOKEN", "").strip():
+                missing.append("TELEGRAM_BOT_TOKEN")
+            if not os.environ.get("GPT_TELEGRAM_CHAT_ID", "").strip():
+                missing.append("GPT_TELEGRAM_CHAT_ID")
+            print(f"[gpt] 비교판정 건너뜀 — 누락: {', '.join(missing)}", file=sys.stderr)
 
-        # ── 기존 Claude 판정 ─────────────────────────────────
         picked = ai_judge.judge(picked, config, events)
 
         # 같은 사고의 후속 알림은 상한을 둡니다.
+        # 대형 사고는 후속 기사가 수십 건 쏟아지는데, 새 사실이 있는 건만
+        # AI가 걸러주더라도 그것만으로 여러 번일 수 있기 때문입니다.
         limit = getattr(config, "EVENT_MAX_UPDATES", 2)
         filtered = []
         for item, place, hits, conf, verdict in picked:
@@ -774,6 +805,11 @@ def main():
                       f"{limit}회 후속 발송", file=sys.stderr)
         picked = filtered
         print(f"AI 판정 후 {len(picked)}건")
+
+    # GPT 비교 결과는 Claude 운영 알림과 별도로 전송합니다.
+    # NO_ALERT / DUP / IRRELEVANT도 비교를 위해 전부 보냅니다.
+    if gpt_results:
+        send_gpt_results(gpt_results)
 
     spreading = maybe_spread(events)
     need_token = bool(picked) or bool(spreading) or config.HEARTBEAT_ENABLED
