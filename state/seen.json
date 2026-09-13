@@ -3053,31 +3053,35 @@
     "중대재해",
     "현대엔지니어링"
    ]
+  },
+  "50b66bf894bc9346": {
+   "ts": 1789264071.392014,
+   "tok": [
+    "공장",
+    "남원",
+    "목재펠릿",
+    "병원",
+    "생산",
+    "어현동",
+    "이송",
+    "화재"
+   ]
+  },
+  "90992cc986feb9fc": {
+   "ts": 1789264071.392531,
+   "tok": [
+    "17",
+    "공장",
+    "남원",
+    "목재펠릿",
+    "연기흡입",
+    "작업자"
+   ]
   }
  },
  "initialized": true,
  "last_heartbeat": "2026-09-13",
  "events": [
-  {
-   "ts": 1788831271.680523,
-   "when": "09/08 10:25",
-   "title": "파주 폐기물처리장서 40대 작업자 사망…굴착기와 화물차 사이에 끼여",
-   "updates": 0,
-   "tok": [
-    "40",
-    "굴착기",
-    "끼임",
-    "사망",
-    "사이에",
-    "작업자",
-    "파주",
-    "폐기물처리장",
-    "화물차"
-   ],
-   "link": "https://news.google.com/rss/articles/CBMiYEFVX3lxTFAwRXE4UW93aXdnQzkwS2E2R09QVkdWdWtKbUVyYUFTTjF3V0lSYmpXWlFFeXgyTFlwb3hXU3dZbEFQWGF0YXJYUEQ0b3JlRDBTVHo3WEFDQkpsN253NkIyTg?oc=5",
-   "reports": 2,
-   "casualty": true
-  },
   {
    "ts": 1788842127.756584,
    "when": "09/08 13:23",
