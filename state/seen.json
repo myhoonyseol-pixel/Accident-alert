@@ -3071,6 +3071,20 @@
     "장의",
     "통로"
    ]
+  },
+  "c82caf60572c3286": {
+   "ts": 1789332561.335547,
+   "tok": [
+    "40",
+    "건설현장",
+    "고물상",
+    "맞아",
+    "머리",
+    "북구",
+    "빔에",
+    "사망",
+    "아파트"
+   ]
   }
  },
  "initialized": true,
@@ -3168,7 +3182,27 @@
    "link": "https://www.safety1stnews.com/news/articleView.html?idxno=8498",
    "reports": 1,
    "casualty": true
+  },
+  {
+   "ts": 1789332571.147332,
+   "when": "09/14 00:48",
+   "title": "북구 아파트 공사장서 H빔에 머리 맞아 40대 고물상 숨져",
+   "updates": 0,
+   "tok": [
+    "40",
+    "건설현장",
+    "고물상",
+    "맞아",
+    "머리",
+    "북구",
+    "빔에",
+    "사망",
+    "아파트"
+   ],
+   "link": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE40QXZxTVFMTGFzcjZIMzF5U2Eza3JpZ3pTVkRpemtxX1hBM3N6Zy1QZEFyVkFvT2c5UndmNV9hZnhnN2U0aEpqOTZLYzNYUmM?oc=5",
+   "reports": 1,
+   "casualty": true
   }
  ],
- "sent_since_heartbeat": 0
+ "sent_since_heartbeat": 1
 }
