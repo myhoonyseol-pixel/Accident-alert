@@ -3383,6 +3383,19 @@
     "창간기획",
     "키워야"
    ]
+  },
+  "12543bc6b97084bd": {
+   "ts": 1789427844.881008,
+   "tok": [
+    "10",
+    "감전",
+    "높이",
+    "무대",
+    "설치하던",
+    "외국",
+    "작업자",
+    "콘서트"
+   ]
   }
  },
  "initialized": true,
@@ -3483,7 +3496,26 @@
    "link": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE40QXZxTVFMTGFzcjZIMzF5U2Eza3JpZ3pTVkRpemtxX1hBM3N6Zy1QZEFyVkFvT2c5UndmNV9hZnhnN2U0aEpqOTZLYzNYUmM?oc=5",
    "reports": 1,
    "casualty": true
+  },
+  {
+   "ts": 1789427856.246432,
+   "when": "09/15 08:05",
+   "title": "콘서트 무대 설치하던 외국인 노동자, 10ｍ 높이서 감전",
+   "updates": 0,
+   "tok": [
+    "10",
+    "감전",
+    "높이",
+    "무대",
+    "설치하던",
+    "외국",
+    "작업자",
+    "콘서트"
+   ],
+   "link": "https://www.yna.co.kr/view/AKR20260915022800051",
+   "reports": 1,
+   "casualty": true
   }
  ],
- "sent_since_heartbeat": 0
+ "sent_since_heartbeat": 1
 }
