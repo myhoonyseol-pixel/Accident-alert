@@ -298,6 +298,71 @@ def collect():
     return items
 
 
+# ── 기사 본문 가져오기 ────────────────────────────────────────
+_TAG_RE     = re.compile(r"<(script|style)[^>]*>.*?</\1>", re.S | re.I)
+_ANYTAG_RE  = re.compile(r"<[^>]+>")
+_SPACE_RE   = re.compile(r"\s+")
+
+
+def fetch_body(link: str, limit: int = 1200) -> str:
+    """기사 본문 앞부분을 가져옵니다. 실패하면 빈 문자열.
+
+    왜 필요한가
+    -----------
+    제목만으로는 담당자가 정작 알아야 할 세 가지를 절대 알 수 없습니다.
+
+      · 사고가 **언제** 났는가 — 제목에 날짜를 쓰는 기사는 거의 없습니다.
+        2026-09-11 19:35 광주 사고가 09-14 기사로 와서 오늘 난 줄 알았습니다.
+      · **시공사**가 어디인가 — 본문 두세 문장 뒤에 나옵니다. 제목에 회사명이
+        있었던 적이 거의 없습니다.
+      · 다친 사람이 **작업자**인가 — 제목의 '40대 고물상'이 실은 하청
+        사업주였습니다. 제목만 보고는 외부인 사고로 오해합니다.
+
+    AI에게 제목만 주면 정규식이 본 것과 같은 재료로 판단하게 됩니다.
+    그러면 AI를 쓰는 의미가 없습니다.
+
+    주의
+    ----
+    · 후보(회차당 0~3건)에만 부릅니다. 수집분 1,100건 전부에 부르면 안 됩니다.
+    · 구글뉴스 주소(news.google.com/rss/articles/CBMi...)는 **우회 주소**라
+      풀리지 않을 수 있습니다. 실패해도 조용히 넘어가고 제목만으로 판단합니다.
+      기능이 없던 때와 똑같이 동작하므로 손해가 없습니다.
+    · 본문을 못 가져와도 절대 예외를 밖으로 던지지 않습니다. 기사 하나 때문에
+      감시 전체가 멈추는 일은 없어야 합니다.
+    """
+    if not link:
+        return ""
+    try:
+        r = requests.get(
+            link,
+            headers={
+                # 기본 파이썬 UA는 막는 언론사가 많습니다.
+                "User-Agent": ("Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
+                               "AppleWebKit/537.36 (KHTML, like Gecko) "
+                               "Chrome/124.0 Safari/537.36"),
+                "Accept-Language": "ko-KR,ko;q=0.9",
+            },
+            timeout=getattr(config, "BODY_TIMEOUT", 4),
+            allow_redirects=True,
+        )
+        if r.status_code != 200:
+            return ""
+        r.encoding = r.apparent_encoding or r.encoding
+        text = _TAG_RE.sub(" ", r.text)          # script·style 통째로 제거
+        text = _ANYTAG_RE.sub(" ", text)         # 남은 태그 제거
+        text = html.unescape(text)
+        text = _SPACE_RE.sub(" ", text).strip()
+
+        # 기사 앞에 붙는 메뉴·네비게이션을 건너뜁니다. 한국 기사 본문은
+        # 거의 항상 '○일 오후 ○시께' 또는 '지난 ○일' 로 시작합니다.
+        m = re.search(r"(지난\s*\d{1,2}일|\d{1,2}일\s*(오전|오후|낮|새벽))", text)
+        if m and m.start() > 200:
+            text = text[max(0, m.start() - 120):]
+        return text[:limit]
+    except Exception:                            # noqa: BLE001
+        return ""
+
+
 # ── 카카오 발송 ──────────────────────────────────────────────
 def get_access_token(refresh_token=None, label="본인", critical=True):
     payload = {
@@ -350,9 +415,8 @@ def get_access_token(refresh_token=None, label="본인", critical=True):
     return data["access_token"], int(data.get("refresh_token_expires_in", 0))
 
 
-
-def _gpt_telegram_ready():
-    """GPT 비교용 Telegram 설정이 모두 있는지 확인합니다."""
+def _gpt_ready():
+    """GPT 비교 판정과 전용 Telegram 발송에 필요한 설정을 확인합니다."""
     return bool(
         ai_judge_gpt is not None
         and os.environ.get("OPENAI_API_KEY", "").strip()
@@ -362,7 +426,7 @@ def _gpt_telegram_ready():
 
 
 def send_gpt_telegram(text: str) -> bool:
-    """GPT 비교방에만 메시지를 보냅니다. 기존 Claude Telegram 방과 완전히 별도입니다."""
+    """GPT가 ALERT로 판정한 기사만 전용 비교방으로 보냅니다."""
     token = os.environ.get("TELEGRAM_BOT_TOKEN", "").strip()
     chat_id = os.environ.get("GPT_TELEGRAM_CHAT_ID", "").strip()
     if not token or not chat_id:
@@ -387,20 +451,15 @@ def send_gpt_telegram(text: str) -> bool:
         return False
 
 
-def format_gpt_compare(item, verdict):
-    """GPT 비교방에 표시할 메시지."""
-    decision = verdict.get("decision", "ERROR")
-    detail = verdict.get("type", "ERROR")
+def format_gpt_alert(item, verdict):
+    """GPT 전용방에 표시할 ALERT/UPDATE 메시지."""
+    detail = verdict.get("type", "NEW")
     reason = verdict.get("why", "") or "-"
     model = verdict.get("model", "")
-    chg = verdict.get("chg", "")
-
-    if decision == "ALERT":
-        head = "🔴 ALERT"
-    elif decision == "NO_ALERT":
-        head = "⚪ NO_ALERT"
-    else:
-        head = "🟡 ERROR"
+    occurred = verdict.get("occurred", "") or ""
+    company = verdict.get("co", "") or ""
+    what = verdict.get("what", "") or ""
+    chg = verdict.get("chg", "") or ""
 
     title = (item.get("title") or "")[:180]
     source = item.get("source", "")
@@ -409,16 +468,24 @@ def format_gpt_compare(item, verdict):
     link = item.get("link", "")
 
     lines = [
-        "🤖 GPT 비교판정",
+        "🤖 GPT 사고속보",
         "",
-        head,
-        f"유형: {detail}",
+        f"🔴 {detail}",
         f"제목: {title}",
-        f"이유: {reason}",
     ]
+    if what:
+        lines.append(f"핵심: {what}")
+    extra = []
+    if occurred:
+        extra.append(f"🕐 사고 발생 {occurred}")
+    if company:
+        extra.append(f"🏗 {company}")
+    if extra:
+        lines.append(" · ".join(extra))
     if chg:
         lines.append(f"변경: {chg}")
-    lines.append(f"시각: {when} · {source}")
+    lines.append(f"이유: {reason}")
+    lines.append(f"기사시각: {when} · {source}")
     if model:
         lines.append(f"모델: {model}")
     if link:
@@ -426,16 +493,35 @@ def format_gpt_compare(item, verdict):
     return "\n".join(lines)
 
 
-def send_gpt_results(results):
-    """GPT가 본 후보를 ALERT/NO_ALERT 구분 없이 모두 비교방으로 보냅니다."""
+def send_gpt_alerts(results):
+    """GPT 결과 중 NEW/UPDATE(ALERT)만 비교방으로 전송합니다.
+
+    SKIP/DUP/ERROR는 Telegram에 보내지 않고 GitHub Actions 로그에만 남깁니다.
+    """
     if not results:
         return 0
+    alert_results = []
+    skipped = 0
+    errors = 0
+    for row in results:
+        verdict = row[4]
+        if verdict.get("decision") == "ALERT" and verdict.get("v") in ("new", "update"):
+            alert_results.append(row)
+        elif verdict.get("decision") == "ERROR" or verdict.get("v") == "error":
+            errors += 1
+            print(f"[gpt] ERROR - {row[0].get('title','')[:60]} — {verdict.get('why','')}",
+                  file=sys.stderr)
+        else:
+            skipped += 1
+
     sent = 0
-    for item, _place, _hits, _confidence, verdict in results:
-        if send_gpt_telegram(format_gpt_compare(item, verdict)):
+    for item, _place, _hits, _confidence, verdict in alert_results:
+        if send_gpt_telegram(format_gpt_alert(item, verdict)):
             sent += 1
         time.sleep(0.15)
-    print(f"[gpt-telegram] {sent}/{len(results)}건 비교방 발송")
+
+    print(f"[gpt-telegram] ALERT {sent}/{len(alert_results)}건 발송 "
+          f"(미발송 NO_ALERT {skipped}건 / ERROR {errors}건)")
     return sent
 
 
@@ -554,6 +640,18 @@ def format_alert(item, place, hits, confidence, link, verdict=None):
     # 구분할 수 없습니다. 2026-09-12 02:17 에 실제로 그런 일이 있었습니다.
     warn = "\n\n⚠️ AI 미검증 (판정 실패로 그대로 전달)" if verdict.get("ai") == "fail" else ""
 
+    # AI가 본문에서 뽑아낸 사실 둘. 본문을 못 가져왔으면 빈 값이라 안 붙습니다.
+    #
+    # 발생 시각을 왜 따로 보여주나 — 기사 작성 시각과 사고 시각이 며칠씩
+    # 벌어지는 일이 흔합니다. 2026-09-11 19:35 광주 사고가 09-14 기사로 와서
+    # 오늘 난 사고로 오해했습니다. 막지 말고 보이게 하자는 결정입니다.
+    facts = []
+    if verdict.get("occurred"):
+        facts.append(f"🕐 사고 발생 {verdict['occurred']}")
+    if verdict.get("co"):
+        facts.append(f"🏗 {verdict['co']}")
+    fact_line = ("\n" + " · ".join(facts)) if facts else ""
+
     if verdict.get("v") == "update":
         # 이미 알린 사고인데 새 사실이 밝혀진 경우.
         # 같은 내용의 재탕 기사는 여기까지 오지 않고 AI가 걸러냅니다.
@@ -564,7 +662,7 @@ def format_alert(item, place, hits, confidence, link, verdict=None):
         # (2026-09-02 "상주소식 - 공장서 화재…인명피해 없어 - 경북신문" 이
         #  두 번 잘려서 "상주소식"만 남아 발송된 사고)
         title = item["title"][:80]
-        return (f"{head}\n\n{title}\n\n"
+        return (f"{head}\n\n{title}{fact_line}\n\n"
                 f"{when} · {item['source']}\n"
                 f"↓ 아래 [기사 보기] 를 누르세요{warn}")
 
@@ -587,7 +685,7 @@ def format_alert(item, place, hits, confidence, link, verdict=None):
     #    링크는 아래 send_kakao 의 '기사 보기' 버튼에 실립니다(길이 제한 없음).
     return (f"{mark} 사고 속보 감지\n"
             f"[{tag} · {'/'.join(hits[:3])}]\n\n"
-            f"{title}\n\n"
+            f"{title}{fact_line}\n\n"
             f"{when} · {item['source']}\n"
             f"↓ 아래 [기사 보기] 를 누르세요{warn}")
 
@@ -765,10 +863,20 @@ def main():
             print(f"후보 {len(picked)}건 중 상한 {cap}건만 AI 판단", file=sys.stderr)
             picked = picked[:cap]
 
-        # 같은 후보 묶음을 GPT에도 독립적으로 보냅니다.
-        # GPT 결과는 아래 Claude의 picked 값을 절대 바꾸지 않습니다.
+        # AI에게 넘기기 직전에 본문을 가져옵니다.
+        # 후보만 대상이라 보통 0~3건이고, 실패해도 제목만으로 판단합니다.
+        if getattr(config, "READ_BODY", True):
+            got = 0
+            for item, *_ in picked:
+                item["body"] = fetch_body(item.get("link", ""))
+                if item["body"]:
+                    got += 1
+            print(f"본문 {got}/{len(picked)}건 확보")
+
+        # 같은 본문 포함 후보를 GPT에도 독립적으로 보냅니다.
+        # GPT 결과는 Claude 운영 판정과 발송 여부를 절대 바꾸지 않습니다.
         gpt_candidates = list(picked)
-        if _gpt_telegram_ready():
+        if _gpt_ready():
             gpt_results = ai_judge_gpt.judge(gpt_candidates, config, events)
         else:
             missing = []
@@ -806,10 +914,10 @@ def main():
         picked = filtered
         print(f"AI 판정 후 {len(picked)}건")
 
-    # GPT 비교 결과는 Claude 운영 알림과 별도로 전송합니다.
-    # NO_ALERT / DUP / IRRELEVANT도 비교를 위해 전부 보냅니다.
+    # GPT 비교 결과는 Claude 운영 알림과 완전히 별개입니다.
+    # NEW/UPDATE만 GPT 전용방으로 보내고, SKIP/DUP/ERROR는 로그에만 남깁니다.
     if gpt_results:
-        send_gpt_results(gpt_results)
+        send_gpt_alerts(gpt_results)
 
     spreading = maybe_spread(events)
     need_token = bool(picked) or bool(spreading) or config.HEARTBEAT_ENABLED
