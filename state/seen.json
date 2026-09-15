@@ -3267,6 +3267,18 @@
     "진화",
     "화재"
    ]
+  },
+  "4bd9c878c0dd0c27": {
+   "ts": 1789443393.66029,
+   "tok": [
+    "달비계",
+    "빌딩",
+    "사망",
+    "작업자",
+    "추락",
+    "코킹작업",
+    "탑승"
+   ]
   }
  },
  "initialized": true,
@@ -3386,7 +3398,25 @@
    "link": "https://www.yna.co.kr/view/AKR20260915022800051",
    "reports": 3,
    "casualty": true
+  },
+  {
+   "ts": 1789443400.980632,
+   "when": "09/15 08:54",
+   "title": "빌딩 코킹작업 달비계 탑승 노동자 추락 사망",
+   "updates": 0,
+   "tok": [
+    "달비계",
+    "빌딩",
+    "사망",
+    "작업자",
+    "추락",
+    "코킹작업",
+    "탑승"
+   ],
+   "link": "https://news.google.com/rss/articles/CBMicEFVX3lxTE9sZENETkJMS3BlaTdoQlhsTGprNGg5TmVOQVZ6UEJVaDlUVVBuN1lCSG1ublRadDRscmhtdkZ0T19qY1FUX1NOSFg0YThIU3N2R2FnLTNQVklPblFIbDZrLWNaeFk4Vmc5bnlHVENIX1U?oc=5",
+   "reports": 1,
+   "casualty": true
   }
  ],
- "sent_since_heartbeat": 1
+ "sent_since_heartbeat": 2
 }
