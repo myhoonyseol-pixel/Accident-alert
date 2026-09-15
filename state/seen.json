@@ -2847,6 +2847,21 @@
     "신안산선",
     "재개"
    ]
+  },
+  "cf617dea4aa74345": {
+   "ts": 1789467597.253324,
+   "tok": [
+    "20",
+    "GTX",
+    "건설현장",
+    "날아",
+    "동시",
+    "매트",
+    "발파",
+    "부천",
+    "폭발에",
+    "회분"
+   ]
   }
  },
  "initialized": true,
@@ -2984,7 +2999,28 @@
    "link": "https://news.google.com/rss/articles/CBMicEFVX3lxTE9sZENETkJMS3BlaTdoQlhsTGprNGg5TmVOQVZ6UEJVaDlUVVBuN1lCSG1ublRadDRscmhtdkZ0T19qY1FUX1NOSFg0YThIU3N2R2FnLTNQVklPblFIbDZrLWNaeFk4Vmc5bnlHVENIX1U?oc=5",
    "reports": 1,
    "casualty": true
+  },
+  {
+   "ts": 1789467605.354877,
+   "when": "09/15 18:37",
+   "title": "GTX-B 부천 공사현장서 발파 사고…2회분 동시 폭발에 매트 20m 날아가",
+   "updates": 0,
+   "tok": [
+    "20",
+    "GTX",
+    "건설현장",
+    "날아",
+    "동시",
+    "매트",
+    "발파",
+    "부천",
+    "폭발에",
+    "회분"
+   ],
+   "link": "https://news.google.com/rss/articles/CBMigAFBVV95cUxQNnlOZzNLemxNVHI2R2Y4WmZtakVNUWFkNnBmSnA0aGMxaEpBQlYxX3VwdVB4VmJxNEpEOUtOc2c2Y1E0X3pSN0VQUHRUQ0RCQS15a05XYlhQRW9Jekx1NXNjTFNRendoWWFXaGI0dmEtUHc0a3M2MF9ucTZ1bkdKOA?oc=5",
+   "reports": 1,
+   "casualty": false
   }
  ],
- "sent_since_heartbeat": 2
+ "sent_since_heartbeat": 3
 }
