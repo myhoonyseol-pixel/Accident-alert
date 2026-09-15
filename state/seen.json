@@ -2735,7 +2735,7 @@
   }
  },
  "initialized": true,
- "last_heartbeat": "2026-09-15",
+ "last_heartbeat": "2026-09-16",
  "events": [
   {
    "ts": 1789113040.581223,
@@ -2892,5 +2892,5 @@
    "casualty": false
   }
  ],
- "sent_since_heartbeat": 3
+ "sent_since_heartbeat": 0
 }
