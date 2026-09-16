@@ -3007,6 +3007,31 @@
     "부상",
     "필름제조"
    ]
+  },
+  "855aed0ed0dc4750": {
+   "ts": 1789557561.333186,
+   "tok": [
+    "70",
+    "건물",
+    "건설현장",
+    "부산",
+    "수영구",
+    "작업자",
+    "중태",
+    "추락",
+    "층서"
+   ]
+  },
+  "9c3809af397e9d64": {
+   "ts": 1789557561.33364,
+   "tok": [
+    "30",
+    "경기",
+    "공장",
+    "광주",
+    "필름",
+    "화상"
+   ]
   }
  },
  "initialized": true,
@@ -3198,7 +3223,7 @@
     "층서"
    ],
    "link": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE5NbTRiM3M2RnNSbUoyMVpSdlBqejZQWVdwTGt3WlhWSUlEUFZjemdIcWlTUnV0bVR6aFZsaVBMV3MyaThXQVR5enQweFVudHd4aHFieFpCSFU1UmPSAWBBVV95cUxOVXdoOUVEc3EzNWdLT1FtU05ReE0zY0dGMkN2R3d0WUJmTWFmU0lkeTRvREYtUlE5NTc3LS1zdGN5aDZJWWhobXp5TGd1TmNLUXEwSGhGNzM2OTg3T0pNclc?oc=5",
-   "reports": 4,
+   "reports": 5,
    "casualty": false
   },
   {
