@@ -2822,6 +2822,58 @@
     "추락",
     "층서"
    ]
+  },
+  "2e37f34ac9c0cb88": {
+   "ts": 1789547790.446159,
+   "tok": [
+    "70",
+    "건설현장",
+    "병원행",
+    "부산",
+    "의식없어",
+    "작업자",
+    "추락",
+    "층서"
+   ]
+  },
+  "7fe24f0f406a6fee": {
+   "ts": 1789547790.446845,
+   "tok": [
+    "공장",
+    "단계",
+    "대응",
+    "세연기술",
+    "소방당국",
+    "완료",
+    "진화",
+    "포토",
+    "하향",
+    "화성시",
+    "화재"
+   ]
+  },
+  "848bd09abe7a0503": {
+   "ts": 1789547790.447469,
+   "tok": [
+    "건설기계",
+    "공장",
+    "배터리",
+    "부상",
+    "안전사고",
+    "인천"
+   ]
+  },
+  "1c41a7d274f5f796": {
+   "ts": 1789547790.448029,
+   "tok": [
+    "70",
+    "가지치기하던",
+    "강화",
+    "고소작업대",
+    "올라",
+    "초교",
+    "추락"
+   ]
   }
  },
  "initialized": true,
@@ -3013,7 +3065,7 @@
     "층서"
    ],
    "link": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE5NbTRiM3M2RnNSbUoyMVpSdlBqejZQWVdwTGt3WlhWSUlEUFZjemdIcWlTUnV0bVR6aFZsaVBMV3MyaThXQVR5enQweFVudHd4aHFieFpCSFU1UmPSAWBBVV95cUxOVXdoOUVEc3EzNWdLT1FtU05ReE0zY0dGMkN2R3d0WUJmTWFmU0lkeTRvREYtUlE5NTc3LS1zdGN5aDZJWWhobXp5TGd1TmNLUXEwSGhGNzM2OTg3T0pNclc?oc=5",
-   "reports": 1,
+   "reports": 2,
    "casualty": false
   }
  ],
