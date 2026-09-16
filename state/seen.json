@@ -2681,6 +2681,40 @@
     "입환",
     "작업"
    ]
+  },
+  "0d6456909f459859": {
+   "ts": 1789537769.59333,
+   "tok": [
+    "발코니",
+    "붕괴",
+    "송도",
+    "아파트",
+    "에코플랜트",
+    "전수조사"
+   ]
+  },
+  "20975767f3b71a74": {
+   "ts": 1789537769.593457,
+   "tok": [
+    "공장화재",
+    "소화기",
+    "초기진화",
+    "최소화",
+    "포천소방",
+    "피해"
+   ]
+  },
+  "e06ea235b16c8f8d": {
+   "ts": 1789537769.594034,
+   "tok": [
+    "121",
+    "35",
+    "경북",
+    "끼임",
+    "대구",
+    "사망",
+    "제조업"
+   ]
   }
  },
  "initialized": true,
@@ -2839,7 +2873,24 @@
    "link": "https://news.google.com/rss/articles/CBMigAFBVV95cUxQNnlOZzNLemxNVHI2R2Y4WmZtakVNUWFkNnBmSnA0aGMxaEpBQlYxX3VwdVB4VmJxNEpEOUtOc2c2Y1E0X3pSN0VQUHRUQ0RCQS15a05XYlhQRW9Jekx1NXNjTFNRendoWWFXaGI0dmEtUHc0a3M2MF9ucTZ1bkdKOA?oc=5",
    "reports": 1,
    "casualty": false
+  },
+  {
+   "ts": 1789537778.725404,
+   "when": "09/16 13:57",
+   "title": "송도 발코니 붕괴, SK에코플랜트 아파트 전수조사",
+   "updates": 0,
+   "tok": [
+    "발코니",
+    "붕괴",
+    "송도",
+    "아파트",
+    "에코플랜트",
+    "전수조사"
+   ],
+   "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTFBwT3FtY0ZKd1BfS3ZKU3JLVDUyRzUwTThteEhZbHNVY0V2ekdVd3ZiZ2gzeHdsbUtmNkQ3MmhENER0NTRFSmduRmllaU8xV3NMQW1oVDRXbzJmanhKRGl2MndlbllDajJYWEowaQ?oc=5",
+   "reports": 1,
+   "casualty": false
   }
  ],
- "sent_since_heartbeat": 0
+ "sent_since_heartbeat": 1
 }
