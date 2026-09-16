@@ -1,35 +1,5 @@
 {
  "seen": {
-  "c2ed6aefd9d2c013": {
-   "ts": 1788943905.99916,
-   "tok": [
-    "강풍주의보",
-    "건설현장",
-    "났는데",
-    "돌린",
-    "사망",
-    "세종교육청",
-    "전날",
-    "전도",
-    "제주",
-    "크레",
-    "타워크레"
-   ]
-  },
-  "0788a87f134749c4": {
-   "ts": 1788943905.999747,
-   "tok": [
-    "공장",
-    "관계",
-    "대응",
-    "소화기",
-    "신속한",
-    "직후",
-    "초기",
-    "화재",
-    "활용"
-   ]
-  },
   "48b4fba4b7962792": {
    "ts": 1788944835.231191,
    "tok": [
@@ -2874,6 +2844,55 @@
     "초교",
     "추락"
    ]
+  },
+  "79f4ff7722447264": {
+   "ts": 1789549090.967456,
+   "tok": [
+    "공장",
+    "금속",
+    "기업",
+    "높이",
+    "사망",
+    "울산",
+    "작업자",
+    "추락한"
+   ]
+  },
+  "939acc2a9a703f49": {
+   "ts": 1789549090.968081,
+   "tok": [
+    "70",
+    "가지치기",
+    "고소작업대",
+    "올라",
+    "중국",
+    "초교",
+    "추락"
+   ]
+  },
+  "c44ca581dc6811f0": {
+   "ts": 1789549090.968587,
+   "tok": [
+    "40",
+    "부상",
+    "손목",
+    "컨테이너",
+    "포항",
+    "화재",
+    "활활"
+   ]
+  },
+  "071217edfc66600d": {
+   "ts": 1789549090.96909,
+   "tok": [
+    "건설기계",
+    "공장",
+    "배터리",
+    "부상",
+    "스파크",
+    "연구원",
+    "인천"
+   ]
   }
  },
  "initialized": true,
@@ -3035,7 +3054,7 @@
    "ts": 1789545163.273121,
    "when": "09/16 16:31",
    "title": "울산 금속 기업 공장서 7m 높이 추락한 작업자 이송",
-   "updates": 0,
+   "updates": 1,
    "tok": [
     "공장",
     "금속",
@@ -3047,7 +3066,7 @@
     "추락한"
    ],
    "link": "https://news.google.com/rss/articles/CBMiW0FVX3lxTFBxTUtpOFE2Z21CMGRXaFlUTzh0M2lSU0dDZVIwbHhSVnVkOV9ZWVZnU2ZnQWlUdGs3U2NCSWw4MEt6WXk2SUlrTk44NUdXLXBlc1VQbXdqOU44aFXSAWBBVV95cUxPOS1FZXZrRGNtQl9vb1hJeUQzNlVVT0xqQmcxZkNCNGZOZjBJT0MyTUZLdWlUTDMxRk5haEJZRURrbTVBTE9XODdGYzB5UWF5dzB0UFFDLUM2cU5ISlc1Y2E?oc=5",
-   "reports": 1,
+   "reports": 2,
    "casualty": true
   },
   {
@@ -3069,5 +3088,5 @@
    "casualty": false
   }
  ],
- "sent_since_heartbeat": 3
+ "sent_since_heartbeat": 4
 }
