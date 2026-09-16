@@ -2970,6 +2970,19 @@
     "추락",
     "층서"
    ]
+  },
+  "c2d39642ca2a679c": {
+   "ts": 1789555018.90318,
+   "tok": [
+    "가지",
+    "강화",
+    "고소작업대",
+    "사망",
+    "작업자",
+    "차량",
+    "추락",
+    "치던"
+   ]
   }
  },
  "initialized": true,
@@ -3163,7 +3176,26 @@
    "link": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE5NbTRiM3M2RnNSbUoyMVpSdlBqejZQWVdwTGt3WlhWSUlEUFZjemdIcWlTUnV0bVR6aFZsaVBMV3MyaThXQVR5enQweFVudHd4aHFieFpCSFU1UmPSAWBBVV95cUxOVXdoOUVEc3EzNWdLT1FtU05ReE0zY0dGMkN2R3d0WUJmTWFmU0lkeTRvREYtUlE5NTc3LS1zdGN5aDZJWWhobXp5TGd1TmNLUXEwSGhGNzM2OTg3T0pNclc?oc=5",
    "reports": 4,
    "casualty": false
+  },
+  {
+   "ts": 1789555026.482453,
+   "when": "09/16 19:21",
+   "title": "강화서 차량 고소작업대서 가지 치던 노동자 추락 사망",
+   "updates": 0,
+   "tok": [
+    "가지",
+    "강화",
+    "고소작업대",
+    "사망",
+    "작업자",
+    "차량",
+    "추락",
+    "치던"
+   ],
+   "link": "https://news.google.com/rss/articles/CBMicEFVX3lxTE9xUkxWRGNhemFVbGkwS3poVWd4WXROc05tTy1zZWNwVFBuTFo3eW9wYWFpVXVHM2c5R3hpX0VxZ0xsbVY2NEpRdXVlOEQwY0s4RmR1YWtOZGZqUVJRdDlmQlhpRE03VHFncWRPR18xT3Q?oc=5",
+   "reports": 1,
+   "casualty": true
   }
  ],
- "sent_since_heartbeat": 4
+ "sent_since_heartbeat": 5
 }
