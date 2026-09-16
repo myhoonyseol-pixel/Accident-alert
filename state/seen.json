@@ -3152,10 +3152,23 @@
     "필름공장",
     "화재"
    ]
+  },
+  "e5e0b00e0717e5d7": {
+   "ts": 1789596368.344944,
+   "tok": [
+    "10",
+    "년간",
+    "만도",
+    "산재",
+    "수십건",
+    "중대재해",
+    "판박",
+    "평택공장"
+   ]
   }
  },
  "initialized": true,
- "last_heartbeat": "2026-09-16",
+ "last_heartbeat": "2026-09-17",
  "events": [
   {
    "ts": 1789332571.147332,
@@ -3309,5 +3322,5 @@
    "casualty": true
   }
  ],
- "sent_since_heartbeat": 5
+ "sent_since_heartbeat": 0
 }
