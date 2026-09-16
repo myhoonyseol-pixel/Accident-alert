@@ -1,19 +1,5 @@
 {
  "seen": {
-  "836bc88a602ced3b": {
-   "ts": 1788995838.873883,
-   "tok": [
-    "만에",
-    "부상",
-    "상주",
-    "시간",
-    "장작",
-    "제조공장",
-    "진화",
-    "캠핑용",
-    "화재"
-   ]
-  },
   "f8c80f9a66ff169f": {
    "ts": 1788996766.303196,
    "tok": [
@@ -3190,6 +3176,32 @@
     "컨베이어",
     "피해"
    ]
+  },
+  "b2c536f5e20ec8c8": {
+   "ts": 1789600675.485722,
+   "tok": [
+    "고려아연",
+    "공장",
+    "사망",
+    "온산제련소",
+    "작업",
+    "지붕",
+    "추락"
+   ]
+  },
+  "2c18267e4e6ba14a": {
+   "ts": 1789600675.486314,
+   "tok": [
+    "40",
+    "경북",
+    "공장",
+    "부상",
+    "잇따라",
+    "주택",
+    "찜질방",
+    "포항",
+    "화재"
+   ]
   }
  },
  "initialized": true,
@@ -3345,7 +3357,25 @@
    "link": "https://news.google.com/rss/articles/CBMicEFVX3lxTE9xUkxWRGNhemFVbGkwS3poVWd4WXROc05tTy1zZWNwVFBuTFo3eW9wYWFpVXVHM2c5R3hpX0VxZ0xsbVY2NEpRdXVlOEQwY0s4RmR1YWtOZGZqUVJRdDlmQlhpRE03VHFncWRPR18xT3Q?oc=5",
    "reports": 1,
    "casualty": true
+  },
+  {
+   "ts": 1789600683.741553,
+   "when": "09/17 07:53",
+   "title": "고려아연, 온산제련소 2공장서 지붕 작업 중 추락 사고…사망자 1명 발생",
+   "updates": 0,
+   "tok": [
+    "고려아연",
+    "공장",
+    "사망",
+    "온산제련소",
+    "작업",
+    "지붕",
+    "추락"
+   ],
+   "link": "https://news.google.com/rss/articles/CBMie0FVX3lxTFBpNDZhWERFVU41bFpvMElOejE4bVRYV1l5MkZMWHdqS1QxWVRRTElhcnRZUDQ5RWRsb3kyUXY0cGVCeUNGTG0xNC1qLTYydFNzTDBSRnJHUGg4VHdqeGNaLW90eG9Mb0JFWVpLMjhzc1JGVWRJTVYxU0xPcw?oc=5",
+   "reports": 1,
+   "casualty": true
   }
  ],
- "sent_since_heartbeat": 0
+ "sent_since_heartbeat": 1
 }
