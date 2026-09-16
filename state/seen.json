@@ -1,18 +1,5 @@
 {
  "seen": {
-  "48b4fba4b7962792": {
-   "ts": 1788944835.231191,
-   "tok": [
-    "노동부",
-    "사망",
-    "쇄신해야",
-    "안전체계",
-    "작업자",
-    "전면",
-    "현대",
-    "현장점검"
-   ]
-  },
   "2a725ceeeb68b423": {
    "ts": 1788946534.588267,
    "tok": [
@@ -2893,6 +2880,69 @@
     "연구원",
     "인천"
    ]
+  },
+  "f87af5d3406c8b13": {
+   "ts": 1789550393.720097,
+   "tok": [
+    "건설현장",
+    "광주",
+    "대형",
+    "불티",
+    "예방교육",
+    "용접",
+    "폭발",
+    "화재"
+   ]
+  },
+  "6526ccf5bc2c9931": {
+   "ts": 1789550393.720704,
+   "tok": [
+    "건설현장",
+    "광주본부",
+    "교육",
+    "막는다",
+    "안전관리자",
+    "안전보건공단",
+    "화재"
+   ]
+  },
+  "af3091963b4b1e14": {
+   "ts": 1789550393.721279,
+   "tok": [
+    "70",
+    "건설현장",
+    "남성",
+    "높이",
+    "작업자",
+    "중태",
+    "추락"
+   ]
+  },
+  "a28865504b552d85": {
+   "ts": 1789550393.721854,
+   "tok": [
+    "70",
+    "건물",
+    "건설현장",
+    "부산",
+    "부상",
+    "부착하던",
+    "유리",
+    "추락"
+   ]
+  },
+  "f5390aa55a104d2c": {
+   "ts": 1789550393.722436,
+   "tok": [
+    "40",
+    "공장",
+    "금속",
+    "울산",
+    "작업자",
+    "작업하던",
+    "추락",
+    "환풍기"
+   ]
   }
  },
  "initialized": true,
@@ -3066,7 +3116,7 @@
     "추락한"
    ],
    "link": "https://news.google.com/rss/articles/CBMiW0FVX3lxTFBxTUtpOFE2Z21CMGRXaFlUTzh0M2lSU0dDZVIwbHhSVnVkOV9ZWVZnU2ZnQWlUdGs3U2NCSWw4MEt6WXk2SUlrTk44NUdXLXBlc1VQbXdqOU44aFXSAWBBVV95cUxPOS1FZXZrRGNtQl9vb1hJeUQzNlVVT0xqQmcxZkNCNGZOZjBJT0MyTUZLdWlUTDMxRk5haEJZRURrbTVBTE9XODdGYzB5UWF5dzB0UFFDLUM2cU5ISlc1Y2E?oc=5",
-   "reports": 2,
+   "reports": 3,
    "casualty": true
   },
   {
@@ -3084,7 +3134,7 @@
     "층서"
    ],
    "link": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE5NbTRiM3M2RnNSbUoyMVpSdlBqejZQWVdwTGt3WlhWSUlEUFZjemdIcWlTUnV0bVR6aFZsaVBMV3MyaThXQVR5enQweFVudHd4aHFieFpCSFU1UmPSAWBBVV95cUxOVXdoOUVEc3EzNWdLT1FtU05ReE0zY0dGMkN2R3d0WUJmTWFmU0lkeTRvREYtUlE5NTc3LS1zdGN5aDZJWWhobXp5TGd1TmNLUXEwSGhGNzM2OTg3T0pNclc?oc=5",
-   "reports": 2,
+   "reports": 3,
    "casualty": false
   }
  ],
