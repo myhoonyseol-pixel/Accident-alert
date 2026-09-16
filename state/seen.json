@@ -2728,30 +2728,65 @@
     "위한",
     "프로보노단"
    ]
+  },
+  "f05b9c3c0c66ef68": {
+   "ts": 1789545152.111472,
+   "tok": [
+    "광주",
+    "끼임",
+    "노동청",
+    "막아라",
+    "반복",
+    "부딪힘",
+    "불시점검",
+    "사업장",
+    "산재"
+   ]
+  },
+  "1a119d4a654bd7c6": {
+   "ts": 1789545152.111882,
+   "tok": [
+    "공장",
+    "금속",
+    "기업",
+    "높이",
+    "울산",
+    "이송",
+    "작업자",
+    "추락한"
+   ]
+  },
+  "55df128cddaf5f0c": {
+   "ts": 1789545152.112306,
+   "tok": [
+    "38",
+    "년간",
+    "대구경북",
+    "변경",
+    "보장해야",
+    "사업장",
+    "산재사망",
+    "이주노동자",
+    "자유"
+   ]
+  },
+  "ee41a23f1f2037e6": {
+   "ts": 1789545152.112699,
+   "tok": [
+    "40",
+    "공장",
+    "비철금속",
+    "심정지",
+    "울산",
+    "이송",
+    "작업자",
+    "추락"
+   ]
   }
  },
  "initialized": true,
  "last_heartbeat": "2026-09-16",
  "events": [
-  {
-   "ts": 1789113040.581223,
-   "when": "09/11 16:40",
-   "title": "마포구 5층 건물 외벽서 작업자 추락…60대 남성 숨져",
-   "updates": 0,
-   "tok": [
-    "60",
-    "건물",
-    "남성",
-    "마포구",
-    "사망",
-    "외벽",
-    "작업자",
-    "추락"
-   ],
-   "link": "https://www.newsis.com/view/NISX20260911_0003786309",
-   "reports": 1,
-   "casualty": true
-  },
   {
    "ts": 1789136579.904845,
    "when": "09/11 23:07",
@@ -2903,7 +2938,26 @@
    "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTFBwT3FtY0ZKd1BfS3ZKU3JLVDUyRzUwTThteEhZbHNVY0V2ekdVd3ZiZ2gzeHdsbUtmNkQ3MmhENER0NTRFSmduRmllaU8xV3NMQW1oVDRXbzJmanhKRGl2MndlbllDajJYWEowaQ?oc=5",
    "reports": 1,
    "casualty": false
+  },
+  {
+   "ts": 1789545163.273121,
+   "when": "09/16 16:31",
+   "title": "울산 금속 기업 공장서 7m 높이 추락한 작업자 이송",
+   "updates": 0,
+   "tok": [
+    "공장",
+    "금속",
+    "기업",
+    "높이",
+    "울산",
+    "이송",
+    "작업자",
+    "추락한"
+   ],
+   "link": "https://news.google.com/rss/articles/CBMiW0FVX3lxTFBxTUtpOFE2Z21CMGRXaFlUTzh0M2lSU0dDZVIwbHhSVnVkOV9ZWVZnU2ZnQWlUdGs3U2NCSWw4MEt6WXk2SUlrTk44NUdXLXBlc1VQbXdqOU44aFXSAWBBVV95cUxPOS1FZXZrRGNtQl9vb1hJeUQzNlVVT0xqQmcxZkNCNGZOZjBJT0MyTUZLdWlUTDMxRk5haEJZRURrbTVBTE9XODdGYzB5UWF5dzB0UFFDLUM2cU5ISlc1Y2E?oc=5",
+   "reports": 1,
+   "casualty": true
   }
  ],
- "sent_since_heartbeat": 1
+ "sent_since_heartbeat": 2
 }
