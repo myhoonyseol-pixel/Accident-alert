@@ -2794,6 +2794,34 @@
     "안전관리",
     "해법"
    ]
+  },
+  "0aed92d91e01dcf2": {
+   "ts": 1789546854.598624,
+   "tok": [
+    "70",
+    "건물",
+    "건설현장",
+    "부산",
+    "작업하던",
+    "추락",
+    "층서"
+   ]
+  },
+  "958771046bdbf683": {
+   "ts": 1789546854.59919,
+   "tok": [
+    "70",
+    "건설현장",
+    "남구",
+    "병원이송",
+    "부산",
+    "상태",
+    "없는",
+    "의식",
+    "작업자",
+    "추락",
+    "층서"
+   ]
   }
  },
  "initialized": true,
@@ -2969,7 +2997,25 @@
    "link": "https://news.google.com/rss/articles/CBMiW0FVX3lxTFBxTUtpOFE2Z21CMGRXaFlUTzh0M2lSU0dDZVIwbHhSVnVkOV9ZWVZnU2ZnQWlUdGs3U2NCSWw4MEt6WXk2SUlrTk44NUdXLXBlc1VQbXdqOU44aFXSAWBBVV95cUxPOS1FZXZrRGNtQl9vb1hJeUQzNlVVT0xqQmcxZkNCNGZOZjBJT0MyTUZLdWlUTDMxRk5haEJZRURrbTVBTE9XODdGYzB5UWF5dzB0UFFDLUM2cU5ISlc1Y2E?oc=5",
    "reports": 1,
    "casualty": true
+  },
+  {
+   "ts": 1789546863.118678,
+   "when": "09/16 17:11",
+   "title": "부산 건물 공사장 6층서 작업하던 70대 추락",
+   "updates": 0,
+   "tok": [
+    "70",
+    "건물",
+    "건설현장",
+    "부산",
+    "작업하던",
+    "추락",
+    "층서"
+   ],
+   "link": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE5NbTRiM3M2RnNSbUoyMVpSdlBqejZQWVdwTGt3WlhWSUlEUFZjemdIcWlTUnV0bVR6aFZsaVBMV3MyaThXQVR5enQweFVudHd4aHFieFpCSFU1UmPSAWBBVV95cUxOVXdoOUVEc3EzNWdLT1FtU05ReE0zY0dGMkN2R3d0WUJmTWFmU0lkeTRvREYtUlE5NTc3LS1zdGN5aDZJWWhobXp5TGd1TmNLUXEwSGhGNzM2OTg3T0pNclc?oc=5",
+   "reports": 1,
+   "casualty": false
   }
  ],
- "sent_since_heartbeat": 2
+ "sent_since_heartbeat": 3
 }
