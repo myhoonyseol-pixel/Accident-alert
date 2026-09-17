@@ -3429,6 +3429,19 @@
     "추석",
     "화재안전"
    ]
+  },
+  "dff7aca7229fc7df": {
+   "ts": 1789669163.204847,
+   "tok": [
+    "감독",
+    "강화",
+    "경북동부",
+    "고용노동부",
+    "늘자",
+    "중대재해",
+    "포항지청",
+    "행사법처리"
+   ]
   }
  },
  "initialized": true,
@@ -3714,5 +3727,5 @@
  "last_gpt_heartbeat": "2026-09-17",
  "gpt_alerts_since_heartbeat": 5,
  "gpt_last_status": "ok",
- "gpt_last_status_at": "09/18 02:48"
+ "gpt_last_status_at": "09/18 03:19"
 }
