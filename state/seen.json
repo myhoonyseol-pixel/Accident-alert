@@ -3286,6 +3286,18 @@
     "컨베이어",
     "화재"
    ]
+  },
+  "01a02ab6c0272377": {
+   "ts": 1789619980.145538,
+   "tok": [
+    "가리왕산",
+    "부상",
+    "생태복원공사현장",
+    "운전자",
+    "전복",
+    "정선",
+    "트럭"
+   ]
   }
  },
  "initialized": true,
@@ -3498,5 +3510,9 @@
    "casualty": false
   }
  ],
- "sent_since_heartbeat": 3
+ "sent_since_heartbeat": 3,
+ "last_gpt_heartbeat": "2026-09-17",
+ "gpt_alerts_since_heartbeat": 0,
+ "gpt_last_status": "ok",
+ "gpt_last_status_at": "09/17 13:39"
 }
