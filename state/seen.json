@@ -3210,6 +3210,70 @@
     "전자",
     "화재"
    ]
+  },
+  "b408fd755d57044d": {
+   "ts": 1789610744.156618,
+   "tok": [
+    "40",
+    "금속공장",
+    "사망",
+    "온산",
+    "울산",
+    "작업자",
+    "추락"
+   ]
+  },
+  "075c8b77d1457820": {
+   "ts": 1789610744.156837,
+   "tok": [
+    "공장",
+    "소규모",
+    "앞두고",
+    "인천시",
+    "점검",
+    "집중",
+    "추석",
+    "화재안전"
+   ]
+  },
+  "1904dc49132bed29": {
+   "ts": 1789610744.157447,
+   "tok": [
+    "공장",
+    "공장밀집지",
+    "막는다",
+    "불씨",
+    "연휴",
+    "인천시",
+    "착수",
+    "취약",
+    "화재점검"
+   ]
+  },
+  "c91f93d7da7afa2a": {
+   "ts": 1789610744.158075,
+   "tok": [
+    "19",
+    "검단구",
+    "식품제조공장",
+    "인천",
+    "차량",
+    "피해",
+    "화재"
+   ]
+  },
+  "3f983fd7580b3b61": {
+   "ts": 1789610744.158665,
+   "tok": [
+    "LIG",
+    "건물",
+    "구미",
+    "넥스원",
+    "없어",
+    "옥상",
+    "인명",
+    "피해"
+   ]
   }
  },
  "initialized": true,
@@ -3383,7 +3447,25 @@
    "link": "https://news.google.com/rss/articles/CBMie0FVX3lxTFBpNDZhWERFVU41bFpvMElOejE4bVRYV1l5MkZMWHdqS1QxWVRRTElhcnRZUDQ5RWRsb3kyUXY0cGVCeUNGTG0xNC1qLTYydFNzTDBSRnJHUGg4VHdqeGNaLW90eG9Mb0JFWVpLMjhzc1JGVWRJTVYxU0xPcw?oc=5",
    "reports": 2,
    "casualty": true
+  },
+  {
+   "ts": 1789610752.830625,
+   "when": "09/17 10:48",
+   "title": "인천 검단구 식품제조공장서 화재…차량 19대 등 피해",
+   "updates": 0,
+   "tok": [
+    "19",
+    "검단구",
+    "식품제조공장",
+    "인천",
+    "차량",
+    "피해",
+    "화재"
+   ],
+   "link": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE9iLXYxN3hwMkJhaDVpLW1CYmJlbFpNWGN0MnEtSHlRZWVwdGV2eDl1N3RQLXMyNWZ6T1hwSTJtQzNkbkk4QkZFMExwVHJMZW9QYjRxSFliSEdwOGpIUF8tbtIBeEFVX3lxTE1TQ1FUcXJlOWxHR2thLTV3RkMyZE9JcTlObU9URTN0VjdEVkN2UjNBeUFNNkRvQzRRR2pydEZlZGprbi1LZUYwdFRmXzkwdEJjMFJsYWJ6bVF3elU3cEVhanNDaUVzN1VRQWJROUJQTnlmNTdyaDVNdQ?oc=5",
+   "reports": 1,
+   "casualty": false
   }
  ],
- "sent_since_heartbeat": 1
+ "sent_since_heartbeat": 2
 }
