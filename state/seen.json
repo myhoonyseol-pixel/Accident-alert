@@ -1,19 +1,5 @@
 {
  "seen": {
-  "85b094ac28d6bc43": {
-   "ts": 1789014925.623003,
-   "tok": [
-    "가이드라",
-    "막는다",
-    "머니투데",
-    "붕괴",
-    "수립",
-    "안양시",
-    "안전",
-    "전도",
-    "해체공사장"
-   ]
-  },
   "860e58149cdf4711": {
    "ts": 1789015855.977108,
    "tok": [
@@ -3287,6 +3273,19 @@
     "매입",
     "화재"
    ]
+  },
+  "31ea835b7e2d0431": {
+   "ts": 1789619721.434929,
+   "tok": [
+    "30",
+    "공장",
+    "높이",
+    "동해",
+    "벨트에",
+    "시멘트",
+    "컨베이어",
+    "화재"
+   ]
   }
  },
  "initialized": true,
@@ -3478,7 +3477,26 @@
    "link": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE9iLXYxN3hwMkJhaDVpLW1CYmJlbFpNWGN0MnEtSHlRZWVwdGV2eDl1N3RQLXMyNWZ6T1hwSTJtQzNkbkk4QkZFMExwVHJMZW9QYjRxSFliSEdwOGpIUF8tbtIBeEFVX3lxTE1TQ1FUcXJlOWxHR2thLTV3RkMyZE9JcTlObU9URTN0VjdEVkN2UjNBeUFNNkRvQzRRR2pydEZlZGprbi1LZUYwdFRmXzkwdEJjMFJsYWJ6bVF3elU3cEVhanNDaUVzN1VRQWJROUJQTnlmNTdyaDVNdQ?oc=5",
    "reports": 2,
    "casualty": false
+  },
+  {
+   "ts": 1789619728.747114,
+   "when": "09/17 10:25",
+   "title": "30m 높이 컨베이어 벨트에 긴 불길…동해 시멘트 공장 또 화재",
+   "updates": 0,
+   "tok": [
+    "30",
+    "공장",
+    "높이",
+    "동해",
+    "벨트에",
+    "시멘트",
+    "컨베이어",
+    "화재"
+   ],
+   "link": "https://news.google.com/rss/articles/CBMiVEFVX3lxTFB5bnQwY2Q0Ym1tMU9MNTFBd1Z2SWZRVXlHMFRxdXpkVjNyUzdFUzRaa2JTdTZvVWd0bURlOVVHVkFtaHRzR3ZtVC1RblAzUWlMZXJGNw?oc=5",
+   "reports": 1,
+   "casualty": false
   }
  ],
- "sent_since_heartbeat": 2
+ "sent_since_heartbeat": 3
 }
