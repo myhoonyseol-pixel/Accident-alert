@@ -3430,7 +3430,7 @@
   }
  },
  "initialized": true,
- "last_heartbeat": "2026-09-17",
+ "last_heartbeat": "2026-09-18",
  "events": [
   {
    "ts": 1789443400.980632,
@@ -3708,9 +3708,9 @@
    "casualty": false
   }
  ],
- "sent_since_heartbeat": 9,
- "last_gpt_heartbeat": "2026-09-17",
- "gpt_alerts_since_heartbeat": 5,
+ "sent_since_heartbeat": 0,
+ "last_gpt_heartbeat": "2026-09-18",
+ "gpt_alerts_since_heartbeat": 0,
  "gpt_last_status": "ok",
  "gpt_last_status_at": "09/18 03:19"
 }
