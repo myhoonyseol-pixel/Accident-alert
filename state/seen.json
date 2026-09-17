@@ -3399,6 +3399,46 @@
     "타이어",
     "협착"
    ]
+  },
+  "cffaafb8fca98e7d": {
+   "ts": 1789653152.648447,
+   "tok": [
+    "40",
+    "건설현장",
+    "국도",
+    "롤러에",
+    "머니투데",
+    "사망",
+    "아산",
+    "작업자",
+    "협착"
+   ]
+  },
+  "266f63da2c26fd98": {
+   "ts": 1789653152.649133,
+   "tok": [
+    "15",
+    "건설현장",
+    "아래",
+    "정선",
+    "추락",
+    "트럭"
+   ]
+  },
+  "e0308552e24a9a94": {
+   "ts": 1789653152.649742,
+   "tok": [
+    "25",
+    "LIG",
+    "공장",
+    "구미",
+    "넥스원",
+    "소방차",
+    "없어",
+    "인명피해",
+    "출동",
+    "화재"
+   ]
   }
  },
  "initialized": true,
@@ -3678,13 +3718,30 @@
     "협착"
    ],
    "link": "https://news.google.com/rss/articles/CBMic0FVX3lxTE5FNEtLeEFheGljSm1fUTlzUTJaTHpGbko3MzJ4NF9xckJNbnhwTnlXTTZRR2x3cEpRSlNJN0MteG1xTUhmUGtjNVFvcDU1em9EWnM3ZlhCRUV1QzJlczNLSmFYdk5YYU4wTEl0anR3LU9MVk3SAXdBVV95cUxQcnpRdU1TVUUzV2stR1FScVdUTmFFbkdXdHdTY3FGdG9Rc3RwLW9RUktpcmpSeS1yQnUzZm5xbEsyYjlxYjlGX1Bia0YxeGczaU82ODU5WmF6MTVPZjZjZzZCU1lNN3l2M0Y5UDhFT2xnSFc2QkNCSQ?oc=5",
-   "reports": 2,
+   "reports": 3,
    "casualty": true
+  },
+  {
+   "ts": 1789653165.535747,
+   "when": "09/17 22:44",
+   "title": "정선 공사현장서 15t 트럭 ‘7m 아래로 추락’",
+   "updates": 0,
+   "tok": [
+    "15",
+    "건설현장",
+    "아래",
+    "정선",
+    "추락",
+    "트럭"
+   ],
+   "link": "https://news.google.com/rss/articles/CBMiY0FVX3lxTFA1ejlSVjRvVk5EYUhPTFlIOHNaRFYwNnNnYkVsWmtzeHNvbXFpMDhOY3pSMC1SbHlHd2dBczJNbkhCWGVlUUtGa2dEdUZyZ3VsUEtMZll2U0xwbG5rWEh6d3lBYw?oc=5",
+   "reports": 1,
+   "casualty": false
   }
  ],
- "sent_since_heartbeat": 8,
+ "sent_since_heartbeat": 9,
  "last_gpt_heartbeat": "2026-09-17",
- "gpt_alerts_since_heartbeat": 4,
+ "gpt_alerts_since_heartbeat": 5,
  "gpt_last_status": "ok",
- "gpt_last_status_at": "09/17 21:56"
+ "gpt_last_status_at": "09/17 22:52"
 }
