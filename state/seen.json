@@ -1,20 +1,5 @@
 {
  "seen": {
-  "fe371dd77bb39190": {
-   "ts": 1789044967.339887,
-   "tok": [
-    "고용노동부",
-    "고위험",
-    "기계",
-    "기구",
-    "끼임",
-    "실시",
-    "예방",
-    "점검",
-    "중대재해",
-    "평택지청"
-   ]
-  },
   "587fbde20b4b3c8c": {
    "ts": 1789049213.97503,
    "tok": [
@@ -3391,31 +3376,21 @@
     "철거",
     "화재"
    ]
+  },
+  "0cfcd523b39b543c": {
+   "ts": 1789649760.200763,
+   "tok": [
+    "건설",
+    "내포",
+    "사망",
+    "작업자",
+    "충남"
+   ]
   }
  },
  "initialized": true,
  "last_heartbeat": "2026-09-17",
  "events": [
-  {
-   "ts": 1789332571.147332,
-   "when": "09/14 00:48",
-   "title": "북구 아파트 공사장서 H빔에 머리 맞아 40대 고물상 숨져",
-   "updates": 0,
-   "tok": [
-    "40",
-    "건설현장",
-    "고물상",
-    "맞아",
-    "머리",
-    "북구",
-    "빔에",
-    "사망",
-    "아파트"
-   ],
-   "link": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE40QXZxTVFMTGFzcjZIMzF5U2Eza3JpZ3pTVkRpemtxX1hBM3N6Zy1QZEFyVkFvT2c5UndmNV9hZnhnN2U0aEpqOTZLYzNYUmM?oc=5",
-   "reports": 1,
-   "casualty": true
-  },
   {
    "ts": 1789427856.246432,
    "when": "09/15 08:05",
@@ -3698,5 +3673,5 @@
  "last_gpt_heartbeat": "2026-09-17",
  "gpt_alerts_since_heartbeat": 4,
  "gpt_last_status": "ok",
- "gpt_last_status_at": "09/17 21:40"
+ "gpt_last_status_at": "09/17 21:56"
 }
