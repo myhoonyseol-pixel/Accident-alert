@@ -3437,6 +3437,17 @@
     "주요",
     "중대재해"
    ]
+  },
+  "5a0496e30c1bd07b": {
+   "ts": 1789639581.572276,
+   "tok": [
+    "건설현장",
+    "내포신도시",
+    "사망",
+    "아파트",
+    "작업자",
+    "충남"
+   ]
   }
  },
  "initialized": true,
@@ -3687,11 +3698,28 @@
    "link": "https://www.yna.co.kr/view/AKR20260917178600063",
    "reports": 2,
    "casualty": true
+  },
+  {
+   "ts": 1789639592.352465,
+   "when": "09/17 18:57",
+   "title": "충남 내포신도시 아파트 공사 현장서 작업자 1명 사망",
+   "updates": 0,
+   "tok": [
+    "건설현장",
+    "내포신도시",
+    "사망",
+    "아파트",
+    "작업자",
+    "충남"
+   ],
+   "link": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE9tdHk1MDNFdEhIdWdwNGwyYjFmTE1BRzZkNlE1aWh6WDQxNHp0aXJRaDdwWDQxdV9FcEc3NmxFNUJDYkQ2aG9mdE94ZG11YWQ0YmRTNmtVa0dONHlBbExpZw?oc=5",
+   "reports": 1,
+   "casualty": true
   }
  ],
- "sent_since_heartbeat": 5,
+ "sent_since_heartbeat": 6,
  "last_gpt_heartbeat": "2026-09-17",
- "gpt_alerts_since_heartbeat": 1,
+ "gpt_alerts_since_heartbeat": 2,
  "gpt_last_status": "ok",
- "gpt_last_status_at": "09/17 18:08"
+ "gpt_last_status_at": "09/17 19:06"
 }
