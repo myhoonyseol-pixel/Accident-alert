@@ -3410,6 +3410,40 @@
     "추석",
     "화재"
    ]
+  },
+  "a9700d389a3b5d3b": {
+   "ts": 1789643927.043268,
+   "tok": [
+    "건설현장",
+    "발견돼",
+    "사망",
+    "상태",
+    "의식불명",
+    "작업자"
+   ]
+  },
+  "939afb99c1857245": {
+   "ts": 1789643927.043835,
+   "tok": [
+    "건설",
+    "건설현장",
+    "내포신도시",
+    "사망",
+    "아파트",
+    "작업자",
+    "조선비즈",
+    "중대재해"
+   ]
+  },
+  "d35b6e352026923c": {
+   "ts": 1789643927.0445,
+   "tok": [
+    "건설현장",
+    "관련성",
+    "사망",
+    "업무",
+    "작업자"
+   ]
   }
  },
  "initialized": true,
@@ -3675,13 +3709,29 @@
     "충남"
    ],
    "link": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE9tdHk1MDNFdEhIdWdwNGwyYjFmTE1BRzZkNlE1aWh6WDQxNHp0aXJRaDdwWDQxdV9FcEc3NmxFNUJDYkQ2aG9mdE94ZG11YWQ0YmRTNmtVa0dONHlBbExpZw?oc=5",
-   "reports": 2,
+   "reports": 3,
+   "casualty": true
+  },
+  {
+   "ts": 1789643943.368594,
+   "when": "09/17 20:12",
+   "title": "DL건설 현장서 작업자 1명 사망…\"업무 관련성 확인 중\"",
+   "updates": 0,
+   "tok": [
+    "건설현장",
+    "관련성",
+    "사망",
+    "업무",
+    "작업자"
+   ],
+   "link": "https://www.newsis.com/view/NISX20260917_0003794633",
+   "reports": 1,
    "casualty": true
   }
  ],
- "sent_since_heartbeat": 6,
+ "sent_since_heartbeat": 7,
  "last_gpt_heartbeat": "2026-09-17",
- "gpt_alerts_since_heartbeat": 2,
+ "gpt_alerts_since_heartbeat": 4,
  "gpt_last_status": "ok",
- "gpt_last_status_at": "09/17 19:19"
+ "gpt_last_status_at": "09/17 20:18"
 }
