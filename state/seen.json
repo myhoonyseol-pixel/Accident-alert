@@ -3339,6 +3339,34 @@
     "작업중지",
     "추락"
    ]
+  },
+  "602612bd16fe80c1": {
+   "ts": 1789635149.479205,
+   "tok": [
+    "126",
+    "2026",
+    "국정감사",
+    "끊이지",
+    "년여간",
+    "사망",
+    "산업단지",
+    "않는다",
+    "중대사고"
+   ]
+  },
+  "e6dfa9db8656e06b": {
+   "ts": 1789635149.479922,
+   "tok": [
+    "40",
+    "도로",
+    "롤러",
+    "사망",
+    "신호수",
+    "아산",
+    "차량에",
+    "치여",
+    "포장"
+   ]
   }
  },
  "initialized": true,
@@ -3549,11 +3577,51 @@
    "link": "https://news.google.com/rss/articles/CBMiVEFVX3lxTFB5bnQwY2Q0Ym1tMU9MNTFBd1Z2SWZRVXlHMFRxdXpkVjNyUzdFUzRaa2JTdTZvVWd0bURlOVVHVkFtaHRzR3ZtVC1RblAzUWlMZXJGNw?oc=5",
    "reports": 1,
    "casualty": false
+  },
+  {
+   "ts": 1789635161.270799,
+   "when": "09/17 17:34",
+   "title": "[2026년 국정감사] 산업단지 중대사고 ‘끊이지 않는다’…5년여간 126명 사망",
+   "updates": 0,
+   "tok": [
+    "126",
+    "2026",
+    "국정감사",
+    "끊이지",
+    "년여간",
+    "사망",
+    "산업단지",
+    "않는다",
+    "중대사고"
+   ],
+   "link": "https://news.google.com/rss/articles/CBMiVEFVX3lxTFBDbDdwQ0JSQVFMN3BhelhKbFM5cW9HdWROUlM2RkNJY2tKWDlVWFVRUlZwV1hYVF9hZzRybkNhMmRRMHF0X1N1djhyNVB4QnBJUnRVbQ?oc=5",
+   "reports": 1,
+   "casualty": true
+  },
+  {
+   "ts": 1789635163.415335,
+   "when": "09/17 17:30",
+   "title": "아산서 도로 포장 롤러 차량에 치여 40대 신호수 사망",
+   "updates": 0,
+   "tok": [
+    "40",
+    "도로",
+    "롤러",
+    "사망",
+    "신호수",
+    "아산",
+    "차량에",
+    "치여",
+    "포장"
+   ],
+   "link": "https://www.yna.co.kr/view/AKR20260917178600063",
+   "reports": 1,
+   "casualty": true
   }
  ],
- "sent_since_heartbeat": 3,
+ "sent_since_heartbeat": 5,
  "last_gpt_heartbeat": "2026-09-17",
- "gpt_alerts_since_heartbeat": 0,
+ "gpt_alerts_since_heartbeat": 1,
  "gpt_last_status": "ok",
- "gpt_last_status_at": "09/17 16:52"
+ "gpt_last_status_at": "09/17 17:52"
 }
