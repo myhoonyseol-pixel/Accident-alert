@@ -1,21 +1,5 @@
 {
  "seen": {
-  "8cb52b39fba925c8": {
-   "ts": 1789068753.997324,
-   "tok": [
-    "CCTV",
-    "개발",
-    "건설현장",
-    "결정",
-    "경상국립대",
-    "기술",
-    "방향",
-    "위치",
-    "자동",
-    "정현수",
-    "학생"
-   ]
-  },
   "86448ec32281702a": {
    "ts": 1789069682.912314,
    "tok": [
@@ -3442,6 +3426,19 @@
     "포항지청",
     "행사법처리"
    ]
+  },
+  "c50ae7e1c5f9b419": {
+   "ts": 1789673602.14464,
+   "tok": [
+    "40",
+    "건설현장",
+    "국도",
+    "롤러에",
+    "사망",
+    "아산",
+    "작업자",
+    "협착"
+   ]
   }
  },
  "initialized": true,
@@ -3702,7 +3699,7 @@
     "협착"
    ],
    "link": "https://news.google.com/rss/articles/CBMic0FVX3lxTE5FNEtLeEFheGljSm1fUTlzUTJaTHpGbko3MzJ4NF9xckJNbnhwTnlXTTZRR2x3cEpRSlNJN0MteG1xTUhmUGtjNVFvcDU1em9EWnM3ZlhCRUV1QzJlczNLSmFYdk5YYU4wTEl0anR3LU9MVk3SAXdBVV95cUxQcnpRdU1TVUUzV2stR1FScVdUTmFFbkdXdHdTY3FGdG9Rc3RwLW9RUktpcmpSeS1yQnUzZm5xbEsyYjlxYjlGX1Bia0YxeGczaU82ODU5WmF6MTVPZjZjZzZCU1lNN3l2M0Y5UDhFT2xnSFc2QkNCSQ?oc=5",
-   "reports": 3,
+   "reports": 4,
    "casualty": true
   },
   {
