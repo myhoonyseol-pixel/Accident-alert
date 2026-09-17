@@ -3366,6 +3366,31 @@
     "아파트",
     "작업자"
    ]
+  },
+  "8586bc6d44126061": {
+   "ts": 1789648822.1413,
+   "tok": [
+    "40",
+    "건설장비에",
+    "건설현장",
+    "사망",
+    "아산",
+    "작업자",
+    "협착"
+   ]
+  },
+  "bff051da5e007087": {
+   "ts": 1789648822.141816,
+   "tok": [
+    "공장",
+    "구미",
+    "꺼져",
+    "냉각탑",
+    "시간만",
+    "옥상",
+    "철거",
+    "화재"
+   ]
   }
  },
  "initialized": true,
@@ -3649,11 +3674,29 @@
    "link": "https://www.newsis.com/view/NISX20260917_0003794633",
    "reports": 1,
    "casualty": true
+  },
+  {
+   "ts": 1789648832.309334,
+   "when": "09/17 21:17",
+   "title": "아산 공사 현장서 40대 노동자 건설장비에 깔려 숨져",
+   "updates": 0,
+   "tok": [
+    "40",
+    "건설장비에",
+    "건설현장",
+    "사망",
+    "아산",
+    "작업자",
+    "협착"
+   ],
+   "link": "https://news.google.com/rss/articles/CBMic0FVX3lxTE5FNEtLeEFheGljSm1fUTlzUTJaTHpGbko3MzJ4NF9xckJNbnhwTnlXTTZRR2x3cEpRSlNJN0MteG1xTUhmUGtjNVFvcDU1em9EWnM3ZlhCRUV1QzJlczNLSmFYdk5YYU4wTEl0anR3LU9MVk3SAXdBVV95cUxQcnpRdU1TVUUzV2stR1FScVdUTmFFbkdXdHdTY3FGdG9Rc3RwLW9RUktpcmpSeS1yQnUzZm5xbEsyYjlxYjlGX1Bia0YxeGczaU82ODU5WmF6MTVPZjZjZzZCU1lNN3l2M0Y5UDhFT2xnSFc2QkNCSQ?oc=5",
+   "reports": 1,
+   "casualty": true
   }
  ],
- "sent_since_heartbeat": 7,
+ "sent_since_heartbeat": 8,
  "last_gpt_heartbeat": "2026-09-17",
  "gpt_alerts_since_heartbeat": 4,
  "gpt_last_status": "ok",
- "gpt_last_status_at": "09/17 20:18"
+ "gpt_last_status_at": "09/17 21:40"
 }
