@@ -3424,6 +3424,19 @@
     "추석",
     "화재"
    ]
+  },
+  "b779f6e812bc711d": {
+   "ts": 1789638653.494277,
+   "tok": [
+    "17",
+    "고려아연",
+    "공시",
+    "공장",
+    "오늘",
+    "온산제련소",
+    "주요",
+    "중대재해"
+   ]
   }
  },
  "initialized": true,
@@ -3595,7 +3608,7 @@
     "추락"
    ],
    "link": "https://news.google.com/rss/articles/CBMie0FVX3lxTFBpNDZhWERFVU41bFpvMElOejE4bVRYV1l5MkZMWHdqS1QxWVRRTElhcnRZUDQ5RWRsb3kyUXY0cGVCeUNGTG0xNC1qLTYydFNzTDBSRnJHUGg4VHdqeGNaLW90eG9Mb0JFWVpLMjhzc1JGVWRJTVYxU0xPcw?oc=5",
-   "reports": 2,
+   "reports": 3,
    "casualty": true
   },
   {
