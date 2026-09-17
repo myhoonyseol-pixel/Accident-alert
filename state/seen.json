@@ -3399,6 +3399,22 @@
     "큰불",
     "화재"
    ]
+  },
+  "caf20a96ad3dd377": {
+   "ts": 1789662109.10079,
+   "tok": [
+    "강화",
+    "관리감독자",
+    "대상",
+    "돌입",
+    "안전보건",
+    "역량",
+    "원천",
+    "의성군",
+    "중대재해",
+    "차단",
+    "특훈"
+   ]
   }
  },
  "initialized": true,
@@ -3684,5 +3700,5 @@
  "last_gpt_heartbeat": "2026-09-17",
  "gpt_alerts_since_heartbeat": 5,
  "gpt_last_status": "ok",
- "gpt_last_status_at": "09/17 22:52"
+ "gpt_last_status_at": "09/18 01:21"
 }
