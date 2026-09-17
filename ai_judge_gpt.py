@@ -30,25 +30,46 @@ import ai_judge
 API_URL = "https://api.openai.com/v1/responses"
 DEFAULT_MODEL = "gpt-5.6-luna"
 
-# Claude 최신 출력 구조와 동일한 필드를 강제합니다.
+# Responses API Structured Outputs는 최상위 schema를 object로 둡니다.
+# 실제 판정 목록은 results 배열 안에 넣습니다.
 RESULT_SCHEMA = {
-    "type": "array",
-    "items": {
-        "type": "object",
-        "additionalProperties": False,
-        "properties": {
-            "i": {"type": "integer"},
-            "what": {"type": "string"},
-            "v": {"type": "string", "enum": ["new", "update", "skip", "dup"]},
-            "e": {"type": "integer"},
-            "occurred": {"type": "string"},
-            "co": {"type": "string"},
-            "chg": {"type": "string"},
-            "why": {"type": "string"},
+    "type": "object",
+    "additionalProperties": False,
+    "properties": {
+        "results": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "additionalProperties": False,
+                "properties": {
+                    "i": {"type": "integer"},
+                    "what": {"type": "string"},
+                    "v": {"type": "string", "enum": ["new", "update", "skip", "dup"]},
+                    "e": {"type": "integer"},
+                    "occurred": {"type": "string"},
+                    "co": {"type": "string"},
+                    "chg": {"type": "string"},
+                    "why": {"type": "string"},
+                },
+                "required": ["i", "what", "v", "e", "occurred", "co", "chg", "why"],
+            },
         },
-        "required": ["i", "what", "v", "e", "occurred", "co", "chg", "why"],
     },
+    "required": ["results"],
 }
+
+GPT_OUTPUT_INSTRUCTION = r"""
+
+━━ GPT 구조화 출력 형식 ━━
+OpenAI Structured Outputs 제약 때문에 최상위는 배열이 아니라 반드시 객체다.
+위의 'JSON 배열만 출력' 지시보다 아래 형식을 우선한다. 다른 말은 쓰지 마라.
+{"results":[{"i":0,"what":"기사의 핵심 사고","v":"new","e":-1,"occurred":"","co":"","chg":"","why":"20자 이내"}]}
+
+what: 기사의 핵심 사건을 짧게 요약한다.
+occurred: 본문에서 확인되는 실제 사고 발생 일시. 모르면 빈 문자열.
+co: 본문에서 확인되는 시공사/원청/사업주. 모르면 빈 문자열.
+모든 입력 기사에 대해 results에 정확히 한 건씩 결과를 넣는다.
+"""
 
 
 def _build_user_msg(candidates, recent_events):
@@ -103,8 +124,33 @@ def _output_text(body):
     return "\n".join(texts)
 
 
-def _extract_json(text):
-    """Claude 쪽과 같은 안전한 JSON 배열 파서를 사용합니다."""
+def _extract_results(text):
+    """Structured Outputs의 {"results": [...]}를 안전하게 읽습니다.
+
+    혹시 예전 형식(JSON 배열)이 돌아와도 비교기가 죽지 않도록
+    레거시 배열 파싱을 한 번 더 지원합니다.
+    """
+    text = (text or "").strip()
+    try:
+        data = json.loads(text)
+        if isinstance(data, dict) and isinstance(data.get("results"), list):
+            return data["results"]
+        if isinstance(data, list):
+            return data
+    except json.JSONDecodeError:
+        pass
+
+    # 비정상적으로 앞뒤 텍스트가 붙은 경우 첫 JSON 객체만 시도합니다.
+    start = text.find("{")
+    if start >= 0:
+        try:
+            data, _ = json.JSONDecoder().raw_decode(text[start:])
+            if isinstance(data, dict) and isinstance(data.get("results"), list):
+                return data["results"]
+        except json.JSONDecodeError:
+            pass
+
+    # 마지막 안전망: Claude 쪽 레거시 배열 파서
     return ai_judge._extract_json(text)
 
 
@@ -161,7 +207,7 @@ def judge(candidates, cfg, recent_events=None):
                     "model": model,
                     "store": False,
                     "input": [
-                        {"role": "system", "content": ai_judge.SYSTEM_PROMPT},
+                        {"role": "system", "content": ai_judge.SYSTEM_PROMPT + GPT_OUTPUT_INSTRUCTION},
                         {"role": "user", "content": user_msg},
                     ],
                     "text": {
@@ -180,7 +226,7 @@ def judge(candidates, cfg, recent_events=None):
 
             response_body = r.json()
             raw = _output_text(response_body)
-            verdicts = _extract_json(raw)
+            verdicts = _extract_results(raw)
             break
 
         except Exception as e:  # noqa: BLE001

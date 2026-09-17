@@ -137,6 +137,13 @@ def load_state():
     state.setdefault("events", [])
     # 생존신호 이후 몇 건을 보냈는지. "새 속보 없음"이 거짓말이 되지 않게 셉니다.
     state.setdefault("sent_since_heartbeat", 0)
+
+    # GPT 비교방용 상태. 기사 ERROR는 텔레그램에 보내지 않되,
+    # 하루 1회 생존신고에서 시스템 상태만 확인할 수 있게 기록합니다.
+    state.setdefault("last_gpt_heartbeat", "")
+    state.setdefault("gpt_alerts_since_heartbeat", 0)
+    state.setdefault("gpt_last_status", "")
+    state.setdefault("gpt_last_status_at", "")
     return state
 
 
@@ -523,6 +530,89 @@ def send_gpt_alerts(results):
     print(f"[gpt-telegram] ALERT {sent}/{len(alert_results)}건 발송 "
           f"(미발송 NO_ALERT {skipped}건 / ERROR {errors}건)")
     return sent
+
+
+def record_gpt_status(state, results):
+    """최근 GPT 판정이 정상인지 상태만 저장합니다.
+
+    개별 ERROR 기사는 비교방에 보내지 않습니다. 대신 다음 08시 생존신고에서
+    '최근 판정 오류 있음' 정도만 알려 사용자가 GitHub 로그를 확인할 수 있게 합니다.
+    """
+    if not results:
+        return
+    total = len(results)
+    errors = sum(
+        1 for row in results
+        if row[4].get("decision") == "ERROR" or row[4].get("v") == "error"
+    )
+    if errors == 0:
+        status = "ok"
+    elif errors == total:
+        status = "error"
+    else:
+        status = "partial"
+    state["gpt_last_status"] = status
+    state["gpt_last_status_at"] = datetime.now(KST).strftime("%m/%d %H:%M")
+
+
+def maybe_gpt_heartbeat(state):
+    """GPT 전용 비교방에 하루 한 번 생존신고를 보냅니다.
+
+    NEW/UPDATE 기사만 실시간으로 보내는 원칙은 그대로 유지합니다.
+    개별 오류 내용은 보내지 않고, 최근 판정 상태가 오류였는지만 표시합니다.
+    """
+    if not getattr(config, "HEARTBEAT_ENABLED", False):
+        return False
+
+    token = os.environ.get("TELEGRAM_BOT_TOKEN", "").strip()
+    chat_id = os.environ.get("GPT_TELEGRAM_CHAT_ID", "").strip()
+    if not token or not chat_id:
+        return False
+
+    now_kst = datetime.now(KST)
+    today = now_kst.strftime("%Y-%m-%d")
+    if state.get("last_gpt_heartbeat") == today:
+        return False
+    if now_kst.hour < getattr(config, "HEARTBEAT_HOUR_KST", 8):
+        return False
+
+    missing = []
+    if ai_judge_gpt is None:
+        missing.append("ai_judge_gpt.py")
+    if not os.environ.get("OPENAI_API_KEY", "").strip():
+        missing.append("OPENAI_API_KEY")
+
+    status = state.get("gpt_last_status", "")
+    at = state.get("gpt_last_status_at", "")
+    if missing:
+        head = "⚠️ GPT 비교판정 감시 생존신고"
+        status_line = "설정 누락: " + ", ".join(missing)
+    elif status == "error":
+        head = "⚠️ GPT 비교판정 감시 생존신고"
+        status_line = f"최근 GPT 판정: 오류 ({at or '시각 미상'}) · GitHub 로그 확인"
+    elif status == "partial":
+        head = "⚠️ GPT 비교판정 감시 생존신고"
+        status_line = f"최근 GPT 판정: 일부 오류 ({at or '시각 미상'}) · GitHub 로그 확인"
+    elif status == "ok":
+        head = "✅ GPT 비교판정 감시 생존신고"
+        status_line = f"최근 GPT 판정: 정상 ({at or '시각 미상'})"
+    else:
+        head = "✅ GPT 비교판정 감시 생존신고"
+        status_line = "최근 GPT 판정 대상 없음"
+
+    n = state.get("gpt_alerts_since_heartbeat", 0)
+    msg = (
+        f"{head}\n"
+        f"{now_kst:%Y-%m-%d %H:%M} 기준\n"
+        f"{status_line}\n"
+        f"지난 생존신고 이후 GPT ALERT {n}건"
+    )
+    if send_gpt_telegram(msg):
+        state["last_gpt_heartbeat"] = today
+        state["gpt_alerts_since_heartbeat"] = 0
+        print("[gpt-heartbeat] 생존신고 발송")
+        return True
+    return False
 
 
 def broadcast(text: str, link: str = "", subject: str = "") -> int:
@@ -917,7 +1007,11 @@ def main():
     # GPT 비교 결과는 Claude 운영 알림과 완전히 별개입니다.
     # NEW/UPDATE만 GPT 전용방으로 보내고, SKIP/DUP/ERROR는 로그에만 남깁니다.
     if gpt_results:
-        send_gpt_alerts(gpt_results)
+        record_gpt_status(state, gpt_results)
+        gpt_sent = send_gpt_alerts(gpt_results)
+        state["gpt_alerts_since_heartbeat"] = (
+            state.get("gpt_alerts_since_heartbeat", 0) + gpt_sent
+        )
 
     spreading = maybe_spread(events)
     need_token = bool(picked) or bool(spreading) or config.HEARTBEAT_ENABLED
@@ -974,6 +1068,10 @@ def main():
 
     if not picked and not spreading:
         maybe_heartbeat(state)
+
+    # GPT방은 실제 통과 기사(NEW/UPDATE)만 실시간 발송하고,
+    # 하루 한 번은 별도의 생존신고만 보냅니다.
+    maybe_gpt_heartbeat(state)
 
     save_state(state)
 
