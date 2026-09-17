@@ -3286,6 +3286,21 @@
     "일단",
     "화재"
    ]
+  },
+  "45584fa91c2a5b8d": {
+   "ts": 1789615180.107529,
+   "tok": [
+    "19",
+    "교반기",
+    "소스",
+    "식품공장",
+    "인천",
+    "차량",
+    "추정",
+    "폭발",
+    "피해",
+    "화재"
+   ]
   }
  },
  "initialized": true,
@@ -3475,7 +3490,7 @@
     "화재"
    ],
    "link": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE9iLXYxN3hwMkJhaDVpLW1CYmJlbFpNWGN0MnEtSHlRZWVwdGV2eDl1N3RQLXMyNWZ6T1hwSTJtQzNkbkk4QkZFMExwVHJMZW9QYjRxSFliSEdwOGpIUF8tbtIBeEFVX3lxTE1TQ1FUcXJlOWxHR2thLTV3RkMyZE9JcTlObU9URTN0VjdEVkN2UjNBeUFNNkRvQzRRR2pydEZlZGprbi1LZUYwdFRmXzkwdEJjMFJsYWJ6bVF3elU3cEVhanNDaUVzN1VRQWJROUJQTnlmNTdyaDVNdQ?oc=5",
-   "reports": 1,
+   "reports": 2,
    "casualty": false
   }
  ],
