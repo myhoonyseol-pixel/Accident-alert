@@ -3313,6 +3313,22 @@
     "인명피해",
     "화재"
    ]
+  },
+  "73ba9d72c7fe7b63": {
+   "ts": 1789625108.272791,
+   "tok": [
+    "2030",
+    "가속",
+    "끼임",
+    "로봇",
+    "롯데건설",
+    "막고",
+    "센서",
+    "스마트건설",
+    "자동화",
+    "청소한다",
+    "충돌"
+   ]
   }
  },
  "initialized": true,
@@ -3529,5 +3545,5 @@
  "last_gpt_heartbeat": "2026-09-17",
  "gpt_alerts_since_heartbeat": 0,
  "gpt_last_status": "ok",
- "gpt_last_status_at": "09/17 14:10"
+ "gpt_last_status_at": "09/17 15:05"
 }
