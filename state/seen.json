@@ -3419,6 +3419,16 @@
     "업무",
     "작업자"
    ]
+  },
+  "a8242758bc8e4f9d": {
+   "ts": 1789645796.612821,
+   "tok": [
+    "건설",
+    "내포신도시",
+    "사망",
+    "아파트",
+    "작업자"
+   ]
   }
  },
  "initialized": true,
@@ -3684,7 +3694,7 @@
     "충남"
    ],
    "link": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE9tdHk1MDNFdEhIdWdwNGwyYjFmTE1BRzZkNlE1aWh6WDQxNHp0aXJRaDdwWDQxdV9FcEc3NmxFNUJDYkQ2aG9mdE94ZG11YWQ0YmRTNmtVa0dONHlBbExpZw?oc=5",
-   "reports": 3,
+   "reports": 4,
    "casualty": true
   },
   {
