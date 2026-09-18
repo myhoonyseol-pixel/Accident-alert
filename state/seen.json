@@ -4388,6 +4388,47 @@
     "협력사",
     "화물차에"
    ]
+  },
+  "a59124e4ed0eb387": {
+   "ts": 1789728625.038404,
+   "tok": [
+    "격상",
+    "난항",
+    "단계",
+    "대응",
+    "물류센터",
+    "소방당국",
+    "연소",
+    "우려에",
+    "인천",
+    "진화",
+    "화재",
+    "확대"
+   ]
+  },
+  "db827431e7c224d2": {
+   "ts": 1789728625.038932,
+   "tok": [
+    "단계",
+    "대응",
+    "물류센터",
+    "서해구",
+    "시간째",
+    "인천",
+    "진화",
+    "한때",
+    "화재"
+   ]
+  },
+  "8713f492f698e926": {
+   "ts": 1789728625.039777,
+   "tok": [
+    "검은연기",
+    "덮은",
+    "도로",
+    "물류센터",
+    "화재"
+   ]
   }
  },
  "initialized": true,
@@ -4643,7 +4684,7 @@
     "화재"
    ],
    "link": "https://news.google.com/rss/articles/CBMicEFVX3lxTFBqWEQ4ZklqdjZaUzNocW00ZHpVaG5rbE50Y21SbmtDRWlrcl9mSzItZGdzM24yQkV2dlhLZUltTkxBbWRCN1cwVFRqVTV2Z2xRdUx0V0tmd2hQa1pOQnJGa1dENWswRHMtWHJjUklDYjk?oc=5",
-   "reports": 9,
+   "reports": 10,
    "casualty": false
   },
   {
@@ -4670,5 +4711,5 @@
  "last_gpt_heartbeat": "2026-09-18",
  "gpt_alerts_since_heartbeat": 1,
  "gpt_last_status": "ok",
- "gpt_last_status_at": "09/18 19:05"
+ "gpt_last_status_at": "09/18 19:50"
 }
