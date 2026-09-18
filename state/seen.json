@@ -3605,6 +3605,28 @@
     "충돌",
     "화물자"
    ]
+  },
+  "6ccee4c05f0eed4c": {
+   "ts": 1789704314.208944,
+   "tok": [
+    "건설",
+    "건설현장",
+    "내포",
+    "사망",
+    "신도시",
+    "아파트",
+    "작업자"
+   ]
+  },
+  "74e238fd220fc69b": {
+   "ts": 1789704314.209517,
+   "tok": [
+    "공장",
+    "사망",
+    "온산제련소",
+    "채광창",
+    "추락"
+   ]
   }
  },
  "initialized": true,
@@ -3737,7 +3759,7 @@
     "추락"
    ],
    "link": "https://news.google.com/rss/articles/CBMie0FVX3lxTFBpNDZhWERFVU41bFpvMElOejE4bVRYV1l5MkZMWHdqS1QxWVRRTElhcnRZUDQ5RWRsb3kyUXY0cGVCeUNGTG0xNC1qLTYydFNzTDBSRnJHUGg4VHdqeGNaLW90eG9Mb0JFWVpLMjhzc1JGVWRJTVYxU0xPcw?oc=5",
-   "reports": 3,
+   "reports": 4,
    "casualty": true
   },
   {
