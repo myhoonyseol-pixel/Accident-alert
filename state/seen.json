@@ -1,18 +1,5 @@
 {
  "seen": {
-  "3fded5d21c65df83": {
-   "ts": 1789136575.417671,
-   "tok": [
-    "40",
-    "구조물에",
-    "도중",
-    "심정지",
-    "작업",
-    "집게차",
-    "철제",
-    "충돌"
-   ]
-  },
   "1042d053449dbb78": {
    "ts": 1789138436.336631,
    "tok": [
@@ -4743,6 +4730,20 @@
     "쿠팡",
     "화재"
    ]
+  },
+  "d955522ccfcece3b": {
+   "ts": 1789742158.205716,
+   "tok": [
+    "만에",
+    "물류센터",
+    "서해구",
+    "시간",
+    "없어",
+    "인명피해",
+    "인천",
+    "초진",
+    "화재"
+   ]
   }
  },
  "initialized": true,
@@ -4980,7 +4981,7 @@
     "화재"
    ],
    "link": "https://news.google.com/rss/articles/CBMicEFVX3lxTFBqWEQ4ZklqdjZaUzNocW00ZHpVaG5rbE50Y21SbmtDRWlrcl9mSzItZGdzM24yQkV2dlhLZUltTkxBbWRCN1cwVFRqVTV2Z2xRdUx0V0tmd2hQa1pOQnJGa1dENWswRHMtWHJjUklDYjk?oc=5",
-   "reports": 15,
+   "reports": 16,
    "casualty": false
   },
   {
