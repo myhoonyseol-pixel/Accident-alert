@@ -1,18 +1,5 @@
 {
  "seen": {
-  "2a5925cf3d309458": {
-   "ts": 1789141857.710905,
-   "tok": [
-    "40",
-    "건설현장",
-    "광주",
-    "사망",
-    "사회",
-    "아파트",
-    "작업자",
-    "철제"
-   ]
-  },
   "d9efead2214d1be9": {
    "ts": 1789146485.92792,
    "tok": [
@@ -4807,6 +4794,21 @@
     "진화",
     "화재"
    ]
+  },
+  "04dbc37e77518ef8": {
+   "ts": 1789747565.359866,
+   "tok": [
+    "만에",
+    "물류센터",
+    "부상",
+    "사람",
+    "서해구",
+    "시간",
+    "없어",
+    "완진",
+    "인천",
+    "화재"
+   ]
   }
  },
  "initialized": true,
@@ -5044,7 +5046,7 @@
     "화재"
    ],
    "link": "https://news.google.com/rss/articles/CBMicEFVX3lxTFBqWEQ4ZklqdjZaUzNocW00ZHpVaG5rbE50Y21SbmtDRWlrcl9mSzItZGdzM24yQkV2dlhLZUltTkxBbWRCN1cwVFRqVTV2Z2xRdUx0V0tmd2hQa1pOQnJGa1dENWswRHMtWHJjUklDYjk?oc=5",
-   "reports": 16,
+   "reports": 17,
    "casualty": false
   },
   {
