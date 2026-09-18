@@ -4744,6 +4744,19 @@
     "초진",
     "화재"
    ]
+  },
+  "f6419dab110d0533": {
+   "ts": 1789743091.657755,
+   "tok": [
+    "검은",
+    "노을",
+    "물류센터",
+    "서해구",
+    "연기",
+    "저녁",
+    "집어삼킨",
+    "화재"
+   ]
   }
  },
  "initialized": true,
@@ -5029,5 +5042,5 @@
  "last_gpt_heartbeat": "2026-09-18",
  "gpt_alerts_since_heartbeat": 1,
  "gpt_last_status": "ok",
- "gpt_last_status_at": "09/18 20:33"
+ "gpt_last_status_at": "09/18 23:51"
 }
