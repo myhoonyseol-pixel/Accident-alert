@@ -4584,6 +4584,48 @@
     "진화",
     "화재"
    ]
+  },
+  "85c0a945355067c7": {
+   "ts": 1789736992.386439,
+   "tok": [
+    "만에",
+    "물류센터",
+    "서해구",
+    "시간",
+    "인천",
+    "초진",
+    "화재"
+   ]
+  },
+  "02cfe023e7ac6ab5": {
+   "ts": 1789736992.387117,
+   "tok": [
+    "34",
+    "격상",
+    "단계",
+    "대응",
+    "대피",
+    "물류센터",
+    "서해구",
+    "인천",
+    "직원",
+    "진화",
+    "총력",
+    "화재"
+   ]
+  },
+  "091e662621748628": {
+   "ts": 1789736992.387885,
+   "tok": [
+    "물류센터",
+    "세인티엔엘",
+    "시간만",
+    "없어",
+    "인명피해",
+    "인천",
+    "초진",
+    "화재"
+   ]
   }
  },
  "initialized": true,
@@ -4821,7 +4863,7 @@
     "화재"
    ],
    "link": "https://news.google.com/rss/articles/CBMicEFVX3lxTFBqWEQ4ZklqdjZaUzNocW00ZHpVaG5rbE50Y21SbmtDRWlrcl9mSzItZGdzM24yQkV2dlhLZUltTkxBbWRCN1cwVFRqVTV2Z2xRdUx0V0tmd2hQa1pOQnJGa1dENWswRHMtWHJjUklDYjk?oc=5",
-   "reports": 13,
+   "reports": 15,
    "casualty": false
   },
   {
