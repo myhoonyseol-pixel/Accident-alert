@@ -3464,6 +3464,19 @@
     "자동차",
     "화재"
    ]
+  },
+  "50f26436ccd53ecc": {
+   "ts": 1789693009.230277,
+   "tok": [
+    "39",
+    "만든다",
+    "물류단지",
+    "위험",
+    "인천공항",
+    "입주사",
+    "평가",
+    "화재위험도지"
+   ]
   }
  },
  "initialized": true,
@@ -3749,5 +3762,5 @@
  "last_gpt_heartbeat": "2026-09-18",
  "gpt_alerts_since_heartbeat": 0,
  "gpt_last_status": "ok",
- "gpt_last_status_at": "09/18 09:18"
+ "gpt_last_status_at": "09/18 09:56"
 }
