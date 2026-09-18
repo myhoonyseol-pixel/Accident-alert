@@ -4067,6 +4067,75 @@
     "인천",
     "화재"
    ]
+  },
+  "ae57e4cca6cc9064": {
+   "ts": 1789721469.952496,
+   "tok": [
+    "물류센터",
+    "인천",
+    "화재"
+   ]
+  },
+  "7d139303f57f9d44": {
+   "ts": 1789721469.953415,
+   "tok": [
+    "home",
+    "news",
+    "건설현장",
+    "예방",
+    "전후",
+    "중대재해",
+    "지자체",
+    "총력",
+    "추석"
+   ]
+  },
+  "0d363bb3ce575427": {
+   "ts": 1789721469.954177,
+   "tok": [
+    "경서동",
+    "난항",
+    "많아",
+    "물류센터",
+    "인천",
+    "적치물",
+    "진화",
+    "화재"
+   ]
+  },
+  "c6ebee7929a59da3": {
+   "ts": 1789721469.954904,
+   "tok": [
+    "34",
+    "경인아라뱃길",
+    "대피",
+    "물류단지",
+    "화재"
+   ]
+  },
+  "bd7b6fb51445195b": {
+   "ts": 1789721469.955869,
+   "tok": [
+    "20",
+    "곡물",
+    "분여",
+    "없이",
+    "익산",
+    "인명피해",
+    "잡아",
+    "저장",
+    "창고"
+   ]
+  },
+  "e7ed84718c0d9494": {
+   "ts": 1789721469.956645,
+   "tok": [
+    "건설",
+    "내포신도시",
+    "사망",
+    "아파트",
+    "작업자"
+   ]
   }
  },
  "initialized": true,
@@ -4218,7 +4287,7 @@
     "충남"
    ],
    "link": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE9tdHk1MDNFdEhIdWdwNGwyYjFmTE1BRzZkNlE1aWh6WDQxNHp0aXJRaDdwWDQxdV9FcEc3NmxFNUJDYkQ2aG9mdE94ZG11YWQ0YmRTNmtVa0dONHlBbExpZw?oc=5",
-   "reports": 5,
+   "reports": 6,
    "casualty": true
   },
   {
@@ -4322,7 +4391,7 @@
     "화재"
    ],
    "link": "https://news.google.com/rss/articles/CBMicEFVX3lxTFBqWEQ4ZklqdjZaUzNocW00ZHpVaG5rbE50Y21SbmtDRWlrcl9mSzItZGdzM24yQkV2dlhLZUltTkxBbWRCN1cwVFRqVTV2Z2xRdUx0V0tmd2hQa1pOQnJGa1dENWswRHMtWHJjUklDYjk?oc=5",
-   "reports": 7,
+   "reports": 8,
    "casualty": false
   },
   {
@@ -4349,5 +4418,5 @@
  "last_gpt_heartbeat": "2026-09-18",
  "gpt_alerts_since_heartbeat": 1,
  "gpt_last_status": "ok",
- "gpt_last_status_at": "09/18 17:35"
+ "gpt_last_status_at": "09/18 17:51"
 }
