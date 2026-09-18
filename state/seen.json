@@ -3619,29 +3619,25 @@
     "치여",
     "화물차에"
    ]
+  },
+  "bd2d073521507481": {
+   "ts": 1789707962.313011,
+   "tok": [
+    "34",
+    "40",
+    "건설현장",
+    "국도",
+    "롤러에",
+    "사망",
+    "아산",
+    "작업자",
+    "협착"
+   ]
   }
  },
  "initialized": true,
  "last_heartbeat": "2026-09-18",
  "events": [
-  {
-   "ts": 1789443400.980632,
-   "when": "09/15 08:54",
-   "title": "빌딩 코킹작업 달비계 탑승 노동자 추락 사망",
-   "updates": 0,
-   "tok": [
-    "달비계",
-    "빌딩",
-    "사망",
-    "작업자",
-    "추락",
-    "코킹작업",
-    "탑승"
-   ],
-   "link": "https://news.google.com/rss/articles/CBMicEFVX3lxTE9sZENETkJMS3BlaTdoQlhsTGprNGg5TmVOQVZ6UEJVaDlUVVBuN1lCSG1ublRadDRscmhtdkZ0T19qY1FUX1NOSFg0YThIU3N2R2FnLTNQVklPblFIbDZrLWNaeFk4Vmc5bnlHVENIX1U?oc=5",
-   "reports": 1,
-   "casualty": true
-  },
   {
    "ts": 1789467605.354877,
    "when": "09/15 18:37",
@@ -3879,7 +3875,7 @@
     "협착"
    ],
    "link": "https://news.google.com/rss/articles/CBMic0FVX3lxTE5FNEtLeEFheGljSm1fUTlzUTJaTHpGbko3MzJ4NF9xckJNbnhwTnlXTTZRR2x3cEpRSlNJN0MteG1xTUhmUGtjNVFvcDU1em9EWnM3ZlhCRUV1QzJlczNLSmFYdk5YYU4wTEl0anR3LU9MVk3SAXdBVV95cUxQcnpRdU1TVUUzV2stR1FScVdUTmFFbkdXdHdTY3FGdG9Rc3RwLW9RUktpcmpSeS1yQnUzZm5xbEsyYjlxYjlGX1Bia0YxeGczaU82ODU5WmF6MTVPZjZjZzZCU1lNN3l2M0Y5UDhFT2xnSFc2QkNCSQ?oc=5",
-   "reports": 4,
+   "reports": 5,
    "casualty": true
   },
   {
