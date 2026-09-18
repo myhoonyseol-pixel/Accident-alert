@@ -4842,6 +4842,26 @@
     "진화중",
     "화재"
    ]
+  },
+  "28470bcdc42e2fc1": {
+   "ts": 1789753728.670223,
+   "tok": [
+    "단계",
+    "대응",
+    "물류창고",
+    "상향",
+    "서해구",
+    "인천",
+    "화재"
+   ]
+  },
+  "6e5e9a190f593045": {
+   "ts": 1789753728.670855,
+   "tok": [
+    "물류센터",
+    "인천",
+    "화재"
+   ]
   }
  },
  "initialized": true,
@@ -5079,7 +5099,7 @@
     "화재"
    ],
    "link": "https://news.google.com/rss/articles/CBMicEFVX3lxTFBqWEQ4ZklqdjZaUzNocW00ZHpVaG5rbE50Y21SbmtDRWlrcl9mSzItZGdzM24yQkV2dlhLZUltTkxBbWRCN1cwVFRqVTV2Z2xRdUx0V0tmd2hQa1pOQnJGa1dENWswRHMtWHJjUklDYjk?oc=5",
-   "reports": 18,
+   "reports": 19,
    "casualty": false
   },
   {
