@@ -1,18 +1,5 @@
 {
  "seen": {
-  "8b7f3e91865aa60e": {
-   "ts": 1789114835.289223,
-   "tok": [
-    "70",
-    "물에",
-    "발견",
-    "빠져",
-    "사망",
-    "서산",
-    "웅도선착장",
-    "인근"
-   ]
-  },
   "b3ffa81be3334c61": {
    "ts": 1789120209.760691,
    "tok": [
@@ -4033,6 +4020,53 @@
     "트럭",
     "하청"
    ]
+  },
+  "41f1c05200029184": {
+   "ts": 1789720535.027404,
+   "tok": [
+    "단계",
+    "대응",
+    "물류센터",
+    "서해구",
+    "없어",
+    "인명",
+    "인천",
+    "피해",
+    "현재",
+    "화재"
+   ]
+  },
+  "68c39bff09ebadd7": {
+   "ts": 1789720535.028154,
+   "tok": [
+    "물류센터",
+    "서해구",
+    "소방관들",
+    "인천",
+    "진압하",
+    "화재"
+   ]
+  },
+  "d680c2a821edfb5e": {
+   "ts": 1789720535.028881,
+   "tok": [
+    "경서동",
+    "단계",
+    "대응",
+    "물류센터",
+    "발령",
+    "인천",
+    "화재"
+   ]
+  },
+  "e1a91685090c7106": {
+   "ts": 1789720535.029542,
+   "tok": [
+    "물류센터에",
+    "발생한",
+    "인천",
+    "화재"
+   ]
   }
  },
  "initialized": true,
@@ -4288,7 +4322,7 @@
     "화재"
    ],
    "link": "https://news.google.com/rss/articles/CBMicEFVX3lxTFBqWEQ4ZklqdjZaUzNocW00ZHpVaG5rbE50Y21SbmtDRWlrcl9mSzItZGdzM24yQkV2dlhLZUltTkxBbWRCN1cwVFRqVTV2Z2xRdUx0V0tmd2hQa1pOQnJGa1dENWswRHMtWHJjUklDYjk?oc=5",
-   "reports": 5,
+   "reports": 7,
    "casualty": false
   },
   {
@@ -4315,5 +4349,5 @@
  "last_gpt_heartbeat": "2026-09-18",
  "gpt_alerts_since_heartbeat": 1,
  "gpt_last_status": "ok",
- "gpt_last_status_at": "09/18 17:06"
+ "gpt_last_status_at": "09/18 17:35"
 }
