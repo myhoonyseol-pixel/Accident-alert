@@ -1,15 +1,5 @@
 {
  "seen": {
-  "438bee918fa78a5d": {
-   "ts": 1789164221.864485,
-   "tok": [
-    "Pic",
-    "뉴시스",
-    "보는",
-    "사진",
-    "일주일"
-   ]
-  },
   "3a062d54f2ac6ee6": {
    "ts": 1789166959.125843,
    "tok": [
@@ -4916,10 +4906,24 @@
     "퇴근길",
     "화재"
    ]
+  },
+  "67bf0e105e1f04a0": {
+   "ts": 1789769091.57078,
+   "tok": [
+    "만에",
+    "물류센터",
+    "시간",
+    "없어",
+    "완진",
+    "인명",
+    "인천",
+    "피해",
+    "화재"
+   ]
   }
  },
  "initialized": true,
- "last_heartbeat": "2026-09-18",
+ "last_heartbeat": "2026-09-19",
  "events": [
   {
    "ts": 1789555026.482453,
@@ -5197,9 +5201,9 @@
    "casualty": true
   }
  ],
- "sent_since_heartbeat": 5,
- "last_gpt_heartbeat": "2026-09-18",
- "gpt_alerts_since_heartbeat": 1,
+ "sent_since_heartbeat": 0,
+ "last_gpt_heartbeat": "2026-09-19",
+ "gpt_alerts_since_heartbeat": 0,
  "gpt_last_status": "ok",
  "gpt_last_status_at": "09/18 23:51"
 }
