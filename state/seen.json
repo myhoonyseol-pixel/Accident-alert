@@ -3991,30 +3991,53 @@
     "추락",
     "현수막"
    ]
+  },
+  "2aa03eea5e6afe44": {
+   "ts": 1789719606.459876,
+   "tok": [
+    "경인아라뱃길",
+    "단계",
+    "대응",
+    "물류센터",
+    "발령",
+    "인근",
+    "인천",
+    "화재"
+   ]
+  },
+  "4848f3706e3c040e": {
+   "ts": 1789719606.460392,
+   "tok": [
+    "경서동",
+    "단계",
+    "대응",
+    "물류센터",
+    "발령",
+    "소방당국",
+    "인천",
+    "화재"
+   ]
+  },
+  "d7c9b7cf92137db1": {
+   "ts": 1789719606.461432,
+   "tok": [
+    "11",
+    "50",
+    "거제조선소",
+    "달리해",
+    "삼성중공업",
+    "유명",
+    "자전거",
+    "작업자",
+    "충돌",
+    "트럭",
+    "하청"
+   ]
   }
  },
  "initialized": true,
  "last_heartbeat": "2026-09-18",
  "events": [
-  {
-   "ts": 1789545163.273121,
-   "when": "09/16 16:31",
-   "title": "울산 금속 기업 공장서 7m 높이 추락한 작업자 이송",
-   "updates": 1,
-   "tok": [
-    "공장",
-    "금속",
-    "기업",
-    "높이",
-    "울산",
-    "이송",
-    "작업자",
-    "추락한"
-   ],
-   "link": "https://news.google.com/rss/articles/CBMiW0FVX3lxTFBxTUtpOFE2Z21CMGRXaFlUTzh0M2lSU0dDZVIwbHhSVnVkOV9ZWVZnU2ZnQWlUdGs3U2NCSWw4MEt6WXk2SUlrTk44NUdXLXBlc1VQbXdqOU44aFXSAWBBVV95cUxPOS1FZXZrRGNtQl9vb1hJeUQzNlVVT0xqQmcxZkNCNGZOZjBJT0MyTUZLdWlUTDMxRk5haEJZRURrbTVBTE9XODdGYzB5UWF5dzB0UFFDLUM2cU5ISlc1Y2E?oc=5",
-   "reports": 5,
-   "casualty": true
-  },
   {
    "ts": 1789546863.118678,
    "when": "09/16 17:11",
