@@ -3923,6 +3923,74 @@
     "인명피해",
     "화재"
    ]
+  },
+  "1115bfcfe4f3dcce": {
+   "ts": 1789718765.395157,
+   "tok": [
+    "감독",
+    "다시",
+    "대전청",
+    "사업장",
+    "서산지청",
+    "여부",
+    "이후",
+    "작동",
+    "재발방지대책",
+    "점검",
+    "중대재해",
+    "중요",
+    "찾아"
+   ]
+  },
+  "aef2b804824af951": {
+   "ts": 1789718765.395891,
+   "tok": [
+    "단계",
+    "대응",
+    "물류센터",
+    "발령",
+    "인천",
+    "진화",
+    "화재"
+   ]
+  },
+  "3d1b27a6e15bb82c": {
+   "ts": 1789718765.396479,
+   "tok": [
+    "경서동",
+    "단계",
+    "대응",
+    "물류센터",
+    "발령",
+    "소방",
+    "인천",
+    "화재"
+   ]
+  },
+  "77b395e79089ba80": {
+   "ts": 1789718765.397048,
+   "tok": [
+    "경서동",
+    "단계",
+    "대응",
+    "물류센터",
+    "발령",
+    "인천",
+    "화재"
+   ]
+  },
+  "b71894f41b4349af": {
+   "ts": 1789718765.397748,
+   "tok": [
+    "당선",
+    "대표",
+    "설치하다",
+    "업체",
+    "입건",
+    "지방선거",
+    "추락",
+    "현수막"
+   ]
   }
  },
  "initialized": true,
@@ -4199,11 +4267,30 @@
    "link": "https://news.google.com/rss/articles/CBMicEFVX3lxTFBqWEQ4ZklqdjZaUzNocW00ZHpVaG5rbE50Y21SbmtDRWlrcl9mSzItZGdzM24yQkV2dlhLZUltTkxBbWRCN1cwVFRqVTV2Z2xRdUx0V0tmd2hQa1pOQnJGa1dENWswRHMtWHJjUklDYjk?oc=5",
    "reports": 5,
    "casualty": false
+  },
+  {
+   "ts": 1789718776.540344,
+   "when": "09/18 16:51",
+   "title": "지방선거 당선 현수막 설치하다 추락사…업체 대표 입건",
+   "updates": 0,
+   "tok": [
+    "당선",
+    "대표",
+    "설치하다",
+    "업체",
+    "입건",
+    "지방선거",
+    "추락",
+    "현수막"
+   ],
+   "link": "https://www.yna.co.kr/view/AKR20260918156400061",
+   "reports": 1,
+   "casualty": true
   }
  ],
- "sent_since_heartbeat": 3,
+ "sent_since_heartbeat": 4,
  "last_gpt_heartbeat": "2026-09-18",
- "gpt_alerts_since_heartbeat": 0,
+ "gpt_alerts_since_heartbeat": 1,
  "gpt_last_status": "ok",
- "gpt_last_status_at": "09/18 16:50"
+ "gpt_last_status_at": "09/18 17:06"
 }
