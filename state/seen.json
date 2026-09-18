@@ -4744,6 +4744,30 @@
     "집어삼킨",
     "화재"
    ]
+  },
+  "84757e7a1aef2563": {
+   "ts": 1789744770.207333,
+   "tok": [
+    "만에",
+    "물류센터",
+    "시간",
+    "인천",
+    "초진",
+    "화재"
+   ]
+  },
+  "a455e154b3ebfcee": {
+   "ts": 1789744770.208153,
+   "tok": [
+    "고려아연",
+    "공장",
+    "시험대",
+    "안전경영",
+    "온산제련소",
+    "최윤범",
+    "추락사고",
+    "회장"
+   ]
   }
  },
  "initialized": true,
@@ -4783,7 +4807,7 @@
     "추락"
    ],
    "link": "https://news.google.com/rss/articles/CBMie0FVX3lxTFBpNDZhWERFVU41bFpvMElOejE4bVRYV1l5MkZMWHdqS1QxWVRRTElhcnRZUDQ5RWRsb3kyUXY0cGVCeUNGTG0xNC1qLTYydFNzTDBSRnJHUGg4VHdqeGNaLW90eG9Mb0JFWVpLMjhzc1JGVWRJTVYxU0xPcw?oc=5",
-   "reports": 4,
+   "reports": 5,
    "casualty": true
   },
   {
