@@ -4862,6 +4862,22 @@
     "인천",
     "화재"
    ]
+  },
+  "9e7512d341f3cd67": {
+   "ts": 1789759128.856708,
+   "tok": [
+    "단계",
+    "대응",
+    "물류센터",
+    "서해구",
+    "세인티엔엘",
+    "없어",
+    "인명",
+    "인천",
+    "피해",
+    "현재",
+    "화재"
+   ]
   }
  },
  "initialized": true,
@@ -5099,7 +5115,7 @@
     "화재"
    ],
    "link": "https://news.google.com/rss/articles/CBMicEFVX3lxTFBqWEQ4ZklqdjZaUzNocW00ZHpVaG5rbE50Y21SbmtDRWlrcl9mSzItZGdzM24yQkV2dlhLZUltTkxBbWRCN1cwVFRqVTV2Z2xRdUx0V0tmd2hQa1pOQnJGa1dENWswRHMtWHJjUklDYjk?oc=5",
-   "reports": 19,
+   "reports": 20,
    "casualty": false
   },
   {
