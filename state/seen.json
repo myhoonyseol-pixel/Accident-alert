@@ -4522,6 +4522,21 @@
     "안잡혀",
     "화재"
    ]
+  },
+  "30147791cea793fb": {
+   "ts": 1789731226.019711,
+   "tok": [
+    "20",
+    "50",
+    "부상",
+    "삼성중",
+    "숨지고",
+    "잇단",
+    "자전거",
+    "작업자",
+    "조선소",
+    "현대중서"
+   ]
   }
  },
  "initialized": true,
@@ -4798,11 +4813,32 @@
    "link": "https://www.yna.co.kr/view/AKR20260918156400061",
    "reports": 1,
    "casualty": true
+  },
+  {
+   "ts": 1789731238.988674,
+   "when": "09/18 19:59",
+   "title": "조선소 잇단 자전거 사고…삼성중서 50대 근로자 숨지고 HD현대중서도 20대 부상",
+   "updates": 0,
+   "tok": [
+    "20",
+    "50",
+    "부상",
+    "삼성중",
+    "숨지고",
+    "잇단",
+    "자전거",
+    "작업자",
+    "조선소",
+    "현대중서"
+   ],
+   "link": "https://news.google.com/rss/articles/CBMia0FVX3lxTE94eENWYjk2QzFsQ01rVWFUV1k1ZzZfNEUwVDNGeXhCTC1PN0c1S0pSajVFWUVCcGZaQjBzLTJOX28zeXJXSXBTaGhSOTdGS3RURHlLc1VYMUtNdzhzdXZJOWd3eHNaMElZbVFZ?oc=5",
+   "reports": 1,
+   "casualty": true
   }
  ],
- "sent_since_heartbeat": 4,
+ "sent_since_heartbeat": 5,
  "last_gpt_heartbeat": "2026-09-18",
  "gpt_alerts_since_heartbeat": 1,
  "gpt_last_status": "ok",
- "gpt_last_status_at": "09/18 19:50"
+ "gpt_last_status_at": "09/18 20:33"
 }
