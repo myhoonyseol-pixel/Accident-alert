@@ -4537,29 +4537,24 @@
     "조선소",
     "현대중서"
    ]
+  },
+  "4cb1ba1004b7fca8": {
+   "ts": 1789732167.566743,
+   "tok": [
+    "물류센터",
+    "소방당국",
+    "아라뱃길",
+    "인근",
+    "인천",
+    "진화",
+    "총력",
+    "화재"
+   ]
   }
  },
  "initialized": true,
  "last_heartbeat": "2026-09-18",
  "events": [
-  {
-   "ts": 1789546863.118678,
-   "when": "09/16 17:11",
-   "title": "부산 건물 공사장 6층서 작업하던 70대 추락",
-   "updates": 0,
-   "tok": [
-    "70",
-    "건물",
-    "건설현장",
-    "부산",
-    "작업하던",
-    "추락",
-    "층서"
-   ],
-   "link": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE5NbTRiM3M2RnNSbUoyMVpSdlBqejZQWVdwTGt3WlhWSUlEUFZjemdIcWlTUnV0bVR6aFZsaVBMV3MyaThXQVR5enQweFVudHd4aHFieFpCSFU1UmPSAWBBVV95cUxOVXdoOUVEc3EzNWdLT1FtU05ReE0zY0dGMkN2R3d0WUJmTWFmU0lkeTRvREYtUlE5NTc3LS1zdGN5aDZJWWhobXp5TGd1TmNLUXEwSGhGNzM2OTg3T0pNclc?oc=5",
-   "reports": 6,
-   "casualty": false
-  },
   {
    "ts": 1789555026.482453,
    "when": "09/16 19:21",
