@@ -4561,6 +4561,29 @@
     "적치물에",
     "화재"
    ]
+  },
+  "2f0c8d1c38eddca7": {
+   "ts": 1789736061.555987,
+   "tok": [
+    "넘게",
+    "물류센터",
+    "서해구",
+    "시간",
+    "인천",
+    "진화",
+    "화재"
+   ]
+  },
+  "6e418de9c1a8d77d": {
+   "ts": 1789736061.556706,
+   "tok": [
+    "물류센터",
+    "상황",
+    "시간째",
+    "인천",
+    "진화",
+    "화재"
+   ]
   }
  },
  "initialized": true,
@@ -4798,7 +4821,7 @@
     "화재"
    ],
    "link": "https://news.google.com/rss/articles/CBMicEFVX3lxTFBqWEQ4ZklqdjZaUzNocW00ZHpVaG5rbE50Y21SbmtDRWlrcl9mSzItZGdzM24yQkV2dlhLZUltTkxBbWRCN1cwVFRqVTV2Z2xRdUx0V0tmd2hQa1pOQnJGa1dENWswRHMtWHJjUklDYjk?oc=5",
-   "reports": 12,
+   "reports": 13,
    "casualty": false
   },
   {
