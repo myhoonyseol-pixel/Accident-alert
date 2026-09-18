@@ -3710,6 +3710,80 @@
     "진화",
     "화재"
    ]
+  },
+  "3efea075e950c326": {
+   "ts": 1789714514.302572,
+   "tok": [
+    "당국",
+    "물류센터",
+    "서해구",
+    "소방",
+    "인천",
+    "진화",
+    "화재"
+   ]
+  },
+  "d59ab39ffc64511a": {
+   "ts": 1789714514.303298,
+   "tok": [
+    "경서동",
+    "단계",
+    "대응",
+    "물류창고",
+    "인천",
+    "화재"
+   ]
+  },
+  "fa9d9bd764922ae9": {
+   "ts": 1789714514.30415,
+   "tok": [
+    "경서동",
+    "단계",
+    "대응",
+    "물류센터",
+    "발령",
+    "서해구",
+    "인천",
+    "화재"
+   ]
+  },
+  "70b21293e8b23948": {
+   "ts": 1789714514.304589,
+   "tok": [
+    "물류센터",
+    "서해구",
+    "소방당국",
+    "우회",
+    "인천",
+    "진압",
+    "차량",
+    "필요",
+    "화재에"
+   ]
+  },
+  "933fb109d9f703f4": {
+   "ts": 1789714514.305687,
+   "tok": [
+    "당부",
+    "대피",
+    "물류센터",
+    "서해구",
+    "시민",
+    "인천",
+    "화재"
+   ]
+  },
+  "abc564ca13cccec8": {
+   "ts": 1789714514.306694,
+   "tok": [
+    "경인아라뱃길",
+    "단계",
+    "대응",
+    "물류단지",
+    "발령",
+    "소방",
+    "화재"
+   ]
   }
  },
  "initialized": true,
@@ -3967,7 +4041,7 @@
     "화재"
    ],
    "link": "https://www.newsis.com/view/NISX20260918_0003795891",
-   "reports": 1,
+   "reports": 2,
    "casualty": true
   },
   {
@@ -3984,7 +4058,7 @@
     "화재"
    ],
    "link": "https://news.google.com/rss/articles/CBMicEFVX3lxTFBqWEQ4ZklqdjZaUzNocW00ZHpVaG5rbE50Y21SbmtDRWlrcl9mSzItZGdzM24yQkV2dlhLZUltTkxBbWRCN1cwVFRqVTV2Z2xRdUx0V0tmd2hQa1pOQnJGa1dENWswRHMtWHJjUklDYjk?oc=5",
-   "reports": 1,
+   "reports": 5,
    "casualty": false
   }
  ],
@@ -3992,5 +4066,5 @@
  "last_gpt_heartbeat": "2026-09-18",
  "gpt_alerts_since_heartbeat": 0,
  "gpt_last_status": "ok",
- "gpt_last_status_at": "09/18 15:24"
+ "gpt_last_status_at": "09/18 15:55"
 }
