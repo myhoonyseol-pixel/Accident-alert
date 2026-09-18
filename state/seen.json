@@ -3679,6 +3679,37 @@
     "충돌",
     "화물차"
    ]
+  },
+  "1da2ddcfb4c94311": {
+   "ts": 1789712650.706023,
+   "tok": [
+    "물류센터",
+    "서구",
+    "인천",
+    "정서진",
+    "화재"
+   ]
+  },
+  "ba5f84f68e4655a3": {
+   "ts": 1789712650.706795,
+   "tok": [
+    "도로",
+    "물류센터",
+    "서해구",
+    "우회해야",
+    "인천",
+    "화재"
+   ]
+  },
+  "634bf58ad2bbcfdb": {
+   "ts": 1789712650.707585,
+   "tok": [
+    "경인아라뱃길",
+    "물류단지",
+    "소방",
+    "진화",
+    "화재"
+   ]
   }
  },
  "initialized": true,
@@ -3960,11 +3991,44 @@
    "link": "https://www.yna.co.kr/view/AKR20260918101000052",
    "reports": 1,
    "casualty": true
+  },
+  {
+   "ts": 1789712661.821257,
+   "when": "09/18 15:22",
+   "title": "경인아라뱃길 물류단지서 화재…소방 진화 중",
+   "updates": 0,
+   "tok": [
+    "경인아라뱃길",
+    "물류단지",
+    "소방",
+    "진화",
+    "화재"
+   ],
+   "link": "https://www.newsis.com/view/NISX20260918_0003795891",
+   "reports": 1,
+   "casualty": true
+  },
+  {
+   "ts": 1789712663.785212,
+   "when": "09/18 15:18",
+   "title": "인천 서해구 물류센터에서 화재 \"도로 우회해야\" [속보]",
+   "updates": 0,
+   "tok": [
+    "도로",
+    "물류센터",
+    "서해구",
+    "우회해야",
+    "인천",
+    "화재"
+   ],
+   "link": "https://news.google.com/rss/articles/CBMicEFVX3lxTFBqWEQ4ZklqdjZaUzNocW00ZHpVaG5rbE50Y21SbmtDRWlrcl9mSzItZGdzM24yQkV2dlhLZUltTkxBbWRCN1cwVFRqVTV2Z2xRdUx0V0tmd2hQa1pOQnJGa1dENWswRHMtWHJjUklDYjk?oc=5",
+   "reports": 1,
+   "casualty": false
   }
  ],
- "sent_since_heartbeat": 1,
+ "sent_since_heartbeat": 3,
  "last_gpt_heartbeat": "2026-09-18",
  "gpt_alerts_since_heartbeat": 0,
  "gpt_last_status": "ok",
- "gpt_last_status_at": "09/18 15:04"
+ "gpt_last_status_at": "09/18 15:24"
 }
