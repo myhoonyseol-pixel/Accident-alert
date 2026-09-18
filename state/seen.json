@@ -4347,6 +4347,47 @@
     "상향",
     "화재"
    ]
+  },
+  "e039c0f643353e1a": {
+   "ts": 1789727699.416734,
+   "tok": [
+    "격상",
+    "단계",
+    "당국",
+    "대응",
+    "물류센터",
+    "서해구",
+    "소방",
+    "인천",
+    "화재"
+   ]
+  },
+  "a7999032c8ef2793": {
+   "ts": 1789727699.417428,
+   "tok": [
+    "경서동",
+    "난항",
+    "많아",
+    "물류센터",
+    "인천",
+    "적치물",
+    "진화",
+    "화재"
+   ]
+  },
+  "c07734b0655617f3": {
+   "ts": 1789727699.418465,
+   "tok": [
+    "50",
+    "거제조선소",
+    "사망",
+    "자전거",
+    "직원",
+    "치여",
+    "타던",
+    "협력사",
+    "화물차에"
+   ]
   }
  },
  "initialized": true,
@@ -4569,7 +4610,7 @@
     "화물차에"
    ],
    "link": "https://www.yna.co.kr/view/AKR20260918101000052",
-   "reports": 1,
+   "reports": 2,
    "casualty": true
   },
   {
@@ -4602,7 +4643,7 @@
     "화재"
    ],
    "link": "https://news.google.com/rss/articles/CBMicEFVX3lxTFBqWEQ4ZklqdjZaUzNocW00ZHpVaG5rbE50Y21SbmtDRWlrcl9mSzItZGdzM24yQkV2dlhLZUltTkxBbWRCN1cwVFRqVTV2Z2xRdUx0V0tmd2hQa1pOQnJGa1dENWswRHMtWHJjUklDYjk?oc=5",
-   "reports": 8,
+   "reports": 9,
    "casualty": false
   },
   {
