@@ -5221,6 +5221,18 @@
     "피해",
     "한전"
    ]
+  },
+  "959e03e25c5b9b35": {
+   "ts": 1789857171.105366,
+   "tok": [
+    "공장",
+    "벌금",
+    "사망",
+    "업체들",
+    "월의",
+    "조지아",
+    "현대"
+   ]
   }
  },
  "initialized": true,
@@ -5509,5 +5521,5 @@
  "last_gpt_heartbeat": "2026-09-20",
  "gpt_alerts_since_heartbeat": 0,
  "gpt_last_status": "ok",
- "gpt_last_status_at": "09/20 07:03"
+ "gpt_last_status_at": "09/20 07:32"
 }
