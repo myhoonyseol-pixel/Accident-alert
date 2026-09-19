@@ -4994,6 +4994,20 @@
     "인천시",
     "화재안전"
    ]
+  },
+  "4c1eae66fd1c6b82": {
+   "ts": 1789785218.757378,
+   "tok": [
+    "50",
+    "건설현장",
+    "병원",
+    "성주",
+    "이송",
+    "작업자",
+    "추락",
+    "측량작업",
+    "하던"
+   ]
   }
  },
  "initialized": true,
@@ -5273,11 +5287,31 @@
    "link": "https://news.google.com/rss/articles/CBMia0FVX3lxTE94eENWYjk2QzFsQ01rVWFUV1k1ZzZfNEUwVDNGeXhCTC1PN0c1S0pSajVFWUVCcGZaQjBzLTJOX28zeXJXSXBTaGhSOTdGS3RURHlLc1VYMUtNdzhzdXZJOWd3eHNaMElZbVFZ?oc=5",
    "reports": 1,
    "casualty": true
+  },
+  {
+   "ts": 1789785226.723441,
+   "when": "09/19 11:25",
+   "title": "성주 댐 건설현장서 '측량작업'하던 50대 작업자 추락...병원 이송",
+   "updates": 0,
+   "tok": [
+    "50",
+    "건설현장",
+    "병원",
+    "성주",
+    "이송",
+    "작업자",
+    "추락",
+    "측량작업",
+    "하던"
+   ],
+   "link": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE1LZk5rakRMOTdKZ0ttaHN0X2NTYjgteHpPeDhjNHhLMV9DaUtwQl9iV0tvTHF0LUJYbUJ4c2dncHZmb3NNZUtZbGx2VV9LLTl1M2Q2S0tLMHo2ekFr?oc=5",
+   "reports": 1,
+   "casualty": true
   }
  ],
- "sent_since_heartbeat": 0,
+ "sent_since_heartbeat": 1,
  "last_gpt_heartbeat": "2026-09-19",
  "gpt_alerts_since_heartbeat": 0,
  "gpt_last_status": "ok",
- "gpt_last_status_at": "09/18 23:51"
+ "gpt_last_status_at": "09/19 11:33"
 }
