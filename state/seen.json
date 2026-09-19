@@ -5066,24 +5066,6 @@
  "last_heartbeat": "2026-09-19",
  "events": [
   {
-   "ts": 1789600683.741553,
-   "when": "09/17 07:53",
-   "title": "고려아연, 온산제련소 2공장서 지붕 작업 중 추락 사고…사망자 1명 발생",
-   "updates": 0,
-   "tok": [
-    "고려아연",
-    "공장",
-    "사망",
-    "온산제련소",
-    "작업",
-    "지붕",
-    "추락"
-   ],
-   "link": "https://news.google.com/rss/articles/CBMie0FVX3lxTFBpNDZhWERFVU41bFpvMElOejE4bVRYV1l5MkZMWHdqS1QxWVRRTElhcnRZUDQ5RWRsb3kyUXY0cGVCeUNGTG0xNC1qLTYydFNzTDBSRnJHUGg4VHdqeGNaLW90eG9Mb0JFWVpLMjhzc1JGVWRJTVYxU0xPcw?oc=5",
-   "reports": 5,
-   "casualty": true
-  },
-  {
    "ts": 1789610752.830625,
    "when": "09/17 10:48",
    "title": "인천 검단구 식품제조공장서 화재…차량 19대 등 피해",
