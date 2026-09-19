@@ -5099,29 +5099,36 @@
     "작업자",
     "추락"
    ]
+  },
+  "980f7262d2c91da8": {
+   "ts": 1789801755.478742,
+   "tok": [
+    "60",
+    "공장",
+    "사망",
+    "아래",
+    "아산",
+    "작업자",
+    "작업하던",
+    "추락"
+   ]
+  },
+  "21ffa252a8ce80e1": {
+   "ts": 1789801755.479494,
+   "tok": [
+    "경서동",
+    "물류센터",
+    "시간",
+    "인천",
+    "잡혀",
+    "큰불",
+    "화재"
+   ]
   }
  },
  "initialized": true,
  "last_heartbeat": "2026-09-19",
  "events": [
-  {
-   "ts": 1789610752.830625,
-   "when": "09/17 10:48",
-   "title": "인천 검단구 식품제조공장서 화재…차량 19대 등 피해",
-   "updates": 0,
-   "tok": [
-    "19",
-    "검단구",
-    "식품제조공장",
-    "인천",
-    "차량",
-    "피해",
-    "화재"
-   ],
-   "link": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE9iLXYxN3hwMkJhaDVpLW1CYmJlbFpNWGN0MnEtSHlRZWVwdGV2eDl1N3RQLXMyNWZ6T1hwSTJtQzNkbkk4QkZFMExwVHJMZW9QYjRxSFliSEdwOGpIUF8tbtIBeEFVX3lxTE1TQ1FUcXJlOWxHR2thLTV3RkMyZE9JcTlObU9URTN0VjdEVkN2UjNBeUFNNkRvQzRRR2pydEZlZGprbi1LZUYwdFRmXzkwdEJjMFJsYWJ6bVF3elU3cEVhanNDaUVzN1VRQWJROUJQTnlmNTdyaDVNdQ?oc=5",
-   "reports": 2,
-   "casualty": false
-  },
   {
    "ts": 1789619728.747114,
    "when": "09/17 10:25",
@@ -5405,5 +5412,5 @@
  "last_gpt_heartbeat": "2026-09-19",
  "gpt_alerts_since_heartbeat": 2,
  "gpt_last_status": "ok",
- "gpt_last_status_at": "09/19 15:53"
+ "gpt_last_status_at": "09/19 16:09"
 }
