@@ -5209,10 +5209,22 @@
     "인명피해",
     "전남광주"
    ]
+  },
+  "e2c6cbe89df90999": {
+   "ts": 1789855403.797554,
+   "tok": [
+    "3700",
+    "KPS",
+    "만원",
+    "보령화력발전소",
+    "사무동",
+    "피해",
+    "한전"
+   ]
   }
  },
  "initialized": true,
- "last_heartbeat": "2026-09-19",
+ "last_heartbeat": "2026-09-20",
  "events": [
   {
    "ts": 1789619728.747114,
@@ -5493,9 +5505,9 @@
    "casualty": true
   }
  ],
- "sent_since_heartbeat": 3,
- "last_gpt_heartbeat": "2026-09-19",
- "gpt_alerts_since_heartbeat": 3,
+ "sent_since_heartbeat": 0,
+ "last_gpt_heartbeat": "2026-09-20",
+ "gpt_alerts_since_heartbeat": 0,
  "gpt_last_status": "ok",
- "gpt_last_status_at": "09/20 06:48"
+ "gpt_last_status_at": "09/20 07:03"
 }
