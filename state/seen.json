@@ -5199,6 +5199,16 @@
     "사망",
     "폭발"
    ]
+  },
+  "cdaee39cc76020d8": {
+   "ts": 1789854472.523073,
+   "tok": [
+    "광산구",
+    "목재공장",
+    "없어",
+    "인명피해",
+    "전남광주"
+   ]
   }
  },
  "initialized": true,
@@ -5487,5 +5497,5 @@
  "last_gpt_heartbeat": "2026-09-19",
  "gpt_alerts_since_heartbeat": 3,
  "gpt_last_status": "ok",
- "gpt_last_status_at": "09/20 02:31"
+ "gpt_last_status_at": "09/20 06:48"
 }
