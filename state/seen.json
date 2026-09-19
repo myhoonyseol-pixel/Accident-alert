@@ -5124,6 +5124,18 @@
     "큰불",
     "화재"
    ]
+  },
+  "ce0ba171e8b9f765": {
+   "ts": 1789804097.171433,
+   "tok": [
+    "60",
+    "공장",
+    "사망",
+    "아산",
+    "작업",
+    "작업자",
+    "추락"
+   ]
   }
  },
  "initialized": true,
@@ -5404,7 +5416,7 @@
     "추락"
    ],
    "link": "https://www.yna.co.kr/view/AKR20260919045300063",
-   "reports": 1,
+   "reports": 2,
    "casualty": true
   }
  ],
@@ -5412,5 +5424,5 @@
  "last_gpt_heartbeat": "2026-09-19",
  "gpt_alerts_since_heartbeat": 2,
  "gpt_last_status": "ok",
- "gpt_last_status_at": "09/19 16:09"
+ "gpt_last_status_at": "09/19 16:48"
 }
