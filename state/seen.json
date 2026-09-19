@@ -5190,6 +5190,15 @@
     "조사",
     "중대재해법"
    ]
+  },
+  "774ffe6b2fc3eb0f": {
+   "ts": 1789839107.14736,
+   "tok": [
+    "공장",
+    "마리화나",
+    "사망",
+    "폭발"
+   ]
   }
  },
  "initialized": true,
@@ -5476,7 +5485,7 @@
  ],
  "sent_since_heartbeat": 3,
  "last_gpt_heartbeat": "2026-09-19",
- "gpt_alerts_since_heartbeat": 2,
+ "gpt_alerts_since_heartbeat": 3,
  "gpt_last_status": "ok",
- "gpt_last_status_at": "09/19 17:50"
+ "gpt_last_status_at": "09/20 02:31"
 }
