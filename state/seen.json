@@ -5047,6 +5047,19 @@
     "컨테이너",
     "화재"
    ]
+  },
+  "467660865f9749a5": {
+   "ts": 1789798741.616796,
+   "tok": [
+    "70",
+    "건설현장",
+    "공공주택",
+    "사망",
+    "울산",
+    "작업자",
+    "작업차량에",
+    "치여"
+   ]
   }
  },
  "initialized": true,
@@ -5327,11 +5340,30 @@
    "link": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE1LZk5rakRMOTdKZ0ttaHN0X2NTYjgteHpPeDhjNHhLMV9DaUtwQl9iV0tvTHF0LUJYbUJ4c2dncHZmb3NNZUtZbGx2VV9LLTl1M2Q2S0tLMHo2ekFr?oc=5",
    "reports": 1,
    "casualty": true
+  },
+  {
+   "ts": 1789798751.035006,
+   "when": "09/19 15:07",
+   "title": "울산 공공주택 공사장 70대 근로자, 작업차량에 치여 사망",
+   "updates": 0,
+   "tok": [
+    "70",
+    "건설현장",
+    "공공주택",
+    "사망",
+    "울산",
+    "작업자",
+    "작업차량에",
+    "치여"
+   ],
+   "link": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE1GcEN0TjZsRjNNUzdBWl84ZUdUbGhjem9jeFIxNE9UWGdNblFLUkR2dEVDVTNQZkxOOW1xMTdnZGVnWE5KcGR1SVRjNVJha2puZDlrWDJiZTgzLWdGSC1aTtIBeEFVX3lxTE9jS1d2M3hGT2tNeE5wekpncUxqV3VJMUhZQUc2UVBxSVlVSm1kZDVOalhCU19XN3lWeDNvekRQdUdvVVlLWlZIZDVkRXJZNmJ2bmhGVkZ6ODVXc3BYMkxTVmVnbzBTOEFnM1lhU2NjSzVrQzkzOHJyZg?oc=5",
+   "reports": 1,
+   "casualty": true
   }
  ],
- "sent_since_heartbeat": 1,
+ "sent_since_heartbeat": 2,
  "last_gpt_heartbeat": "2026-09-19",
- "gpt_alerts_since_heartbeat": 0,
+ "gpt_alerts_since_heartbeat": 1,
  "gpt_last_status": "ok",
- "gpt_last_status_at": "09/19 14:32"
+ "gpt_last_status_at": "09/19 15:19"
 }
