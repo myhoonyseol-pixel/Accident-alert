@@ -5233,6 +5233,19 @@
     "조지아",
     "현대"
    ]
+  },
+  "f09033fc2fac0394": {
+   "ts": 1789864937.889473,
+   "tok": [
+    "60",
+    "공장",
+    "구조물",
+    "깔렸다",
+    "밸트",
+    "사망",
+    "작업",
+    "컨베이어"
+   ]
   }
  },
  "initialized": true,
@@ -5515,11 +5528,30 @@
    "link": "https://www.yna.co.kr/view/AKR20260919045300063",
    "reports": 2,
    "casualty": true
+  },
+  {
+   "ts": 1789864946.766627,
+   "when": "09/20 09:28",
+   "title": "공장서 컨베이어 밸트 작업 60대 구조물 깔렸다…\"사망\"",
+   "updates": 0,
+   "tok": [
+    "60",
+    "공장",
+    "구조물",
+    "깔렸다",
+    "밸트",
+    "사망",
+    "작업",
+    "컨베이어"
+   ],
+   "link": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE44RDJVM0hyU0JDa2tMMjNpZ1J4WG8xR0F3djNIMXMyQ2p5RXBrZnluWV81MWdHRDFlS2RzckltcnFIOVB4ZXBTQTNSS1l6bzExR2E2MHZlamdkNmgya0RRcdIBeEFVX3lxTE9CVU5waS1LbkxsUEY3dkw2SzNtZWFCemNZQ2xTaVBhLWZKaHlqeHZWS1N4ZUxVZ1Etb1NUYVBFbzlraGFpd3dKb2cxb2hLUVhOZHRYcHVic1kzZTFISGp5ZHFkYWZnbVdFa2JnMmNWOE5xZU1iYzBrNg?oc=5",
+   "reports": 1,
+   "casualty": true
   }
  ],
- "sent_since_heartbeat": 0,
+ "sent_since_heartbeat": 1,
  "last_gpt_heartbeat": "2026-09-20",
- "gpt_alerts_since_heartbeat": 0,
+ "gpt_alerts_since_heartbeat": 1,
  "gpt_last_status": "ok",
- "gpt_last_status_at": "09/20 07:32"
+ "gpt_last_status_at": "09/20 09:42"
 }
