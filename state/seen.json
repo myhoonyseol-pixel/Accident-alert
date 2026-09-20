@@ -6281,6 +6281,19 @@
     "파주",
     "화재"
    ]
+  },
+  "fbac974c6abd5bd6": {
+   "ts": 1789899485.867726,
+   "tok": [
+    "공장",
+    "그라인더",
+    "불티",
+    "원인",
+    "추정",
+    "파주",
+    "화재",
+    "활활"
+   ]
   }
  },
  "initialized": true,
@@ -6568,5 +6581,5 @@
  "last_gpt_heartbeat": "2026-09-20",
  "gpt_alerts_since_heartbeat": 1,
  "gpt_last_status": "ok",
- "gpt_last_status_at": "09/20 18:18"
+ "gpt_last_status_at": "09/20 19:18"
 }
