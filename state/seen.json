@@ -6519,10 +6519,22 @@
     "쿠팡",
     "화재"
    ]
+  },
+  "19bfd2f24564da11": {
+   "ts": 1789941830.806892,
+   "tok": [
+    "70",
+    "건설현장",
+    "공공주택",
+    "공사차량에",
+    "사망",
+    "중구",
+    "치여"
+   ]
   }
  },
  "initialized": true,
- "last_heartbeat": "2026-09-20",
+ "last_heartbeat": "2026-09-21",
  "events": [
   {
    "ts": 1789635163.415335,
@@ -6741,7 +6753,7 @@
     "치여"
    ],
    "link": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE1GcEN0TjZsRjNNUzdBWl84ZUdUbGhjem9jeFIxNE9UWGdNblFLUkR2dEVDVTNQZkxOOW1xMTdnZGVnWE5KcGR1SVRjNVJha2puZDlrWDJiZTgzLWdGSC1aTtIBeEFVX3lxTE9jS1d2M3hGT2tNeE5wekpncUxqV3VJMUhZQUc2UVBxSVlVSm1kZDVOalhCU19XN3lWeDNvekRQdUdvVVlLWlZIZDVkRXJZNmJ2bmhGVkZ6ODVXc3BYMkxTVmVnbzBTOEFnM1lhU2NjSzVrQzkzOHJyZg?oc=5",
-   "reports": 2,
+   "reports": 3,
    "casualty": true
   },
   {
@@ -6802,9 +6814,9 @@
    "casualty": true
   }
  ],
- "sent_since_heartbeat": 2,
- "last_gpt_heartbeat": "2026-09-20",
- "gpt_alerts_since_heartbeat": 2,
+ "sent_since_heartbeat": 0,
+ "last_gpt_heartbeat": "2026-09-21",
+ "gpt_alerts_since_heartbeat": 0,
  "gpt_last_status": "ok",
  "gpt_last_status_at": "09/21 06:03"
 }
