@@ -5641,6 +5641,18 @@
     "쿠팡풀필먼트서비스",
     "화재에"
    ]
+  },
+  "ef5c6ece71796c47": {
+   "ts": 1789877958.489819,
+   "tok": [
+    "공장",
+    "뇌조리",
+    "닫기",
+    "당부",
+    "창문",
+    "파주",
+    "화재"
+   ]
   }
  },
  "initialized": true,
@@ -5928,5 +5940,5 @@
  "last_gpt_heartbeat": "2026-09-20",
  "gpt_alerts_since_heartbeat": 1,
  "gpt_last_status": "ok",
- "gpt_last_status_at": "09/20 12:19"
+ "gpt_last_status_at": "09/20 13:19"
 }
