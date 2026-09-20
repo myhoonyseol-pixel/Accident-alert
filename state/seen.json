@@ -5201,6 +5201,171 @@
     "투입",
     "화재"
    ]
+  },
+  "f193d4e71d6c363e": {
+   "ts": 1789872584.069418,
+   "tok": [
+    "60",
+    "경고등",
+    "공장",
+    "사망",
+    "상주",
+    "안전",
+    "일터",
+    "작업자"
+   ]
+  },
+  "70775d5318bbc119": {
+   "ts": 1789872584.070024,
+   "tok": [
+    "10",
+    "20",
+    "만원",
+    "물류센터",
+    "서해구",
+    "세대당",
+    "인당",
+    "주민에",
+    "지원",
+    "최대",
+    "쿠팡",
+    "화재"
+   ]
+  },
+  "d81c55a56d4a118f": {
+   "ts": 1789872584.070357,
+   "tok": [
+    "45",
+    "물류센터",
+    "억원",
+    "인천",
+    "조선비즈",
+    "지역에",
+    "지원",
+    "추가",
+    "쿠팡풀필먼트서비스",
+    "피해",
+    "화재"
+   ]
+  },
+  "8970c88d968c4111": {
+   "ts": 1789872584.070679,
+   "tok": [
+    "45",
+    "물류센터",
+    "인천",
+    "지역사회",
+    "지원",
+    "총력",
+    "쿠팡",
+    "화재지역에",
+    "회복"
+   ]
+  },
+  "ffbdd2d58a673e4f": {
+   "ts": 1789872584.071002,
+   "tok": [
+    "45",
+    "물류센터",
+    "인천",
+    "주민에",
+    "지역사회",
+    "지원",
+    "총력",
+    "쿠팡",
+    "피해",
+    "화재",
+    "회복"
+   ]
+  },
+  "1b98fae880bafb6f": {
+   "ts": 1789872584.071268,
+   "tok": [
+    "나서",
+    "물류센터",
+    "인천",
+    "지역에",
+    "지원",
+    "추가",
+    "쿠팡풀필먼트서비스",
+    "피해",
+    "화재"
+   ]
+  },
+  "d056bc5c7e11bbfd": {
+   "ts": 1789872584.071545,
+   "tok": [
+    "45",
+    "8000",
+    "CFS",
+    "물류센터",
+    "억원",
+    "인근",
+    "인천",
+    "주민",
+    "지원",
+    "쿠팡",
+    "투입",
+    "화재",
+    "후속"
+   ]
+  },
+  "5cb7448a08faf83e": {
+   "ts": 1789872584.07208,
+   "tok": [
+    "60",
+    "가구",
+    "만원",
+    "물류센터",
+    "주민",
+    "지원",
+    "최대",
+    "쿠팡",
+    "피해",
+    "현금",
+    "화재"
+   ]
+  },
+  "143091cefcb937b2": {
+   "ts": 1789872584.072351,
+   "tok": [
+    "45",
+    "CFS",
+    "물류센터",
+    "인천",
+    "지역에",
+    "지원",
+    "추가",
+    "쿠팡",
+    "피해",
+    "화재"
+   ]
+  },
+  "94f518df93a64850": {
+   "ts": 1789872584.072609,
+   "tok": [
+    "CFS",
+    "대표",
+    "물류센터",
+    "설명하",
+    "인천",
+    "정종철",
+    "지원방안",
+    "추가",
+    "화재"
+   ]
+  },
+  "cc8804706c1f968c": {
+   "ts": 1789872584.073458,
+   "tok": [
+    "CFS",
+    "대표",
+    "물류센터",
+    "사과하",
+    "인천",
+    "정종철",
+    "화재"
+   ]
   }
  },
  "initialized": true,
@@ -5483,11 +5648,30 @@
    "link": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE44RDJVM0hyU0JDa2tMMjNpZ1J4WG8xR0F3djNIMXMyQ2p5RXBrZnluWV81MWdHRDFlS2RzckltcnFIOVB4ZXBTQTNSS1l6bzExR2E2MHZlamdkNmgya0RRcdIBeEFVX3lxTE9CVU5waS1LbkxsUEY3dkw2SzNtZWFCemNZQ2xTaVBhLWZKaHlqeHZWS1N4ZUxVZ1Etb1NUYVBFbzlraGFpd3dKb2cxb2hLUVhOZHRYcHVic1kzZTFISGp5ZHFkYWZnbVdFa2JnMmNWOE5xZU1iYzBrNg?oc=5",
    "reports": 1,
    "casualty": true
+  },
+  {
+   "ts": 1789872596.334279,
+   "when": "09/20 10:00",
+   "title": "상주 공장 60대 근로자 참변…일터 안전 '경고등'",
+   "updates": 0,
+   "tok": [
+    "60",
+    "경고등",
+    "공장",
+    "사망",
+    "상주",
+    "안전",
+    "일터",
+    "작업자"
+   ],
+   "link": "https://news.google.com/rss/articles/CBMiV0FVX3lxTFA5VFZSR0ZtcTc3NnNlODluXzRST0FzNlY3T1NlMHVaUTdCeWRKX182alRHUG5TWXVJMFdNdnFtSVhFX1ExUk1ha3FvNjBGY0xLb2YyOVdSUdIBXEFVX3lxTE91c0tOczFjalpUX2FrU0x0bHhiRXdPdFlZTTlJUmk5UDIxY1ZCNGRHV0wxWUhERmhOWm1nbDJEVXFGeDRLRm1sdlpvanRFemkzYkdjbzFLM3JwTlVm?oc=5",
+   "reports": 1,
+   "casualty": true
   }
  ],
- "sent_since_heartbeat": 1,
+ "sent_since_heartbeat": 2,
  "last_gpt_heartbeat": "2026-09-20",
  "gpt_alerts_since_heartbeat": 1,
  "gpt_last_status": "ok",
- "gpt_last_status_at": "09/20 11:34"
+ "gpt_last_status_at": "09/20 11:49"
 }
