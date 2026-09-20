@@ -6355,6 +6355,18 @@
     "충청남",
     "해결"
    ]
+  },
+  "bcb158d6e4d102aa": {
+   "ts": 1789903957.110829,
+   "tok": [
+    "공장",
+    "뇌조리",
+    "에어",
+    "제조",
+    "조리읍",
+    "파주시",
+    "화재"
+   ]
   }
  },
  "initialized": true,
@@ -6640,7 +6652,7 @@
  ],
  "sent_since_heartbeat": 2,
  "last_gpt_heartbeat": "2026-09-20",
- "gpt_alerts_since_heartbeat": 1,
+ "gpt_alerts_since_heartbeat": 2,
  "gpt_last_status": "ok",
- "gpt_last_status_at": "09/20 19:18"
+ "gpt_last_status_at": "09/20 20:32"
 }
