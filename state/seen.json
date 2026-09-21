@@ -1,18 +1,5 @@
 {
  "seen": {
-  "4150657e2db96a0e": {
-   "ts": 1789360558.190674,
-   "tok": [
-    "강화",
-    "노사",
-    "안전기구",
-    "중대재해",
-    "진주시",
-    "폭염",
-    "현장점검",
-    "확대"
-   ]
-  },
   "6875a4fb2b8d4aa8": {
    "ts": 1789361487.269829,
    "tok": [
@@ -6567,28 +6554,38 @@
     "작업자",
     "추락"
    ]
+  },
+  "852eb63119a5d6b6": {
+   "ts": 1789965367.602437,
+   "tok": [
+    "138",
+    "끼임",
+    "만도",
+    "사망",
+    "산업안전조치",
+    "위반",
+    "적발",
+    "평택공장"
+   ]
+  },
+  "36c66f6c477db899": {
+   "ts": 1789965367.603594,
+   "tok": [
+    "138",
+    "끼임사",
+    "만도",
+    "안전법",
+    "위반",
+    "작업자",
+    "적발",
+    "평택공장",
+    "하청"
+   ]
   }
  },
  "initialized": true,
  "last_heartbeat": "2026-09-21",
  "events": [
-  {
-   "ts": 1789639592.352465,
-   "when": "09/17 18:57",
-   "title": "충남 내포신도시 아파트 공사 현장서 작업자 1명 사망",
-   "updates": 0,
-   "tok": [
-    "건설현장",
-    "내포신도시",
-    "사망",
-    "아파트",
-    "작업자",
-    "충남"
-   ],
-   "link": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE9tdHk1MDNFdEhIdWdwNGwyYjFmTE1BRzZkNlE1aWh6WDQxNHp0aXJRaDdwWDQxdV9FcEc3NmxFNUJDYkQ2aG9mdE94ZG11YWQ0YmRTNmtVa0dONHlBbExpZw?oc=5",
-   "reports": 6,
-   "casualty": true
-  },
   {
    "ts": 1789643943.368594,
    "when": "09/17 20:12",
@@ -6845,7 +6842,7 @@
     "평택공장"
    ],
    "link": "https://www.yna.co.kr/view/AKR20260921074700530",
-   "reports": 1,
+   "reports": 2,
    "casualty": true
   },
   {
