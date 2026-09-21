@@ -6505,6 +6505,18 @@
     "피해",
     "화재"
    ]
+  },
+  "3d3ff410ba90c10e": {
+   "ts": 1789958066.606812,
+   "tok": [
+    "40",
+    "대전",
+    "리튬배터리",
+    "만에",
+    "저장창고",
+    "진화",
+    "화재"
+   ]
   }
  },
  "initialized": true,
@@ -6790,7 +6802,7 @@
  ],
  "sent_since_heartbeat": 0,
  "last_gpt_heartbeat": "2026-09-21",
- "gpt_alerts_since_heartbeat": 1,
+ "gpt_alerts_since_heartbeat": 2,
  "gpt_last_status": "ok",
- "gpt_last_status_at": "09/21 11:05"
+ "gpt_last_status_at": "09/21 11:34"
 }
