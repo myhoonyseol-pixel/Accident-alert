@@ -6873,6 +6873,30 @@
     "인명",
     "피해"
    ]
+  },
+  "3191ae84c52d240c": {
+   "ts": 1790025521.438319,
+   "tok": [
+    "고령",
+    "공장",
+    "다산면",
+    "만에",
+    "시간여",
+    "잡아",
+    "차량부품",
+    "큰불",
+    "화재"
+   ]
+  },
+  "3fc2dfa5225b09e8": {
+   "ts": 1790025521.439583,
+   "tok": [
+    "간밤",
+    "경북",
+    "고령군",
+    "공장",
+    "화재"
+   ]
   }
  },
  "initialized": true,
@@ -7161,7 +7185,7 @@
  ],
  "sent_since_heartbeat": 3,
  "last_gpt_heartbeat": "2026-09-21",
- "gpt_alerts_since_heartbeat": 5,
+ "gpt_alerts_since_heartbeat": 6,
  "gpt_last_status": "ok",
- "gpt_last_status_at": "09/22 00:07"
+ "gpt_last_status_at": "09/22 06:18"
 }
