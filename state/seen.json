@@ -6555,6 +6555,18 @@
     "산하기관",
     "원주시장"
    ]
+  },
+  "57bc3050e9582013": {
+   "ts": 1789964426.393396,
+   "tok": [
+    "공장",
+    "낚시객",
+    "사망",
+    "예당저수지",
+    "익사",
+    "작업자",
+    "추락"
+   ]
   }
  },
  "initialized": true,
@@ -6835,11 +6847,29 @@
    "link": "https://www.yna.co.kr/view/AKR20260921074700530",
    "reports": 1,
    "casualty": true
+  },
+  {
+   "ts": 1789964437.044171,
+   "when": "09/21 13:01",
+   "title": "예당저수지 낚시객 익사…공장 추락 노동자 사망",
+   "updates": 0,
+   "tok": [
+    "공장",
+    "낚시객",
+    "사망",
+    "예당저수지",
+    "익사",
+    "작업자",
+    "추락"
+   ],
+   "link": "https://news.google.com/rss/articles/CBMickFVX3lxTE43ZmgwRVhxbkE2bktyd0g4T2VkR2lVSmFLNk96dWtYcUM2Vmk3QUZfYWZ4VS1vWVczbDA0UEV1dFp4OGIzc21hclM4TE5nMXlCOEl5Y0Q3aTI1UkxreVMtWFVFWlNwbHVKeW5SRHN6T1Rjd9IBdkFVX3lxTE1SbmhPVGxyZk56N0YtSjYtcldvbkNNOEhiLWJkUFZCQVcxdmlDMFVra0Zvd3NhUi1yVUQ5Ui1lWlVnMVduUnJQdHIxak1pWUN0MUtBS2k3aUF1M1NDY2pkc1c0V205dktUUjhQYXJkV1R6X1FWaVE?oc=5",
+   "reports": 1,
+   "casualty": true
   }
  ],
- "sent_since_heartbeat": 1,
+ "sent_since_heartbeat": 2,
  "last_gpt_heartbeat": "2026-09-21",
- "gpt_alerts_since_heartbeat": 2,
+ "gpt_alerts_since_heartbeat": 3,
  "gpt_last_status": "ok",
- "gpt_last_status_at": "09/21 13:06"
+ "gpt_last_status_at": "09/21 13:20"
 }
