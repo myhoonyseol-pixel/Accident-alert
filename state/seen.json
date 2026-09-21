@@ -1,29 +1,5 @@
 {
  "seen": {
-  "344b74524a304d63": {
-   "ts": 1789355162.576633,
-   "tok": [
-    "공장",
-    "없어",
-    "인명피해",
-    "자동차부품업체",
-    "제천",
-    "화재"
-   ]
-  },
-  "6b22cfadd0220a26": {
-   "ts": 1789355162.57727,
-   "tok": [
-    "경찰",
-    "못해",
-    "실종",
-    "업무",
-    "없었다",
-    "일원화",
-    "칸막",
-    "형사국"
-   ]
-  },
   "4146b86ef494294c": {
    "ts": 1789356022.619136,
    "tok": [
@@ -6537,6 +6513,49 @@
     "위반사항만",
     "처리"
    ]
+  },
+  "be09cf66dd5cc92c": {
+   "ts": 1789960785.548888,
+   "tok": [
+    "끼임",
+    "만도",
+    "무더기",
+    "사망",
+    "위험",
+    "적발",
+    "평택공장",
+    "후에"
+   ]
+  },
+  "1a52c1cc4643e20c": {
+   "ts": 1789960785.549637,
+   "tok": [
+    "45",
+    "나선다",
+    "물류센터",
+    "억원",
+    "인천",
+    "주민",
+    "지역사회",
+    "지원",
+    "총력",
+    "쿠팡풀필먼트서비스",
+    "화재지역",
+    "회복에"
+   ]
+  },
+  "ef6e3f407beb810f": {
+   "ts": 1789960785.550873,
+   "tok": [
+    "138",
+    "86",
+    "끼임사",
+    "만도",
+    "법위반",
+    "사법처리",
+    "작업자",
+    "평택공장"
+   ]
   }
  },
  "initialized": true,
@@ -6818,11 +6837,30 @@
    "link": "https://news.google.com/rss/articles/CBMiV0FVX3lxTFA5VFZSR0ZtcTc3NnNlODluXzRST0FzNlY3T1NlMHVaUTdCeWRKX182alRHUG5TWXVJMFdNdnFtSVhFX1ExUk1ha3FvNjBGY0xLb2YyOVdSUdIBXEFVX3lxTE91c0tOczFjalpUX2FrU0x0bHhiRXdPdFlZTTlJUmk5UDIxY1ZCNGRHV0wxWUhERmhOWm1nbDJEVXFGeDRLRm1sdlpvanRFemkzYkdjbzFLM3JwTlVm?oc=5",
    "reports": 1,
    "casualty": true
+  },
+  {
+   "ts": 1789960797.961464,
+   "when": "09/21 12:00",
+   "title": "'근로자 끼임사' HL만도 평택공장, 법위반 138건…86건 사법처리",
+   "updates": 0,
+   "tok": [
+    "138",
+    "86",
+    "끼임사",
+    "만도",
+    "법위반",
+    "사법처리",
+    "작업자",
+    "평택공장"
+   ],
+   "link": "https://www.yna.co.kr/view/AKR20260921074700530",
+   "reports": 1,
+   "casualty": true
   }
  ],
- "sent_since_heartbeat": 0,
+ "sent_since_heartbeat": 1,
  "last_gpt_heartbeat": "2026-09-21",
  "gpt_alerts_since_heartbeat": 2,
  "gpt_last_status": "ok",
- "gpt_last_status_at": "09/21 12:05"
+ "gpt_last_status_at": "09/21 12:19"
 }
