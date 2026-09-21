@@ -1,20 +1,5 @@
 {
  "seen": {
-  "bd227cd535cc9676": {
-   "ts": 1789423513.751542,
-   "tok": [
-    "사망",
-    "산업재해",
-    "산재사망",
-    "안전",
-    "역량",
-    "영세사업장",
-    "줄이려면",
-    "중소",
-    "창간기획",
-    "키워야"
-   ]
-  },
   "12543bc6b97084bd": {
    "ts": 1789427844.881008,
    "tok": [
@@ -6900,7 +6885,7 @@
   }
  },
  "initialized": true,
- "last_heartbeat": "2026-09-21",
+ "last_heartbeat": "2026-09-22",
  "events": [
   {
    "ts": 1789648832.309334,
@@ -7183,9 +7168,9 @@
    "casualty": true
   }
  ],
- "sent_since_heartbeat": 3,
- "last_gpt_heartbeat": "2026-09-21",
- "gpt_alerts_since_heartbeat": 6,
+ "sent_since_heartbeat": 0,
+ "last_gpt_heartbeat": "2026-09-22",
+ "gpt_alerts_since_heartbeat": 0,
  "gpt_last_status": "ok",
  "gpt_last_status_at": "09/22 06:18"
 }
