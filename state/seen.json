@@ -7238,5 +7238,7 @@
  "last_gpt_heartbeat": "2026-09-22",
  "gpt_alerts_since_heartbeat": 0,
  "gpt_last_status": "ok",
- "gpt_last_status_at": "09/22 09:42"
+ "gpt_last_status_at": "09/22 09:42",
+ "gpt_events": [],
+ "gpt_silent": []
 }
