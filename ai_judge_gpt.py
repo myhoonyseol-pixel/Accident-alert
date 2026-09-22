@@ -51,6 +51,8 @@ RESULT_SCHEMA = {
                 "additionalProperties": False,
                 "properties": {
                     "i": {"type": "integer"},
+                    "cid": {"type": "string"},
+                    "t": {"type": "string"},
                     "what": {"type": "string"},
                     "v": {"type": "string", "enum": ["new", "update", "skip", "dup"]},
                     "e": {"type": "integer"},
@@ -59,7 +61,7 @@ RESULT_SCHEMA = {
                     "chg": {"type": "string"},
                     "why": {"type": "string"},
                 },
-                "required": ["i", "what", "v", "e", "occurred", "co", "chg", "why"],
+                "required": ["i", "cid", "t", "what", "v", "e", "occurred", "co", "chg", "why"],
             },
         },
     },
@@ -71,8 +73,10 @@ GPT_OUTPUT_INSTRUCTION = r"""
 ━━ GPT 구조화 출력 형식 ━━
 OpenAI Structured Outputs 제약 때문에 최상위는 배열이 아니라 반드시 객체다.
 위의 'JSON 배열만 출력' 지시보다 아래 형식을 우선한다. 다른 말은 쓰지 마라.
-{"results":[{"i":0,"what":"기사의 핵심 사건","v":"new","e":-1,"occurred":"","co":"","chg":"","why":"20자 이내"}]}
+{"results":[{"i":0,"cid":"받은 기사 ID","t":"제목 앞 12글자","what":"기사의 핵심 사건","v":"new","e":-1,"occurred":"","co":"","chg":"","why":"20자 이내"}]}
 
+cid는 입력에서 받은 **기사 ID를 한 글자도 바꾸지 말고 그대로** 베껴 쓴다. 답과 기사를 짝짓는 1순위 키다.
+t는 그 기사 **제목 앞 12글자를 그대로** 베껴 쓴다. cid가 잘못됐을 때의 보조 확인용이다.
 모든 입력 기사에 대해 results에 정확히 한 건씩 결과를 넣는다.
 
 ━━ 회사명 co 판단 보강 ━━
@@ -124,8 +128,10 @@ def _build_user_msg(candidates, recent_events, silent_events=None):
         title = (item.get("title") or "")[:120]
         summary = (item.get("summary") or "")[:200]
         outlet = (item.get("outlet") or "").replace("https://", "")[:40]
+        cid = ai_judge._candidate_id(item)
         line = (
-            f'{i}. 제목: {title}\n'
+            f'{i}. ID: {cid}\n'
+            f'   제목: {title}\n'
             f'   요약: {summary}\n'
             f'   매체: {outlet or "미상"}\n'
             f'   걸린단어: {place} / {"·".join(hits[:4])}'
@@ -268,12 +274,49 @@ def judge(candidates, cfg, recent_events=None, silent_events=None):
         print(f"[gpt] 비교 판정 최종 실패: {last_err}", file=sys.stderr)
         return [_error_result(c, model, str(last_err)[:180]) for c in candidates]
 
+    # 답과 기사를 **고유 ID 우선, 제목 보조**로 짝짓습니다. (ai_judge.py와 동일한 방식)
+    # 예전에는 번호(i)만 믿었는데, 번호가 한 칸 밀리면 판정이 엉뚱한 기사에
+    # 붙어 나갔습니다(2026-09-22 "[여백] 고잉홈" 오발송 — 실제로는 다른 기사의
+    # 판정이었음). cid가 답에 그대로 돌아오면 그걸로, 안 되면 제목으로 짝짓습니다.
+    cids = [ai_judge._candidate_id(c[0]) for c in candidates]
+    ntitles = [ai_judge._norm(c[0].get("title"))[:80] for c in candidates]
     by_i = {}
     for v in verdicts:
-        try:
-            by_i[int(v["i"])] = v
-        except (TypeError, ValueError, KeyError):
+        if not isinstance(v, dict):
             continue
+        try:
+            i = int(v.get("i", -1))
+        except (TypeError, ValueError):
+            i = -1
+
+        k = None
+        cid = str(v.get("cid", "")).strip()
+        if cid:
+            matches = [x for x, known in enumerate(cids) if x not in by_i and known == cid]
+            if len(matches) == 1:
+                k = matches[0]
+                if k != i:
+                    print(f"[gpt] ID 짝 보정 — {i}번으로 온 답을 cid로 찾아 {k}번 기사에 붙임",
+                          file=sys.stderr)
+            elif not matches:
+                print(f"[gpt] cid 불일치 — '{cid}', 제목 보조 매칭 시도", file=sys.stderr)
+
+        if k is None:
+            t = ai_judge._norm(v.get("t", ""))[:12]
+            if len(t) >= 4:
+                matches = [x for x in range(len(candidates)) if x not in by_i and t in ntitles[x]]
+                if matches:
+                    k = i if i in matches else min(matches, key=lambda x: abs(x - i))
+                    if k != i:
+                        print(f"[gpt] 제목 짝 보정 — {i}번으로 온 답을 제목으로 찾아 {k}번 기사에 붙임",
+                              file=sys.stderr)
+
+        if k is None and 0 <= i < len(candidates) and i not in by_i:
+            k = i
+            print(f"[gpt] 번호 fallback — cid/t 매칭 실패, {i}번에 임시 연결", file=sys.stderr)
+
+        if k is not None and k not in by_i:
+            by_i[k] = v
 
     type_map = {
         "new": ("ALERT", "NEW"),
