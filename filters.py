@@ -144,9 +144,19 @@ def match(cfg, title, summary="", outlet=""):
     #     안에서 '전도'가 튀어나오는 식의 새 오탐이 생기기 때문.)
     packed = re.sub(r"\s+", "", text)
 
+    # 주요 건설사 이름. 아래 장소·작업 판정과 **별개로** 먼저 봐둡니다.
+    #
+    # 예전에는 장소 단어가 먼저 걸리면 거기서 끝나 🔴 가 안 붙었습니다.
+    # 그런데 "DL건설 현장서 작업자 사망" 은 띄어쓰기를 지우면 'DL건설현장' 이 되어
+    # '건설현장' 에 먼저 걸립니다. 대우건설 현장·GS건설 공사현장도 전부 같았습니다.
+    # 회사 이름이 제목에 나오는 기사는 대부분 '현장'도 함께 쓰므로, 🔴 가 정작
+    # 필요한 기사에 거의 안 붙고 있었습니다. (2026-09-21 수정)
+    # 판정(통과 여부)은 그대로이고, **표시만** 🔴 로 올립니다.
+    corp = next((w for w in getattr(cfg, "COMPANY_WORDS", ()) if w in packed), None)
+
     strong = next((w for w in cfg.STRONG_PLACE_WORDS if w in packed), None)
     if strong:
-        return strong, hits, "strong"
+        return (corp, hits, "company") if corp else (strong, hits, "strong")
 
     # 3-2) 속보 대응 — '공사 중', '갱폼' 같은 건설 작업 표현.
     #      사고 직후 속보에는 '현장'도 회사명도 없이 이것만 나옵니다.
@@ -154,18 +164,17 @@ def match(cfg, title, summary="", outlet=""):
     #      띄어쓰기가 의미를 가르므로(도로공사 중부 vs 공사 중) 원문으로 봅니다.
     work = next((w for w in getattr(cfg, "WORK_WORDS", ()) if w in text), None)
     if work:
-        return work, hits, "strong"
+        return (corp, hits, "company") if corp else (work, hits, "strong")
 
     # 3-2-2) 같은 취지의 동사형. "창틀 공사하던", "지붕 방수하던", "옹벽 철거하다"
     #        제목이 명사(공사 중)가 아니라 동사(공사하던)로 쓰인 경우입니다.
     mv = _WORK_VERB_RE.search(text)
     if mv:
-        return mv.group(), hits, "strong"
+        return (corp, hits, "company") if corp else (mv.group(), hits, "strong")
 
     # 3-3) 장소 표현이 없어도 주요 건설사 이름이 나오면 건설 사고로 봅니다.
     #      재해개요형 기사("갱폼 인상 작업 중 근로자 추락 사망")에는 '현장'이라는
     #      말이 아예 없는 경우가 많은데, 시공사 이름은 거의 항상 실립니다.
-    corp = next((w for w in getattr(cfg, "COMPANY_WORDS", ()) if w in packed), None)
     if corp:
         return corp, hits, "company"
 

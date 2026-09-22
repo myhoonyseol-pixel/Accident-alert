@@ -75,6 +75,10 @@ what 칸에 "누가 언제 어디서 무엇을" 을 25자로 적어라.
 
 ━━ 판단 1 · 알려야 할 사고인가 ━━
 
+⚠️ 단, 이 기사가 '이미 보낸 사고'의 후속이면 **판단 3을 먼저** 본다.
+   며칠 뒤 기사라도, 수사·감독 얘기가 섞여 있어도, 새 사실이 있으면 update 다.
+   판단 1의 '사고 이후의 일 → skip' 은 **새 사실이 없을 때만** 적용한다.
+
 스스로 셋을 물어라. 아래 단어는 **예시일 뿐이다.**
 목록에 없어도 성격이 같으면 똑같이 판단하라. 목록을 정답지로 쓰지 마라.
 
@@ -129,8 +133,15 @@ what 칸에 "누가 언제 어디서 무엇을" 을 25자로 적어라.
 같은 사고라면 —
   update  상황 자체가 달라짐. 셋뿐이다.
           사상자 수 변화 / 시공사·원청 최초 공개 / 매몰·실종 종결
+          목록에 [시공사: ○○] 가 이미 있으면 그 회사는 '최초 공개'가 아니다.
+
   dup     그 외 전부. 작업중지·수사착수·압수수색·원인규명은
           사망사고에 당연히 따르는 절차이지 상황 변화가 아니다.
+
+  실제로 틀린 사례 — 9/11 광주 H빔 사고를 보낸 뒤 9/13 에
+    "전남광주 현대엔지니어링 시공 현장에서 40대 사망 중대재해 발생"
+  을 '사후보도'라며 skip 했다. 시공사가 처음 밝혀진 기사였다. update 였어야 한다.
+  언론은 나중에 회사명을 빼기도 한다. **회사명이 처음 나온 기사는 절대 버리지 마라.**
 
 ━━ 판단이 애매하면 ━━
 new 로 한다. 놓치는 것이 헛알림보다 위험하다.
@@ -150,10 +161,11 @@ new 로 한다. 놓치는 것이 헛알림보다 위험하다.
 ━━ 출력 ━━
 아래 JSON 배열만 출력한다. 배열 뒤에 아무것도 쓰지 마라.
 
-[{"i":0,"what":"","v":"new","e":-1,"occurred":"","co":"","chg":"","why":""}]
+[{"i":0,"what":"핵심 사건","v":"넷 중 하나","e":-1,"occurred":"","co":"","chg":"","why":"판단 이유"}]
 
   what      이 기사의 핵심 사건 25자. **판정 전에 먼저 쓴다.** 항상 채운다
-  v         skip · dup · update · new 넷 중 하나
+  v         skip · dup · update · new 넷 중 하나. **판정은 반드시 이 칸에.**
+            what 칸에 skip·new 같은 판정을 쓰지 마라
   e         dup·update일 때 사건 번호, 아니면 -1
   occurred  본문에 사고 발생 일시가 있으면 "09-11 19:35" 또는 "09-11",
             없으면 "" (기사 작성일이 아니라 **사고가 난 때**다)
@@ -248,7 +260,8 @@ def judge(candidates, cfg, recent_events=None):
     if recent_events:
         parts.append("[이미 보낸 사고]")
         for j, ev in enumerate(recent_events):
-            parts.append(f'{j}. ({ev.get("when","")}) {ev.get("title","")[:90]}')
+            co = f' [시공사: {ev["co"]}]' if ev.get("co") else ""
+            parts.append(f'{j}. ({ev.get("when","")}) {ev.get("title","")[:90]}{co}')
         parts.append("")
     parts.append("[판단할 기사]")
     for i, (item, place, hits, _conf) in enumerate(candidates):
@@ -295,7 +308,10 @@ def judge(candidates, cfg, recent_events=None):
                 },
                 json={
                     "model": getattr(cfg, "AI_MODEL", "claude-haiku-4-5-20251001"),
-                    "max_tokens": 1200,
+                    # 칸이 7개로 늘며 답 한 줄이 약 147자가 됐습니다. 1200이면 후보 5건쯤에서
+                    # 답이 중간에 잘려 판정이 통째로 실패합니다(=전부 무검증 발송).
+                    # 요금은 실제로 쓴 만큼만 나가므로 한도를 올려도 비용은 같습니다.
+                    "max_tokens": 4000,
                     "system": SYSTEM_PROMPT,
                     "messages": [{"role": "user", "content": user_msg}],
                 },
@@ -332,15 +348,43 @@ def judge(candidates, cfg, recent_events=None):
         except (TypeError, ValueError, KeyError):
             continue
 
+    VALID = ("skip", "dup", "update", "new")
     kept = []
     for i, cand in enumerate(candidates):
         title = (cand[0].get("title") or "")[:44]
-        v = by_i.get(i, {})
-        verdict = str(v.get("v", "new")).lower()
+
+        # ── 답이 멀쩡한지부터 확인합니다 ──────────────────────
+        # 예전에는 답이 없거나 이상하면 **조용히 new(발송)** 로 처리했습니다.
+        # 2026-09-17 국정감사 통계 기사, 09-21 HL만도 감독결과 기사가
+        # 이렇게 나갔습니다. AI는 skip 이라고 답했는데 칸을 잘못 적었고,
+        # 코드는 판정 칸에 남아 있던 "new" 를 그대로 믿었습니다.
+        #
+        # 이제는 셋 중 하나면 발송하되 ⚠️ AI 미검증 을 붙입니다.
+        # (놓치는 것보다 헛알림이 낫다는 원칙은 그대로입니다)
+        v = by_i.get(i)
+        if v is None:
+            print(f"[ai] 답 없음 ⚠ {title} — 이 기사에 대한 답이 빠짐", file=sys.stderr)
+            kept.append((*cand, {"v": "new", "e": -1, "chg": "", "ai": "fail"}))
+            continue
+
+        verdict = str(v.get("v", "")).strip().lower()
         why = v.get("why", "")
         # AI가 판정 전에 적은 '이 기사의 핵심 사건'. 로그에 남겨두면
         # 잘못 보냈을 때 AI가 무엇으로 읽었는지 바로 보입니다.
         what = str(v.get("what", "")).strip()
+
+        # 칸 혼동 구제 — what 은 25자 요약이라 판정어 한 단어만 올 일이 없습니다.
+        # 그런데 딱 판정어만 있다면 AI가 칸을 헷갈린 것이므로 그쪽을 믿습니다.
+        # (실제로 {"what":"skip","v":"new"} 형태로 두 번 샜습니다)
+        if what.lower() in VALID:
+            print(f"[ai] 칸 혼동 구제 {title} — what 칸의 '{what}' 를 판정으로 봄",
+                  file=sys.stderr)
+            verdict, what = what.lower(), ""
+
+        if verdict not in VALID:
+            print(f"[ai] 판정값 이상 ⚠ {title} — v='{v.get('v')}'", file=sys.stderr)
+            kept.append((*cand, {"v": "new", "e": -1, "chg": "", "ai": "fail"}))
+            continue
         # 본문에서 뽑아낸 사실 둘. 알림에 표시합니다.
         occurred = str(v.get("occurred", "")).strip()
         company = str(v.get("co", "")).strip()
@@ -350,6 +394,19 @@ def judge(candidates, cfg, recent_events=None):
             print(f"[ai] 제외 × {title} ({why}){tail}")
             continue
         if verdict == "dup":
+            # 안전망 — AI가 재탕이라 했지만 그 사고의 시공사가 **처음** 나온 기사면
+            # 코드가 update 로 올립니다. 언론은 나중에 회사명을 빼기도 하므로
+            # 처음 나온 순간 붙잡지 못하면 영영 잃습니다.
+            # (9/11 광주 H빔 → 9/13 현대엔지니어링 공개 기사를 AI가 버린 사고)
+            e = v.get("e", -1)
+            ev = (recent_events[e] if isinstance(e, int) and 0 <= e < len(recent_events)
+                  else None)
+            if company and ev is not None and not ev.get("co"):
+                print(f"[ai] 재탕→후속 ↻ {title} — 시공사 최초 공개({company})")
+                kept.append((*cand, {"v": "update", "e": e,
+                                     "chg": f"시공사 공개: {company}"[:25],
+                                     "occurred": occurred, "co": company}))
+                continue
             print(f"[ai] 재탕 × {title} ({why}){tail}")
             continue
         if verdict == "update":

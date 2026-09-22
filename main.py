@@ -127,7 +127,13 @@ def load_state():
         with open(STATE_PATH, encoding="utf-8") as f:
             state = json.load(f)
     except (FileNotFoundError, json.JSONDecodeError):
-        return {"seen": {}, "initialized": False, "last_heartbeat": ""}
+        return {
+            "seen": {}, "initialized": False, "last_heartbeat": "",
+            "events": [], "sent_since_heartbeat": 0,
+            "gpt_events": [], "gpt_silent": [],
+            "last_gpt_heartbeat": "", "gpt_alerts_since_heartbeat": 0,
+            "gpt_last_status": "", "gpt_last_status_at": "",
+        }
 
     # 예전 형식({key: timestamp})을 새 형식으로 옮깁니다.
     for k, v in list(state.get("seen", {}).items()):
@@ -138,8 +144,11 @@ def load_state():
     # 생존신호 이후 몇 건을 보냈는지. "새 속보 없음"이 거짓말이 되지 않게 셉니다.
     state.setdefault("sent_since_heartbeat", 0)
 
-    # GPT 비교방용 상태. 기사 ERROR는 텔레그램에 보내지 않되,
-    # 하루 1회 생존신고에서 시스템 상태만 확인할 수 있게 기록합니다.
+    # GPT 비교기는 Claude와 별도의 사건 기억을 씁니다.
+    # 그래야 Claude가 skip 한 사고를 GPT가 NEW로 보낸 경우에도 GPT가 자기 알림을 기억하고,
+    # 반대로 Claude 판단이 GPT의 NEW/DUP 판정에 섞이지 않습니다.
+    state.setdefault("gpt_events", [])
+    state.setdefault("gpt_silent", [])
     state.setdefault("last_gpt_heartbeat", "")
     state.setdefault("gpt_alerts_since_heartbeat", 0)
     state.setdefault("gpt_last_status", "")
@@ -153,6 +162,29 @@ def recent_events(state):
     fresh = [e for e in state.get("events", []) if e.get("ts", 0) > cutoff]
     state["events"] = fresh[-getattr(config, "EVENT_MEMORY_MAX", 15):]
     return state["events"]
+
+
+def recent_gpt_events(state):
+    """GPT 비교방이 실제로 ALERT한 최근 사고 목록. Claude events와 분리합니다."""
+    cutoff = (now_utc() - timedelta(days=getattr(config, "EVENT_MEMORY_DAYS", 5))).timestamp()
+    fresh = [e for e in state.get("gpt_events", []) if e.get("ts", 0) > cutoff]
+    state["gpt_events"] = fresh[-getattr(config, "EVENT_MEMORY_MAX", 15):]
+    return state["gpt_events"]
+
+
+def recent_gpt_silent(state):
+    """GPT가 최근 NO_ALERT로 본 후보의 짧은 기억.
+
+    9/17 정선 트럭 사고처럼 낮에는 '단순부상'으로 정확히 제외했는데 밤 기사 제목에서
+    부상 표현이 빠져 '피해규모 미상 NEW'로 되살아나는 일을 막기 위한 보조 기억입니다.
+    텔레그램에는 보내지 않고 GPT 판단 문맥에만 사용합니다.
+    """
+    days = getattr(config, "GPT_SILENT_MEMORY_DAYS", 2)
+    max_n = getattr(config, "GPT_SILENT_MEMORY_MAX", 20)
+    cutoff = (now_utc() - timedelta(days=days)).timestamp()
+    fresh = [e for e in state.get("gpt_silent", []) if e.get("ts", 0) > cutoff]
+    state["gpt_silent"] = fresh[-max_n:]
+    return state["gpt_silent"]
 
 
 def save_state(state):
@@ -351,11 +383,38 @@ def fetch_body(link: str, limit: int = 1200) -> str:
             },
             timeout=getattr(config, "BODY_TIMEOUT", 4),
             allow_redirects=True,
+            stream=True,                         # 통째로 받지 않고 앞부분만
         )
         if r.status_code != 200:
+            r.close()
             return ""
-        r.encoding = r.apparent_encoding or r.encoding
-        text = _TAG_RE.sub(" ", r.text)          # script·style 통째로 제거
+        # 기사 페이지가 아니면(PDF·이미지 등) 받지 않습니다.
+        ctype = r.headers.get("Content-Type", "").lower()
+        if ctype and "html" not in ctype and "text" not in ctype:
+            r.close()
+            return ""
+
+        # 앞 200KB 까지만 받습니다. 본문 앞부분만 필요한데 무거운 페이지를
+        # 통째로 받으면 회차가 밀립니다. 한국 기사 본문은 대개 앞 100KB 안에 있습니다.
+        raw = b""
+        for chunk in r.iter_content(16384):
+            raw += chunk
+            if len(raw) > 200_000:
+                break
+        r.close()
+
+        # 인코딩 — 헤더에 없으면 페이지 안의 charset 을 봅니다.
+        # (euc-kr 쓰는 지역지가 아직 많습니다)
+        enc = r.encoding if r.encoding and r.encoding.lower() != "iso-8859-1" else None
+        if not enc:
+            m = re.search(rb'charset=["\']?([\w-]+)', raw[:5000], re.I)
+            enc = m.group(1).decode("ascii", "ignore") if m else "utf-8"
+        try:
+            page = raw.decode(enc, errors="replace")
+        except LookupError:
+            page = raw.decode("utf-8", errors="replace")
+
+        text = _TAG_RE.sub(" ", page)            # script·style 통째로 제거
         text = _ANYTAG_RE.sub(" ", text)         # 남은 태그 제거
         text = html.unescape(text)
         text = _SPACE_RE.sub(" ", text).strip()
@@ -433,7 +492,7 @@ def _gpt_ready():
 
 
 def send_gpt_telegram(text: str) -> bool:
-    """GPT가 ALERT로 판정한 기사만 전용 비교방으로 보냅니다."""
+    """GPT 전용 비교방으로 보냅니다. 실시간은 ALERT만 호출합니다."""
     token = os.environ.get("TELEGRAM_BOT_TOKEN", "").strip()
     chat_id = os.environ.get("GPT_TELEGRAM_CHAT_ID", "").strip()
     if not token or not chat_id:
@@ -459,7 +518,7 @@ def send_gpt_telegram(text: str) -> bool:
 
 
 def format_gpt_alert(item, verdict):
-    """GPT 전용방에 표시할 ALERT/UPDATE 메시지."""
+    """GPT 전용방에 표시할 NEW/UPDATE 메시지."""
     detail = verdict.get("type", "NEW")
     reason = verdict.get("why", "") or "-"
     model = verdict.get("model", "")
@@ -482,13 +541,13 @@ def format_gpt_alert(item, verdict):
     ]
     if what:
         lines.append(f"핵심: {what}")
-    extra = []
+    facts = []
     if occurred:
-        extra.append(f"🕐 사고 발생 {occurred}")
+        facts.append(f"🕐 사고 발생 {occurred}")
     if company:
-        extra.append(f"🏗 {company}")
-    if extra:
-        lines.append(" · ".join(extra))
+        facts.append(f"🏗 {company}")
+    if facts:
+        lines.append(" · ".join(facts))
     if chg:
         lines.append(f"변경: {chg}")
     lines.append(f"이유: {reason}")
@@ -500,44 +559,133 @@ def format_gpt_alert(item, verdict):
     return "\n".join(lines)
 
 
-def send_gpt_alerts(results):
-    """GPT 결과 중 NEW/UPDATE(ALERT)만 비교방으로 전송합니다.
+def _remember_gpt_silent(state, item, verdict):
+    """NO_ALERT 후보를 짧게 기억합니다. 오류와 DUP는 저장하지 않습니다."""
+    if verdict.get("v") != "skip":
+        return
+    pub = item.get("published")
+    when = pub.astimezone(KST).strftime("%m/%d %H:%M") if pub else ""
+    state.setdefault("gpt_silent", []).append({
+        "ts": now_utc().timestamp(),
+        "when": when,
+        "title": (item.get("title") or "")[:100],
+        "what": (verdict.get("what") or "")[:100],
+        "occurred": (verdict.get("occurred") or "")[:30],
+        "co": (verdict.get("co") or "")[:60],
+        "why": (verdict.get("why") or "")[:80],
+    })
+    max_n = getattr(config, "GPT_SILENT_MEMORY_MAX", 20)
+    state["gpt_silent"] = state["gpt_silent"][-max_n:]
 
-    SKIP/DUP/ERROR는 Telegram에 보내지 않고 GitHub Actions 로그에만 남깁니다.
+
+def prepare_gpt_alerts(state, gpt_events, results):
+    """GPT 판정 결과를 자체 사건기억에 반영하고, 실제 보낼 NEW/UPDATE만 반환합니다.
+
+    Claude events를 쓰지 않는 이유
+    ------------------------------
+    비교 실험인데 Claude의 판정 결과를 GPT가 기억으로 사용하면 두 모델이 독립적이지 않습니다.
+    또한 9/17 DL건설 사고처럼 GPT가 보낸 NEW/UPDATE를 Claude가 안 보냈을 경우,
+    다음 기사에서 GPT가 자기 알림을 잊고 NEW/UPDATE를 반복하게 됩니다.
     """
     if not results:
-        return 0
-    alert_results = []
+        return []
+
+    limit = getattr(config, "EVENT_MAX_UPDATES", 1)
+    alerts = []
     skipped = 0
     errors = 0
-    for row in results:
-        verdict = row[4]
-        if verdict.get("decision") == "ALERT" and verdict.get("v") in ("new", "update"):
-            alert_results.append(row)
-        elif verdict.get("decision") == "ERROR" or verdict.get("v") == "error":
-            errors += 1
-            print(f"[gpt] ERROR - {row[0].get('title','')[:60]} — {verdict.get('why','')}",
-                  file=sys.stderr)
-        else:
-            skipped += 1
 
+    for row in results:
+        item, place, hits, confidence, verdict = row
+        v = verdict.get("v")
+
+        if verdict.get("decision") == "ERROR" or v == "error":
+            errors += 1
+            print(f"[gpt] ERROR - {item.get('title','')[:60]} — {verdict.get('why','')}",
+                  file=sys.stderr)
+            continue
+
+        if v == "skip":
+            skipped += 1
+            _remember_gpt_silent(state, item, verdict)
+            continue
+
+        if v == "dup":
+            skipped += 1
+            continue
+
+        # 제목 필터가 회사명을 직접 잡았는데 모델이 비웠다면 기억/표시를 보완합니다.
+        if not verdict.get("co") and confidence == "company":
+            verdict["co"] = place
+
+        if v == "update":
+            idx = verdict.get("e", -1)
+            ev = gpt_events[idx] if isinstance(idx, int) and 0 <= idx < len(gpt_events) else None
+
+            # 'update'인데 가리키는 GPT 사건이 없으면 비교방 기준으로는 처음 보내는 사고입니다.
+            # 조용히 버리지 않고 NEW로 바꿔 fail-open 합니다.
+            if ev is None:
+                print(f"[gpt] UPDATE 사건번호 불일치 → NEW {item.get('title','')[:50]}",
+                      file=sys.stderr)
+                verdict["v"] = "new"
+                verdict["decision"] = "ALERT"
+                verdict["type"] = "NEW"
+                verdict["e"] = -1
+                verdict["chg"] = ""
+                v = "new"
+            else:
+                # 시공사는 한 번 알면 계속 기억합니다.
+                if verdict.get("co") and not ev.get("co"):
+                    ev["co"] = verdict["co"]
+                if not verdict.get("co") and ev.get("co"):
+                    verdict["co"] = ev["co"]
+
+                # GPT방도 Claude와 같은 후속 상한을 적용합니다.
+                if ev.get("updates", 0) >= limit:
+                    print(f"[gpt-후속상한] {item.get('title','')[:40]} — 이 사고는 이미 "
+                          f"{limit}회 후속 발송", file=sys.stderr)
+                    skipped += 1
+                    continue
+                ev["updates"] = ev.get("updates", 0) + 1
+                alerts.append(row)
+                continue
+
+        if v == "new":
+            # GPT가 실제로 보낸 사고를 자기 기억에 올립니다.
+            pub = item.get("published")
+            gpt_events.append({
+                "ts": now_utc().timestamp(),
+                "when": (pub or now_utc()).astimezone(KST).strftime("%m/%d %H:%M"),
+                "title": (item.get("title") or "")[:90],
+                "what": (verdict.get("what") or "")[:90],
+                "occurred": (verdict.get("occurred") or "")[:30],
+                "updates": 0,
+                "co": verdict.get("co") or "",
+            })
+            alerts.append(row)
+            continue
+
+        # 여기까지 오면 예상하지 않은 값. 텔레그램에는 안 보내고 로그만 남깁니다.
+        errors += 1
+        print(f"[gpt] 처리할 수 없는 판정값: {v}", file=sys.stderr)
+
+    print(f"[gpt] 발송대상 {len(alerts)}건 / 미발송 {skipped}건 / ERROR {errors}건")
+    return alerts
+
+
+def send_gpt_alerts(alert_results):
+    """prepare_gpt_alerts가 통과시킨 NEW/UPDATE만 비교방으로 전송합니다."""
     sent = 0
     for item, _place, _hits, _confidence, verdict in alert_results:
         if send_gpt_telegram(format_gpt_alert(item, verdict)):
             sent += 1
         time.sleep(0.15)
-
-    print(f"[gpt-telegram] ALERT {sent}/{len(alert_results)}건 발송 "
-          f"(미발송 NO_ALERT {skipped}건 / ERROR {errors}건)")
+    print(f"[gpt-telegram] ALERT {sent}/{len(alert_results)}건 발송")
     return sent
 
 
 def record_gpt_status(state, results):
-    """최근 GPT 판정이 정상인지 상태만 저장합니다.
-
-    개별 ERROR 기사는 비교방에 보내지 않습니다. 대신 다음 08시 생존신고에서
-    '최근 판정 오류 있음' 정도만 알려 사용자가 GitHub 로그를 확인할 수 있게 합니다.
-    """
+    """최근 GPT API/구조화 판정 상태만 저장합니다. 개별 오류는 Telegram에 안 보냅니다."""
     if not results:
         return
     total = len(results)
@@ -556,11 +704,7 @@ def record_gpt_status(state, results):
 
 
 def maybe_gpt_heartbeat(state):
-    """GPT 전용 비교방에 하루 한 번 생존신고를 보냅니다.
-
-    NEW/UPDATE 기사만 실시간으로 보내는 원칙은 그대로 유지합니다.
-    개별 오류 내용은 보내지 않고, 최근 판정 상태가 오류였는지만 표시합니다.
-    """
+    """GPT 전용방에 하루 한 번 생존신고를 보냅니다."""
     if not getattr(config, "HEARTBEAT_ENABLED", False):
         return False
 
@@ -933,7 +1077,11 @@ def main():
     state = load_state()
     first_run = not state.get("initialized")
 
+    # Claude 운영 기억과 GPT 비교 기억을 분리합니다.
     events = recent_events(state)
+    gpt_events = recent_gpt_events(state)
+    gpt_silent = recent_gpt_silent(state)
+
     picked = pick_candidates(state, events)
     gpt_results = []
     print(f"신규 매칭 {len(picked)}건 (first_run={first_run})")
@@ -954,7 +1102,8 @@ def main():
             picked = picked[:cap]
 
         # AI에게 넘기기 직전에 본문을 가져옵니다.
-        # 후보만 대상이라 보통 0~3건이고, 실패해도 제목만으로 판단합니다.
+        # Claude가 개선한 200KB 제한/PDF 제외/euc-kr 처리를 그대로 사용하고,
+        # 여기서 확보한 동일한 body를 Claude와 GPT 둘 다 받습니다.
         if getattr(config, "READ_BODY", True):
             got = 0
             for item, *_ in picked:
@@ -963,11 +1112,13 @@ def main():
                     got += 1
             print(f"본문 {got}/{len(picked)}건 확보")
 
-        # 같은 본문 포함 후보를 GPT에도 독립적으로 보냅니다.
-        # GPT 결과는 Claude 운영 판정과 발송 여부를 절대 바꾸지 않습니다.
+        # GPT는 Claude와 동일 후보·동일 본문을 받되, 사건 기억은 GPT 자체 기억을 씁니다.
+        # 따라서 A/B 비교에서 한 모델의 판정이 다른 모델의 DUP/UPDATE 판단을 오염시키지 않습니다.
         gpt_candidates = list(picked)
         if _gpt_ready():
-            gpt_results = ai_judge_gpt.judge(gpt_candidates, config, events)
+            gpt_results = ai_judge_gpt.judge(
+                gpt_candidates, config, gpt_events, gpt_silent
+            )
         else:
             missing = []
             if ai_judge_gpt is None:
@@ -980,11 +1131,10 @@ def main():
                 missing.append("GPT_TELEGRAM_CHAT_ID")
             print(f"[gpt] 비교판정 건너뜀 — 누락: {', '.join(missing)}", file=sys.stderr)
 
+        # Claude 운영 판정. 아래는 Claude가 수정한 최신 로직을 그대로 유지합니다.
         picked = ai_judge.judge(picked, config, events)
 
         # 같은 사고의 후속 알림은 상한을 둡니다.
-        # 대형 사고는 후속 기사가 수십 건 쏟아지는데, 새 사실이 있는 건만
-        # AI가 걸러주더라도 그것만으로 여러 번일 수 있기 때문입니다.
         limit = getattr(config, "EVENT_MAX_UPDATES", 2)
         filtered = []
         for item, place, hits, conf, verdict in picked:
@@ -993,6 +1143,13 @@ def main():
                 continue
             idx = verdict.get("e", -1)
             ev = events[idx] if isinstance(idx, int) and 0 <= idx < len(events) else None
+            if ev is not None:
+                # 회사명은 한 번 나오면 사건 기록에 남깁니다. 언론이 나중에 빼도 유지합니다.
+                if verdict.get("co") and not ev.get("co"):
+                    ev["co"] = verdict["co"]
+                # 이번 기사에 회사명이 빠졌으면 기억해둔 시공사를 알림에 붙입니다.
+                if not verdict.get("co") and ev.get("co"):
+                    verdict["co"] = ev["co"]
             if ev is None:
                 filtered.append((item, place, hits, conf, verdict))
             elif ev.get("updates", 0) < limit:
@@ -1004,11 +1161,12 @@ def main():
         picked = filtered
         print(f"AI 판정 후 {len(picked)}건")
 
-    # GPT 비교 결과는 Claude 운영 알림과 완전히 별개입니다.
-    # NEW/UPDATE만 GPT 전용방으로 보내고, SKIP/DUP/ERROR는 로그에만 남깁니다.
+    # GPT는 Claude 운영발송과 완전히 별개입니다.
+    # NEW/UPDATE만 비교방으로 보내고, SKIP/DUP/ERROR는 메시지를 만들지 않습니다.
     if gpt_results:
         record_gpt_status(state, gpt_results)
-        gpt_sent = send_gpt_alerts(gpt_results)
+        gpt_alerts = prepare_gpt_alerts(state, gpt_events, gpt_results)
+        gpt_sent = send_gpt_alerts(gpt_alerts)
         state["gpt_alerts_since_heartbeat"] = (
             state.get("gpt_alerts_since_heartbeat", 0) + gpt_sent
         )
@@ -1016,6 +1174,7 @@ def main():
     spreading = maybe_spread(events)
     need_token = bool(picked) or bool(spreading) or config.HEARTBEAT_ENABLED
     if not need_token:
+        maybe_gpt_heartbeat(state)
         save_state(state)
         return
 
@@ -1024,7 +1183,6 @@ def main():
 
     if picked:
         # 인명피해가 확인된 건을 먼저, 그다음 최신순.
-        # 상한(MAX_SEND_PER_RUN)에 걸려 잘릴 때 사람이 다친 건이 밀리지 않도록.
         picked.sort(
             key=lambda c: (
                 casualty_level(c[0]),
@@ -1034,24 +1192,25 @@ def main():
         )
         for item, place, hits, confidence, verdict in picked[:config.MAX_SEND_PER_RUN]:
             link = resolve_link(item["link"])
-            title = item["title"][:70]      # 이미 수집 단계에서 매체명을 뗀 값
+            title = item["title"][:70]
             n = broadcast(format_alert(item, place, hits, confidence, link, verdict),
                           link, subject=f"[안전속보] {title}")
             print(f"발송 {n}/{len(people)}명 — {item['title'][:40]}")
             state["sent_since_heartbeat"] = state.get("sent_since_heartbeat", 0) + 1
-            # 새 사고면 '이미 보낸 사고' 목록에 올립니다.
+            # 새 사고면 Claude 운영 '이미 보낸 사고' 목록에 올립니다.
             if verdict.get("v") == "new":
                 state["events"].append({
                     "ts": now_utc().timestamp(),
                     "when": (item["published"] or now_utc()).astimezone(KST)
                             .strftime("%m/%d %H:%M"),
-                    "title": item["title"][:90],   # 이미 수집 단계에서 매체명을 뗀 값
+                    "title": item["title"][:90],
                     "updates": 0,
-                    # 아래는 보도 확산 집계용입니다.
                     "tok": sorted(filters.tokenize(item["title"])),
                     "link": link,
                     "reports": 1,
                     "casualty": bool(casualty_level(item)),
+                    # Claude 최신 수정: 첫 기사에서 본 시공사를 기억합니다.
+                    "co": verdict.get("co") or (place if confidence == "company" else ""),
                 })
         extra = len(picked) - config.MAX_SEND_PER_RUN
         if extra > 0:
@@ -1069,7 +1228,7 @@ def main():
     if not picked and not spreading:
         maybe_heartbeat(state)
 
-    # GPT방은 실제 통과 기사(NEW/UPDATE)만 실시간 발송하고,
+    # GPT 비교방은 실제 통과 기사(NEW/UPDATE)만 실시간 발송하고,
     # 하루 한 번은 별도의 생존신고만 보냅니다.
     maybe_gpt_heartbeat(state)
 
