@@ -1,0 +1,57 @@
+name: daily-verify-collect
+
+# ─────────────────────────────────────────────────────────────
+# 매일 1회, 15분 루프(alert.yml)와 별개로 돕니다.
+# 여기서는 판정을 하지 않습니다 — 후보만 모아 state/daily_review.json에
+# 커밋합니다. 실제 판단(진짜 놓쳤는가, 회사명이 정말 빠졌는가)은 이 파일을
+# 읽어서 Claude가 직접 합니다. daily_collect.py 상단 docstring 참고.
+# ─────────────────────────────────────────────────────────────
+
+on:
+  schedule:
+    # 매일 07:30 KST = 22:30 UTC(전날)
+    - cron: "30 22 * * *"
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - run: pip install -r requirements.txt
+
+      - name: Collect daily review candidates
+        env:
+          NAVER_CLIENT_ID: ${{ secrets.NAVER_CLIENT_ID }}
+          NAVER_CLIENT_SECRET: ${{ secrets.NAVER_CLIENT_SECRET }}
+        run: python daily_collect.py
+
+      - name: Commit review data
+        run: |
+          set -u
+          git config user.name "github-actions"
+          git config user.email "actions@github.com"
+          git add state/daily_review.json
+          if ! git diff --staged --quiet 2>/dev/null; then
+            git commit -q -m "chore: daily review data [skip ci]"
+            for i in 1 2 3; do
+              if git pull --rebase --autostash -q && git push -q; then
+                break
+              fi
+              echo "push 재시도 $i"
+              sleep 5
+            done
+          else
+            echo "변경 없음 — 커밋 생략"
+          fi
