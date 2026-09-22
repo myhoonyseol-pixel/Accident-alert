@@ -1096,9 +1096,12 @@ def main():
     # AI 최종 판정 — 키워드가 걸러낸 후보만 넘깁니다.
     # 후보가 없으면 호출 자체가 없으므로 조용한 날은 비용 0원입니다.
     if picked:
-        cap = getattr(config, "AI_MAX_CANDIDATES", 20)
-        if len(picked) > cap:
-            print(f"후보 {len(picked)}건 중 상한 {cap}건만 AI 판단", file=sys.stderr)
+        # 예전에는 20건에서 잘랐는데, pick_candidates() 단계에서 이미 seen 처리된
+        # 21번째 이후 후보가 다음 회차에도 돌아오지 않아 실제 사고를 영구 누락할 수 있었습니다.
+        # 기본값 0은 하드캡 없음. 비용 비상제동이 필요할 때만 양수로 설정합니다.
+        cap = int(getattr(config, "AI_MAX_CANDIDATES", 0) or 0)
+        if cap > 0 and len(picked) > cap:
+            print(f"후보 {len(picked)}건 중 비상 상한 {cap}건만 AI 판단", file=sys.stderr)
             picked = picked[:cap]
 
         # AI에게 넘기기 직전에 본문을 가져옵니다.
@@ -1116,9 +1119,13 @@ def main():
         # 따라서 A/B 비교에서 한 모델의 판정이 다른 모델의 DUP/UPDATE 판단을 오염시키지 않습니다.
         gpt_candidates = list(picked)
         if _gpt_ready():
-            gpt_results = ai_judge_gpt.judge(
-                gpt_candidates, config, gpt_events, gpt_silent
-            )
+            # Claude와 같은 크기로 나눠 A/B 비교 조건을 맞춥니다. 후보가 많이 몰려도
+            # 한 요청의 출력이 잘리거나 번호가 밀릴 가능성을 줄입니다.
+            gpt_batch = max(1, int(getattr(config, "AI_BATCH_SIZE", 8)))
+            for k in range(0, len(gpt_candidates), gpt_batch):
+                gpt_results += ai_judge_gpt.judge(
+                    gpt_candidates[k:k + gpt_batch], config, gpt_events, gpt_silent
+                )
         else:
             missing = []
             if ai_judge_gpt is None:

@@ -34,8 +34,9 @@ skip 이 왜 따로 필요한가
 
 실패했을 때
 -----------
-AI 호출이 실패하면 **전부 새 사고로 보고 발송**합니다(fail-open).
-헛알림 하나보다 사고 하나를 놓치는 게 훨씬 위험하기 때문입니다.
+AI 호출이 실패하면 제목 자체에 사망·중상·추락·붕괴 같은 **명백한 사고 신호가
+있는 기사만** ⚠️ AI 미검증으로 발송합니다(guarded fail-open).
+정책·수주·과거사고 후속처럼 제목만으로도 비사고가 분명한 기사는 발송하지 않습니다.
 
 다만 이게 조용히 일어나면 안 됩니다. 2026-09-12 02:17 에 답을 읽다 실패해
 AI 검증이 통째로 꺼진 채 "올해 하청노동자 5명 숨진 HD현대중공업…노동부
@@ -44,16 +45,20 @@ AI 검증이 통째로 꺼진 채 "올해 하청노동자 5명 숨진 HD현대�
 
   1) AI가 실제로 뭐라고 답했는지 로그에 남긴다 (안 남기면 원인을 못 봅니다)
   2) 한 번 더 물어본다 (실패했을 때만이라 평소 비용은 그대로입니다)
-  3) 그래도 안 되면 판정에 ai="fail" 을 달아 보낸다
+  3) 그래도 안 되면 제목 안전장치를 통과한 기사만 ai="fail" 로 보낸다
      → main.py 가 알림에 '⚠️ AI 미검증' 을 붙입니다
 """
+import hashlib
 import json
 import os
 import re
 import sys
 import time
+from datetime import datetime
 
 import requests
+
+import filters
 
 API_URL = "https://api.anthropic.com/v1/messages"
 API_VERSION = "2023-06-01"
@@ -161,8 +166,12 @@ new 로 한다. 놓치는 것이 헛알림보다 위험하다.
 ━━ 출력 ━━
 아래 JSON 배열만 출력한다. 배열 뒤에 아무것도 쓰지 마라.
 
-[{"i":0,"what":"핵심 사건","v":"넷 중 하나","e":-1,"occurred":"","co":"","chg":"","why":"판단 이유"}]
+[{"i":0,"cid":"받은 기사 ID","t":"제목 앞 12글자","what":"핵심 사건","v":"넷 중 하나","e":-1,"occurred":"","co":"","chg":"","why":"판단 이유"}]
 
+  기사마다 하나씩, 빠짐없이, 받은 순서대로 답한다.
+
+  cid       입력에서 받은 **기사 ID를 한 글자도 바꾸지 말고 그대로** 베껴 쓴다. 답과 기사를 짝짓는 1순위 키다
+  t         그 기사 **제목 앞 12글자를 그대로** 베껴 쓴다. cid가 잘못됐을 때의 보조 확인용이다
   what      이 기사의 핵심 사건 25자. **판정 전에 먼저 쓴다.** 항상 채운다
   v         skip · dup · update · new 넷 중 하나. **판정은 반드시 이 칸에.**
             what 칸에 skip·new 같은 판정을 쓰지 마라
@@ -249,13 +258,137 @@ def judge(candidates, cfg, recent_events=None):
 
     api_key = os.environ.get("ANTHROPIC_API_KEY", "").strip()
     if not api_key:
-        # AI_ENABLED=False 는 일부러 끈 것이므로 표시하지 않지만,
-        # 열쇠가 없는 건 의도한 상태가 아니므로 미검증으로 표시합니다.
-        print("[ai] ANTHROPIC_API_KEY 가 없어 AI 판정을 건너뜁니다", file=sys.stderr)
-        return [(c[0], c[1], c[2], c[3],
-                 {"v": "new", "e": -1, "chg": "", "ai": "fail"})
-                for c in candidates]
+        # 열쇠가 없으면 AI는 못 쓰지만, 잡기사 전체를 속보로 보내지는 않습니다.
+        print("[ai] ANTHROPIC_API_KEY 가 없어 제목 안전장치로 판단합니다", file=sys.stderr)
+        out = []
+        for cand in candidates:
+            safe = _safe_fail_open(cand, cfg, "ANTHROPIC_API_KEY 없음")
+            if safe is not None:
+                out.append(safe)
+        return out
 
+    # 나눠서 묻습니다. (2026-09-22)
+    # 한 번에 20건을 본문째 물었더니 AI가 번호를 헷갈려 답이 한 칸씩 밀렸고,
+    # '경북 화재' 기사에 대한 발송 판정이 '서문시장 재건축' 기사에 붙어 나갔습니다.
+    # 호출이 늘어도 지시문(약 3천 자)을 다시 보내는 값이라 차이는 몇 원입니다.
+    size = max(1, int(getattr(cfg, "AI_BATCH_SIZE", 8)))
+    kept = []
+    for k in range(0, len(candidates), size):
+        kept += _judge_batch(candidates[k:k + size], cfg, recent_events, api_key)
+    return kept
+
+
+def _norm(s) -> str:
+    """제목 비교용 — 글자·숫자만 남깁니다. (따옴표·괄호·띄어쓰기 차이 무시)"""
+    return re.sub(r"[^0-9A-Za-z가-힣]", "", str(s or ""))
+
+
+def _candidate_id(item) -> str:
+    """AI 답을 원 기사에 붙이는 안정적인 짧은 ID.
+
+    제목 앞글자는 같은 보도자료 묶음에서 쉽게 겹칩니다. 제목+링크로 만든 ID를
+    입력에 같이 주고 그대로 돌려받으면 한 답이 빠져도 뒤 기사로 밀리지 않습니다.
+    """
+    raw = f"{item.get('title','')}\n{item.get('link','')}"
+    return hashlib.sha1(raw.encode("utf-8")).hexdigest()[:10]
+
+
+def _date_key(value: str):
+    """'09-11 19:35', '09/11 19:35' 등에서 (월, 일)만 꺼냅니다."""
+    m = re.search(r"(?<!\d)(\d{1,2})[-/.](\d{1,2})(?!\d)", str(value or ""))
+    return (int(m.group(1)), int(m.group(2))) if m else None
+
+
+def _safe_fail_open(cand, cfg, reason=""):
+    """AI가 끝내 답하지 못했을 때도 명백한 사고 제목만 살립니다.
+
+    fail-open 자체는 유지하되, 수주·양형·감독·유족합의·과거사고 회고처럼
+    제목만 읽어도 '방금 난 사고'가 아닌 것은 Telegram으로 흘리지 않습니다.
+    """
+    item, _place, _hits, _conf = cand
+    title = str(item.get("title") or "")
+
+    # 제목에 과거 연도가 박혀 있으면 현재 속보로 보지 않습니다.
+    years = [int(y) for y in re.findall(r"(?<!\d)(20\d{2})(?!\d)", title)]
+    if years and min(years) < datetime.now().year:
+        print(f"[ai] 실패안전 제외 × {title[:44]} — 과거 연도 기사 ({reason})", file=sys.stderr)
+        return None
+
+    post_words = (
+        "양형", "징역", "처벌", "사법처리", "법위반", "특별감독", "감독결과",
+        "국감", "국정감사", "영업정지", "본계약", "수주", "유족", "합의", "장례",
+        "사과", "캠페인", "교육", "안전점검", "대책 발표", "재발 방지", "재발방지",
+    )
+    if any(w in title for w in post_words):
+        print(f"[ai] 실패안전 제외 × {title[:44]} — 사후·정책·경영 기사 ({reason})", file=sys.stderr)
+        return None
+
+    strong = (
+        "사망", "숨져", "숨진", "숨졌", "심정지", "중상", "위독", "의식불명",
+        "매몰", "실종", "추락", "끼임", "끼여", "깔려", "협착", "붕괴", "무너져",
+        "폭발", "화재", "감전", "질식", "전도", "낙하", "참변",
+    )
+    if not any(w in title for w in strong):
+        print(f"[ai] 실패안전 제외 × {title[:44]} — 명백한 사고 신호 없음 ({reason})", file=sys.stderr)
+        return None
+
+    print(f"[ai] 실패안전 발송 ⚠ {title[:44]} — 명백한 사고 제목 ({reason})", file=sys.stderr)
+    return (*cand, {"v": "new", "e": -1, "chg": "", "ai": "fail"})
+
+
+def _same_event_evidence(cand, ev, occurred, cfg) -> bool:
+    """UPDATE가 실제 기존 사건과 연결된다는 코드 측 근거가 있는지 확인합니다."""
+    if ev is None:
+        return False
+    item = cand[0]
+    if item.get("followup_hint"):
+        return True
+
+    # AI가 본문에서 뽑은 사고 발생일과 기존 알림 발생일이 같으면 강한 근거입니다.
+    d1, d2 = _date_key(occurred), _date_key(ev.get("when", ""))
+    if d1 and d2 and d1 == d2:
+        return True
+
+    now_tok = filters.tokenize(item.get("title", ""))
+    old_tok = set(ev.get("tok", [])) or filters.tokenize(ev.get("title", ""))
+    return filters.same_event(cfg, now_tok, old_tok) > 0
+
+
+def _validate_update(cand, v, recent_events, cfg, company, occurred):
+    """AI가 직접 UPDATE라고 해도 기존 사건 동일성을 코드가 한 번 더 검증합니다."""
+    try:
+        e = int(v.get("e", -1))
+    except (TypeError, ValueError):
+        e = -1
+    ev = recent_events[e] if 0 <= e < len(recent_events) else None
+    if ev is None:
+        return False, "기존 사건 번호가 유효하지 않음", e
+
+    if not _same_event_evidence(cand, ev, occurred, cfg):
+        return False, "기존 사고와 동일하다는 날짜·제목 근거 없음", e
+
+    change_text = f"{v.get('chg','')} {v.get('why','')}"
+    company_words = ("시공사", "원청", "회사", "업체", "시공 정보", "현장 정보")
+    casualty_words = ("사망", "중상", "위독", "사상자", "매몰", "실종", "구조", "종결")
+    company_only = company and any(w in change_text for w in company_words) \
+        and not any(w in change_text for w in casualty_words)
+
+    # '시공사 최초 공개' 류는 본문 속 비교대상 회사로 승격시키지 않습니다.
+    if company_only:
+        nco = _norm(company)
+        title_n = _norm(cand[0].get("title", ""))
+        old_title_n = _norm(ev.get("title", ""))
+        old_co_n = _norm(ev.get("co", ""))
+        if not nco or nco not in title_n:
+            return False, "시공사명이 현재 기사 제목에 없음", e
+        if nco in old_title_n or (old_co_n and nco == old_co_n):
+            return False, "기존 사고에 이미 같은 시공사 기록", e
+
+    return True, "", e
+
+
+def _judge_batch(candidates, cfg, recent_events, api_key, retry_missing=True):
+    """기사 몇 건을 한 번에 묻습니다. judge() 가 나눠서 부릅니다."""
     parts = []
     if recent_events:
         parts.append("[이미 보낸 사고]")
@@ -268,7 +401,8 @@ def judge(candidates, cfg, recent_events=None):
         title = (item.get("title") or "")[:120]
         summary = (item.get("summary") or "")[:200]
         outlet = (item.get("outlet") or "").replace("https://", "")[:40]
-        line = (f'{i}. 제목: {title}\n   요약: {summary}\n'
+        cid = _candidate_id(item)
+        line = (f'{i}. ID: {cid}\n   제목: {title}\n   요약: {summary}\n'
                 f'   매체: {outlet or "미상"}\n'
                 f'   걸린단어: {place} / {"·".join(hits[:4])}')
         # 기사 본문 앞부분. main.py 가 가져다 넣습니다.
@@ -335,18 +469,58 @@ def judge(candidates, cfg, recent_events=None):
                 time.sleep(2)
 
     if verdicts is None:
-        print(f"[ai] 판정 실패 — 거르지 않고 전부 발송합니다(⚠️ AI 미검증 표시): "
+        print(f"[ai] 판정 실패 — 제목 안전장치로 fail-open 여부를 결정합니다: "
               f"{last_err}", file=sys.stderr)
-        return [(c[0], c[1], c[2], c[3],
-                 {"v": "new", "e": -1, "chg": "", "ai": "fail"})
-                for c in candidates]
+        out = []
+        for cand in candidates:
+            safe = _safe_fail_open(cand, cfg, f"API/형식 실패: {last_err}")
+            if safe is not None:
+                out.append(safe)
+        return out
 
+    # ── 답과 기사를 **고유 ID 우선, 제목 보조**로 짝짓습니다 ──────────
+    # 제목 앞글자는 보도자료 묶음에서 겹칠 수 있으므로 cid를 1순위로 씁니다.
+    # cid가 없거나 모델이 잘못 옮긴 경우에만 Claude가 추가한 제목(t) 보정을 사용합니다.
+    cids = [_candidate_id(c[0]) for c in candidates]
+    ntitles = [_norm(c[0].get("title"))[:80] for c in candidates]
     by_i = {}
     for v in verdicts:
-        try:
-            by_i[int(v["i"])] = v
-        except (TypeError, ValueError, KeyError):
+        if not isinstance(v, dict):
             continue
+        try:
+            i = int(v.get("i", -1))
+        except (TypeError, ValueError):
+            i = -1
+
+        k = None
+        cid = str(v.get("cid", "")).strip()
+        if cid:
+            matches = [x for x, known in enumerate(cids) if x not in by_i and known == cid]
+            if len(matches) == 1:
+                k = matches[0]
+                if k != i:
+                    print(f"[ai] ID 짝 보정 — {i}번으로 온 답을 cid로 찾아 {k}번 기사에 붙임",
+                          file=sys.stderr)
+            elif not matches:
+                print(f"[ai] cid 불일치 — '{cid}', 제목 보조 매칭 시도", file=sys.stderr)
+
+        if k is None:
+            t = _norm(v.get("t", ""))[:12]
+            if len(t) >= 4:
+                matches = [x for x in range(len(candidates)) if x not in by_i and t in ntitles[x]]
+                if matches:
+                    k = i if i in matches else min(matches, key=lambda x: abs(x - i))
+                    if k != i:
+                        print(f"[ai] 제목 짝 보정 — {i}번으로 온 답을 제목으로 찾아 {k}번 기사에 붙임",
+                              file=sys.stderr)
+
+        if k is None and 0 <= i < len(candidates) and i not in by_i:
+            # 구버전 응답 호환용 최후 수단. 새 프롬프트에서는 cid가 항상 있어야 합니다.
+            k = i
+            print(f"[ai] 번호 fallback — cid/t 매칭 실패, {i}번에 임시 연결", file=sys.stderr)
+
+        if k is not None and k not in by_i:
+            by_i[k] = v
 
     VALID = ("skip", "dup", "update", "new")
     kept = []
@@ -363,8 +537,13 @@ def judge(candidates, cfg, recent_events=None):
         # (놓치는 것보다 헛알림이 낫다는 원칙은 그대로입니다)
         v = by_i.get(i)
         if v is None:
-            print(f"[ai] 답 없음 ⚠ {title} — 이 기사에 대한 답이 빠짐", file=sys.stderr)
-            kept.append((*cand, {"v": "new", "e": -1, "chg": "", "ai": "fail"}))
+            if retry_missing:
+                print(f"[ai] 답 없음 ↻ {title} — 빠진 기사 1건만 다시 질문", file=sys.stderr)
+                kept.extend(_judge_batch([cand], cfg, recent_events, api_key, retry_missing=False))
+            else:
+                safe = _safe_fail_open(cand, cfg, "재질문 후에도 답 없음")
+                if safe is not None:
+                    kept.append(safe)
             continue
 
         verdict = str(v.get("v", "")).strip().lower()
@@ -382,12 +561,25 @@ def judge(candidates, cfg, recent_events=None):
             verdict, what = what.lower(), ""
 
         if verdict not in VALID:
-            print(f"[ai] 판정값 이상 ⚠ {title} — v='{v.get('v')}'", file=sys.stderr)
-            kept.append((*cand, {"v": "new", "e": -1, "chg": "", "ai": "fail"}))
+            if retry_missing:
+                print(f"[ai] 판정값 이상 ↻ {title} — v='{v.get('v')}', 1건만 다시 질문",
+                      file=sys.stderr)
+                kept.extend(_judge_batch([cand], cfg, recent_events, api_key, retry_missing=False))
+            else:
+                safe = _safe_fail_open(cand, cfg, f"재질문 후 판정값 이상: {v.get('v')}")
+                if safe is not None:
+                    kept.append(safe)
             continue
         # 본문에서 뽑아낸 사실 둘. 알림에 표시합니다.
         occurred = str(v.get("occurred", "")).strip()
         company = str(v.get("co", "")).strip()
+        # 제목에 실제 주요건설사명이 있으면 본문에서 스친 다른 회사보다 우선합니다.
+        if cand[3] == "company":
+            title_company = str(cand[1] or "").strip()
+            if title_company and _norm(title_company) in _norm(cand[0].get("title", "")):
+                if company and _norm(company) != _norm(title_company):
+                    print(f"[ai] 회사명 보정 {title} — {company} → {title_company}", file=sys.stderr)
+                company = title_company
         tail = f' · "{what}"' if what else ""
 
         if verdict == "skip":
@@ -401,7 +593,16 @@ def judge(candidates, cfg, recent_events=None):
             e = v.get("e", -1)
             ev = (recent_events[e] if isinstance(e, int) and 0 <= e < len(recent_events)
                   else None)
-            if company and ev is not None and not ev.get("co"):
+            # 조건 셋 (2026-09-22 강화):
+            #   · 원래 사건에 회사명이 아직 없고
+            #   · 회사명이 **이 기사 제목에** 있고 (본문에 비교 대상으로 스친 회사 제외)
+            #   · 원래 사건 **제목에도 없던** 회사일 때 (그래야 '최초 공개')
+            # 실제로 하이닉스 기사에 비교로 나온 HL만도를, 그리고 원래 제목에
+            # 이미 있던 HL만도를 '시공사 공개'로 올린 적이 있습니다.
+            nco = _norm(company)
+            if (nco and ev is not None and not ev.get("co")
+                    and nco in _norm(cand[0].get("title"))
+                    and nco not in _norm(ev.get("title"))):
                 print(f"[ai] 재탕→후속 ↻ {title} — 시공사 최초 공개({company})")
                 kept.append((*cand, {"v": "update", "e": e,
                                      "chg": f"시공사 공개: {company}"[:25],
@@ -411,8 +612,19 @@ def judge(candidates, cfg, recent_events=None):
             continue
         if verdict == "update":
             chg = v.get("chg", "")
+            ok, reason, event_idx = _validate_update(
+                cand, v, recent_events, cfg, company, occurred
+            )
+            if not ok:
+                print(f"[ai] UPDATE 검증실패 × {title} — {reason}", file=sys.stderr)
+                # 동일사건 연결은 거부하되, 제목 자체가 명백한 새 사고라면
+                # 누락 방지를 위해 NEW(⚠️ 미검증)로만 살립니다.
+                safe = _safe_fail_open(cand, cfg, f"UPDATE 동일사건 검증 실패: {reason}")
+                if safe is not None:
+                    kept.append(safe)
+                continue
             print(f"[ai] 후속 ↻ {title} ({chg or why}){tail}")
-            kept.append((*cand, {"v": "update", "e": v.get("e", -1), "chg": chg,
+            kept.append((*cand, {"v": "update", "e": event_idx, "chg": chg,
                                  "occurred": occurred, "co": company}))
             continue
         extra = " ".join(x for x in (f"발생 {occurred}" if occurred else "",

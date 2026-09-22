@@ -384,7 +384,11 @@ TELEGRAM_ENABLED = True
 AI_ENABLED = True
 AI_MODEL = "claude-haiku-4-5-20251001"
 AI_TIMEOUT = 30
-AI_MAX_CANDIDATES = 20       # 한 번에 판단할 최대 건수 (비용 폭주 방지)
+# 0이면 후보 전체를 처리합니다. 예전 20건 하드캡은 21번째 이후 후보를 seen 처리한 채
+# 영구적으로 버릴 수 있어 제거했습니다. 긴 목록은 AI_BATCH_SIZE 단위로 나눠 처리합니다.
+AI_MAX_CANDIDATES = 0
+AI_BATCH_SIZE = 8            # Claude/GPT 모두 한 번에 묻는 건수. 20건을 한꺼번에 물었더니
+                             # 번호가 밀려 판정이 옆 기사에 붙었습니다(9/22)
 
 # ── 기사 본문 읽기 (2026-09-14 추가) ────────────────────────
 # 제목만 주면 AI가 보는 재료가 정규식이 본 것과 똑같아집니다. 그러면

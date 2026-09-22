@@ -125,8 +125,19 @@ def match(cfg, title, summary="", outlet=""):
     if any(w in title for w in cfg.EXCLUDE_WORDS):
         return None
 
-    # 2) 사고 키워드가 없으면 사고 기사가 아니다.
-    hits = [w for w in cfg.ACCIDENT_WORDS if w in text]
+    # 2) 사고 키워드는 **제목에** 있어야 한다. (2026-09-22 변경)
+    #
+    #    예전에는 제목+요약 어디에든 있으면 됐습니다. 구글 요약은 비어 있고
+    #    언론사 RSS는 5곳뿐이라 문제가 안 됐는데, 네이버 요약은 **진짜 기사 앞부분**
+    #    이라 본문에 지나가듯 나온 '과거 사고'에 걸렸습니다.
+    #      "현산 관양현대 재건축 5700억 본계약" ← 요약 속 "…건설 현장 붕괴…"
+    #      "하이닉스 산안법 119건 위반"        ← 요약 속 "HL만도 끼임 사망…"
+    #    네이버를 붙인 첫 회차에 후보가 1~3건에서 22건으로 뛰었습니다.
+    #
+    #    속보 제목에는 '무슨 일이 났는지'가 반드시 들어갑니다. 그래서 사고 단어는
+    #    제목에서만 보고, 장소·회사는 요약에서 와도 인정합니다.
+    #    ("40대 근로자 추락해 숨져" + 요약의 "공사현장에서" → 계속 잡힙니다)
+    hits = [w for w in cfg.ACCIDENT_WORDS if w in title]
     if not hits:
         return None
 
@@ -152,7 +163,13 @@ def match(cfg, title, summary="", outlet=""):
     # 회사 이름이 제목에 나오는 기사는 대부분 '현장'도 함께 쓰므로, 🔴 가 정작
     # 필요한 기사에 거의 안 붙고 있었습니다. (2026-09-21 수정)
     # 판정(통과 여부)은 그대로이고, **표시만** 🔴 로 올립니다.
-    corp = next((w for w in getattr(cfg, "COMPANY_WORDS", ()) if w in packed), None)
+    # 제목에 있는 회사를 먼저 씁니다. 요약에 다른 회사가 스치듯 나오면
+    # 엉뚱한 회사로 표시되기 때문입니다. ("IPARK현산 재건축 본계약"이
+    # 요약 속 '롯데건설' 때문에 [롯데건설] 로 표시된 적 있음)
+    _cw = getattr(cfg, "COMPANY_WORDS", ())
+    _pt = re.sub(r"\s+", "", title)
+    corp = (next((w for w in _cw if w in _pt), None)
+            or next((w for w in _cw if w in packed), None))
 
     strong = next((w for w in cfg.STRONG_PLACE_WORDS if w in packed), None)
     if strong:
