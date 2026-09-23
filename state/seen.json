@@ -9114,6 +9114,15 @@
     "적용성",
     "청취"
    ]
+  },
+  "f8a7dffb6247e729": {
+   "ts": 1790130009.169003,
+   "tok": [
+    "50",
+    "건설현장",
+    "부상",
+    "잇따라"
+   ]
   }
  },
  "initialized": true,
@@ -9405,9 +9414,9 @@
  ],
  "sent_since_heartbeat": 0,
  "last_gpt_heartbeat": "2026-09-23",
- "gpt_alerts_since_heartbeat": 0,
+ "gpt_alerts_since_heartbeat": 1,
  "gpt_last_status": "ok",
- "gpt_last_status_at": "09/23 11:06",
+ "gpt_last_status_at": "09/23 11:20",
  "gpt_events": [
   {
    "ts": 1790043724.132793,
@@ -9432,6 +9441,15 @@
    "when": "09/22 15:37",
    "title": "영풍 석포제련소 두 달 새 같은 공장 또 화재…생산 차질 장기화 우려",
    "what": "석포제련소 공장서 또 화재 발생",
+   "occurred": "",
+   "updates": 0,
+   "co": ""
+  },
+  {
+   "ts": 1790130018.226582,
+   "when": "09/23 07:48",
+   "title": "공사 현장서 사고 잇따라…50대 2명 중상",
+   "what": "제주 공사현장서 50대 2명 중상",
    "occurred": "",
    "updates": 0,
    "co": ""
