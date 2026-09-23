@@ -9250,39 +9250,6 @@
  "last_heartbeat": "2026-09-23",
  "events": [
   {
-   "ts": 1789712661.821257,
-   "when": "09/18 15:22",
-   "title": "경인아라뱃길 물류단지서 화재…소방 진화 중",
-   "updates": 0,
-   "tok": [
-    "경인아라뱃길",
-    "물류단지",
-    "소방",
-    "진화",
-    "화재"
-   ],
-   "link": "https://www.newsis.com/view/NISX20260918_0003795891",
-   "reports": 2,
-   "casualty": true
-  },
-  {
-   "ts": 1789712663.785212,
-   "when": "09/18 15:18",
-   "title": "인천 서해구 물류센터에서 화재 \"도로 우회해야\" [속보]",
-   "updates": 0,
-   "tok": [
-    "도로",
-    "물류센터",
-    "서해구",
-    "우회해야",
-    "인천",
-    "화재"
-   ],
-   "link": "https://news.google.com/rss/articles/CBMicEFVX3lxTFBqWEQ4ZklqdjZaUzNocW00ZHpVaG5rbE50Y21SbmtDRWlrcl9mSzItZGdzM24yQkV2dlhLZUltTkxBbWRCN1cwVFRqVTV2Z2xRdUx0V0tmd2hQa1pOQnJGa1dENWswRHMtWHJjUklDYjk?oc=5",
-   "reports": 20,
-   "casualty": false
-  },
-  {
    "ts": 1789718776.540344,
    "when": "09/18 16:51",
    "title": "지방선거 당선 현수막 설치하다 추락사…업체 대표 입건",
