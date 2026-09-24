@@ -8698,10 +8698,24 @@
     "중대재해",
     "추락"
    ]
+  },
+  "bc61e383a720ccaf": {
+   "ts": 1790287625.656546,
+   "tok": [
+    "100",
+    "ZERO",
+    "도전",
+    "무재해",
+    "반도건설",
+    "연속",
+    "운동",
+    "전개",
+    "중대재해"
+   ]
   }
  },
  "initialized": true,
- "last_heartbeat": "2026-09-24",
+ "last_heartbeat": "2026-09-25",
  "events": [
   {
    "ts": 1789864946.766627,
@@ -8877,9 +8891,9 @@
    "co": ""
   }
  ],
- "sent_since_heartbeat": 1,
- "last_gpt_heartbeat": "2026-09-24",
- "gpt_alerts_since_heartbeat": 1,
+ "sent_since_heartbeat": 0,
+ "last_gpt_heartbeat": "2026-09-25",
+ "gpt_alerts_since_heartbeat": 0,
  "gpt_last_status": "ok",
  "gpt_last_status_at": "09/25 05:06",
  "gpt_events": [
