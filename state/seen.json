@@ -1,31 +1,5 @@
 {
  "seen": {
-  "9e021d05464268dd": {
-   "ts": 1789612465.846994,
-   "tok": [
-    "공단동",
-    "공장",
-    "구미",
-    "없어",
-    "인명",
-    "진화",
-    "피해",
-    "현재",
-    "화재"
-   ]
-  },
-  "4ee0464dc53aa3f3": {
-   "ts": 1789612465.847528,
-   "tok": [
-    "검은",
-    "공장",
-    "다량",
-    "사동",
-    "안산",
-    "연기",
-    "화재"
-   ]
-  },
   "85a4eb5e42bde64f": {
    "ts": 1789613393.047866,
    "tok": [
@@ -9046,26 +9020,6 @@
  "initialized": true,
  "last_heartbeat": "2026-09-24",
  "events": [
-  {
-   "ts": 1789785226.723441,
-   "when": "09/19 11:25",
-   "title": "성주 댐 건설현장서 '측량작업'하던 50대 작업자 추락...병원 이송",
-   "updates": 0,
-   "tok": [
-    "50",
-    "건설현장",
-    "병원",
-    "성주",
-    "이송",
-    "작업자",
-    "추락",
-    "측량작업",
-    "하던"
-   ],
-   "link": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE1LZk5rakRMOTdKZ0ttaHN0X2NTYjgteHpPeDhjNHhLMV9DaUtwQl9iV0tvTHF0LUJYbUJ4c2dncHZmb3NNZUtZbGx2VV9LLTl1M2Q2S0tLMHo2ekFr?oc=5",
-   "reports": 1,
-   "casualty": true
-  },
   {
    "ts": 1789798751.035006,
    "when": "09/19 15:07",
