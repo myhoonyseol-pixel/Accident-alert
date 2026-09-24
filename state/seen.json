@@ -1,19 +1,5 @@
 {
  "seen": {
-  "dfc8d8493efd717a": {
-   "ts": 1789626040.135792,
-   "tok": [
-    "17",
-    "40",
-    "공장",
-    "금속",
-    "기업",
-    "안전상황실",
-    "울산",
-    "작업자",
-    "추락"
-   ]
-  },
   "274d996cefcdc2dc": {
    "ts": 1789629105.397255,
    "tok": [
@@ -8931,30 +8917,41 @@
     "화장품",
     "화재"
    ]
+  },
+  "c9ecb272f186b789": {
+   "ts": 1790230961.79416,
+   "tok": [
+    "16",
+    "공장",
+    "시간",
+    "완전",
+    "인천",
+    "제조",
+    "진화",
+    "화장품",
+    "화재"
+   ]
+  },
+  "e3c4b923bec7ba36": {
+   "ts": 1790230961.794366,
+   "tok": [
+    "16",
+    "검은",
+    "공장",
+    "서울",
+    "시간",
+    "연기",
+    "인천",
+    "진화",
+    "화장품",
+    "화재",
+    "확산"
+   ]
   }
  },
  "initialized": true,
  "last_heartbeat": "2026-09-24",
  "events": [
-  {
-   "ts": 1789798751.035006,
-   "when": "09/19 15:07",
-   "title": "울산 공공주택 공사장 70대 근로자, 작업차량에 치여 사망",
-   "updates": 0,
-   "tok": [
-    "70",
-    "건설현장",
-    "공공주택",
-    "사망",
-    "울산",
-    "작업자",
-    "작업차량에",
-    "치여"
-   ],
-   "link": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE1GcEN0TjZsRjNNUzdBWl84ZUdUbGhjem9jeFIxNE9UWGdNblFLUkR2dEVDVTNQZkxOOW1xMTdnZGVnWE5KcGR1SVRjNVJha2puZDlrWDJiZTgzLWdGSC1aTtIBeEFVX3lxTE9jS1d2M3hGT2tNeE5wekpncUxqV3VJMUhZQUc2UVBxSVlVSm1kZDVOalhCU19XN3lWeDNvekRQdUdvVVlLWlZIZDVkRXJZNmJ2bmhGVkZ6ODVXc3BYMkxTVmVnbzBTOEFnM1lhU2NjSzVrQzkzOHJyZg?oc=5",
-   "reports": 3,
-   "casualty": true
-  },
   {
    "ts": 1789800829.09752,
    "when": "09/19 15:36",
