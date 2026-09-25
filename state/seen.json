@@ -1,17 +1,5 @@
 {
  "seen": {
-  "45e22c356f2c11a8": {
-   "ts": 1789692077.493654,
-   "tok": [
-    "공장",
-    "꺼져",
-    "달서구",
-    "섬유",
-    "시간만",
-    "자동차",
-    "화재"
-   ]
-  },
   "50f26436ccd53ecc": {
    "ts": 1789693009.230277,
    "tok": [
@@ -8673,25 +8661,6 @@
  "initialized": true,
  "last_heartbeat": "2026-09-25",
  "events": [
-  {
-   "ts": 1789864946.766627,
-   "when": "09/20 09:28",
-   "title": "공장서 컨베이어 밸트 작업 60대 구조물 깔렸다…\"사망\"",
-   "updates": 0,
-   "tok": [
-    "60",
-    "공장",
-    "구조물",
-    "깔렸다",
-    "밸트",
-    "사망",
-    "작업",
-    "컨베이어"
-   ],
-   "link": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE44RDJVM0hyU0JDa2tMMjNpZ1J4WG8xR0F3djNIMXMyQ2p5RXBrZnluWV81MWdHRDFlS2RzckltcnFIOVB4ZXBTQTNSS1l6bzExR2E2MHZlamdkNmgya0RRcdIBeEFVX3lxTE9CVU5waS1LbkxsUEY3dkw2SzNtZWFCemNZQ2xTaVBhLWZKaHlqeHZWS1N4ZUxVZ1Etb1NUYVBFbzlraGFpd3dKb2cxb2hLUVhOZHRYcHVic1kzZTFISGp5ZHFkYWZnbVdFa2JnMmNWOE5xZU1iYzBrNg?oc=5",
-   "reports": 1,
-   "casualty": true
-  },
   {
    "ts": 1789872596.334279,
    "when": "09/20 10:00",
