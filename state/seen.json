@@ -1,19 +1,5 @@
 {
  "seen": {
-  "67bf0e105e1f04a0": {
-   "ts": 1789769091.57078,
-   "tok": [
-    "만에",
-    "물류센터",
-    "시간",
-    "없어",
-    "완진",
-    "인명",
-    "인천",
-    "피해",
-    "화재"
-   ]
-  },
   "bc7ec748f77b14c9": {
    "ts": 1789770876.850077,
    "tok": [
@@ -7135,7 +7121,7 @@
   }
  },
  "initialized": true,
- "last_heartbeat": "2026-09-25",
+ "last_heartbeat": "2026-09-26",
  "events": [
   {
    "ts": 1789960797.961464,
@@ -7274,7 +7260,7 @@
   }
  ],
  "sent_since_heartbeat": 0,
- "last_gpt_heartbeat": "2026-09-25",
+ "last_gpt_heartbeat": "2026-09-26",
  "gpt_alerts_since_heartbeat": 0,
  "gpt_last_status": "ok",
  "gpt_last_status_at": "09/26 06:35",
