@@ -8467,30 +8467,24 @@
     "중대재해",
     "최다"
    ]
+  },
+  "fc7881e0fc0bf624": {
+   "ts": 1790305614.346813,
+   "tok": [
+    "24",
+    "구조",
+    "부산해경",
+    "선박",
+    "신속",
+    "응급환자",
+    "주취추락자",
+    "해상"
+   ]
   }
  },
  "initialized": true,
  "last_heartbeat": "2026-09-25",
  "events": [
-  {
-   "ts": 1789872596.334279,
-   "when": "09/20 10:00",
-   "title": "상주 공장 60대 근로자 참변…일터 안전 '경고등'",
-   "updates": 0,
-   "tok": [
-    "60",
-    "경고등",
-    "공장",
-    "사망",
-    "상주",
-    "안전",
-    "일터",
-    "작업자"
-   ],
-   "link": "https://news.google.com/rss/articles/CBMiV0FVX3lxTFA5VFZSR0ZtcTc3NnNlODluXzRST0FzNlY3T1NlMHVaUTdCeWRKX182alRHUG5TWXVJMFdNdnFtSVhFX1ExUk1ha3FvNjBGY0xLb2YyOVdSUdIBXEFVX3lxTE91c0tOczFjalpUX2FrU0x0bHhiRXdPdFlZTTlJUmk5UDIxY1ZCNGRHV0wxWUhERmhOWm1nbDJEVXFGeDRLRm1sdlpvanRFemkzYkdjbzFLM3JwTlVm?oc=5",
-   "reports": 1,
-   "casualty": true
-  },
   {
    "ts": 1789960797.961464,
    "when": "09/21 12:00",
