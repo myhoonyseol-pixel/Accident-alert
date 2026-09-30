@@ -1,31 +1,5 @@
 {
  "seen": {
-  "ba8e67a5dbd9eb96": {
-   "ts": 1790124087.440137,
-   "tok": [
-    "29",
-    "43",
-    "48",
-    "사망재해",
-    "산재예방",
-    "증가",
-    "지원사업장"
-   ]
-  },
-  "04223867c0cc8f68": {
-   "ts": 1790124087.441576,
-   "tok": [
-    "4000",
-    "48",
-    "급증",
-    "사망",
-    "사업장",
-    "산업안전공단",
-    "산재예방",
-    "어디",
-    "지원"
-   ]
-  },
   "3f397ccf7990ccab": {
    "ts": 1790125049.861797,
    "tok": [
@@ -2971,10 +2945,60 @@
     "추락주의보",
     "축사"
    ]
+  },
+  "b9d1b180536964cd": {
+   "ts": 1790729199.723973,
+   "tok": [
+    "건설현장",
+    "사망",
+    "서초구",
+    "작업자",
+    "중대재해",
+    "현대건설"
+   ]
+  },
+  "1609db757cef203c": {
+   "ts": 1790729199.72436,
+   "tok": [
+    "건설현장",
+    "붕괴",
+    "사망",
+    "서울",
+    "서초구",
+    "아파트",
+    "작업자",
+    "천장",
+    "콘크리트"
+   ]
+  },
+  "3d821ac96b7bdaf7": {
+   "ts": 1790729199.724743,
+   "tok": [
+    "낙하물",
+    "맞아",
+    "반디클",
+    "반포",
+    "사망",
+    "외국",
+    "작업자"
+   ]
+  },
+  "11aa2423f4abb1e7": {
+   "ts": 1790729199.725608,
+   "tok": [
+    "859",
+    "공장",
+    "내달",
+    "실태조사",
+    "안전",
+    "진천군",
+    "창고",
+    "화재"
+   ]
   }
  },
  "initialized": true,
- "last_heartbeat": "2026-09-26",
+ "last_heartbeat": "2026-09-30",
  "events": [
   {
    "ts": 1790728250.630797,
@@ -2991,7 +3015,7 @@
     "콘크리트"
    ],
    "link": "http://www.newstomato.com/ReadNews.aspx?no=1315181&inflow=N",
-   "reports": 1,
+   "reports": 2,
    "casualty": true,
    "co": "현대건설"
   },
@@ -3010,16 +3034,16 @@
     "현대건설"
    ],
    "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTE5WTS1ac3BmVWZhS1NEakZEYjl2VHhtNkc5Q1pMLTgzS2RkTlZobGF1enV3Q2VhU2ZyR18xMFNOTGkyMER4SGRHcW9ZNE5PUUN3a1ZaaGIxNXRjMF9sQVdET0NtZXctdDlnZFN5cA?oc=5",
-   "reports": 1,
+   "reports": 2,
    "casualty": true,
    "co": "현대건설"
   }
  ],
- "sent_since_heartbeat": 2,
+ "sent_since_heartbeat": 0,
  "last_gpt_heartbeat": "2026-09-30",
  "gpt_alerts_since_heartbeat": 0,
- "gpt_last_status": "partial",
- "gpt_last_status_at": "09/30 09:30",
+ "gpt_last_status": "ok",
+ "gpt_last_status_at": "09/30 09:46",
  "gpt_events": [
   {
    "ts": 1790728247.546554,
