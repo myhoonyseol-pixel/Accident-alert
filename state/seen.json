@@ -1,19 +1,5 @@
 {
  "seen": {
-  "877c5168538276f0": {
-   "ts": 1790200275.744663,
-   "tok": [
-    "공장",
-    "덮친",
-    "매캐한",
-    "사회",
-    "서울",
-    "시간",
-    "연기",
-    "오류동",
-    "화재"
-   ]
-  },
   "e6fb57088b6b6ed2": {
    "ts": 1790201225.285444,
    "tok": [
@@ -4359,10 +4345,23 @@
     "쿠팡",
     "화재"
    ]
+  },
+  "12521355600f9af6": {
+   "ts": 1790805693.46778,
+   "tok": [
+    "60",
+    "건설현장",
+    "사망",
+    "상가",
+    "안전상황실",
+    "용인",
+    "작업자",
+    "전도"
+   ]
   }
  },
  "initialized": true,
- "last_heartbeat": "2026-09-30",
+ "last_heartbeat": "2026-10-01",
  "events": [
   {
    "ts": 1790728250.630797,
@@ -4519,9 +4518,9 @@
    "co": ""
   }
  ],
- "sent_since_heartbeat": 6,
- "last_gpt_heartbeat": "2026-09-30",
- "gpt_alerts_since_heartbeat": 5,
+ "sent_since_heartbeat": 0,
+ "last_gpt_heartbeat": "2026-10-01",
+ "gpt_alerts_since_heartbeat": 0,
  "gpt_last_status": "ok",
  "gpt_last_status_at": "09/30 22:35",
  "gpt_events": [
