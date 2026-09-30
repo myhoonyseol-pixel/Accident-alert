@@ -767,8 +767,9 @@ def broadcast(text: str, link: str = "", subject: str = "") -> int:
     """
     # 알림이 확실한 통로부터 내보냅니다.
     # 카카오톡 '나에게 보내기'는 푸시가 안 뜨므로 마지막입니다.
+    tg_sent = 0
     if telegram.enabled(config):
-        telegram.send(text, link, config)
+        tg_sent = telegram.send(text, link, config)
 
     if mailer.enabled(config):
         body = text.replace("↓ 아래 [기사 보기] 를 누르세요", "")
@@ -778,7 +779,10 @@ def broadcast(text: str, link: str = "", subject: str = "") -> int:
 
     sent = 0
     for label, refresh in load_recipients():
-        got = get_access_token(refresh, label, critical=(label == "본인"))
+        # 텔레그램으로 이미 나갔으면 카카오 실패로 감시 전체를 멈추지 않습니다.
+        # (2026-09-27 카카오 토큰 만료로 루프가 매번 죽어 하루 가까이 감시가 멈췄음)
+        got = get_access_token(refresh, label,
+                               critical=(label == "본인" and not tg_sent))
         if not got:
             continue
         token, ttl = got
@@ -791,7 +795,9 @@ def broadcast(text: str, link: str = "", subject: str = "") -> int:
             send_kakao(token, f"🔑 카카오 토큰 만료 {ttl // 86400}일 남음 ({label})\n"
                               f"만료되면 이 알림이 끊깁니다. 담당자에게 알려주세요.")
         time.sleep(0.3)
-    return sent
+    # 텔레그램 발송도 셉니다. 카카오만 세면 카카오가 죽었을 때 생존신호가
+    # '안 보낸 것'으로 남아 회차마다 다시 나갑니다.
+    return sent + tg_sent
 
 
 def send_kakao(token: str, text: str, link: str = "", button: str = "기사 보기"):
