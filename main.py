@@ -1128,10 +1128,15 @@ def main():
             # Claude와 같은 크기로 나눠 A/B 비교 조건을 맞춥니다. 후보가 많이 몰려도
             # 한 요청의 출력이 잘리거나 번호가 밀릴 가능성을 줄입니다.
             gpt_batch = max(1, int(getattr(config, "AI_BATCH_SIZE", 8)))
+            # Claude와 같은 방식으로 앞 묶음의 NEW를 다음 묶음에 '이미 보낸 사고'로 보여줍니다.
+            # 실제 gpt_events는 건드리지 않고 사본에만 붙입니다.
+            gpt_context, gpt_run_new = list(gpt_events), []
             for k in range(0, len(gpt_candidates), gpt_batch):
-                gpt_results += ai_judge_gpt.judge(
-                    gpt_candidates[k:k + gpt_batch], config, gpt_events, gpt_silent
+                rows = ai_judge_gpt.judge(
+                    gpt_candidates[k:k + gpt_batch], config, gpt_context, gpt_silent
                 )
+                gpt_results += ai_judge.merge_same_run(
+                    rows, gpt_context, len(gpt_events), gpt_run_new, "gpt")
         else:
             missing = []
             if ai_judge_gpt is None:
