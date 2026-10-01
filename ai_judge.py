@@ -54,7 +54,7 @@ import os
 import re
 import sys
 import time
-from datetime import datetime
+from datetime import datetime, timedelta, timezone
 
 import requests
 
@@ -266,9 +266,58 @@ def judge(candidates, cfg, recent_events=None):
     # 호출이 늘어도 지시문(약 3천 자)을 다시 보내는 값이라 차이는 몇 원입니다.
     size = max(1, int(getattr(cfg, "AI_BATCH_SIZE", 8)))
     kept = []
+    # 앞 묶음에서 NEW로 판정한 사고를 다음 묶음의 '이미 보낸 사고'에 넣어서 묻습니다.
+    # (2026-09-30 현대건설 서초 현장 사고가 서로 다른 묶음에서 NEW 3건으로 나왔음)
+    context = list(recent_events)
+    run_new = []
     for k in range(0, len(candidates), size):
-        kept += _judge_batch(candidates[k:k + size], cfg, recent_events, api_key)
+        rows = _judge_batch(candidates[k:k + size], cfg, context, api_key)
+        rows = merge_same_run(rows, context, len(recent_events), run_new, "ai")
+        kept += [r for r in rows if r[4].get("v") != "dup"]
     return kept
+
+
+_KST = timezone(timedelta(hours=9))
+
+
+def _run_event(row):
+    """이번 회차에 NEW로 판정된 기사를 '이미 보낸 사고' 목록 형식으로 바꿉니다."""
+    item, v = row[0], row[4]
+    title = item.get("title") or ""
+    pub = item.get("published")
+    when = v.get("occurred") or (pub.astimezone(_KST).strftime("%m/%d %H:%M") if pub else "")
+    return {"title": title[:90], "when": when, "co": v.get("co") or "",
+            "tok": sorted(filters.tokenize(title)), "same_run": True}
+
+
+def merge_same_run(rows, context, base, run_new, log="ai"):
+    """한 묶음의 판정을 같은 회차 앞 묶음들의 NEW와 합칩니다. Claude·GPT 공용.
+
+    context  : AI에게 보여준 '이미 보낸 사고' (실제 기억 + 이번 회차 NEW). 여기에 추가합니다.
+    base     : 실제 사건 기억의 길이. 이 번호 이상은 이번 회차에 새로 붙인 사고입니다.
+    run_new  : 이번 회차 NEW 행. context[base + i] 가 run_new[i] 입니다.
+
+    같은 회차의 앞 NEW를 가리키는 update는 dup으로 바꿉니다. 아직 보내기 전인 사고에
+    '후속'을 따로 보낼 이유가 없고, 새로 밝혀진 회사명은 앞 NEW 알림에 합칩니다.
+    """
+    for row in rows:
+        v = row[4]
+        try:
+            e = int(v.get("e", -1))
+        except (TypeError, ValueError):
+            e = -1
+        if v.get("v") in ("update", "dup") and base <= e < base + len(run_new):
+            first = run_new[e - base][4]
+            if v.get("co") and not first.get("co"):
+                first["co"] = v["co"]
+            if v.get("v") == "update":
+                print(f"[{log}] 같은 회차 동일사고 × {row[0].get('title', '')[:44]} "
+                      f"— 앞 묶음 NEW와 합침", file=sys.stderr)
+            v["v"], v["decision"], v["type"] = "dup", "NO_ALERT", "DUP"
+        elif v.get("v") == "new":
+            run_new.append(row)
+            context.append(_run_event(row))
+    return rows
 
 
 def _norm(s) -> str:

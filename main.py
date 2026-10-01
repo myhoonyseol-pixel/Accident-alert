@@ -767,8 +767,9 @@ def broadcast(text: str, link: str = "", subject: str = "") -> int:
     """
     # 알림이 확실한 통로부터 내보냅니다.
     # 카카오톡 '나에게 보내기'는 푸시가 안 뜨므로 마지막입니다.
+    tg_sent = 0
     if telegram.enabled(config):
-        telegram.send(text, link, config)
+        tg_sent = telegram.send(text, link, config)
 
     if mailer.enabled(config):
         body = text.replace("↓ 아래 [기사 보기] 를 누르세요", "")
@@ -778,7 +779,10 @@ def broadcast(text: str, link: str = "", subject: str = "") -> int:
 
     sent = 0
     for label, refresh in load_recipients():
-        got = get_access_token(refresh, label, critical=(label == "본인"))
+        # 텔레그램으로 이미 나갔으면 카카오 실패로 감시 전체를 멈추지 않습니다.
+        # (2026-09-27 카카오 토큰 만료로 루프가 매번 죽어 하루 가까이 감시가 멈췄음)
+        got = get_access_token(refresh, label,
+                               critical=(label == "본인" and not tg_sent))
         if not got:
             continue
         token, ttl = got
@@ -791,7 +795,9 @@ def broadcast(text: str, link: str = "", subject: str = "") -> int:
             send_kakao(token, f"🔑 카카오 토큰 만료 {ttl // 86400}일 남음 ({label})\n"
                               f"만료되면 이 알림이 끊깁니다. 담당자에게 알려주세요.")
         time.sleep(0.3)
-    return sent
+    # 텔레그램 발송도 셉니다. 카카오만 세면 카카오가 죽었을 때 생존신호가
+    # '안 보낸 것'으로 남아 회차마다 다시 나갑니다.
+    return sent + tg_sent
 
 
 def send_kakao(token: str, text: str, link: str = "", button: str = "기사 보기"):
@@ -1122,10 +1128,15 @@ def main():
             # Claude와 같은 크기로 나눠 A/B 비교 조건을 맞춥니다. 후보가 많이 몰려도
             # 한 요청의 출력이 잘리거나 번호가 밀릴 가능성을 줄입니다.
             gpt_batch = max(1, int(getattr(config, "AI_BATCH_SIZE", 8)))
+            # Claude와 같은 방식으로 앞 묶음의 NEW를 다음 묶음에 '이미 보낸 사고'로 보여줍니다.
+            # 실제 gpt_events는 건드리지 않고 사본에만 붙입니다.
+            gpt_context, gpt_run_new = list(gpt_events), []
             for k in range(0, len(gpt_candidates), gpt_batch):
-                gpt_results += ai_judge_gpt.judge(
-                    gpt_candidates[k:k + gpt_batch], config, gpt_events, gpt_silent
+                rows = ai_judge_gpt.judge(
+                    gpt_candidates[k:k + gpt_batch], config, gpt_context, gpt_silent
                 )
+                gpt_results += ai_judge.merge_same_run(
+                    rows, gpt_context, len(gpt_events), gpt_run_new, "gpt")
         else:
             missing = []
             if ai_judge_gpt is None:
