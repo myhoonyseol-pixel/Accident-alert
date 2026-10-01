@@ -5258,6 +5258,20 @@
     "추락사고",
     "파주"
    ]
+  },
+  "11f8f9204e3e1aa9": {
+   "ts": 1790890589.953738,
+   "tok": [
+    "공장",
+    "단계",
+    "대응",
+    "잔불",
+    "정리",
+    "제조",
+    "창원",
+    "한때",
+    "화재"
+   ]
   }
  },
  "initialized": true,
@@ -5437,9 +5451,9 @@
  ],
  "sent_since_heartbeat": 1,
  "last_gpt_heartbeat": "2026-10-01",
- "gpt_alerts_since_heartbeat": 5,
+ "gpt_alerts_since_heartbeat": 6,
  "gpt_last_status": "ok",
- "gpt_last_status_at": "10/02 06:20",
+ "gpt_last_status_at": "10/02 06:36",
  "gpt_events": [
   {
    "ts": 1790728247.546554,
@@ -5528,6 +5542,15 @@
    "title": "파주 공장에서 추락사고…근로자 3명 사상",
    "what": "파주 종이공장 근로자 3명 추락",
    "occurred": "10-01 14:50",
+   "updates": 0,
+   "co": ""
+  },
+  {
+   "ts": 1790890597.336346,
+   "when": "10/02 06:28",
+   "title": "창원 제조 공장 화재로 한때 대응 1단계…잔불 정리 중",
+   "what": "창원 제조공장에서 화재 발생",
+   "occurred": "",
    "updates": 0,
    "co": ""
   }
