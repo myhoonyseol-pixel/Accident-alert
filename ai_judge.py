@@ -343,6 +343,35 @@ def _date_key(value: str):
     return (int(m.group(1)), int(m.group(2))) if m else None
 
 
+# 본문 발생일이 이보다 오래된 사고는 새 알림으로 보내지 않습니다.
+# 2026-09-30 대원산업(08-28)·대불산단(09-08) 등 지난 사고의 성명·기획 기사가
+# '이미 보낸 사고' 기억(5일) 밖이라 new 로 나간 일이 있었습니다.
+OLD_ACCIDENT_DAYS = 7
+
+
+def occurred_age_days(occurred, now=None):
+    """AI가 적은 발생일('09-11 19:35')이 오늘(KST)로부터 며칠 전인지. 모르면 None."""
+    md = _date_key(occurred)
+    if not md:
+        return None
+    today = (now or datetime.now(_KST)).astimezone(_KST).date()
+    try:
+        d = today.replace(month=md[0], day=md[1])
+    except ValueError:
+        return None
+    if d > today + timedelta(days=1):      # 1월에 받은 '12-30' 같은 작년 날짜
+        try:
+            d = d.replace(year=d.year - 1)
+        except ValueError:
+            return None
+    return (today - d).days
+
+
+def too_old(occurred, now=None) -> bool:
+    age = occurred_age_days(occurred, now)
+    return age is not None and age > OLD_ACCIDENT_DAYS
+
+
 def _safe_fail_open(cand, cfg, reason=""):
     """AI가 끝내 답하지 못했을 때도 명백한 사고 제목만 살립니다.
 
@@ -660,16 +689,18 @@ def _judge_batch(candidates, cfg, recent_events, api_key, retry_missing=True):
                 cand, v, recent_events, cfg, company, occurred
             )
             if not ok:
-                print(f"[ai] UPDATE 검증실패 × {title} — {reason}", file=sys.stderr)
-                # 동일사건 연결은 거부하되, 제목 자체가 명백한 새 사고라면
-                # 누락 방지를 위해 NEW(⚠️ 미검증)로만 살립니다.
-                safe = _safe_fail_open(cand, cfg, f"UPDATE 동일사건 검증 실패: {reason}")
-                if safe is not None:
-                    kept.append(safe)
+                # AI는 '이미 보낸 사고'라고 답했습니다. 코드 검증이 틀어진 것뿐이라
+                # 새 사고(⚠️ 미검증)로 올리지 않고 버립니다. 예전엔 NEW로 올려서
+                # 2026-09-30 서초 디에이치클래스트 사고가 두 번 나갔습니다.
+                print(f"[ai] UPDATE 검증실패 → 재탕 × {title} — {reason}", file=sys.stderr)
                 continue
             print(f"[ai] 후속 ↻ {title} ({chg or why}){tail}")
             kept.append((*cand, {"v": "update", "e": event_idx, "chg": chg,
                                  "occurred": occurred, "co": company}))
+            continue
+        if too_old(occurred):
+            print(f"[ai] 지난 사고 × {title} — 발생 {occurred}, "
+                  f"{OLD_ACCIDENT_DAYS}일 초과{tail}")
             continue
         extra = " ".join(x for x in (f"발생 {occurred}" if occurred else "",
                                      f"시공사 {company}" if company else "") if x)
