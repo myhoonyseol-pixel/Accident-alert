@@ -6579,6 +6579,21 @@
     "현대건설",
     "현장관리"
    ]
+  },
+  "a44b83332490d475": {
+   "ts": 1790941997.770593,
+   "tok": [
+    "70",
+    "경북",
+    "굴착기",
+    "맞아",
+    "버킷에",
+    "사망",
+    "작업자",
+    "추락",
+    "토목공장",
+    "하동"
+   ]
   }
  },
  "initialized": true,
@@ -6878,7 +6893,7 @@
  "last_gpt_heartbeat": "2026-10-02",
  "gpt_alerts_since_heartbeat": 6,
  "gpt_last_status": "ok",
- "gpt_last_status_at": "10/02 20:37",
+ "gpt_last_status_at": "10/02 20:53",
  "gpt_events": [
   {
    "ts": 1790728247.546674,
