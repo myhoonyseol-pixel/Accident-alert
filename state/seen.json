@@ -6735,30 +6735,26 @@
     "화재",
     "화학공장"
    ]
+  },
+  "11cea2250e35b807": {
+   "ts": 1790955794.802739,
+   "tok": [
+    "70",
+    "굴착기",
+    "그만",
+    "사망",
+    "삽에",
+    "안타까운",
+    "옮기던",
+    "철근",
+    "추락",
+    "하늘"
+   ]
   }
  },
  "initialized": true,
  "last_heartbeat": "2026-10-02",
  "events": [
-  {
-   "ts": 1790728251.659988,
-   "when": "09/30 08:18",
-   "title": "현대건설 서초구 디에이치클래스트 건설 현장 또 노동자 사망사고…지난 8월에도 사망사고",
-   "updates": 0,
-   "tok": [
-    "건설현장",
-    "디에이치클래스트",
-    "사망",
-    "서초구",
-    "월에",
-    "작업자",
-    "현대건설"
-   ],
-   "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTE5WTS1ac3BmVWZhS1NEakZEYjl2VHhtNkc5Q1pMLTgzS2RkTlZobGF1enV3Q2VhU2ZyR18xMFNOTGkyMER4SGRHcW9ZNE5PUUN3a1ZaaGIxNXRjMF9sQVdET0NtZXctdDlnZFN5cA?oc=5",
-   "reports": 3,
-   "casualty": true,
-   "co": "현대건설"
-  },
   {
    "ts": 1790734047.115351,
    "when": "09/30 11:00",
@@ -7052,9 +7048,9 @@
  ],
  "sent_since_heartbeat": 8,
  "last_gpt_heartbeat": "2026-10-02",
- "gpt_alerts_since_heartbeat": 6,
+ "gpt_alerts_since_heartbeat": 7,
  "gpt_last_status": "ok",
- "gpt_last_status_at": "10/02 22:45",
+ "gpt_last_status_at": "10/03 00:43",
  "gpt_events": [
   {
    "ts": 1790728247.546674,
@@ -7188,8 +7184,8 @@
    "title": "경남 공사 현장서 70대 굴착기 버킷 맞아 사망…중처법 위반 조사",
    "what": "70대 노동자 경남 공사장서 버킷 맞아 사망",
    "occurred": "",
-   "updates": 0,
-   "co": ""
+   "updates": 1,
+   "co": "대국"
   }
  ],
  "gpt_silent": [
