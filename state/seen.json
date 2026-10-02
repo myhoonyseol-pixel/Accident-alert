@@ -1,20 +1,5 @@
 {
  "seen": {
-  "ee1f8efb65bb14e1": {
-   "ts": 1790294832.758463,
-   "tok": [
-    "노동부",
-    "부진",
-    "사망",
-    "산재",
-    "성과",
-    "시험대",
-    "여전",
-    "정책",
-    "줄었지만",
-    "청년고용"
-   ]
-  },
   "87e80a1cfc60d6ce": {
    "ts": 1790298948.47593,
    "tok": [
@@ -5462,6 +5447,57 @@
     "작업하다",
     "해체"
    ]
+  },
+  "eee0222b9836de56": {
+   "ts": 1790899788.573245,
+   "tok": [
+    "366",
+    "년간",
+    "명은",
+    "사망",
+    "산재",
+    "서울교통공사",
+    "이중"
+   ]
+  },
+  "93bcb2847c525735": {
+   "ts": 1790899788.573991,
+   "tok": [
+    "473",
+    "대전사업장",
+    "동일",
+    "반복",
+    "법위반",
+    "적발",
+    "폭발사고",
+    "한화에어"
+   ]
+  },
+  "f4fa73a9205a67c4": {
+   "ts": 1790899788.574928,
+   "tok": [
+    "건물",
+    "구조",
+    "구조물",
+    "옥상",
+    "작업",
+    "작업자",
+    "해체",
+    "화재"
+   ]
+  },
+  "24c3f9eef869648b": {
+   "ts": 1790899788.576039,
+   "tok": [
+    "10",
+    "공장",
+    "대전",
+    "사망",
+    "순식간",
+    "자동차부품",
+    "화재",
+    "확산"
+   ]
   }
  },
  "initialized": true,
@@ -5669,16 +5705,36 @@
     "화재"
    ],
    "link": "http://news.lghellovision.net/news/articleView.html?idxno=557048",
-   "reports": 1,
+   "reports": 2,
    "casualty": false,
+   "co": ""
+  },
+  {
+   "ts": 1790899799.514928,
+   "when": "10/02 04:15",
+   "title": "대전 자동차부품 공장 화재 10명 숨져…“불길 순식간 확산”",
+   "updates": 0,
+   "tok": [
+    "10",
+    "공장",
+    "대전",
+    "사망",
+    "순식간",
+    "자동차부품",
+    "화재",
+    "확산"
+   ],
+   "link": "https://news.google.com/rss/articles/CBMiY0FVX3lxTFA3R0pQNGVRclhQblozeDdfMi15TkEyOFNDNW12RUFPUHhWb1NGVV92MUJRby1JbkV5WHZYcmlhT3Y5aHhnd1VqZHJmSGhQTXhhcWhpYkQ0aFE4dXFRZm1OT1czbw?oc=5",
+   "reports": 1,
+   "casualty": true,
    "co": ""
   }
  ],
- "sent_since_heartbeat": 2,
+ "sent_since_heartbeat": 3,
  "last_gpt_heartbeat": "2026-10-02",
- "gpt_alerts_since_heartbeat": 1,
+ "gpt_alerts_since_heartbeat": 2,
  "gpt_last_status": "ok",
- "gpt_last_status_at": "10/02 08:53",
+ "gpt_last_status_at": "10/02 09:09",
  "gpt_events": [
   {
    "ts": 1790728247.546554,
@@ -5775,6 +5831,15 @@
    "when": "10/02 06:28",
    "title": "창원 제조 공장 화재로 한때 대응 1단계…잔불 정리 중",
    "what": "창원 제조공장에서 화재 발생",
+   "occurred": "",
+   "updates": 0,
+   "co": ""
+  },
+  {
+   "ts": 1790899797.256322,
+   "when": "10/02 04:15",
+   "title": "대전 자동차부품 공장 화재 10명 숨져…“불길 순식간 확산”",
+   "what": "대전 자동차부품 공장 화재로 10명 사망",
    "occurred": "",
    "updates": 0,
    "co": ""
