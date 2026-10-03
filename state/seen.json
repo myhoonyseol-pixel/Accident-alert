@@ -6790,6 +6790,32 @@
     "작업자",
     "철근"
    ]
+  },
+  "124a0a5df39c28f9": {
+   "ts": 1790992811.083299,
+   "tok": [
+    "경북",
+    "굴착현장",
+    "매몰",
+    "임도",
+    "잇단",
+    "차량",
+    "추락"
+   ]
+  },
+  "efa8d4070c77b8e5": {
+   "ts": 1790992811.084386,
+   "tok": [
+    "60",
+    "건설현장",
+    "경주",
+    "붕괴",
+    "아파트",
+    "오수관",
+    "이송",
+    "작업자",
+    "토사"
+   ]
   }
  },
  "initialized": true,
@@ -7084,13 +7110,32 @@
    "reports": 1,
    "casualty": true,
    "co": ""
+  },
+  {
+   "ts": 1790992833.551968,
+   "when": "10/03 10:46",
+   "title": "산 임도 차량 추락부터 굴착현장 매몰까지…경북 잇단 사고",
+   "updates": 0,
+   "tok": [
+    "경북",
+    "굴착현장",
+    "매몰",
+    "임도",
+    "잇단",
+    "차량",
+    "추락"
+   ],
+   "link": "https://news.tf.co.kr/read/national/2372761.htm",
+   "reports": 1,
+   "casualty": true,
+   "co": ""
   }
  ],
- "sent_since_heartbeat": 0,
+ "sent_since_heartbeat": 1,
  "last_gpt_heartbeat": "2026-10-03",
- "gpt_alerts_since_heartbeat": 0,
+ "gpt_alerts_since_heartbeat": 1,
  "gpt_last_status": "ok",
- "gpt_last_status_at": "10/03 10:12",
+ "gpt_last_status_at": "10/03 11:00",
  "gpt_events": [
   {
    "ts": 1790728247.546674,
@@ -7226,6 +7271,15 @@
    "occurred": "",
    "updates": 1,
    "co": "대국"
+  },
+  {
+   "ts": 1790992831.257935,
+   "when": "10/03 10:46",
+   "title": "산 임도 차량 추락부터 굴착현장 매몰까지…경북 잇단 사고",
+   "what": "경주 굴착현장 토사 붕괴로 작업자 매몰",
+   "occurred": "10-02 13:55",
+   "updates": 0,
+   "co": ""
   }
  ],
  "gpt_silent": [
