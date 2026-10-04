@@ -7337,6 +7337,18 @@
     "주류회사",
     "화재"
    ]
+  },
+  "8b8a98b87fdbf176": {
+   "ts": 1791109530.069357,
+   "tok": [
+    "50",
+    "높이",
+    "도색하던",
+    "안전장구",
+    "없었다",
+    "추락",
+    "학교"
+   ]
   }
  },
  "initialized": true,
@@ -7638,7 +7650,7 @@
  "last_gpt_heartbeat": "2026-10-04",
  "gpt_alerts_since_heartbeat": 2,
  "gpt_last_status": "ok",
- "gpt_last_status_at": "10/04 18:53",
+ "gpt_last_status_at": "10/04 19:25",
  "gpt_events": [
   {
    "ts": 1790762953.261341,
