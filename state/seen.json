@@ -7176,6 +7176,19 @@
     "추락",
     "휴일"
    ]
+  },
+  "343a3dfb0adb9a18": {
+   "ts": 1791093409.912628,
+   "tok": [
+    "50",
+    "고등학교",
+    "도색하던",
+    "미착용",
+    "안전장구",
+    "외벽",
+    "일산",
+    "추락"
+   ]
   }
  },
  "initialized": true,
@@ -7469,13 +7482,33 @@
    "reports": 1,
    "casualty": true,
    "co": ""
+  },
+  {
+   "ts": 1791093420.233512,
+   "when": "10/04 14:21",
+   "title": "일산 고등학교서 외벽 도색하던 50대 추락사…안전장구 미착용",
+   "updates": 0,
+   "tok": [
+    "50",
+    "고등학교",
+    "도색하던",
+    "미착용",
+    "안전장구",
+    "외벽",
+    "일산",
+    "추락"
+   ],
+   "link": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE1BY01ZaWExVDNobThUS1F2NUQ0eUdQY05CY1o0c3BJd1NZY2pDUnhPT0t5WmFjVWc3RzZJMDdoZ2FrSEtoUnlyS0ZNbFJ0THNSZjluZHJn0gFbQVVfeXFMUExtOFpGSVNMQUpuUjl6V25WdHVfa3dpcEZWYk5DVUx0MlJ5MlQ5QUdveHJDZ09tWnhSejFIRnNKeW9UVW1qcFE2WG1FcVZJOXFwSkZVaGx6ZXFYdw?oc=5",
+   "reports": 1,
+   "casualty": false,
+   "co": ""
   }
  ],
- "sent_since_heartbeat": 0,
+ "sent_since_heartbeat": 1,
  "last_gpt_heartbeat": "2026-10-04",
- "gpt_alerts_since_heartbeat": 0,
+ "gpt_alerts_since_heartbeat": 1,
  "gpt_last_status": "ok",
- "gpt_last_status_at": "10/04 11:24",
+ "gpt_last_status_at": "10/04 14:56",
  "gpt_events": [
   {
    "ts": 1790735970.487084,
@@ -7609,6 +7642,15 @@
    "title": "산 임도 차량 추락부터 굴착현장 매몰까지…경북 잇단 사고",
    "what": "경주 굴착현장 토사 붕괴로 작업자 매몰",
    "occurred": "10-02 13:55",
+   "updates": 0,
+   "co": ""
+  },
+  {
+   "ts": 1791093417.928215,
+   "when": "10/04 14:21",
+   "title": "일산 고등학교서 외벽 도색하던 50대 추락사…안전장구 미착용",
+   "what": "일산 고교 외벽 도색공 추락사",
+   "occurred": "",
    "updates": 0,
    "co": ""
   }
