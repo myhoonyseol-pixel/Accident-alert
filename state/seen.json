@@ -7252,6 +7252,56 @@
     "제주",
     "화재"
    ]
+  },
+  "8aa3a0ca4d6dc73f": {
+   "ts": 1791107629.267374,
+   "tok": [
+    "40",
+    "공장",
+    "사망",
+    "자동차부품",
+    "작업자",
+    "충주"
+   ]
+  },
+  "6b95a83369fea0c8": {
+   "ts": 1791107629.267479,
+   "tok": [
+    "26",
+    "노형동",
+    "만에",
+    "물류창고",
+    "사회",
+    "없어",
+    "완진",
+    "인명피해",
+    "제주",
+    "화재"
+   ]
+  },
+  "ae2f373186ab1310": {
+   "ts": 1791107629.268257,
+   "tok": [
+    "40",
+    "공장",
+    "끼임",
+    "사망",
+    "자동차부품",
+    "작업자",
+    "충주"
+   ]
+  },
+  "178a5b353cd5ec90": {
+   "ts": 1791107629.268999,
+   "tok": [
+    "개정",
+    "교육",
+    "노동법",
+    "대응",
+    "예방",
+    "울주군",
+    "중대재해"
+   ]
   }
  },
  "initialized": true,
@@ -7544,7 +7594,7 @@
     "충주"
    ],
    "link": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE5McnFqb2lrRmp0M3lZWm1hTkxqSHpsUnJuRDJkYTZ6emRrU09GTFRBZ1VrdVk5YXNPUl9jRGgzR202ZXl2TlB6c2VLOTZ6MW45dEZpTDFJT1ZWZXItdnRXU9IBeEFVX3lxTE5TdzczZU1sVmZWcFlLdGRQMUhDNnUyZzkxdmphc2gtY0xhaDdHd3hZQWFMdlVRVHgzMEprQTlVUXJNa214TVQzYzFnZVBvTkZzdVhYWlpnRHVhaW1EbG1MNkd0S2hranRFNXF4WHlEVjhtS1oxZjYtOQ?oc=5",
-   "reports": 2,
+   "reports": 4,
    "casualty": true,
    "co": ""
   }
@@ -7553,7 +7603,7 @@
  "last_gpt_heartbeat": "2026-10-04",
  "gpt_alerts_since_heartbeat": 2,
  "gpt_last_status": "ok",
- "gpt_last_status_at": "10/04 18:38",
+ "gpt_last_status_at": "10/04 18:53",
  "gpt_events": [
   {
    "ts": 1790762953.261341,
@@ -7692,15 +7742,6 @@
   }
  ],
  "gpt_silent": [
-  {
-   "ts": 1790944893.366022,
-   "when": "10/02 21:36",
-   "title": "경남 공장 둔 식품기업들 산업재해 승인 상위권 '불명예'",
-   "what": "경남 식품기업 산재 승인 상위권 통계",
-   "occurred": "",
-   "co": "",
-   "why": "판단2·산재 통계 보도"
-  },
   {
    "ts": 1790944893.366038,
    "when": "10/02 21:26",
@@ -7871,6 +7912,15 @@
    "occurred": "10-04 16:22",
    "co": "",
    "why": "판단3·인명피해 없음"
+  },
+  {
+   "ts": 1791107635.813684,
+   "when": "10/04 15:57",
+   "title": "노동법 개정 대응부터 중대재해 예방까지…울주군 현장 교육",
+   "what": "울주군이 현장 중대재해 예방교육",
+   "occurred": "",
+   "co": "",
+   "why": "판단2·중대재해 예방교육 기사"
   }
  ]
 }
