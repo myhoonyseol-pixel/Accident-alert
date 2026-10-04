@@ -7202,6 +7202,19 @@
     "있던",
     "추락"
    ]
+  },
+  "4a545b48de0c14a5": {
+   "ts": 1791101933.363876,
+   "tok": [
+    "40",
+    "공장",
+    "기계에",
+    "끼였다",
+    "부품",
+    "사망",
+    "작업자",
+    "충주"
+   ]
   }
  },
  "initialized": true,
@@ -7496,13 +7509,33 @@
    "reports": 1,
    "casualty": false,
    "co": ""
+  },
+  {
+   "ts": 1791101942.257243,
+   "when": "10/04 17:07",
+   "title": "충주 車부품 공장에서 기계에 끼였다…40대 근로자 사망",
+   "updates": 0,
+   "tok": [
+    "40",
+    "공장",
+    "기계에",
+    "끼였다",
+    "부품",
+    "사망",
+    "작업자",
+    "충주"
+   ],
+   "link": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE5McnFqb2lrRmp0M3lZWm1hTkxqSHpsUnJuRDJkYTZ6emRrU09GTFRBZ1VrdVk5YXNPUl9jRGgzR202ZXl2TlB6c2VLOTZ6MW45dEZpTDFJT1ZWZXItdnRXU9IBeEFVX3lxTE5TdzczZU1sVmZWcFlLdGRQMUhDNnUyZzkxdmphc2gtY0xhaDdHd3hZQWFMdlVRVHgzMEprQTlVUXJNa214TVQzYzFnZVBvTkZzdVhYWlpnRHVhaW1EbG1MNkd0S2hranRFNXF4WHlEVjhtS1oxZjYtOQ?oc=5",
+   "reports": 1,
+   "casualty": true,
+   "co": ""
   }
  ],
- "sent_since_heartbeat": 1,
+ "sent_since_heartbeat": 2,
  "last_gpt_heartbeat": "2026-10-04",
- "gpt_alerts_since_heartbeat": 1,
+ "gpt_alerts_since_heartbeat": 2,
  "gpt_last_status": "ok",
- "gpt_last_status_at": "10/04 14:56",
+ "gpt_last_status_at": "10/04 17:18",
  "gpt_events": [
   {
    "ts": 1790751216.635163,
@@ -7635,6 +7668,15 @@
    "when": "10/04 14:21",
    "title": "일산 고등학교서 외벽 도색하던 50대 추락사…안전장구 미착용",
    "what": "일산 고교 외벽 도색공 추락사",
+   "occurred": "",
+   "updates": 0,
+   "co": ""
+  },
+  {
+   "ts": 1791101939.906427,
+   "when": "10/04 17:07",
+   "title": "충주 車부품 공장에서 기계에 끼였다…40대 근로자 사망",
+   "what": "충주 자동차부품공장 근로자 기계 끼임 사망",
    "occurred": "",
    "updates": 0,
    "co": ""
