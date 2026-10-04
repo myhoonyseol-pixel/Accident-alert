@@ -7252,10 +7252,22 @@
     "추락",
     "휴무"
    ]
+  },
+  "ee84524ece1b1b1c": {
+   "ts": 1791151372.132718,
+   "tok": [
+    "40",
+    "공장",
+    "끼임",
+    "사망",
+    "자동차부품",
+    "작업자",
+    "충주"
+   ]
   }
  },
  "initialized": true,
- "last_heartbeat": "2026-10-04",
+ "last_heartbeat": "2026-10-05",
  "events": [
   {
    "ts": 1790766847.105274,
@@ -7544,14 +7556,14 @@
     "충주"
    ],
    "link": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE5McnFqb2lrRmp0M3lZWm1hTkxqSHpsUnJuRDJkYTZ6emRrU09GTFRBZ1VrdVk5YXNPUl9jRGgzR202ZXl2TlB6c2VLOTZ6MW45dEZpTDFJT1ZWZXItdnRXU9IBeEFVX3lxTE5TdzczZU1sVmZWcFlLdGRQMUhDNnUyZzkxdmphc2gtY0xhaDdHd3hZQWFMdlVRVHgzMEprQTlVUXJNa214TVQzYzFnZVBvTkZzdVhYWlpnRHVhaW1EbG1MNkd0S2hranRFNXF4WHlEVjhtS1oxZjYtOQ?oc=5",
-   "reports": 6,
+   "reports": 7,
    "casualty": true,
    "co": ""
   }
  ],
- "sent_since_heartbeat": 2,
- "last_gpt_heartbeat": "2026-10-04",
- "gpt_alerts_since_heartbeat": 2,
+ "sent_since_heartbeat": 0,
+ "last_gpt_heartbeat": "2026-10-05",
+ "gpt_alerts_since_heartbeat": 0,
  "gpt_last_status": "ok",
  "gpt_last_status_at": "10/05 06:08",
  "gpt_events": [
