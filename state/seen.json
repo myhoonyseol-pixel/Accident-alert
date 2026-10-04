@@ -7215,6 +7215,43 @@
     "작업자",
     "충주"
    ]
+  },
+  "92ad84967c62556a": {
+   "ts": 1791106674.590961,
+   "tok": [
+    "대청봉",
+    "등산객",
+    "비번",
+    "살렸다",
+    "설악산",
+    "소방관",
+    "추락"
+   ]
+  },
+  "7cc11654a61d6b5e": {
+   "ts": 1791106674.591756,
+   "tok": [
+    "40",
+    "공장",
+    "끼임",
+    "사망",
+    "자동차부품",
+    "작업자",
+    "충주"
+   ]
+  },
+  "7546ad6041ab8a9e": {
+   "ts": 1791106674.592455,
+   "tok": [
+    "노형동",
+    "물류창고",
+    "없이",
+    "완진",
+    "외벽",
+    "인명피해",
+    "제주",
+    "화재"
+   ]
   }
  },
  "initialized": true,
@@ -7507,7 +7544,7 @@
     "충주"
    ],
    "link": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE5McnFqb2lrRmp0M3lZWm1hTkxqSHpsUnJuRDJkYTZ6emRrU09GTFRBZ1VrdVk5YXNPUl9jRGgzR202ZXl2TlB6c2VLOTZ6MW45dEZpTDFJT1ZWZXItdnRXU9IBeEFVX3lxTE5TdzczZU1sVmZWcFlLdGRQMUhDNnUyZzkxdmphc2gtY0xhaDdHd3hZQWFMdlVRVHgzMEprQTlVUXJNa214TVQzYzFnZVBvTkZzdVhYWlpnRHVhaW1EbG1MNkd0S2hranRFNXF4WHlEVjhtS1oxZjYtOQ?oc=5",
-   "reports": 1,
+   "reports": 2,
    "casualty": true,
    "co": ""
   }
@@ -7516,7 +7553,7 @@
  "last_gpt_heartbeat": "2026-10-04",
  "gpt_alerts_since_heartbeat": 2,
  "gpt_last_status": "ok",
- "gpt_last_status_at": "10/04 17:18",
+ "gpt_last_status_at": "10/04 18:38",
  "gpt_events": [
   {
    "ts": 1790762953.261341,
@@ -7655,15 +7692,6 @@
   }
  ],
  "gpt_silent": [
-  {
-   "ts": 1790941031.419559,
-   "when": "10/02 15:00",
-   "title": "현대건설, 안전대책 강화에도 3개월 새 3명 사망…현장관리 도마",
-   "what": "현대건설 3개월 새 3명 사망 논란",
-   "occurred": "",
-   "co": "현대건설",
-   "why": "판단2·과거사고·안전관리 분석"
-  },
   {
    "ts": 1790944893.366022,
    "when": "10/02 21:36",
@@ -7834,6 +7862,15 @@
    "occurred": "",
    "co": "",
    "why": "판단1·등산객 일반 추락사고"
+  },
+  {
+   "ts": 1791106682.615819,
+   "when": "10/04 18:30",
+   "title": "제주 노형동 물류창고 외벽 화재…인명피해 없이 완진",
+   "what": "제주 물류창고 외벽 화재",
+   "occurred": "10-04 16:22",
+   "co": "",
+   "why": "판단3·인명피해 없음"
   }
  ]
 }
