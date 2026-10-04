@@ -7349,6 +7349,42 @@
     "추락",
     "학교"
    ]
+  },
+  "bbefaadbc83e4d6a": {
+   "ts": 1791111432.708166,
+   "tok": [
+    "노형동",
+    "물류창고",
+    "소실",
+    "실외기",
+    "외벽",
+    "제주",
+    "화재"
+   ]
+  },
+  "f8b14f2adf8155b6": {
+   "ts": 1791111432.708991,
+   "tok": [
+    "40",
+    "공장",
+    "끼임",
+    "사망",
+    "자동차부품",
+    "작업자",
+    "충주"
+   ]
+  },
+  "2d64b2601ef64618": {
+   "ts": 1791111432.709719,
+   "tok": [
+    "20",
+    "노형동",
+    "물류창고",
+    "여분",
+    "제주시",
+    "진화",
+    "화재"
+   ]
   }
  },
  "initialized": true,
@@ -7641,7 +7677,7 @@
     "충주"
    ],
    "link": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE5McnFqb2lrRmp0M3lZWm1hTkxqSHpsUnJuRDJkYTZ6emRrU09GTFRBZ1VrdVk5YXNPUl9jRGgzR202ZXl2TlB6c2VLOTZ6MW45dEZpTDFJT1ZWZXItdnRXU9IBeEFVX3lxTE5TdzczZU1sVmZWcFlLdGRQMUhDNnUyZzkxdmphc2gtY0xhaDdHd3hZQWFMdlVRVHgzMEprQTlVUXJNa214TVQzYzFnZVBvTkZzdVhYWlpnRHVhaW1EbG1MNkd0S2hranRFNXF4WHlEVjhtS1oxZjYtOQ?oc=5",
-   "reports": 4,
+   "reports": 5,
    "casualty": true,
    "co": ""
   }
