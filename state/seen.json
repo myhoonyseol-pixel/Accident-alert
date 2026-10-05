@@ -7942,6 +7942,18 @@
     "폐기물",
     "화재"
    ]
+  },
+  "684afdb4bfb47433": {
+   "ts": 1791240539.102392,
+   "tok": [
+    "다량",
+    "대산읍",
+    "서산",
+    "연기",
+    "재활용공장",
+    "폐기물",
+    "화재"
+   ]
   }
  },
  "initialized": true,
@@ -8245,7 +8257,7 @@
  "last_gpt_heartbeat": "2026-10-06",
  "gpt_alerts_since_heartbeat": 0,
  "gpt_last_status": "ok",
- "gpt_last_status_at": "10/06 07:33",
+ "gpt_last_status_at": "10/06 07:49",
  "gpt_events": [
   {
    "ts": 1790845290.488233,
