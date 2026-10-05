@@ -7302,6 +7302,17 @@
     "유형",
     "중대재해"
    ]
+  },
+  "ebd34fe66591221d": {
+   "ts": 1791162198.180752,
+   "tok": [
+    "사망",
+    "사업장",
+    "작업자",
+    "중대재해",
+    "충주",
+    "현대성우캐스팅"
+   ]
   }
  },
  "initialized": true,
@@ -7582,7 +7593,7 @@
    "ts": 1791101942.257243,
    "when": "10/04 17:07",
    "title": "충주 車부품 공장에서 기계에 끼였다…40대 근로자 사망",
-   "updates": 0,
+   "updates": 1,
    "tok": [
     "40",
     "공장",
@@ -7596,14 +7607,14 @@
    "link": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE5McnFqb2lrRmp0M3lZWm1hTkxqSHpsUnJuRDJkYTZ6emRrU09GTFRBZ1VrdVk5YXNPUl9jRGgzR202ZXl2TlB6c2VLOTZ6MW45dEZpTDFJT1ZWZXItdnRXU9IBeEFVX3lxTE5TdzczZU1sVmZWcFlLdGRQMUhDNnUyZzkxdmphc2gtY0xhaDdHd3hZQWFMdlVRVHgzMEprQTlVUXJNa214TVQzYzFnZVBvTkZzdVhYWlpnRHVhaW1EbG1MNkd0S2hranRFNXF4WHlEVjhtS1oxZjYtOQ?oc=5",
    "reports": 7,
    "casualty": true,
-   "co": ""
+   "co": "현대성우캐스팅"
   }
  ],
- "sent_since_heartbeat": 0,
+ "sent_since_heartbeat": 1,
  "last_gpt_heartbeat": "2026-10-05",
- "gpt_alerts_since_heartbeat": 1,
+ "gpt_alerts_since_heartbeat": 2,
  "gpt_last_status": "ok",
- "gpt_last_status_at": "10/05 09:25",
+ "gpt_last_status_at": "10/05 10:03",
  "gpt_events": [
   {
    "ts": 1790762953.261355,
@@ -7739,6 +7750,15 @@
    "occurred": "",
    "updates": 0,
    "co": ""
+  },
+  {
+   "ts": 1791162209.426921,
+   "when": "10/05 09:50",
+   "title": "현대성우캐스팅, 충주 사업장에서 노동자 사망 중대재해 발생",
+   "what": "충주 현대성우캐스팅서 설비 청소 노동자 사망",
+   "occurred": "10-04 10:54",
+   "updates": 0,
+   "co": "현대성우캐스팅"
   }
  ],
  "gpt_silent": [
