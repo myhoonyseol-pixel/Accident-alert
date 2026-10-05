@@ -7278,6 +7278,19 @@
     "제연설비",
     "화재연동"
    ]
+  },
+  "21ad756afda47c16": {
+   "ts": 1791158945.556217,
+   "tok": [
+    "공장",
+    "남양주",
+    "다량",
+    "당부",
+    "연기에",
+    "주의",
+    "팔야리",
+    "화재"
+   ]
   }
  },
  "initialized": true,
@@ -7577,9 +7590,9 @@
  ],
  "sent_since_heartbeat": 0,
  "last_gpt_heartbeat": "2026-10-05",
- "gpt_alerts_since_heartbeat": 0,
+ "gpt_alerts_since_heartbeat": 1,
  "gpt_last_status": "ok",
- "gpt_last_status_at": "10/05 08:53",
+ "gpt_last_status_at": "10/05 09:09",
  "gpt_events": [
   {
    "ts": 1790762953.261341,
@@ -7712,6 +7725,15 @@
    "when": "10/04 17:07",
    "title": "충주 車부품 공장에서 기계에 끼였다…40대 근로자 사망",
    "what": "충주 자동차부품공장 근로자 기계 끼임 사망",
+   "occurred": "",
+   "updates": 0,
+   "co": ""
+  },
+  {
+   "ts": 1791158953.516687,
+   "when": "10/05 08:46",
+   "title": "남양주 팔야리 공장서 화재...다량 연기에 주의 당부",
+   "what": "남양주 팔야리 공장 화재",
    "occurred": "",
    "updates": 0,
    "co": ""
