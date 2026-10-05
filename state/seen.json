@@ -7799,6 +7799,19 @@
     "재부상",
     "적용"
    ]
+  },
+  "ce700aa1d3fe6d2f": {
+   "ts": 1791232960.042488,
+   "tok": [
+    "00",
+    "10",
+    "공장화재",
+    "대산읍",
+    "독곶리",
+    "서산시",
+    "이르트에코",
+    "충청남"
+   ]
   }
  },
  "initialized": true,
@@ -8099,9 +8112,9 @@
  ],
  "sent_since_heartbeat": 2,
  "last_gpt_heartbeat": "2026-10-05",
- "gpt_alerts_since_heartbeat": 2,
+ "gpt_alerts_since_heartbeat": 3,
  "gpt_last_status": "ok",
- "gpt_last_status_at": "10/06 05:26",
+ "gpt_last_status_at": "10/06 05:42",
  "gpt_events": [
   {
    "ts": 1790818807.268147,
@@ -8237,6 +8250,15 @@
    "occurred": "10-04 10:54",
    "updates": 0,
    "co": "현대성우캐스팅"
+  },
+  {
+   "ts": 1791232967.823123,
+   "when": "10/06 01:28",
+   "title": "충청남도 서산시 대산읍 10월 6일 00:00 서산시 대산읍 독곶리 이르트에코 공장화재 사고 발생",
+   "what": "서산 이르트에코 공장 화재 발생",
+   "occurred": "10-06 00:00",
+   "updates": 0,
+   "co": ""
   }
  ],
  "gpt_silent": [
