@@ -9046,6 +9046,26 @@
     "주민",
     "화재"
    ]
+  },
+  "a1a5f586e787e7f2": {
+   "ts": 1791312754.98732,
+   "tok": [
+    "17",
+    "200",
+    "40",
+    "가구",
+    "공장",
+    "대산읍",
+    "만에",
+    "서산",
+    "시간",
+    "인근",
+    "정전",
+    "진화",
+    "폐기물",
+    "한때",
+    "화재"
+   ]
   }
  },
  "initialized": true,
@@ -9324,7 +9344,7 @@
     "화재"
    ],
    "link": "https://news.google.com/rss/articles/CBMidEFVX3lxTE5rdU9PaGI0TG51c3hyOU5HZElOdGlnbmN5bDlVVHBabTZWdlk3QUFFWjUyUHV2bEVQaFNFN1M3ZU1UdnQxZHczbF96c3B3d0YwY2pMbXRnZGhobDFkSTYwcERYQjU3dE4wSU9ENHFMYk56QmZv?oc=5",
-   "reports": 15,
+   "reports": 16,
    "casualty": false,
    "co": ""
   },
