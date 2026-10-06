@@ -8917,6 +8917,21 @@
     "폐기물",
     "화재"
    ]
+  },
+  "e9b4719fd25598fb": {
+   "ts": 1791284962.21649,
+   "tok": [
+    "17",
+    "40",
+    "공장",
+    "만에",
+    "서산",
+    "시간",
+    "완진",
+    "재활용",
+    "폐기물",
+    "화재"
+   ]
   }
  },
  "initialized": true,
@@ -9211,7 +9226,7 @@
     "화재"
    ],
    "link": "https://news.google.com/rss/articles/CBMidEFVX3lxTE5rdU9PaGI0TG51c3hyOU5HZElOdGlnbmN5bDlVVHBabTZWdlk3QUFFWjUyUHV2bEVQaFNFN1M3ZU1UdnQxZHczbF96c3B3d0YwY2pMbXRnZGhobDFkSTYwcERYQjU3dE4wSU9ENHFMYk56QmZv?oc=5",
-   "reports": 13,
+   "reports": 14,
    "casualty": false,
    "co": ""
   }
