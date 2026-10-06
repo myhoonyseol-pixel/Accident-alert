@@ -8105,6 +8105,33 @@
     "현장점검",
     "화재"
    ]
+  },
+  "16600423a76a6934": {
+   "ts": 1791251143.712735,
+   "tok": [
+    "건물",
+    "구조물",
+    "부산",
+    "사상구",
+    "없어",
+    "인명피해",
+    "철거현장",
+    "화재"
+   ]
+  },
+  "51c83d99268856bd": {
+   "ts": 1791251143.714097,
+   "tok": [
+    "공장",
+    "대산읍",
+    "서산",
+    "안전",
+    "완진",
+    "이틀",
+    "최우선돼야",
+    "폐기물",
+    "화재"
+   ]
   }
  },
  "initialized": true,
@@ -8141,7 +8168,7 @@
     "화재"
    ],
    "link": "http://news.lghellovision.net/news/articleView.html?idxno=557048",
-   "reports": 3,
+   "reports": 4,
    "casualty": false,
    "co": ""
   },
@@ -8399,7 +8426,7 @@
     "화재"
    ],
    "link": "https://news.google.com/rss/articles/CBMidEFVX3lxTE5rdU9PaGI0TG51c3hyOU5HZElOdGlnbmN5bDlVVHBabTZWdlk3QUFFWjUyUHV2bEVQaFNFN1M3ZU1UdnQxZHczbF96c3B3d0YwY2pMbXRnZGhobDFkSTYwcERYQjU3dE4wSU9ENHFMYk56QmZv?oc=5",
-   "reports": 5,
+   "reports": 6,
    "casualty": false,
    "co": ""
   }
