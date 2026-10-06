@@ -9157,6 +9157,33 @@
     "정부",
     "효과"
    ]
+  },
+  "a1dfc1015b6d47d0": {
+   "ts": 1791323551.584197,
+   "tok": [
+    "10",
+    "36",
+    "642",
+    "건설사",
+    "건설현장",
+    "년여간",
+    "사망",
+    "절반",
+    "추락"
+   ]
+  },
+  "c520fd3d42e254bd": {
+   "ts": 1791323551.585224,
+   "tok": [
+    "공장",
+    "서산",
+    "안전상황실",
+    "없어",
+    "인명피해",
+    "재활용",
+    "폐기물",
+    "화재"
+   ]
   }
  },
  "initialized": true,
@@ -9435,7 +9462,7 @@
     "화재"
    ],
    "link": "https://news.google.com/rss/articles/CBMidEFVX3lxTE5rdU9PaGI0TG51c3hyOU5HZElOdGlnbmN5bDlVVHBabTZWdlk3QUFFWjUyUHV2bEVQaFNFN1M3ZU1UdnQxZHczbF96c3B3d0YwY2pMbXRnZGhobDFkSTYwcERYQjU3dE4wSU9ENHFMYk56QmZv?oc=5",
-   "reports": 16,
+   "reports": 17,
    "casualty": false,
    "co": ""
   },
@@ -9466,15 +9493,6 @@
  "gpt_last_status": "ok",
  "gpt_last_status_at": "10/07 06:36",
  "gpt_events": [
-  {
-   "ts": 1790890597.336346,
-   "when": "10/02 06:28",
-   "title": "창원 제조 공장 화재로 한때 대응 1단계…잔불 정리 중",
-   "what": "창원 제조공장에서 화재 발생",
-   "occurred": "",
-   "updates": 0,
-   "co": ""
-  },
   {
    "ts": 1790899797.256322,
    "when": "10/02 04:15",
