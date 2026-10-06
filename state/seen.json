@@ -8385,6 +8385,45 @@
     "하청업체",
     "현대중공업"
    ]
+  },
+  "c7aa31d746ab4c8f": {
+   "ts": 1791261019.302618,
+   "tok": [
+    "350",
+    "개월간",
+    "경비업",
+    "과로사",
+    "사망",
+    "서비스업에",
+    "아파트",
+    "최근"
+   ]
+  },
+  "86d31dce2fc20590": {
+   "ts": 1791261019.30377,
+   "tok": [
+    "부품",
+    "싼타페",
+    "작업중지",
+    "중대재해",
+    "팰리세이드",
+    "현대성우캐스팅"
+   ]
+  },
+  "8636a9de6ff236ed": {
+   "ts": 1791261019.304592,
+   "tok": [
+    "1000",
+    "가연물",
+    "공장",
+    "단계",
+    "대응",
+    "발령",
+    "서산",
+    "재활용",
+    "폐기물",
+    "화재"
+   ]
   }
  },
  "initialized": true,
@@ -8679,7 +8718,7 @@
     "화재"
    ],
    "link": "https://news.google.com/rss/articles/CBMidEFVX3lxTE5rdU9PaGI0TG51c3hyOU5HZElOdGlnbmN5bDlVVHBabTZWdlk3QUFFWjUyUHV2bEVQaFNFN1M3ZU1UdnQxZHczbF96c3B3d0YwY2pMbXRnZGhobDFkSTYwcERYQjU3dE4wSU9ENHFMYk56QmZv?oc=5",
-   "reports": 7,
+   "reports": 8,
    "casualty": false,
    "co": ""
   }
@@ -8688,7 +8727,7 @@
  "last_gpt_heartbeat": "2026-10-06",
  "gpt_alerts_since_heartbeat": 0,
  "gpt_last_status": "ok",
- "gpt_last_status_at": "10/06 11:51",
+ "gpt_last_status_at": "10/06 13:30",
  "gpt_events": [
   {
    "ts": 1790845290.488233,
@@ -8827,15 +8866,6 @@
   }
  ],
  "gpt_silent": [
-  {
-   "ts": 1791232011.268406,
-   "when": "10/06 05:20",
-   "title": "[국감 앞두고 ‘분리발주’ 재부상] ① 민참까지 관급자재 적용?…공기...",
-   "what": "LH 민참사업 관급자재 적용 논란",
-   "occurred": "",
-   "co": "",
-   "why": "판단2·정책·제도 논의 기사"
-  },
   {
    "ts": 1791234881.920629,
    "when": "10/06 06:02",
@@ -9006,6 +9036,15 @@
    "occurred": "",
    "co": "",
    "why": "판단2·판결·법률 해설 기사"
+  },
+  {
+   "ts": 1791261034.710984,
+   "when": "10/06 13:28",
+   "title": "최근 5년 6개월간 과로사 사망자 2,350명… 아파트 경비업 등 서비스업에...",
+   "what": "정부가 과로사 사망 통계를 발표",
+   "occurred": "",
+   "co": "",
+   "why": "판단2·과로사 통계 보도"
   }
  ]
 }
