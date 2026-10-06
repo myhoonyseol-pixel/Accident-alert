@@ -8963,6 +8963,31 @@
     "최다",
     "현대건설"
    ]
+  },
+  "790c03f89daafcd1": {
+   "ts": 1791291612.79323,
+   "tok": [
+    "공장",
+    "사망",
+    "외주화",
+    "전체",
+    "중대재해",
+    "하청노동자",
+    "현대성우캐스팅"
+   ]
+  },
+  "a0189f65868ee5c3": {
+   "ts": 1791291612.794264,
+   "tok": [
+    "40",
+    "광산구",
+    "구조물",
+    "끼임",
+    "사이에",
+    "작업자",
+    "전남광주",
+    "철제"
+   ]
   }
  },
  "initialized": true,
@@ -9260,13 +9285,33 @@
    "reports": 15,
    "casualty": false,
    "co": ""
+  },
+  {
+   "ts": 1791291630.030086,
+   "when": "10/06 21:49",
+   "title": "전남광주 광산구서 40대 노동자 철제 구조물 사이에 끼여",
+   "updates": 0,
+   "tok": [
+    "40",
+    "광산구",
+    "구조물",
+    "끼임",
+    "사이에",
+    "작업자",
+    "전남광주",
+    "철제"
+   ],
+   "link": "https://www.nocutnews.co.kr/news/6587874?utm_source=naver&utm_medium=article&utm_campaign=20261006094815",
+   "reports": 1,
+   "casualty": true,
+   "co": ""
   }
  ],
- "sent_since_heartbeat": 0,
+ "sent_since_heartbeat": 1,
  "last_gpt_heartbeat": "2026-10-06",
- "gpt_alerts_since_heartbeat": 0,
+ "gpt_alerts_since_heartbeat": 1,
  "gpt_last_status": "ok",
- "gpt_last_status_at": "10/06 19:06",
+ "gpt_last_status_at": "10/06 22:00",
  "gpt_events": [
   {
    "ts": 1790889635.39929,
@@ -9382,6 +9427,15 @@
    "title": "충청남도 서산시 대산읍 10월 6일 00:00 서산시 대산읍 독곶리 이르트에코 공장화재 사고 발생",
    "what": "서산 이르트에코 공장 화재 발생",
    "occurred": "10-06 00:00",
+   "updates": 0,
+   "co": ""
+  },
+  {
+   "ts": 1791291627.655383,
+   "when": "10/06 21:49",
+   "title": "전남광주 광산구서 40대 노동자 철제 구조물 사이에 끼여",
+   "what": "광산구 작업자 철제 구조물에 끼임",
+   "occurred": "",
    "updates": 0,
    "co": ""
   }
