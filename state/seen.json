@@ -8932,6 +8932,22 @@
     "폐기물",
     "화재"
    ]
+  },
+  "5d56601bad80a424": {
+   "ts": 1791285912.583643,
+   "tok": [
+    "18",
+    "공장",
+    "만에",
+    "서산",
+    "시간",
+    "없어",
+    "완진",
+    "인명피해",
+    "충남",
+    "폐기물",
+    "화재"
+   ]
   }
  },
  "initialized": true,
@@ -9226,7 +9242,7 @@
     "화재"
    ],
    "link": "https://news.google.com/rss/articles/CBMidEFVX3lxTE5rdU9PaGI0TG51c3hyOU5HZElOdGlnbmN5bDlVVHBabTZWdlk3QUFFWjUyUHV2bEVQaFNFN1M3ZU1UdnQxZHczbF96c3B3d0YwY2pMbXRnZGhobDFkSTYwcERYQjU3dE4wSU9ENHFMYk56QmZv?oc=5",
-   "reports": 14,
+   "reports": 15,
    "casualty": false,
    "co": ""
   }
