@@ -9308,26 +9308,6 @@
  "last_heartbeat": "2026-10-07",
  "events": [
   {
-   "ts": 1790899799.514928,
-   "when": "10/02 04:15",
-   "title": "대전 자동차부품 공장 화재 10명 숨져…“불길 순식간 확산”",
-   "updates": 0,
-   "tok": [
-    "10",
-    "공장",
-    "대전",
-    "사망",
-    "순식간",
-    "자동차부품",
-    "화재",
-    "확산"
-   ],
-   "link": "https://news.google.com/rss/articles/CBMiY0FVX3lxTFA3R0pQNGVRclhQblozeDdfMi15TkEyOFNDNW12RUFPUHhWb1NGVV92MUJRby1JbkV5WHZYcmlhT3Y5aHhnd1VqZHJmSGhQTXhhcWhpYkQ0aFE4dXFRZm1OT1czbw?oc=5",
-   "reports": 1,
-   "casualty": true,
-   "co": ""
-  },
-  {
    "ts": 1790906853.213218,
    "when": "10/02 11:00",
    "title": "밀양 레미콘 정비 중 60대 숨져 산업안전 '빨간불'",
@@ -9614,15 +9594,6 @@
  "gpt_last_status": "ok",
  "gpt_last_status_at": "10/07 08:59",
  "gpt_events": [
-  {
-   "ts": 1790899797.256322,
-   "when": "10/02 04:15",
-   "title": "대전 자동차부품 공장 화재 10명 숨져…“불길 순식간 확산”",
-   "what": "대전 자동차부품 공장 화재로 10명 사망",
-   "occurred": "",
-   "updates": 0,
-   "co": ""
-  },
   {
    "ts": 1790918301.07561,
    "when": "10/02 14:01",
