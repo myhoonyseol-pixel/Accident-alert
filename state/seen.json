@@ -7494,6 +7494,19 @@
     "도시락",
     "화상"
    ]
+  },
+  "e89e2085099401a4": {
+   "ts": 1791375431.075641,
+   "tok": [
+    "60",
+    "건설현장",
+    "경찰",
+    "부곡커뮤니티센터",
+    "부상",
+    "의왕",
+    "작업자",
+    "추락해"
+   ]
   }
  },
  "initialized": true,
@@ -7720,9 +7733,9 @@
  ],
  "sent_since_heartbeat": 3,
  "last_gpt_heartbeat": "2026-10-07",
- "gpt_alerts_since_heartbeat": 2,
+ "gpt_alerts_since_heartbeat": 3,
  "gpt_last_status": "ok",
- "gpt_last_status_at": "10/07 20:13",
+ "gpt_last_status_at": "10/07 21:17",
  "gpt_events": [
   {
    "ts": 1790992831.257935,
@@ -7792,6 +7805,15 @@
    "when": "10/07 17:00",
    "title": "성주읍 공장에서 태양광 설치 중 추락… 20대 중상",
    "what": "성주 공장 지붕 태양광 작업자 추락",
+   "occurred": "",
+   "updates": 0,
+   "co": ""
+  },
+  {
+   "ts": 1791375436.917297,
+   "when": "10/07 21:04",
+   "title": "의왕 부곡커뮤니티센터 신축 현장서 60대 근로자 추락해 중상…경찰 수...",
+   "what": "의왕 신축현장 근로자 추락 중상",
    "occurred": "",
    "updates": 0,
    "co": ""
