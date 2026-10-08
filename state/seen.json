@@ -7412,7 +7412,7 @@
   }
  },
  "initialized": true,
- "last_heartbeat": "2026-10-08",
+ "last_heartbeat": "2026-10-09",
  "events": [
   {
    "ts": 1791093420.233512,
@@ -7573,9 +7573,9 @@
    "co": "KCC건설"
   }
  ],
- "sent_since_heartbeat": 1,
- "last_gpt_heartbeat": "2026-10-08",
- "gpt_alerts_since_heartbeat": 12,
+ "sent_since_heartbeat": 0,
+ "last_gpt_heartbeat": "2026-10-09",
+ "gpt_alerts_since_heartbeat": 0,
  "gpt_last_status": "ok",
  "gpt_last_status_at": "10/09 01:23",
  "gpt_events": [
