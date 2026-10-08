@@ -932,7 +932,7 @@ def format_alert(item, place, hits, confidence, link, verdict=None):
 
 # ── 메인 ─────────────────────────────────────────────────────
 def group_scope(item) -> bool:
-    """단체방 범위인가 — 10대 건설사(계열사·아파트 브랜드 포함)가 기사에 나오는가.
+    """단체방 범위인가 — 20대 건설사·삼성 계열사(아파트 브랜드 포함)가 기사에 나오는가.
 
     코드가 정합니다. AI에게 '대기업 위주로'라고 맡기면 판단이 흔들립니다.
     본문에 비교 대상으로만 스친 경우(통계 기사 등)는 Claude 판정이 걸러냅니다.
@@ -1163,10 +1163,10 @@ def main():
                 missing.append("GPT_TELEGRAM_CHAT_ID")
             print(f"[gpt] 비교판정 건너뜀 — 누락: {', '.join(missing)}", file=sys.stderr)
 
-        # Claude 운영 판정 = 단체방. 10대 건설사가 나오는 기사만 넘깁니다.
+        # Claude 운영 판정 = 단체방. 범위 안 회사가 나오는 기사만 넘깁니다.
         # 나머지는 위의 GPT 판정만 받고 GPT 방으로 갑니다. (2026-10-07 범위 결정)
         group = [c for c in picked if group_scope(c[0])]
-        print(f"[단체방 범위] {len(picked)}건 중 10대 건설사 {len(group)}건만 Claude 판정")
+        print(f"[단체방 범위] {len(picked)}건 중 단체방 범위 {len(group)}건만 Claude 판정")
         picked = ai_judge.judge(group, config, events) if group else []
 
         # 같은 사고의 후속 알림은 상한을 둡니다.
