@@ -7488,6 +7488,15 @@
     "환경정화",
     "황금산"
    ]
+  },
+  "71464461a6abacc1": {
+   "ts": 1791429861.462267,
+   "tok": [
+    "제조공장",
+    "차량",
+    "화성",
+    "화재"
+   ]
   }
  },
  "initialized": true,
@@ -7655,9 +7664,9 @@
  ],
  "sent_since_heartbeat": 0,
  "last_gpt_heartbeat": "2026-10-08",
- "gpt_alerts_since_heartbeat": 0,
+ "gpt_alerts_since_heartbeat": 1,
  "gpt_last_status": "ok",
- "gpt_last_status_at": "10/08 12:08",
+ "gpt_last_status_at": "10/08 12:24",
  "gpt_events": [
   {
    "ts": 1791093417.928215,
@@ -7727,6 +7736,15 @@
    "when": "10/07 21:04",
    "title": "의왕 부곡커뮤니티센터 신축 현장서 60대 근로자 추락해 중상…경찰 수...",
    "what": "의왕 신축현장 근로자 추락 중상",
+   "occurred": "",
+   "updates": 0,
+   "co": ""
+  },
+  {
+   "ts": 1791429868.100618,
+   "when": "10/08 12:07",
+   "title": "화성 차량 제조공장 화재 발생",
+   "what": "화성 차량 제조공장에서 화재 발생",
    "occurred": "",
    "updates": 0,
    "co": ""
