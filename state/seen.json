@@ -1,49 +1,5 @@
 {
  "seen": {
-  "255b3d9d7be981cf": {
-   "ts": 1790920198.017021,
-   "tok": [
-    "2026",
-    "30",
-    "골절",
-    "국감",
-    "베임",
-    "산재",
-    "역대",
-    "지난해",
-    "최대",
-    "현장실습생",
-    "화상"
-   ]
-  },
-  "b4d155d0b95d6d70": {
-   "ts": 1790920198.018208,
-   "tok": [
-    "10",
-    "400",
-    "공장",
-    "남녀",
-    "누출",
-    "부상",
-    "부천",
-    "염산",
-    "작업자"
-   ]
-  },
-  "000aa9ca4a9eff2b": {
-   "ts": 1790920198.019258,
-   "tok": [
-    "누출",
-    "병원",
-    "부천",
-    "염산",
-    "외출",
-    "이송",
-    "자제령",
-    "주민",
-    "화학공장"
-   ]
-  },
   "2cb2e295f68c5e31": {
    "ts": 1790921145.504774,
    "tok": [
@@ -6789,31 +6745,23 @@
     "추락",
     "학교"
    ]
+  },
+  "c3efbefa24d9537c": {
+   "ts": 1791525525.926722,
+   "tok": [
+    "건설현장",
+    "대우건설",
+    "바다",
+    "사망",
+    "시신",
+    "이라크",
+    "침매터널"
+   ]
   }
  },
  "initialized": true,
  "last_heartbeat": "2026-10-09",
  "events": [
-  {
-   "ts": 1791093420.233512,
-   "when": "10/04 14:21",
-   "title": "일산 고등학교서 외벽 도색하던 50대 추락사…안전장구 미착용",
-   "updates": 0,
-   "tok": [
-    "50",
-    "고등학교",
-    "도색하던",
-    "미착용",
-    "안전장구",
-    "외벽",
-    "일산",
-    "추락"
-   ],
-   "link": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE1BY01ZaWExVDNobThUS1F2NUQ0eUdQY05CY1o0c3BJd1NZY2pDUnhPT0t5WmFjVWc3RzZJMDdoZ2FrSEtoUnlyS0ZNbFJ0THNSZjluZHJn0gFbQVVfeXFMUExtOFpGSVNMQUpuUjl6V25WdHVfa3dpcEZWYk5DVUx0MlJ5MlQ5QUdveHJDZ09tWnhSejFIRnNKeW9UVW1qcFE2WG1FcVZJOXFwSkZVaGx6ZXFYdw?oc=5",
-   "reports": 1,
-   "casualty": false,
-   "co": ""
-  },
   {
    "ts": 1791101942.257243,
    "when": "10/04 17:07",
@@ -6951,13 +6899,32 @@
    "reports": 1,
    "casualty": true,
    "co": "KCC건설"
+  },
+  {
+   "ts": 1791525537.04028,
+   "when": "10/09 14:52",
+   "title": "[단독] 대우건설, 이라크 침매터널 공사 현장서 사망사고…바다서 시신...",
+   "updates": 0,
+   "tok": [
+    "건설현장",
+    "대우건설",
+    "바다",
+    "사망",
+    "시신",
+    "이라크",
+    "침매터널"
+   ],
+   "link": "http://www.rightknow.co.kr/news/articleView.html?idxno=34942",
+   "reports": 1,
+   "casualty": true,
+   "co": "대우건설"
   }
  ],
- "sent_since_heartbeat": 0,
+ "sent_since_heartbeat": 1,
  "last_gpt_heartbeat": "2026-10-09",
- "gpt_alerts_since_heartbeat": 2,
+ "gpt_alerts_since_heartbeat": 3,
  "gpt_last_status": "ok",
- "gpt_last_status_at": "10/09 14:27",
+ "gpt_last_status_at": "10/09 14:58",
  "gpt_events": [
   {
    "ts": 1791362049.84673,
@@ -7093,6 +7060,15 @@
    "occurred": "",
    "updates": 0,
    "co": ""
+  },
+  {
+   "ts": 1791525534.739605,
+   "when": "10/09 14:52",
+   "title": "[단독] 대우건설, 이라크 침매터널 공사 현장서 사망사고…바다서 시신...",
+   "what": "대우건설 이라크 침매터널 근로자 사망",
+   "occurred": "",
+   "updates": 0,
+   "co": "대우건설"
   }
  ],
  "gpt_silent": [
