@@ -6991,6 +6991,20 @@
     "처리",
     "천여"
    ]
+  },
+  "2c8f34fe191c00f0": {
+   "ts": 1791628829.209604,
+   "tok": [
+    "건설현장",
+    "맞아",
+    "무게추",
+    "부상",
+    "부천",
+    "사망",
+    "시공",
+    "이앤씨",
+    "크레"
+   ]
   }
  },
  "initialized": true,
@@ -7129,7 +7143,7 @@
     "크레"
    ],
    "link": "https://www.newsis.com/view/NISX20261010_0003820452",
-   "reports": 17,
+   "reports": 18,
    "casualty": true,
    "co": "DL이앤씨"
   },
@@ -7160,7 +7174,7 @@
  "last_gpt_heartbeat": "2026-10-10",
  "gpt_alerts_since_heartbeat": 3,
  "gpt_last_status": "ok",
- "gpt_last_status_at": "10/10 17:02",
+ "gpt_last_status_at": "10/10 19:40",
  "gpt_events": [
   {
    "ts": 1791451353.047072,
