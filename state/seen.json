@@ -1,50 +1,5 @@
 {
  "seen": {
-  "973753a2a53f89db": {
-   "ts": 1791061659.994495,
-   "tok": [
-    "건설업계",
-    "경영",
-    "과징금",
-    "반복",
-    "사망",
-    "수백억원",
-    "압박",
-    "커진다"
-   ]
-  },
-  "728f61ba851c5677": {
-   "ts": 1791061659.995307,
-   "tok": [
-    "개발",
-    "공군",
-    "매몰",
-    "불발탄",
-    "안전",
-    "처리",
-    "폭발물",
-    "프로그램",
-    "한국형"
-   ]
-  },
-  "c65541d37ce1dc75": {
-   "ts": 1791061659.996182,
-   "tok": [
-    "교통",
-    "구조",
-    "도로공사현장",
-    "매디슨",
-    "뺑소니",
-    "사망",
-    "안전",
-    "위스콘신",
-    "작업자",
-    "전면",
-    "점검",
-    "정리",
-    "촉구"
-   ]
-  },
   "2bb4d603c1a478ae": {
    "ts": 1791072143.217936,
    "tok": [
@@ -7204,24 +7159,6 @@
  "initialized": true,
  "last_heartbeat": "2026-10-10",
  "events": [
-  {
-   "ts": 1791234884.062471,
-   "when": "10/06 06:07",
-   "title": "간밤 충남 서산 폐기물 공장서 화재 발생",
-   "updates": 0,
-   "tok": [
-    "간밤",
-    "공장",
-    "서산",
-    "충남",
-    "폐기물",
-    "화재"
-   ],
-   "link": "https://news.google.com/rss/articles/CBMidEFVX3lxTE5rdU9PaGI0TG51c3hyOU5HZElOdGlnbmN5bDlVVHBabTZWdlk3QUFFWjUyUHV2bEVQaFNFN1M3ZU1UdnQxZHczbF96c3B3d0YwY2pMbXRnZGhobDFkSTYwcERYQjU3dE4wSU9ENHFMYk56QmZv?oc=5",
-   "reports": 18,
-   "casualty": false,
-   "co": ""
-  },
   {
    "ts": 1791291630.030086,
    "when": "10/06 21:49",
