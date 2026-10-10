@@ -6351,6 +6351,18 @@
     "천장",
     "현장영"
    ]
+  },
+  "9deeea2e443facc9": {
+   "ts": 1791605315.358604,
+   "tok": [
+    "건설현장",
+    "발전소",
+    "부상",
+    "부천",
+    "사망",
+    "시공",
+    "이앤씨"
+   ]
   }
  },
  "initialized": true,
@@ -6509,7 +6521,7 @@
     "크레"
    ],
    "link": "https://www.newsis.com/view/NISX20261010_0003820452",
-   "reports": 3,
+   "reports": 4,
    "casualty": true,
    "co": "DL이앤씨"
   }
@@ -6518,7 +6530,7 @@
  "last_gpt_heartbeat": "2026-10-10",
  "gpt_alerts_since_heartbeat": 2,
  "gpt_last_status": "ok",
- "gpt_last_status_at": "10/10 12:05",
+ "gpt_last_status_at": "10/10 13:08",
  "gpt_events": [
   {
    "ts": 1791449402.774046,
