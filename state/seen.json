@@ -7157,7 +7157,7 @@
   }
  },
  "initialized": true,
- "last_heartbeat": "2026-10-10",
+ "last_heartbeat": "2026-10-11",
  "events": [
   {
    "ts": 1791291630.030086,
@@ -7301,9 +7301,9 @@
    "co": "한국남동발전·두산에너빌리티"
   }
  ],
- "sent_since_heartbeat": 2,
- "last_gpt_heartbeat": "2026-10-10",
- "gpt_alerts_since_heartbeat": 3,
+ "sent_since_heartbeat": 0,
+ "last_gpt_heartbeat": "2026-10-11",
+ "gpt_alerts_since_heartbeat": 0,
  "gpt_last_status": "ok",
  "gpt_last_status_at": "10/10 22:33",
  "gpt_events": [
