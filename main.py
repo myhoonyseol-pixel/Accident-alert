@@ -931,18 +931,30 @@ def format_alert(item, place, hits, confidence, link, verdict=None):
 
 
 # ── 메인 ─────────────────────────────────────────────────────
+def scope_hit(item):
+    """단체방 범위 판정 근거 — (걸린 단어, 위치). 범위 밖이면 ("", "").
+
+    위치는 제목·요약·본문 중 처음 걸린 곳입니다. 본문에만 걸린 경우는
+    기사 옆 다른 기사 목록이 섞여 들어온 것일 수 있어 로그로 확인합니다.
+    (2026-10-13 양산 병원 증축공사 사고가 회사명 없이 단체방으로 간 일)
+    """
+    words = (list(getattr(config, "COMPANY_WORDS", ()))
+             + list(getattr(config, "GROUP_BRAND_WORDS", ())))
+    for where, key in (("제목", "title"), ("요약", "summary"), ("본문", "body")):
+        packed = re.sub(r"\s+", "", item.get(key) or "")
+        w = next((w for w in words if w in packed), None)
+        if w:
+            return w, where
+    return "", ""
+
+
 def group_scope(item) -> bool:
     """단체방 범위인가 — 20대 건설사·삼성 계열사(아파트 브랜드 포함)가 기사에 나오는가.
 
     코드가 정합니다. AI에게 '대기업 위주로'라고 맡기면 판단이 흔들립니다.
     본문에 비교 대상으로만 스친 경우(통계 기사 등)는 Claude 판정이 걸러냅니다.
     """
-    text = " ".join((item.get("title") or "", item.get("summary") or "",
-                     item.get("body") or ""))
-    if filters.has_company(config, text):
-        return True
-    packed = re.sub(r"\s+", "", text)
-    return any(b in packed for b in getattr(config, "GROUP_BRAND_WORDS", ()))
+    return bool(scope_hit(item)[0])
 
 
 def bump_report(events, toks):
@@ -1167,6 +1179,9 @@ def main():
         # 나머지는 위의 GPT 판정만 받고 GPT 방으로 갑니다. (2026-10-07 범위 결정)
         group = [c for c in picked if group_scope(c[0])]
         print(f"[단체방 범위] {len(picked)}건 중 단체방 범위 {len(group)}건만 Claude 판정")
+        for c in group:
+            w, where = scope_hit(c[0])
+            print(f"[단체방 범위]   ← {where} '{w}' · {(c[0].get('title') or '')[:40]}")
         picked = ai_judge.judge(group, config, events) if group else []
 
         # 같은 사고의 후속 알림은 상한을 둡니다.
