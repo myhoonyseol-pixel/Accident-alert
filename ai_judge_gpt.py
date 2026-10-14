@@ -389,7 +389,8 @@ def judge(candidates, cfg, recent_events=None, silent_events=None):
                 v["chg"] = ""
 
         # Claude와 같은 기준: 발생 7일 넘은 사고는 새 알림으로 보내지 않습니다.
-        if verdict == "new" and ai_judge.too_old(v.get("occurred", "")):
+        if verdict == "new" and ai_judge.too_old(v.get("occurred", ""),
+                                                      title=cand[0].get("title", "")):
             print(f"[gpt] 지난 사고 × {cand[0].get('title','')[:44]} — "
                   f"발생 {v.get('occurred')}, {ai_judge.OLD_ACCIDENT_DAYS}일 초과")
             verdict = "skip"
