@@ -367,7 +367,16 @@ def occurred_age_days(occurred, now=None):
     return (today - d).days
 
 
-def too_old(occurred, now=None) -> bool:
+# 다쳤다가 며칠 뒤 숨진 사고. 사고일은 오래됐어도 '사망'은 새 사실입니다.
+# 2026-10-08 "인천 고교 승강기 수리 중 끼인 30대…9일 만에 숨져"(사고 09-28)를
+# 7일 규칙이 막아 놓쳤습니다.
+_DELAYED_DEATH_RE = re.compile(
+    r"(\d+\s*(일|주|개월|달)\s*만에|결국|끝내|치료\s*중|치료받던)\s*(숨|사망)")
+
+
+def too_old(occurred, now=None, title="") -> bool:
+    if title and _DELAYED_DEATH_RE.search(title):
+        return False
     age = occurred_age_days(occurred, now)
     return age is not None and age > OLD_ACCIDENT_DAYS
 
@@ -698,7 +707,7 @@ def _judge_batch(candidates, cfg, recent_events, api_key, retry_missing=True):
             kept.append((*cand, {"v": "update", "e": event_idx, "chg": chg,
                                  "occurred": occurred, "co": company}))
             continue
-        if too_old(occurred):
+        if too_old(occurred, title=cand[0].get("title", "")):
             print(f"[ai] 지난 사고 × {title} — 발생 {occurred}, "
                   f"{OLD_ACCIDENT_DAYS}일 초과{tail}")
             continue
