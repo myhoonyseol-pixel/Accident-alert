@@ -20276,10 +20276,22 @@
     "합동",
     "화재"
    ]
+  },
+  "ffeb003c1b968646": {
+   "ts": 1792188055.89229,
+   "tok": [
+    "공장",
+    "부상",
+    "부천",
+    "소방관",
+    "오늘",
+    "합동감식",
+    "화재"
+   ]
   }
  },
  "initialized": true,
- "last_heartbeat": "2026-10-16",
+ "last_heartbeat": "2026-10-17",
  "events": [
   {
    "ts": 1791856486.664902,
@@ -20341,8 +20353,8 @@
   }
  ],
  "sent_since_heartbeat": 0,
- "last_gpt_heartbeat": "2026-10-16",
- "gpt_alerts_since_heartbeat": 4,
+ "last_gpt_heartbeat": "2026-10-17",
+ "gpt_alerts_since_heartbeat": 0,
  "gpt_last_status": "ok",
  "gpt_last_status_at": "10/17 02:19",
  "gpt_events": [
