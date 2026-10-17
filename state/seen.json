@@ -24049,6 +24049,22 @@
     "준공",
     "해남군"
    ]
+  },
+  "d3f3d67252d2ee9e": {
+   "ts": 1792254715.779816,
+   "tok": [
+    "공백",
+    "광주",
+    "구조",
+    "굴삭기",
+    "기사",
+    "부른",
+    "부상",
+    "안전",
+    "인력",
+    "철거현장",
+    "최저"
+   ]
   }
  },
  "initialized": true,
@@ -24115,9 +24131,9 @@
  ],
  "sent_since_heartbeat": 0,
  "last_gpt_heartbeat": "2026-10-17",
- "gpt_alerts_since_heartbeat": 2,
+ "gpt_alerts_since_heartbeat": 3,
  "gpt_last_status": "ok",
- "gpt_last_status_at": "10/18 00:28",
+ "gpt_last_status_at": "10/18 01:32",
  "gpt_events": [
   {
    "ts": 1791942047.563758,
@@ -24250,6 +24266,15 @@
    "when": "10/17 08:08",
    "title": "마리화나 공장서 폭발...2명 사망",
    "what": "마리화나 공장서 폭발로 2명 사망",
+   "occurred": "",
+   "updates": 0,
+   "co": ""
+  },
+  {
+   "ts": 1792254721.128563,
+   "when": "10/18 01:23",
+   "title": "광주 철거 현장 굴삭기 기사 중상 사고, '최저가 인력' 구조가 부른 안전 공백",
+   "what": "굴삭기 기사가 광주 철거현장에서 중상",
    "occurred": "",
    "updates": 0,
    "co": ""
