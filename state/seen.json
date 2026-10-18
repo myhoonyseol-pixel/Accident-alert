@@ -25351,6 +25351,18 @@
     "지킬",
     "화재"
    ]
+  },
+  "31b7aaa4d80d4cba": {
+   "ts": 1792356501.980317,
+   "tok": [
+    "노동자들",
+    "사망",
+    "잇단",
+    "전북",
+    "주말",
+    "화상",
+    "휴일"
+   ]
   }
  },
  "initialized": true,
@@ -25417,9 +25429,9 @@
  ],
  "sent_since_heartbeat": 0,
  "last_gpt_heartbeat": "2026-10-18",
- "gpt_alerts_since_heartbeat": 6,
+ "gpt_alerts_since_heartbeat": 7,
  "gpt_last_status": "ok",
- "gpt_last_status_at": "10/19 00:18",
+ "gpt_last_status_at": "10/19 05:48",
  "gpt_events": [
   {
    "ts": 1792038397.981193,
@@ -25553,6 +25565,15 @@
    "title": "경기도 여주시 여주시 흥천면 대당리 공장 화재로 다량의 연기가 발생하고 있으니, 인근 주민들께서는 안전에",
    "what": "여주 공장 화재로 다량 연기 발생",
    "occurred": "",
+   "updates": 0,
+   "co": ""
+  },
+  {
+   "ts": 1792356510.503457,
+   "when": "10/19 05:40",
+   "title": "전북 주말·휴일에도 노동자들 '사망·화상' 등 잇단 사고",
+   "what": "군산 접착제 공장 노동자 전신 화상",
+   "occurred": "10-17 10:50",
    "updates": 0,
    "co": ""
   }
