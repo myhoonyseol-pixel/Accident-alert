@@ -28313,6 +28313,16 @@
     "창고",
     "허가"
    ]
+  },
+  "1bcd045f6f2c9b8a": {
+   "ts": 1792518806.554161,
+   "tok": [
+    "물류센터",
+    "사흘째",
+    "인천",
+    "쿠팡",
+    "화재"
+   ]
   }
  },
  "initialized": true,
@@ -28398,9 +28408,9 @@
  ],
  "sent_since_heartbeat": 2,
  "last_gpt_heartbeat": "2026-10-20",
- "gpt_alerts_since_heartbeat": 10,
+ "gpt_alerts_since_heartbeat": 11,
  "gpt_last_status": "ok",
- "gpt_last_status_at": "10/21 00:46",
+ "gpt_last_status_at": "10/21 02:53",
  "gpt_events": [
   {
    "ts": 1792391821.029217,
@@ -28534,6 +28544,15 @@
    "title": "평창 공사현장서 작업자 깔려 중상⋯헬기 긴급 이송",
    "what": "평창 초교 공사장 작업자 펌프카에 깔려 중상",
    "occurred": "10-20 13:32",
+   "updates": 0,
+   "co": ""
+  },
+  {
+   "ts": 1792518812.513307,
+   "when": "10/20 19:45",
+   "title": "인천 쿠팡 물류센터 화재, 사흘째 진",
+   "what": "인천 쿠팡 물류센터 화재 사흘째 진화",
+   "occurred": "",
    "updates": 0,
    "co": ""
   }
