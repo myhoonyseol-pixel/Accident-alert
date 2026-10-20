@@ -28242,6 +28242,18 @@
     "창고",
     "형사입건"
    ]
+  },
+  "d3f9cbd5d598366b": {
+   "ts": 1792508315.007325,
+   "tok": [
+    "설비",
+    "아니다",
+    "여수사업장",
+    "작업자",
+    "점검",
+    "추락",
+    "한전산업개발"
+   ]
   }
  },
  "initialized": true,
@@ -28327,9 +28339,9 @@
  ],
  "sent_since_heartbeat": 2,
  "last_gpt_heartbeat": "2026-10-20",
- "gpt_alerts_since_heartbeat": 8,
+ "gpt_alerts_since_heartbeat": 9,
  "gpt_last_status": "ok",
- "gpt_last_status_at": "10/20 22:59",
+ "gpt_last_status_at": "10/20 23:58",
  "gpt_events": [
   {
    "ts": 1792356510.503457,
@@ -28463,6 +28475,15 @@
    "title": "평창군 공사장서 펌프카 붐대에 깔린 50대 중상",
    "what": "평창 초교 공사장 작업자 붐대에 깔림",
    "occurred": "10-20 13:32",
+   "updates": 0,
+   "co": ""
+  },
+  {
+   "ts": 1792508324.436444,
+   "when": "10/20 23:56",
+   "title": "한전산업개발, 여수사업장 노동자 추락사 \"설비 점검 중 사고 아니다\"",
+   "what": "여수사업장서 노동자 추락사",
+   "occurred": "10-17 22:02",
    "updates": 0,
    "co": ""
   }
