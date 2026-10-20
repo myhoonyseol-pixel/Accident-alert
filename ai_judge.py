@@ -96,6 +96,8 @@ what 칸에 "누가 어디서 무엇을" 을 25자로 적는다. 판정은 그 �
 - 농업·어업, 화물운송·차량정비, 철도 운행·항만 하역
 - 교통사고·범죄·산불·자연재해·군 작전 중 사고
 - 거주자·손님·이용객 사고
+  (단, 상가·지하철·공연장 등 공중이용시설의 붕괴·화재로 사망 2명 이상이거나
+   부상자 10명 이상이면 이용객 피해도 대상이다)
 
 건물 용도가 [대상 아님]이어도, 거기서 건설·설치·보수 작업을 하다 난 사고는 대상이다.
   마사지업소 직원이 영업 중 화재로 사망 → skip
@@ -113,7 +115,7 @@ what 칸에 "누가 어디서 무엇을" 을 25자로 적는다. 판정은 그 �
 ━━ 판단 3 · 피해가 알림 문턱을 넘는가 ━━
 
 사망·중상·위독·의식불명·심정지·매몰·실종·피해규모 미상 → 통과
-단순 부상만 확인됨 → skip (몇 명이든)
+단순 부상만 확인됨 → skip. 단, 부상자가 10명 이상이면 통과.
 건설현장 구조물 사고(붕괴·폭발·타워크레인 전도)는 인명피해가 없어도 통과.
 
 ━━ 판단 4 · 일하던 사람이 다쳤는가 ━━
@@ -162,7 +164,7 @@ what 칸에 "누가 어디서 무엇을" 을 25자로 적는다. 판정은 그 �
 ━━ 출력 ━━
 아래 JSON 배열만 출력한다. 배열 뒤에 아무것도 쓰지 마라.
 
-[{"i":0,"cid":"받은 기사 ID","t":"제목 앞 12글자","what":"핵심 사건","v":"넷 중 하나","e":-1,"occurred":"","co":"","chg":"","why":"판단 이유"}]
+[{"i":0,"cid":"받은 기사 ID","t":"제목 앞 12글자","what":"핵심 사건","v":"넷 중 하나","e":-1,"occurred":"","co":"","dead":0,"hurt":0,"chg":"","why":"판단 이유"}]
 
   기사마다 하나씩, 빠짐없이, 받은 순서대로 답한다.
 
@@ -173,7 +175,11 @@ what 칸에 "누가 어디서 무엇을" 을 25자로 적는다. 판정은 그 �
   e         dup·update면 사건 번호, 아니면 -1
   occurred  본문의 사고 발생 일시 "09-11 19:35" 또는 "09-11", 없으면 ""
             (기사 작성일이 아니라 사고가 난 때다)
-  co        본문의 시공사·원청 이름, 없으면 ""
+  co        사고가 난 사업장의 회사, 또는 시공사·원청 이름. 없으면 ""
+            본문을 읽고 사고와 직접 관련된 회사만 쓴다. 기사 옆 다른 기사 목록이나
+            비교로 언급된 회사는 쓰지 마라
+  dead      확정된 사망자 수. 심정지·위독·의식불명·실종은 세지 않는다. 모르면 0
+  hurt      부상자 수(사망자 제외). 모르면 0
   chg       update일 때 무엇이 달라졌는지 25자
   why       판단 이유 20자. 결정한 판단 번호로 시작한다 (예: "판단1·음식점", "판단3·단순부상")"""
 
@@ -379,6 +385,14 @@ def too_old(occurred, now=None, title="") -> bool:
         return False
     age = occurred_age_days(occurred, now)
     return age is not None and age > OLD_ACCIDENT_DAYS
+
+
+def _count(v, key):
+    """AI가 적은 사망자·부상자 수를 정수로. 이상하면 0."""
+    try:
+        return max(0, int(str(v.get(key, 0)).strip() or 0))
+    except (TypeError, ValueError):
+        return 0
 
 
 def _safe_fail_open(cand, cfg, reason=""):
@@ -655,6 +669,7 @@ def _judge_batch(candidates, cfg, recent_events, api_key, retry_missing=True):
         # 본문에서 뽑아낸 사실 둘. 알림에 표시합니다.
         occurred = str(v.get("occurred", "")).strip()
         company = str(v.get("co", "")).strip()
+        dead, hurt = _count(v, "dead"), _count(v, "hurt")
         # 제목에 실제 주요건설사명이 있으면 본문에서 스친 다른 회사보다 우선합니다.
         if cand[3] == "company":
             title_company = str(cand[1] or "").strip()
@@ -688,7 +703,8 @@ def _judge_batch(candidates, cfg, recent_events, api_key, retry_missing=True):
                 print(f"[ai] 재탕→후속 ↻ {title} — 시공사 최초 공개({company})")
                 kept.append((*cand, {"v": "update", "e": e,
                                      "chg": f"시공사 공개: {company}"[:25],
-                                     "occurred": occurred, "co": company}))
+                                     "occurred": occurred, "co": company,
+                             "dead": dead, "hurt": hurt}))
                 continue
             print(f"[ai] 재탕 × {title} ({why}){tail}")
             continue
@@ -705,17 +721,20 @@ def _judge_batch(candidates, cfg, recent_events, api_key, retry_missing=True):
                 continue
             print(f"[ai] 후속 ↻ {title} ({chg or why}){tail}")
             kept.append((*cand, {"v": "update", "e": event_idx, "chg": chg,
-                                 "occurred": occurred, "co": company}))
+                                 "occurred": occurred, "co": company,
+                             "dead": dead, "hurt": hurt}))
             continue
         if too_old(occurred, title=cand[0].get("title", "")):
             print(f"[ai] 지난 사고 × {title} — 발생 {occurred}, "
                   f"{OLD_ACCIDENT_DAYS}일 초과{tail}")
             continue
         extra = " ".join(x for x in (f"발생 {occurred}" if occurred else "",
-                                     f"시공사 {company}" if company else "") if x)
+                                     f"회사 {company}" if company else "",
+                                     f"사망 {dead}·부상 {hurt}") if x)
         print(f"[ai] 발송 ○ {title} ({why}){tail}{' · ' + extra if extra else ''}")
         kept.append((*cand, {"v": "new", "e": -1, "chg": "",
-                             "occurred": occurred, "co": company}))
+                             "occurred": occurred, "co": company,
+                             "dead": dead, "hurt": hurt}))
 
     usage = body.get("usage", {})
     print(f"[ai] {len(candidates)}건 판단 → {len(kept)}건 발송 "

@@ -931,30 +931,31 @@ def format_alert(item, place, hits, confidence, link, verdict=None):
 
 
 # ── 메인 ─────────────────────────────────────────────────────
-def scope_hit(item):
-    """단체방 범위 판정 근거 — (걸린 단어, 위치). 범위 밖이면 ("", "").
-
-    위치는 제목·요약·본문 중 처음 걸린 곳입니다. 본문에만 걸린 경우는
-    기사 옆 다른 기사 목록이 섞여 들어온 것일 수 있어 로그로 확인합니다.
-    (2026-10-13 양산 병원 증축공사 사고가 회사명 없이 단체방으로 간 일)
-    """
-    words = (list(getattr(config, "COMPANY_WORDS", ()))
-             + list(getattr(config, "GROUP_BRAND_WORDS", ())))
-    for where, key in (("제목", "title"), ("요약", "summary"), ("본문", "body")):
-        packed = re.sub(r"\s+", "", item.get(key) or "")
-        w = next((w for w in words if w in packed), None)
-        if w:
-            return w, where
-    return "", ""
+def group_company(co, title=""):
+    """단체방 대상 회사인가 — AI가 뽑은 회사(co), 없으면 제목으로 봅니다. 걸린 단어 반환."""
+    words = list(getattr(config, "GROUP_COMPANY_WORDS", ()))
+    brands = list(getattr(config, "GROUP_BRAND_WORDS", ()))
+    packed_co = re.sub(r"\s+", "", co or "")
+    hit = next((w for w in words + brands if w in packed_co), "")
+    if hit or packed_co:
+        return hit
+    packed_t = re.sub(r"\s+", "", title or "")
+    return next((w for w in words + brands if w in packed_t), "")
 
 
-def group_scope(item) -> bool:
-    """단체방 범위인가 — 20대 건설사·삼성 계열사(아파트 브랜드 포함)가 기사에 나오는가.
-
-    코드가 정합니다. AI에게 '대기업 위주로'라고 맡기면 판단이 흔들립니다.
-    본문에 비교 대상으로만 스친 경우(통계 기사 등)는 Claude 판정이 걸러냅니다.
-    """
-    return bool(scope_hit(item)[0])
+def group_decision(item, verdict):
+    """단체방으로 보낼 새 사고인가 — (보낼지, 이유). 기준은 config 의 단체방 기준 참고."""
+    dead = int(verdict.get("dead", 0) or 0)
+    hurt = int(verdict.get("hurt", 0) or 0)
+    co = verdict.get("co", "") or ""
+    hit = group_company(co, item.get("title", ""))
+    if dead >= 1 and hit:
+        return True, f"대상회사 '{hit}' 사망 {dead}"
+    if dead >= getattr(config, "GROUP_MIN_DEATHS", 2):
+        return True, f"사망 {dead}명"
+    if hurt >= getattr(config, "GROUP_MIN_HURT", 10):
+        return True, f"부상 {hurt}명"
+    return False, f"기준 미달 (사망 {dead}·부상 {hurt}·회사 {co or '-'})"
 
 
 def bump_report(events, toks):
@@ -1175,14 +1176,21 @@ def main():
                 missing.append("GPT_TELEGRAM_CHAT_ID")
             print(f"[gpt] 비교판정 건너뜀 — 누락: {', '.join(missing)}", file=sys.stderr)
 
-        # Claude 운영 판정 = 단체방. 범위 안 회사가 나오는 기사만 넘깁니다.
-        # 나머지는 위의 GPT 판정만 받고 GPT 방으로 갑니다. (2026-10-07 범위 결정)
-        group = [c for c in picked if group_scope(c[0])]
-        print(f"[단체방 범위] {len(picked)}건 중 단체방 범위 {len(group)}건만 Claude 판정")
-        for c in group:
-            w, where = scope_hit(c[0])
-            print(f"[단체방 범위]   ← {where} '{w}' · {(c[0].get('title') or '')[:40]}")
-        picked = ai_judge.judge(group, config, events) if group else []
+        # Claude 운영 판정 = 단체방. 사고 여부와 사망·부상 수·회사는 AI가 뽑고,
+        # 단체방 기준(config 참고)은 아래에서 코드가 적용합니다. (2026-10-21)
+        picked = ai_judge.judge(picked, config, events)
+        kept = []
+        for c in picked:
+            verdict = c[4]
+            if verdict.get("v") != "new":
+                kept.append(c)            # 이미 단체방에 보낸 사고의 후속
+                continue
+            ok, why = group_decision(c[0], verdict)
+            mark = "○" if ok else "×"
+            print(f"[단체방 기준] {mark} {(c[0].get('title') or '')[:40]} — {why}")
+            if ok:
+                kept.append(c)
+        picked = kept
 
         # 같은 사고의 후속 알림은 상한을 둡니다.
         limit = getattr(config, "EVENT_MAX_UPDATES", 2)
