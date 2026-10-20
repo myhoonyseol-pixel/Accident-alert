@@ -28323,6 +28323,18 @@
     "쿠팡",
     "화재"
    ]
+  },
+  "bd304a10a7c8da4d": {
+   "ts": 1792520725.308933,
+   "tok": [
+    "계열",
+    "사망",
+    "신공장",
+    "올해",
+    "추락",
+    "현대",
+    "현대플라스포"
+   ]
   }
  },
  "initialized": true,
@@ -28410,7 +28422,7 @@
  "last_gpt_heartbeat": "2026-10-20",
  "gpt_alerts_since_heartbeat": 11,
  "gpt_last_status": "ok",
- "gpt_last_status_at": "10/21 02:53",
+ "gpt_last_status_at": "10/21 03:25",
  "gpt_events": [
   {
    "ts": 1792398037.275871,
