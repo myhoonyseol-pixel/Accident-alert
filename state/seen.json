@@ -27412,7 +27412,7 @@
   }
  },
  "initialized": true,
- "last_heartbeat": "2026-10-21",
+ "last_heartbeat": "2026-10-22",
  "events": [
   {
    "ts": 1792048093.048825,
@@ -27531,9 +27531,9 @@
    "co": "HD현대일렉트릭"
   }
  ],
- "sent_since_heartbeat": 4,
- "last_gpt_heartbeat": "2026-10-21",
- "gpt_alerts_since_heartbeat": 3,
+ "sent_since_heartbeat": 0,
+ "last_gpt_heartbeat": "2026-10-22",
+ "gpt_alerts_since_heartbeat": 0,
  "gpt_last_status": "ok",
  "gpt_last_status_at": "10/22 06:13",
  "gpt_events": [
