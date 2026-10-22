@@ -27,6 +27,36 @@ main.py의 필수 환경변수 검사를 함수 안으로 옮기게 되면 여�
    원문을 다시 열어, 저장된 co 문자열이 지금 본문에도 있는지 대조합니다.
    이건 확정 판단이 아니라 "확인 필요" 신호만 남깁니다.
 3) 결과를 state/daily_review.json에 저장합니다.
+
+TODO — DART/KOSHA 연동 (DART_API_KEY, KOSHA_API_KEY 발급 후)
+--------------------------------------------------------------
+설계만 정하고 아직 구현 안 함. 키 받으면 아래 두 함수를 추가하고
+main()에서 결과를 daily_review.json에 dart_candidates / kosha_candidates
+필드로 얹으면 된다.
+
+fetch_dart_disclosures()
+  · 중대재해 발생 시 사업장이 노동부에 보고하면 그 즉시 공시 의무가
+    생기고, 보통 당일 보고 → 다음날 공시로 뜬다. 매일 07:30 수집이면
+    전날치를 충분히 잡을 수 있다.
+  · 2단계 호출이 필요하다.
+    1. 공시검색 API(list.json) — report_nm에 "중대재해발생" 포함된
+       공시를 최근 며칠로 조회. 회사명·공시일·rcept_no만 나옴.
+    2. 공시서류원본파일 API(document.xml) — 1에서 받은 rcept_no로
+       실제 제출 문서 원문을 받음 (zip 안에 XML/HTML).
+       https://opendart.fss.or.kr/guide/detail.do?apiGrpCd=DS001&apiId=2019003
+  · 대조: state/seen.json의 events의 co(회사명) + when(발생일, ±며칠
+    오차 허용)과 매칭. 안 걸리는 공시만 "놓쳤을 가능성" 후보로 남긴다.
+    공시일은 사고 발생일보다 보통 하루 늦으므로 날짜는 참고용, 회사명이
+    핵심 매칭 키다.
+
+fetch_kosha_deaths()
+  · data.go.kr 데이터셋 15119137
+    ("한국산업안전보건공단_사고사망 게시판 정보 조회서비스").
+  · 확인된 것: 사고 발생일자·장소·사고개요(원인 등)·사상 규모 포함.
+  · 확인 못 한 것: 사업장명(회사명)이 별도 필드로 오는지 여부 — 검색만
+    으로는 못 봤다. 키 발급 후 data.go.kr 페이지의 Swagger/명세서를
+    직접 열어서 확인해야 한다. 회사명이 없으면 지역+날짜+업종으로만
+    느슨하게 대조해야 하므로 오탐이 DART 쪽보다 훨씬 많을 수 있다.
 """
 import hashlib
 import html
