@@ -1,17 +1,5 @@
 {
  "seen": {
-  "ffeb003c1b968646": {
-   "ts": 1792188055.89229,
-   "tok": [
-    "공장",
-    "부상",
-    "부천",
-    "소방관",
-    "오늘",
-    "합동감식",
-    "화재"
-   ]
-  },
   "5ea19997ea08abd6": {
    "ts": 1792189011.084636,
    "tok": [
@@ -21856,7 +21844,7 @@
   }
  },
  "initialized": true,
- "last_heartbeat": "2026-10-23",
+ "last_heartbeat": "2026-10-24",
  "events": [
   {
    "ts": 1792454814.442311,
@@ -21975,9 +21963,9 @@
    "co": "현대제철"
   }
  ],
- "sent_since_heartbeat": 1,
- "last_gpt_heartbeat": "2026-10-23",
- "gpt_alerts_since_heartbeat": 4,
+ "sent_since_heartbeat": 0,
+ "last_gpt_heartbeat": "2026-10-24",
+ "gpt_alerts_since_heartbeat": 0,
  "gpt_last_status": "ok",
  "gpt_last_status_at": "10/24 06:10",
  "gpt_events": [
