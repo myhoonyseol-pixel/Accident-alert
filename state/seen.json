@@ -16948,6 +16948,17 @@
     "집행",
     "협착"
    ]
+  },
+  "a680eadb4af3de62": {
+   "ts": 1792879179.953917,
+   "tok": [
+    "60",
+    "석재공장",
+    "작업하던",
+    "지붕",
+    "추락",
+    "포천"
+   ]
   }
  },
  "initialized": true,
@@ -17072,9 +17083,9 @@
  ],
  "sent_since_heartbeat": 0,
  "last_gpt_heartbeat": "2026-10-24",
- "gpt_alerts_since_heartbeat": 3,
+ "gpt_alerts_since_heartbeat": 4,
  "gpt_last_status": "ok",
- "gpt_last_status_at": "10/24 22:13",
+ "gpt_last_status_at": "10/25 06:59",
  "gpt_events": [
   {
    "ts": 1792508324.436444,
@@ -17208,6 +17219,15 @@
    "title": "창원서 40대 여성 변압기 부품 맞아 사망…중대재해법 조사",
    "what": "창원 사업장서 여성 변압기 부품에 맞아 사망",
    "occurred": "",
+   "updates": 0,
+   "co": ""
+  },
+  {
+   "ts": 1792879190.118621,
+   "when": "10/25 06:48",
+   "title": "포천 석재공장서 지붕 작업하던 60대 추락사",
+   "what": "포천 석재공장 지붕 작업자 추락사",
+   "occurred": "10-24 10:18",
    "updates": 0,
    "co": ""
   }
