@@ -16962,7 +16962,7 @@
   }
  },
  "initialized": true,
- "last_heartbeat": "2026-10-24",
+ "last_heartbeat": "2026-10-25",
  "events": [
   {
    "ts": 1792454814.442311,
@@ -17082,20 +17082,11 @@
   }
  ],
  "sent_since_heartbeat": 0,
- "last_gpt_heartbeat": "2026-10-24",
- "gpt_alerts_since_heartbeat": 4,
+ "last_gpt_heartbeat": "2026-10-25",
+ "gpt_alerts_since_heartbeat": 0,
  "gpt_last_status": "ok",
  "gpt_last_status_at": "10/25 06:59",
  "gpt_events": [
-  {
-   "ts": 1792508324.436444,
-   "when": "10/20 23:56",
-   "title": "한전산업개발, 여수사업장 노동자 추락사 \"설비 점검 중 사고 아니다\"",
-   "what": "여수사업장서 노동자 추락사",
-   "occurred": "10-17 22:02",
-   "updates": 1,
-   "co": "한전산업개발"
-  },
   {
    "ts": 1792510241.353117,
    "when": "10/21 00:22",
