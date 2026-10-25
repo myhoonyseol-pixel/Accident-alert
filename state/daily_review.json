@@ -1,605 +1,494 @@
 {
- "generated_at": "2026-10-24 09:55",
+ "generated_at": "2026-10-25 09:26",
  "missed_candidates": [
   {
-   "title": "“산재 사망 감축, 획기적 성과” 칭찬받은 노동부…내부에선 “더 줄일 수 있을까?”[세종백블]",
-   "link": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE1wcDQzYXUwakYyWExRMzllZ1VlWl80cm80VGw0dmFnV3oxcnI1Y1pMazExZHg2SDBjVmRfRkpDTnhnemdac2ZFNVo0b1RQNHpWV09YMVBWb2tBeGNITE5Hdw?oc=5",
-   "source": "구글뉴스",
-   "hits": [
-    "사망"
-   ],
-   "published": "10/23 14:00"
-  },
-  {
-   "title": "지반침하‧구조물 붕괴‧전기차 화재까지… 오세훈 시장, 복합재난 대응체계 점검",
-   "link": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE43NjdtSHhKWUROYVM1TDVtZE9aM0FUdi04Yzg5NWRhaWx5VV9UT01zV0M2QjBnaVk4Q2ViekZoX0VGRjF6eVgwWFlKTlBJNTg0bU9qZDRHNzVNTGdMMy1peW9vZzJoMTDSAWdBVV95cUxONzY3bUh4SllETmFTNUw1bWRPWjNBVHYtOGM4OTVkYWlseVVfVE9Nc1dDNkIwZ2lZOENlYnpGaF9FRkYxenlYMFhZSk5QSTU4NG1PamQ0Rzc1TUxnTDMtaXlvb2cyaDEw?oc=5",
-   "source": "구글뉴스",
-   "hits": [
-    "화재",
-    "붕괴"
-   ],
-   "published": "10/23 20:46"
-  },
-  {
-   "title": "고창군, 중대재해 예방 강화…공직자 100여 명 대상 안전교육",
-   "link": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE5oOExLZmVqUXBzS0pTMGlVZzdRTlhNaDIzQjBXNEZvaGtzZHBqWFBhUzQ1aDVFNS02TGgwcGgtdUc4YWg1cFZHU0czc2k2cDhjdVlucHFOTkhzUGFqSlp3VTU2Zw?oc=5",
-   "source": "구글뉴스",
-   "hits": [
-    "중대재해"
-   ],
-   "published": "10/23 11:12"
-  },
-  {
-   "title": "고용노동부 서산지청, 마을 이장들과 손잡고 지붕 추락사고 막는다",
-   "link": "https://news.google.com/rss/articles/CBMib0FVX3lxTFBRRmdXZThhdl9CRWtFTFlWSXVrMWowTHRiQVlHamNYd3BnenI4US1UQVhsVk1LZWRNMEVsc0hCa2ZuczZfVUxZUmFab0dzbWdVS1NJUlJubjZneGVaSkc5Rlc5bW5pVm84Q0RucF9aMA?oc=5",
-   "source": "구글뉴스",
-   "hits": [
-    "추락"
-   ],
-   "published": "10/23 14:29"
-  },
-  {
-   "title": "[뉴스분석] 김여정 센 발언 해도 ‘수위조절’ 여지…충돌 피하려면",
-   "link": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE5OWl9lOGlQODVPRmJ0Qnc5OWhuT0hqV0MtYkQwU0h5NU5Lem5aTzlqSW9YY21mVmZROGU1TEt3dW96dHFZLVQ5eVU5U1o5c0YyWF8tNjBtb1F6cTBkaHVyLTVUdFpUYzk0?oc=5",
-   "source": "구글뉴스",
-   "hits": [
-    "충돌"
-   ],
-   "published": "10/23 10:25"
-  },
-  {
-   "title": "국정원 \"김정은 사망설 허위\"…국회 정보위에 비공개 보고 > 뉴스포커스",
-   "link": "https://news.google.com/rss/articles/CBMiTEFVX3lxTE9XWjhLWElLTkhxSm9IdFphTDJROXNEaGJqYWF5WHVQeWlpZXlDZ3RaMVR0Ml9rQUJ5NjYwLTNKYnIwRVlkQ3JpLUtrOU0?oc=5",
-   "source": "구글뉴스",
-   "hits": [
-    "사망"
-   ],
-   "published": "10/24 00:05"
-  },
-  {
-   "title": "오세훈 시장 ‘지반침하, 구조물 붕괴 등’ 복합재난 대응체계 점검",
-   "link": "https://news.google.com/rss/articles/CBMibkFVX3lxTE85VGoyR0VLSkxwVlpyeU1DakJBZzUzOGJyRXhEd2RDOFRvWmVZaTlzRHlacHpZQ0hfNlgyWmlubjdOYy1pOE84TXphMFc1SU05ZEFtVG1uVnd5aG9RUFcwRmtGYUpNRjljZjBTR0FR0gFuQVVfeXFMTzlUajJHRUtKTHBWWnJ5TUNqQkFnNTM4YnJFeER3ZEM4VG9aZVlpOXNEeVpwellDSF82WDJaaW5uN05jLWk4TzhNemEwVzVJTTlkQW1UbW5Wd3lob1FQVzBGa0ZhSk1GOWNmMFNHQVE?oc=5",
+   "title": "건물 붕괴 현장 잔해 치우는 구조대",
+   "link": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE9ZbXY3QkpsZm1JTTNlcFl0cjE0NTlGV0FOenY1OFV2Snl5MlNEd2dmOUZFUUlEWGI2UDlMNHFJM3k1WHFqYTBsWl9hc216MXNWbmxtQ0g4TXNUYVVoR1Viaw?oc=5",
    "source": "구글뉴스",
    "hits": [
     "붕괴"
    ],
-   "published": "10/23 10:29"
+   "published": "10/24 11:01"
   },
   {
-   "title": "안전보건공단 부산광역본부, 부울경 주요 기업과 중대재해 예방 협력",
-   "link": "https://news.google.com/rss/articles/CBMicEFVX3lxTE96YzNONHJMdXg0VlpjMEtXTUFxZFFJdzRzWmxfT3luem1KM2pKVHRwWWdQYWh1bkRMQTVab0lycEJqOXp2Um1jM2x1YWJqX2ttM1BDSVZ3R0dGU0dXajBNVENxWTIyZlJlaWZhOFhMcjY?oc=5",
-   "source": "구글뉴스",
-   "hits": [
-    "중대재해"
-   ],
-   "published": "10/23 13:46"
-  },
-  {
-   "title": "특검, 사망한 선관위 직원 유서 내용 공개…“‘특검 원망 않는다’고 쓰여”",
-   "link": "https://news.google.com/rss/articles/CBMib0FVX3lxTE1TQUt6NVh0VkhuUy1xdTJTenlncGxKcF80MUpUMC1EM0txTm05NTBPRDdLQXRRYTlCYi1Hb0dTRTJ0NW4zaVZ2SG9paFoxb3dnMllXbVlrN2dpNF9zVHVNVXIzcDY5NGxQdUZhZlkyWdIBc0FVX3lxTFBNV01XQ25xRkZXNXNzODdXbVBncTlqUGQ5R1ZiT29RU0xQRi1xZ0w2bVQ0ZUd3dXJNWEl4RHBscDJBS2Nab3BvVWdjNV9heXN1VHBuLVVpUlpkSWhqZnZ1S1JmQ3h0bGdPVTZTdGJZLXczYm8?oc=5",
-   "source": "구글뉴스",
-   "hits": [
-    "사망"
-   ],
-   "published": "10/23 11:45"
-  },
-  {
-   "title": "서울 은평구 신축 상업시설서 50대 작업자 추락사 - 머니투데이",
-   "link": "https://news.google.com/rss/articles/CBMicEFVX3lxTE9uRTIyQmhBdUQtLUExRnNMY21OMU1VOFk4bWE3MHhQVlJacjlibDMwamtfLTJJaFhqcEF0VmtpSG5LNjlzb1VUeEtoM1d3cF9SNVI1T09EOXNNWVRUSWY5aE1BRGFQVWVWYnBxelhhQVbSAXBBVV95cUxPbkUyMkJoQXVELS1BMUZzTGNtTjFNVThZOG1hNzB4UFZSWnI5YmwzMGprXy0ySWhYanBBdFZraUhuSzY5c29VVHhLaDNXd3BfUjVSNU9PRDlzTVlUVElmOWhNQURhUFVlVmJwcXpYYUFW?oc=5",
+   "title": "고용노동부 서산지청, 마을 이장단과 추락사고 차단 나선다, 지붕 작업 안전망 확대",
+   "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTE9iMTYtalhFb1FtNm10ZDlsQ0dRM0Q1MmdxQ0VYRE5HSThUSG5PZ1FFbkNUdUxWaWVrZ1RkMXRRWnI3bFZZNXFxWE1DYnZlMUxUVS1HRDRadThOZHFGZGNVcnA3b2hfOHhtZU9EcA?oc=5",
    "source": "구글뉴스",
    "hits": [
     "추락"
    ],
-   "published": "10/23 16:50"
+   "published": "10/24 20:16"
   },
   {
-   "title": "\"안전펜스만 있었어도…\" 금속노조, HD현대일렉 추락 사망사고 처벌 촉구",
-   "link": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE1PZHFNNVVqV2VGb0NMdWpnalQycUJNUHJrSXpNVTRrMGZFWHVzbkZjbE55TGxCUERrNndKUlNhemQxc0ZUMVFuanpmV05sVTIyeWc?oc=5",
+   "title": "포천 폐차장서 화재…검은 연기 확산에 대응 1단계 발령",
+   "link": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE5TSUZnWkdoV1F0X1BNQ0pKamFfa0RZS1hqcG1uSHhHV2ctUWZuTUJ0RnBlZGJPcUV1VUJMRHl4dXRXc1RqVWR5dC1NX25jNTQyUlB2X094cjFNLTFEQlBpNlE1emdCeWhR0gFoQVVfeXFMTlNJRmdaR2hXUXRfUE1DSkpqYV9rRFlLWGpwbW5IeEdXZy1RZm5NQnRGcGVkYk9xRXVVQkxEeXh1dFdzVGpVZHl0LU1fbmM1NDJSUHZfT3hyMU0tMURCUGk2UTV6Z0J5aFE?oc=5",
+   "source": "구글뉴스",
+   "hits": [
+    "화재"
+   ],
+   "published": "10/24 17:48"
+  },
+  {
+   "title": "경찰은 응우옌 짜이 거리의 한 주택 화재 현장에서 출입문을 부수고 들어가 갇힌 5명을 구조했습니다.",
+   "link": "https://news.google.com/rss/articles/CBMioAFBVV95cUxQWHppR1ZMWl9ETWxOX2lsQl9taWE2Zjl5X2xGWHVZcXBTN243dEo2SWpPWVZYS3hiVlh2ZC1EdTM4U0NHUlFDdWlqelNNTXJpd2FQY0I0akdyUVhFU2RQRDRlSDAxYXFabVNlU0s0bnNUc0lxWDJScFdLNXFHUGdsSFdJQ04zcGdCclA4SFE3U1liRGpwWU9YczFpcTJERmFo?oc=5",
+   "source": "구글뉴스",
+   "hits": [
+    "화재"
+   ],
+   "published": "10/24 15:57"
+  },
+  {
+   "title": "안쑤옌동 청년노조 회원들이 소화포 창고 화재 피해 복구 작업을 돕고 있다.",
+   "link": "https://news.google.com/rss/articles/CBMiogFBVV95cUxOOVJ3RExIbkJhNjRIRE9ZOXVqWVQ2T0J6WHBaU29mRjc0TmtaejNDXzRWdGhEX0Ftb0dDNlRULWhhdjAza3lucnJvNzJIbGxMWkM4X3ljUnhGYlY0U2t3MjhBdUlXSjBhazV4Qms2amlwcEU0UTlRcU5HeUJzRGdoUjF2NWdKSE43VEpMWnRLTC0wY2V2VVZ5cDBCRUxpcmRrdWc?oc=5",
+   "source": "구글뉴스",
+   "hits": [
+    "화재"
+   ],
+   "published": "10/24 09:45"
+  },
+  {
+   "title": "곡성군, '유류 화재·산불 연계'... 실전형 복합 재난 대응",
+   "link": "https://news.google.com/rss/articles/CBMiakFVX3lxTE8teVhzSXU3UmJUNkdiYTA1aUxLX3dDYTBmMGZsQnNFNmMzV29mRFc1Vk1wa1AwcUZxN3JOd0RqVU9mRUgxSzJoN0Z1aWVMcEdWTkdwd21nY0JDeEdrandkOE82ZGdjWVhydnc?oc=5",
+   "source": "구글뉴스",
+   "hits": [
+    "화재"
+   ],
+   "published": "10/24 13:39"
+  },
+  {
+   "title": "건물 붕괴 현장 잔해 치우는 구조대",
+   "link": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE9ZbXY3QkpsZm1JTTNlcFl0cjE0NTlGV0FOenY1OFV2Snl5MlNEd2dmOUZFUUlEWGI2UDlMNHFJM3k1WHFqYTBsWl9hc216MXNWbmxtQ0g4TXNUYVVoR1Viaw?oc=5",
+   "source": "구글뉴스",
+   "hits": [
+    "붕괴"
+   ],
+   "published": "10/24 11:01"
+  },
+  {
+   "title": "2차 사고 막던 경찰관, 화물차에 치여 큰 부상…\"회복까지 지원\"",
+   "link": "https://news.google.com/rss/articles/CBMiS0FVX3lxTFBraU45dmdMYldPc00wc0h5VVJIcUZWdDhVejVtb1BQT19fNnZnSFdxUFVNbVgyME1BbE12cDBWYTdRWjgtWHBXTnlLSQ?oc=5",
+   "source": "구글뉴스",
+   "hits": [
+    "부상"
+   ],
+   "published": "10/24 16:35"
+  },
+  {
+   "title": "완도 전복양식장서 30대 외국인 노동자 감전사…고압세척기 작업 중 사고",
+   "link": "https://news.google.com/rss/articles/CBMijgJBVV95cUxNYUdHY3d3UXpOV19ZdzBfY2NCekhzUXlGblJZU1I4d0F5aGNUSHNoNW8zdERzRHRHMHh6SnRfWGRBY3o5OTlNM1hlZXpmeTZlTmVfUk16c3lCTG53M2F4QWw4cEN5dUV0RDRnY2E3S1lfWERCWkZpSDRjWHRhVEkxd0s2M1llNEhrWFE2T1BaaFJNWnJ4TWxLWmRzZ2FvNk5ZbEpwQ0xRZkNpODdTUFNxbER1MUxpNzJqUTkzc0pxaGIyZjZ5RWIzZUVvSWJzRVpmcmRQUkJXczhwVV8wNUxnR3JxekZ1dzFfcmRfWk1vTHhtMnNnay1NY3VrQ3AxU1ZnZERPdlNqR0JRelJjMFE?oc=5",
+   "source": "구글뉴스",
+   "hits": [
+    "감전"
+   ],
+   "published": "10/24 15:04"
+  },
+  {
+   "title": "삼성 라이온스, PO 앞두고 '날벼락'…마무리 김재윤 부상 낙마",
+   "link": "https://news.google.com/rss/articles/CBMi7gJBVV95cUxQb3lQZEpMaHFKYUltVnU1M2tFZGsxa1lRNURJWE0zd0Nic0s2T0VRYUNJaHgwUjVoNWE2M29vQ1BUMDVyYjJrUXgyc0RuU1ZJYW1hSEVrSzlXLWw1NDlVSkFWbGhjMGtpaURYdmk0SDFKdDE0YS1fU0dEbkplYWhuRHBiaDhIU1FJUTRjSllQVm1jV3VxYVBFWFd1bVBkSDJHWmJ2cHNWcWZpVXJkd3VaZnNTTUczakFrX1JFeTJXVDdFOUd2bDljLUdWSkJQeWpLcnFSazg1SzlSQV9iYlFicXB6UkdtbVZYTV9rdEFLWEpDWGFqX25SSFJvMG9ocjJnZnZsMXViVzJGVHlRaFFLdnNMU01fN2pXX1RZc0FyUDdILWoxd1ltbzhncTkxeksyOV9wXzZreFRHb0U0eG5nYUdCQTlId3Y2MWEwZHdwTXpwajJNUDZvaWRDcmJWUkcwaFRPVng5WEt6ODV4MkE?oc=5",
+   "source": "구글뉴스",
+   "hits": [
+    "부상"
+   ],
+   "published": "10/24 15:14"
+  },
+  {
+   "title": "창원 휴대전화 부품업체서 퇴근길 40대, 낙하물 맞아 숨져",
+   "link": "https://news.google.com/rss/articles/CBMijgFBVV95cUxQMG1rcTZ1ZGdjYVNwWDNGNUNlMV9jcE1SWnFQNE9LbVZMem5zODNqendTM0t0b2xaWkpnVDZ3TFBnN3JMSTRRRjhselRoa3M2WnBlaFpOSHFKaDBRZFBua0JLbkJaZVIyQTRlU05ULTF1V21oR2MxbUFHQTVFaC1SakFCOXVZRjFSajBOamdn?oc=5",
+   "source": "구글뉴스",
+   "hits": [
+    "낙하",
+    "숨져"
+   ],
+   "published": "10/25 08:40"
+  },
+  {
+   "title": "[속보] 퇴근길 40대, 2층서 떨어진 60kg 낙하물 맞아 숨져",
+   "link": "https://news.google.com/rss/articles/CBMiYkFVX3lxTFBSMnV1NFhQamxodzVCYm01Y0xjWld1QXh1blZ3aG5WM0V1bVBNb2hzNEZuZ1FIRWJxRkRJMWVUUmluY0d0TVJWOHBxQllUX1dWOWptNlBjRGttQS03MWNsYVZ3?oc=5",
+   "source": "구글뉴스",
+   "hits": [
+    "낙하",
+    "숨져"
+   ],
+   "published": "10/25 08:57"
+  },
+  {
+   "title": "가평서 지붕 페인트 작업하던 60대 9m 아래 추락…의식불명",
+   "link": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE9TM2hWXzVKZ3hxUVVBSzdvbllqTlJSc3ZfMmFCOHF0a28teW1QTE5VT2dxY3dXcnAtbVZzUjhzY2p1RV9jV05hSWZMa0UwR2xZRlluWWZB?oc=5",
    "source": "구글뉴스",
    "hits": [
     "추락",
-    "사망"
+    "의식불명"
    ],
-   "published": "10/23 17:34"
+   "published": "10/24 10:30"
   },
   {
-   "title": "\"잠긴 엘리베이터 문 열었다가 참변\"…50대 작업자 추락사 - 머니투데이",
-   "link": "https://news.google.com/rss/articles/CBMifkFVX3lxTE5adks5ajJLYmk4MTVSRm9udU5wQ1c0VFlMVnJVZm5kU1JrSjZ2R2VmdGc3YmZGTG9SSWtfN2I0ZFVLMDB4S2JSVkZtRl9fZU15aTFxV2xxbmtTaEFtbEphVFdmamVBVU4tNGI5M0FpaTFETlk1OHJ3VWNIM1BSd9IBfkFVX3lxTE5adks5ajJLYmk4MTVSRm9udU5wQ1c0VFlMVnJVZm5kU1JrSjZ2R2VmdGc3YmZGTG9SSWtfN2I0ZFVLMDB4S2JSVkZtRl9fZU15aTFxV2xxbmtTaEFtbEphVFdmamVBVU4tNGI5M0FpaTFETlk1OHJ3VWNIM1BSdw?oc=5",
+   "title": "한 관광객이 조국 최북단을 방문하던 중 계곡으로 추락했습니다",
+   "link": "https://news.google.com/rss/articles/CBMipAFBVV95cUxQenR6SU13WnAzeGNOX21ER19pLVhFQkZDRnBUZFNlVzNrSWgzT1F0blBsY2F0NVc3SHE0amY4Wm9KSXZ0R0pVVExzeFlwd3FGMDFuTlRsb2JVSjFmLWRwUHhlS3I0ZC1tUzdub0hXdU15WlZzdjROai11eXVrQjBOMThXMGppeDUyeXVhWnhjdEs3dHBtSnMwNXM0MVBRbGFTcHRmag?oc=5",
    "source": "구글뉴스",
    "hits": [
-    "추락",
-    "참변"
+    "추락"
    ],
-   "published": "10/23 16:50"
+   "published": "10/24 19:54"
   },
   {
-   "title": "‘소방관 순직’ 부천 화재, 인화물질 추정 보고에도 ‘공격 진압’···무전 녹취록 공개",
-   "link": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE1zVkhrM09RU01qR0RpNW5pNTJfZ0NJYUlNRVZkeUdWbXNuMkJKNmhKSTVFNGNIcmdnT3FqX3JDVzF6QnRYM2RPSFhZbHdfWHg1WXNDLU1Uek1SYUNDaWhV0gFfQVVfeXFMTXNWSGszT1FTTWpHRGk1bmk1Ml9nQ0lhSU1FVmR5R1Ztc24yQko2aEpJNUU0Y0hyZ2dPcWpfckNXMXpCdFgzZE9IWFlsd19YeDVZc0MtTVR6TVJhQ0NpaFU?oc=5",
-   "source": "구글뉴스",
-   "hits": [
-    "화재"
-   ],
-   "published": "10/23 11:44"
-  },
-  {
-   "title": "인화물질 추정 보고에도 “공격 진압”···‘소방관 순직’ 부천 화재 무전 녹취록 공개",
-   "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTFAwTzlrdGdZLWE3b0F6Yy1OaWpzMm03ZTFyQ0NSX3k4Q2hxRkZFYks5UGNCYXFFN2VnZUs3R3MyZVdQU3VpWDdjanJsUUtYQlhCMGN5WmZXcTNjUdIBX0FVX3lxTE1zVkhrM09RU01qR0RpNW5pNTJfZ0NJYUlNRVZkeUdWbXNuMkJKNmhKSTVFNGNIcmdnT3FqX3JDVzF6QnRYM2RPSFhZbHdfWHg1WXNDLU1Uek1SYUNDaWhV?oc=5",
+   "title": "李 대통령, 부천 화재 순직 소방관 조문…“희생 영원히 기억할 것”",
+   "link": "https://news.google.com/rss/articles/CBMiY0FVX3lxTFBXSXd6bXBtY3E0MzdOc0tTVXh0azFvMkdOTzdZUkpfdXZqUHVDd0poMTNoMS0yTkJIZ2d0UFJJTmRIQmRWX1RkNWJUaWpCNjJnQ04yV25PclRxd3huTGdxdU9zQQ?oc=5",
    "source": "구글뉴스",
    "hits": [
     "화재"
    ],
-   "published": "10/23 11:44"
+   "published": "10/25 05:11"
   },
   {
-   "title": "인천 원창동 금속기계 공장서 화재…60대 남성 화상",
-   "link": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE5va29Nb1huRVBpZzhrSG5VLXEzM1BYUmo3WFFaRnVLS09hTk8yd0xabTlHbDRBQlgyRzZETUFoOVBtYTN6U1lfQUxxZkU0Q2Y1YlVndg?oc=5",
-   "source": "구글뉴스",
-   "hits": [
-    "화재",
-    "화상"
-   ],
-   "published": "10/23 16:47"
-  },
-  {
-   "title": "\"인화물질 있다\" 보고에도 '공격 진압'… 부천 화재 지휘 적절했나",
-   "link": "https://news.google.com/rss/articles/CBMic0FVX3lxTE40Yko3T3VVdmRQNWtwUDQzMXUtYjRLdVg2MlF5ckpMbURONVRkOEhic1VadVpNbjVINGxxWTZrLS1QVWxtbjRrMmpUSm5NUUlMRHpCQzZZaHJzYWNIeV9DbmM3TXZrNVZIdWJvbGl1QTh4UzDSAXNBVV95cUxONGJKN091VXZkUDVrcFA0MzF1LWI0S3VYNjJReXJKTG1ETjVUZDhIYnNVWnVaTW41SDRscVk2ay0tUFVsbW40azJqVEpuTVFJTER6QkM2WWhyc2FjSHlfQ25jN012azVWSHVib2xpdUE4eFMw?oc=5",
+   "title": "드론이 옴스크 화학 공장을 타격해 화재 발생",
+   "link": "https://news.google.com/rss/articles/CBMicEFVX3lxTFAzQjBGQXBIZVNBVmsySW5MZDBxb01lWXhVZmZiWHRJODd4c2hsTmVSWmdPUlhsY2NESG1WMld3emNpN2dxT3NzX3RaMzVvd3c0Z2dGYlZYWjRGOWE3MTNyQ29lN0VNMjdTMWdFUXFQLUQ?oc=5",
    "source": "구글뉴스",
    "hits": [
     "화재"
    ],
-   "published": "10/23 10:15"
+   "published": "10/24 18:46"
   },
   {
-   "title": "아산소방서장, ㈜광진기계 방문해 화재안전 현장지도",
-   "link": "https://news.google.com/rss/articles/CBMibkFVX3lxTE1iSnNuN21sd2RlV0ZGZEJDczBOblRIeFZXb1B3TGZGU25nQnB2YjRjQmk0WXRKXy1YUmdCQzlNSnVnS3pSYnFNZ2FnckFacnlVYTBSekNwclltNzJ1V0dJRmVWemxZQ0FRV3p0aUR3?oc=5",
+   "title": "당국은 르호 지역의 테이프 제조 공장에서 발생한 대형 화재를 진압했습니다.",
+   "link": "https://news.google.com/rss/articles/CBMilgFBVV95cUxNVXJwUWlLNjN3TDZnOGJuUzlSN0pVbl9ON3J3YWlBaHgwMGtaSkQxMW1lTVVLUHFJVnJOamFpMjhYTkdOWk9iN29vWXJuVVVFMlV5RjNtUEhHS0RmTVE5QTJwb3pVT013NXdDU2xlZkFVZ3V1ODRKRkJuRzEzRnRnTmlNdFdmaHlweDlNZGVqTS1lYnh5ZWc?oc=5",
    "source": "구글뉴스",
    "hits": [
     "화재"
    ],
-   "published": "10/23 11:04"
+   "published": "10/24 19:25"
   },
   {
-   "title": "허영 \"노동자·소방관 희생 막을 화재안전 대책 시급\"",
-   "link": "https://news.google.com/rss/articles/CBMibkFVX3lxTE5SeFJQUENib2FnZ2xrUkFvTDdnV2RoWkxLczE0WXFNdEtleVdySFd0U1N5R3JqT0FVWVNvWmNPaTFmaHN4UlpRR0F3MVROUm9rSlBubXlJUy12T21jd25TUUFRa3lxbVpRMDJkTWZn?oc=5",
+   "title": "포천 폐차장 화재…소방, 3시간 30분 만에 큰불 진화 : 사회",
+   "link": "https://news.google.com/rss/articles/CBMiS0FVX3lxTE8yWXhwTE1OdHNQLS1yZmhqZlU1VlBySlI0OFBmZWwybklfeHJSUEh4b0czSFhuSVR1T2p4MW1jdGVESERJMmZCdFdzNA?oc=5",
    "source": "구글뉴스",
    "hits": [
     "화재"
    ],
-   "published": "10/23 10:17"
+   "published": "10/24 17:30"
   },
   {
-   "title": "포커스에이아이, AI 화재감지 솔루션 공급 본격화 \"겨울철 화재 예방 수요 대응\"",
-   "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTFBnN1lrVndKcTRIUDFnVnY3TXowMkI3X1k1bzB1QWpUdl95RFFJR3F0WmJDdU14Q3VYeG44b2J5ZGhLTHhSOFZhZkJEMWRfV0ZPREZUOUJqQThzZw?oc=5",
+   "title": "포천 폐차장 화재 3시간 반 만에 큰 불길 잡아 : 사회",
+   "link": "https://news.google.com/rss/articles/CBMiS0FVX3lxTE9KS0NpT1I2dU85d2FHbEdta2x0bWdjRmdQcU42aGtPTDFqVWRCYWViU1Nob1JrV2tfVlZmOGE2bWl6SkRLTkUyY1Bscw?oc=5",
    "source": "구글뉴스",
    "hits": [
     "화재"
    ],
-   "published": "10/23 11:03"
+   "published": "10/24 16:58"
   },
   {
-   "title": "에브나노이: 전기를 안전하게 사용하고 화재 및 폭발 위험을 예방할 것을 당부합니다.",
-   "link": "https://news.google.com/rss/articles/CBMipgFBVV95cUxOT2hnYnpMTUo3LTdnRjZkOFVsWjlkU2Rqdm90djRyWWN6cXotNDRrZkdyUkkwdDJBa21sekhia1R0VXFIUWxsTGtwVVdHeW9DeEhMa0xLMk10c0x4VGxEQlpXY1doRjZndnV6cFpmVU81VTk4b0Rmd1Rkd3NWMXF6RHFkMVhTXzNKUFNibzIyZzVHZXdqUFhXYWJsaWRjLUdmYnRjQnhn?oc=5",
-   "source": "구글뉴스",
-   "hits": [
-    "화재",
-    "폭발"
-   ],
-   "published": "10/23 17:55"
-  },
-  {
-   "title": "포커스에이아이, AI 화재감지 솔루션 공급 본격화 \"겨울철 화재 예방 수요 대응\"",
-   "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTFBnN1lrVndKcTRIUDFnVnY3TXowMkI3X1k1bzB1QWpUdl95RFFJR3F0WmJDdU14Q3VYeG44b2J5ZGhLTHhSOFZhZkJEMWRfV0ZPREZUOUJqQThzZw?oc=5",
+   "title": "포천 폐차장 화재…소방, 3시간 30분 만에 큰불 진화 : 사회",
+   "link": "https://news.google.com/rss/articles/CBMiS0FVX3lxTE8yWXhwTE1OdHNQLS1yZmhqZlU1VlBySlI0OFBmZWwybklfeHJSUEh4b0czSFhuSVR1T2p4MW1jdGVESERJMmZCdFdzNA?oc=5",
    "source": "구글뉴스",
    "hits": [
     "화재"
    ],
-   "published": "10/23 11:03"
+   "published": "10/24 17:30"
   },
   {
-   "title": "\"화재 발생 전 징후 잡는다\"…포커스에이아이, AI 화재감지 솔루션 출시",
-   "link": "https://news.google.com/rss/articles/CBMiUEFVX3lxTFBDV2hZaWFrS1JyMXBGdHVfZU01QTNNY3ZGNWZreTU3cDZFcHdnZFNxVXcwdTRmTkJoQllQWVFEX05sVW5sd0RlUGctb2ZRNzNZ?oc=5",
+   "title": "[단독] 인천지방노동위, ‘제2쿠팡 화재’ 공익제보자 부당대기발령·부당해고 '전부인정' 판정",
+   "link": "https://news.google.com/rss/articles/CBMiakFVX3lxTFB5V3U3SV9ZcFVqRlZLbHloaUp0b1RfeE5aRjlFR1BVcG5nejIxZ0tMSWxjWGdJQ1c2T05DeXlwT2ZubUR2bEJJaHFaQmhCT3lGellxcGN0NmpWTWwzdi1QcEVnRWFsSnIyMVE?oc=5",
    "source": "구글뉴스",
    "hits": [
     "화재"
    ],
-   "published": "10/23 10:26"
+   "published": "10/24 17:13"
   },
   {
-   "title": "포커스에이아이, AI 화재감지 솔루션 공급 본격화 \"겨울철 화재 예방 수요 대응\"",
-   "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTFBnN1lrVndKcTRIUDFnVnY3TXowMkI3X1k1bzB1QWpUdl95RFFJR3F0WmJDdU14Q3VYeG44b2J5ZGhLTHhSOFZhZkJEMWRfV0ZPREZUOUJqQThzZw?oc=5",
+   "title": "히틀러의 ‘독수리 둥지’ 대형 화재…80년 넘게 살아남은 건물 잿더미로",
+   "link": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE5VUXJnNTF5aG5qWk9tZVJrTThqMlU4ZmxDQVlzalJta1hLMHMtTVJaaVFGZVpOQzNIMW5raS1YVUc0RDdRenp6YTVETFk5QUJadlZSVEZ3?oc=5",
    "source": "구글뉴스",
    "hits": [
     "화재"
    ],
-   "published": "10/23 11:03"
+   "published": "10/24 22:31"
   },
   {
-   "title": "[속보] 경기 오산 고현동 철물점서 화재 발생",
-   "link": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE1ELUNhaFNjRFVZQzB6cXJZMlFKOWh4aVJqTU5XWTVvTUQzNmRoVC1GRy1iM2lJc3NxdjNwaGZnWjdUOXhPWkYxSGxpRmtHVG9KMGZ6eA?oc=5",
+   "title": "용인특례시, 시민과 재난안전 기관 관계자 대상 ‘배터리 화재 안전 교육 시연회’ 열어",
+   "link": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE9EM2lud2tXa1JRYUtGWllSd211dGkxR1ZhQ3l4UG1YX0tybWhqNFJrSHpMWEVuUDBScnFTZF9ITzJJaUdvdUNIbFNLQVFRdlk0cGcxWnhNeUJucExkVTBzcFlqR1I2OUU?oc=5",
    "source": "구글뉴스",
    "hits": [
     "화재"
    ],
-   "published": "10/23 13:24"
+   "published": "10/24 15:59"
   },
   {
-   "title": "[금주의 서해구의회] “원도심 화재 예방 강화해야”…고선희 의장, 가좌동 피해 현장 방문",
-   "link": "https://news.google.com/rss/articles/CBMib0FVX3lxTE5SSHozYjVDUjVlczE3U0hVbU1PWGVNd1JoMXRhSEo1amZNeXc4NmZGS2RFZUlYNWZMOFdTZjZfQmplbWxvdzZUYnJoQk5ETkx5eWpBSi1DbFFxSGZoUEc5YUlxV3pNUU5NRjZZZ0Fsaw?oc=5",
-   "source": "구글뉴스",
-   "hits": [
-    "화재"
-   ],
-   "published": "10/23 14:59"
-  },
-  {
-   "title": "부여소방서, 음식점 주방 화재예방 강화",
-   "link": "https://news.google.com/rss/articles/CBMickFVX3lxTE9ETFdqZ19YZzd3WjNRWVE4bVlmQ29oRndBTWpTN1RIVHdqazQzRFVtU3VyLXN3SjZyc1FBVG0zeEtXeXh4ZTZDdHZYMjZjdHdYRzVwZGNxcmVhSEpoX0pWak4tSXhxWnhSQXp0NHVTeU12QQ?oc=5",
-   "source": "구글뉴스",
-   "hits": [
-    "화재"
-   ],
-   "published": "10/23 13:01"
-  },
-  {
-   "title": "까마우: 스티로폼과 폼을 보관하던 창고에서 대형 화재 발생.",
-   "link": "https://news.google.com/rss/articles/CBMib0FVX3lxTE1oWFE1R2tLRzk5VTBTZ1pQWGZzam9QZ3lFbXdWZWs4VmlFbHpYVzFYOVF1cE1rR0pLY3JhZ2pGd3AtRFpPRFRfeEVRNVhNcmtld29ZRkJ2aUdmUF9JTkxLcFJCYzNLbm1MTVlJWnNMRQ?oc=5",
-   "source": "구글뉴스",
-   "hits": [
-    "화재"
-   ],
-   "published": "10/23 23:06"
-  },
-  {
-   "title": "중상해·사망사고 233곳 중 221곳 안전인증 유지",
-   "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTE1TdVBkdkZfMTNsanFleDItLTRndmJsUDVuQ2xPdTVmS3BTQ2o2V3c5MmNiV08zRVhaRy15SGI4X3VrbF8tQkJuTkhRS3M0OFRTdWxhNS11TDN4bTl1a21ZSXNjMmNvYlBSQXdNQQ?oc=5",
-   "source": "구글뉴스",
-   "hits": [
-    "사망",
-    "중상"
-   ],
-   "published": "10/23 11:35"
-  },
-  {
-   "title": "대불산단 잇단 사망…안전감독 실효성 도마",
-   "link": "https://news.google.com/rss/articles/CBMiT0FVX3lxTFBUTUJPdHU1Mm1iRWVETVdLbTJjYW11OUk4ZTM0bkIzQWh6TElyclgzYk04WUM2cXZ2bE1VX0hNQ3RqTThyLUdBTmJxbHhaZ3M?oc=5",
+   "title": "40대 女, 변압기 부품에 맞아 사망…부품 굴러떨어져...고용부 ‘중처법’ 조사",
+   "link": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE9OY2c0Q3gwYWxmZzJlWVpBemo2QjUtZ3RUa21ZcnJudThpU1lyMDNNSzJoLWZBZXpYTUZ5dGp3RWRkTjVPWE9QQ3lwT0lKYkxN?oc=5",
    "source": "구글뉴스",
    "hits": [
     "사망"
    ],
-   "published": "10/23 13:30"
+   "published": "10/25 07:19"
   },
   {
-   "title": "“산재 사망 감축, 획기적 성과” 칭찬받은 노동부…내부에선 “더 줄일 수 있을까?”[세종백블]",
-   "link": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE1wcDQzYXUwakYyWExRMzllZ1VlWl80cm80VGw0dmFnV3oxcnI1Y1pMazExZHg2SDBjVmRfRkpDTnhnemdac2ZFNVo0b1RQNHpWV09YMVBWb2tBeGNITE5Hdw?oc=5",
-   "source": "구글뉴스",
-   "hits": [
-    "사망"
-   ],
-   "published": "10/23 14:00"
-  },
-  {
-   "title": "고창군, 중대재해 예방 강화…공직자 100여 명 대상 안전교육",
-   "link": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE5oOExLZmVqUXBzS0pTMGlVZzdRTlhNaDIzQjBXNEZvaGtzZHBqWFBhUzQ1aDVFNS02TGgwcGgtdUc4YWg1cFZHU0czc2k2cDhjdVlucHFOTkhzUGFqSlp3VTU2Zw?oc=5",
+   "title": "[뉴스락 특별기획] 중대재해 경영책임자 10명 중 9명 집행유예... 첫 양형기준, 형량 편차 줄일까",
+   "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTE9zNFM2bzRaZEVQdzk1bVFnR00zcWs0RVRLYzhSZndFbXNhX1FPbXczcjNvc0J4enhLa1dYeXplSTFVTWpBODFsX09rUk5oRGd0Y0ZNR01aS1BJTjJmeGcyVTBhVzMtanhyNWJHag?oc=5",
    "source": "구글뉴스",
    "hits": [
     "중대재해"
    ],
-   "published": "10/23 11:12"
+   "published": "10/24 10:41"
   },
   {
-   "title": "나주시, ‘중대재해 예방을 위한 직원 역량강화 교육’ 실시",
-   "link": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE42SGxkQ0pMN3VRcjd3c3NXdVdQVVNHaEdlMmwzQlVBQ2Rhek5YSUthbXFPQ0IwMDgwU1REaFZoYnJzVHY0X0ZlTlhrTkJBdzlOcUdiVjNxSTRTeTZhNlFZ?oc=5",
-   "source": "구글뉴스",
-   "hits": [
-    "중대재해"
-   ],
-   "published": "10/23 13:10"
-  },
-  {
-   "title": "[고창군] 공직자 중대재해예방 역량강화 교육 실시",
-   "link": "https://news.google.com/rss/articles/CBMiakFVX3lxTE1ndXpHYXhJYmd1U3hDRjBYTUxGRTNXNzJEZTFRcUFJNnVTaHJUdEJheWRlLWl5QzJ6TzdFdXVGQjVSYloxQURSSjY0QnNRN0RnaWYwd0NhMUYzQUIwajNnY1B1TGV6V1NoUlE?oc=5",
-   "source": "구글뉴스",
-   "hits": [
-    "중대재해"
-   ],
-   "published": "10/23 10:11"
-  },
-  {
-   "title": "[한진 톺아보기] 노란봉투법·사망사고 겹악재…떠났던 '노무통' 다시 불렀다 : 네이버 블로그",
-   "link": "https://news.google.com/rss/articles/CBMijwFBVV95cUxNRktLXzRJbWkwTjdicHRSSGdnbmRYcWFXMDJaTC01QzdybmVVX2ZZMDlBTjBDZVdRQjg0d1hwRk9uTmF4ZHlWTmZ5VFJPM01pci1hQXoyVmVGaVQ2WlBYbENhakttWUVLQTE3ZUxqS0lwWVpmT001WFUtRU5vdjFfaFVub3hpR3ZIN2Rwb1VRTQ?oc=5",
+   "title": "전력 공공기관 산재 사고 1위‘위험의 외주화’, ‘다치는 곳’은 한전MCS, ‘사망’은 한국전력 하청업체",
+   "link": "https://news.google.com/rss/articles/CBMickFVX3lxTE0tdEJQVGhCQm5lNGhuZWthSWg4NGViUVBkcTBRQWxNc1I4SGloQk5pNzdFUGk0YUgxc3RTbW9kNVV3WUtGSnEwUU0zRkNrZVVMMnA4QnFiWlUzRHBvcmlpTWV5eVF2R2JGeWtiNW1CTGZYd9IBckFVX3lxTE0tdEJQVGhCQm5lNGhuZWthSWg4NGViUVBkcTBRQWxNc1I4SGloQk5pNzdFUGk0YUgxc3RTbW9kNVV3WUtGSnEwUU0zRkNrZVVMMnA4QnFiWlUzRHBvcmlpTWV5eVF2R2JGeWtiNW1CTGZYdw?oc=5",
    "source": "구글뉴스",
    "hits": [
     "사망"
    ],
-   "published": "10/23 19:21"
+   "published": "10/24 10:57"
   },
   {
-   "title": "중상해·사망사고 233곳 중 221곳 안전인증 유지",
-   "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTE1TdVBkdkZfMTNsanFleDItLTRndmJsUDVuQ2xPdTVmS3BTQ2o2V3c5MmNiV08zRVhaRy15SGI4X3VrbF8tQkJuTkhRS3M0OFRTdWxhNS11TDN4bTl1a21ZSXNjMmNvYlBSQXdNQQ?oc=5",
-   "source": "구글뉴스",
-   "hits": [
-    "사망",
-    "중상"
-   ],
-   "published": "10/23 11:35"
-  },
-  {
-   "title": "안전보건공단 부산광역본부, 부울경 주요 기업과 중대재해 예방 협력",
-   "link": "https://news.google.com/rss/articles/CBMicEFVX3lxTE96YzNONHJMdXg0VlpjMEtXTUFxZFFJdzRzWmxfT3luem1KM2pKVHRwWWdQYWh1bkRMQTVab0lycEJqOXp2Um1jM2x1YWJqX2ttM1BDSVZ3R0dGU0dXajBNVENxWTIyZlJlaWZhOFhMcjY?oc=5",
-   "source": "구글뉴스",
-   "hits": [
-    "중대재해"
-   ],
-   "published": "10/23 13:46"
-  },
-  {
-   "title": "중대재해처벌법 사건 1,836건 중 1,012건 미처리…수사인력 공석 226명",
-   "link": "https://news.google.com/rss/articles/CBMib0FVX3lxTFBVdXVRUWVBNzVXdG03YnJzcEluR0JDWTVQLTVUUDBuMDZ6c2pyMi1FN0MxZ0RHX2dTbG9qMVU3OFZkcGZwTlZ3MjBaMmVoYnRCcUN6a1hPam93SVpJemlhMzY4ampZelp5N01VX0QxZw?oc=5",
-   "source": "구글뉴스",
-   "hits": [
-    "중대재해"
-   ],
-   "published": "10/23 10:44"
-  },
-  {
-   "title": "경로확인차 정차중인 화물차 오토바이가 추돌…40대 사망",
-   "link": "https://www.yna.co.kr/view/AKR20261024015100060",
-   "source": "언론사RSS",
-   "hits": [
-    "사망"
-   ],
-   "published": "10/24 08:10"
-  },
-  {
-   "title": "경기남부 고속도로서 사고 잇달아…1명 숨지고 경찰관 부상",
-   "link": "https://www.yna.co.kr/view/AKR20261024012600061",
-   "source": "언론사RSS",
-   "hits": [
-    "부상"
-   ],
-   "published": "10/24 07:57"
-  },
-  {
-   "title": "인천서 노루사냥 엽총에 밭일하던 80대 부상",
-   "link": "https://www.yna.co.kr/view/AKR20261024011400065",
-   "source": "언론사RSS",
-   "hits": [
-    "부상"
-   ],
-   "published": "10/24 07:38"
-  },
-  {
-   "title": "강원 횡성 영동고속도로서 차량 3대 추돌…2명 사망·3명 부상",
-   "link": "https://www.yna.co.kr/view/AKR20261024008400062",
-   "source": "언론사RSS",
-   "hits": [
-    "사망",
-    "부상"
-   ],
-   "published": "10/24 06:41"
-  },
-  {
-   "title": "[AI돋보기] AI가 더 똑똑한 AI 만든다…'지능 폭발' 현실 되나",
-   "link": "https://www.yna.co.kr/view/AKR20261023025100017",
-   "source": "언론사RSS",
-   "hits": [
-    "폭발"
-   ],
-   "published": "10/24 06:33"
-  },
-  {
-   "title": "침 맞던 노인 심근파열로 숨져…업무상과실치사 한의사 벌금형",
-   "link": "https://www.yna.co.kr/view/AKR20261023112600063",
-   "source": "언론사RSS",
-   "hits": [
-    "숨져"
-   ],
-   "published": "10/24 06:00"
-  },
-  {
-   "title": "\"숨진 미화원 덮친 신발장 없애라\" 증거인멸교사 전 공무원 집유",
-   "link": "https://www.yna.co.kr/view/AKR20261023170300061",
-   "source": "언론사RSS",
-   "hits": [
-    "숨진"
-   ],
-   "published": "10/23 18:30"
-  },
-  {
-   "title": "완주서 작업차 위에서 가로수 정비하던 50대 감전돼 중상",
-   "link": "https://www.yna.co.kr/view/AKR20261023169700055",
-   "source": "언론사RSS",
-   "hits": [
-    "감전",
-    "중상"
-   ],
-   "published": "10/23 18:24"
-  },
-  {
-   "title": "서해안고속도로 달리던 사설 구급차 전도…이송 중 환자 또 다쳐",
-   "link": "https://www.yna.co.kr/view/AKR20261023157200055",
-   "source": "언론사RSS",
-   "hits": [
-    "전도",
-    "다쳐"
-   ],
-   "published": "10/23 17:19"
-  },
-  {
-   "title": "구미서 쇠파이프 상차 작업 중 50대 깔려 심정지",
-   "link": "https://www.newsis.com/view/NISX20261024_0003839431",
-   "source": "언론사RSS",
-   "hits": [
-    "깔려"
-   ],
-   "published": "10/24 09:15"
-  },
-  {
-   "title": "김천서 관광버스가 시내버스 '꽝'…女 승객 6명 다쳐",
-   "link": "https://www.newsis.com/view/NISX20261024_0003839413",
-   "source": "언론사RSS",
-   "hits": [
-    "다쳐"
-   ],
-   "published": "10/24 08:55"
-  },
-  {
-   "title": "인천 장봉도서 고라니 향해 쏜 총에 맞은 80대 경상",
-   "link": "https://www.newsis.com/view/NISX20261024_0003839394",
-   "source": "언론사RSS",
-   "hits": [
-    "경상"
-   ],
-   "published": "10/24 07:55"
-  },
-  {
-   "title": "횡성 영동고속도로서 차량 3대 추돌…2명 사망·3명 부상[종합]",
-   "link": "https://www.newsis.com/view/NISX20261024_0003839389",
-   "source": "언론사RSS",
-   "hits": [
-    "사망",
-    "부상"
-   ],
-   "published": "10/24 07:46"
-  },
-  {
-   "title": "강릉서 SUV 전기자 화재…30대 숨져",
-   "link": "https://www.newsis.com/view/NISX20261024_0003839385",
-   "source": "언론사RSS",
-   "hits": [
-    "화재",
-    "숨져"
-   ],
-   "published": "10/24 07:28"
-  },
-  {
-   "title": "횡성 영동고속도로서 차량 3대 추돌…2명 사망",
-   "link": "https://www.newsis.com/view/NISX20261024_0003839383",
-   "source": "언론사RSS",
-   "hits": [
-    "사망"
-   ],
-   "published": "10/24 07:28"
-  },
-  {
-   "title": "강릉 주문진서 전기차 화재…30대 숨진채 발견",
-   "link": "https://www.newsis.com/view/NISX20261024_0003839381",
-   "source": "언론사RSS",
-   "hits": [
-    "화재",
-    "숨진"
-   ],
-   "published": "10/24 07:28"
-  },
-  {
-   "title": "횡성 영동고속도로서 차량 3대 추돌…2명 사망",
-   "link": "https://www.newsis.com/view/NISX20261024_0003839383",
-   "source": "언론사RSS",
-   "hits": [
-    "사망"
-   ],
-   "published": "10/24 07:28"
-  },
-  {
-   "title": "강릉 주문진서 전기차 화재…30대 숨진채 발견",
-   "link": "https://www.newsis.com/view/NISX20261024_0003839381",
-   "source": "언론사RSS",
-   "hits": [
-    "화재",
-    "숨진"
-   ],
-   "published": "10/24 07:28"
-  },
-  {
-   "title": "한의사가 가슴에 침, 90대 통증·호흡곤란→사망…벌금형",
-   "link": "https://www.newsis.com/view/NISX20261023_0003838695",
-   "source": "언론사RSS",
-   "hits": [
-    "사망"
-   ],
-   "published": "10/24 06:00"
-  },
-  {
-   "title": "뇌출혈 쓰러진 혼자 사는 아버지…스마트워치 '낙상 감지' 알림에 구출",
-   "link": "https://www.newsis.com/view/NISX20261020_0003833099",
-   "source": "언론사RSS",
-   "hits": [
-    "쓰러진"
-   ],
-   "published": "10/24 00:00"
-  },
-  {
-   "title": "서해안고속도로서 사설 구급차 전도…탑승 3인 경상",
-   "link": "https://www.newsis.com/view/NISX20261023_0003839133",
-   "source": "언론사RSS",
-   "hits": [
-    "전도",
-    "경상"
-   ],
-   "published": "10/23 17:28"
-  },
-  {
-   "title": "전주서 승용차가 가드레일 쾅…뒤따르던 화물차 전도",
-   "link": "https://www.newsis.com/view/NISX20261023_0003839115",
-   "source": "언론사RSS",
-   "hits": [
-    "전도"
-   ],
-   "published": "10/23 17:23"
-  },
-  {
-   "title": "동대문구 동부간선도로서 차량 5대 연쇄 추돌…경상 1명",
-   "link": "https://www.newsis.com/view/NISX20261023_0003839079",
-   "source": "언론사RSS",
-   "hits": [
-    "경상"
-   ],
-   "published": "10/23 17:02"
-  },
-  {
-   "title": "\"동생 사망 합의금 빌려 간 고모…29년 지나도록 돈도 사과도 못 받았다\"",
-   "link": "https://www.newsis.com/view/NISX20261023_0003837914",
-   "source": "언론사RSS",
-   "hits": [
-    "사망"
-   ],
-   "published": "10/23 16:00"
-  },
-  {
-   "title": "'미화원 사망 사고 증거 은폐' 전 공무원 유죄",
-   "link": "https://www.safetimes.co.kr/news/articleView.html?idxno=246802",
-   "source": "언론사RSS",
-   "hits": [
-    "사망"
-   ],
-   "published": "10/24 05:55"
-  },
-  {
-   "title": "구급차 사고로 80대 환자 '2차 부상' … 병원 이송",
-   "link": "https://www.safetimes.co.kr/news/articleView.html?idxno=246799",
-   "source": "언론사RSS",
-   "hits": [
-    "부상"
-   ],
-   "published": "10/24 04:09"
-  },
-  {
-   "title": "제주도, 인공지능 활용해 실종자 추적 '29명 발견'",
-   "link": "https://www.safetimes.co.kr/news/articleView.html?idxno=246794",
+   "title": "영광 안마도 갯바위서 낚시하던 40대 실종…해경 수색",
+   "link": "https://www.yna.co.kr/view/AKR20261025009400054",
    "source": "언론사RSS",
    "hits": [
     "실종"
    ],
-   "published": "10/24 01:52"
+   "published": "10/25 08:29"
   },
   {
-   "title": "실적 추락·리베이트 논란, 게보린도 못 잡는 삼진제약 오너가 '두통'",
-   "link": "https://www.safetimes.co.kr/news/articleView.html?idxno=246593",
+   "title": "창원 휴대전화 부품 생산업체서 퇴근길 40대, 낙하물 맞아 숨져",
+   "link": "https://www.yna.co.kr/view/AKR20261025008800052",
+   "source": "언론사RSS",
+   "hits": [
+    "낙하",
+    "숨져"
+   ],
+   "published": "10/25 08:24"
+  },
+  {
+   "title": "안성 저수지 낚시터서 초등학생 물에 빠져 숨져",
+   "link": "https://www.yna.co.kr/view/AKR20261025008200061",
+   "source": "언론사RSS",
+   "hits": [
+    "숨져",
+    "물에 빠"
+   ],
+   "published": "10/25 08:17"
+  },
+  {
+   "title": "완주서 빗속 도로 건너다 차량 2대에 연이어 사고…의식불명",
+   "link": "https://www.yna.co.kr/view/AKR20261024054500055",
+   "source": "언론사RSS",
+   "hits": [
+    "의식불명"
+   ],
+   "published": "10/24 22:24"
+  },
+  {
+   "title": "호남고속도로 서광주IC 인근서 승합차 가드레일 충돌…7명 경상",
+   "link": "https://www.yna.co.kr/view/AKR20261024050000054",
+   "source": "언론사RSS",
+   "hits": [
+    "충돌",
+    "경상"
+   ],
+   "published": "10/24 20:01"
+  },
+  {
+   "title": "경기광주 자동차 매매상사 건물서 60대 남성 추락사…실족 추정",
+   "link": "https://www.yna.co.kr/view/AKR20261024049300061",
    "source": "언론사RSS",
    "hits": [
     "추락"
    ],
-   "published": "10/23 18:24"
+   "published": "10/24 19:09"
+  },
+  {
+   "title": "북한산 등산 50대 산행 중 추락, 머리 다쳐 헬기로 병원 이송",
+   "link": "https://www.yna.co.kr/view/AKR20261024046700060",
+   "source": "언론사RSS",
+   "hits": [
+    "추락",
+    "다쳐"
+   ],
+   "published": "10/24 18:19"
+  },
+  {
+   "title": "전주서 승용차가 가로수 충격 후 전도…운전자 사망",
+   "link": "https://www.yna.co.kr/view/AKR20261024040900055",
+   "source": "언론사RSS",
+   "hits": [
+    "전도",
+    "사망"
+   ],
+   "published": "10/24 16:39"
+  },
+  {
+   "title": "경찰청장 대행 \"고속도로 사고수습 중 다친 경찰관 지원 총력\"",
+   "link": "https://www.yna.co.kr/view/AKR20261024032500004",
+   "source": "언론사RSS",
+   "hits": [
+    "다친"
+   ],
+   "published": "10/24 14:40"
+  },
+  {
+   "title": "완도 양식장서 30대 외국인 근로자 숨져…감전 추정",
+   "link": "https://www.yna.co.kr/view/AKR20261024031100054",
+   "source": "언론사RSS",
+   "hits": [
+    "감전",
+    "숨져"
+   ],
+   "published": "10/24 13:46"
+  },
+  {
+   "title": "안성 낚시터서 초등생 물에 빠져 숨져…수색 3시간여 만에 발견",
+   "link": "https://www.newsis.com/view/NISX20261025_0003839803",
+   "source": "언론사RSS",
+   "hits": [
+    "숨져",
+    "물에 빠"
+   ],
+   "published": "10/25 09:18"
+  },
+  {
+   "title": "김정난 \"고입 시험 보고 오니 母 사망…말로 못 할 충격\"",
+   "link": "https://www.newsis.com/view/NISX20261025_0003839763",
+   "source": "언론사RSS",
+   "hits": [
+    "사망"
+   ],
+   "published": "10/25 08:29"
+  },
+  {
+   "title": "주말 경북 김천·문경서 화재 잇따라…인명피해 없어",
+   "link": "https://www.newsis.com/view/NISX20261025_0003839762",
+   "source": "언론사RSS",
+   "hits": [
+    "화재"
+   ],
+   "published": "10/25 08:20"
+  },
+  {
+   "title": "주말 경북 김천·문경서 화재 잇따라…인명피해 없어",
+   "link": "https://www.newsis.com/view/NISX20261025_0003839762",
+   "source": "언론사RSS",
+   "hits": [
+    "화재"
+   ],
+   "published": "10/25 08:20"
+  },
+  {
+   "title": "\"음료는 만들지 마세요\"…다친 고양이 돌본 카페 사장에 날아온 응원",
+   "link": "https://www.newsis.com/view/NISX20261022_0003837348",
+   "source": "언론사RSS",
+   "hits": [
+    "다친"
+   ],
+   "published": "10/24 22:01"
+  },
+  {
+   "title": "몸무게 들쭉날쭉하는 어르신…\"사망위험 급상승\"",
+   "link": "https://www.newsis.com/view/NISX20261022_0003836907",
+   "source": "언론사RSS",
+   "hits": [
+    "사망"
+   ],
+   "published": "10/24 18:01"
+  },
+  {
+   "title": "포천 폐차장 화재 5시간여 만에 진화…인명 피해 없어(종합)",
+   "link": "https://www.newsis.com/view/NISX20261024_0003839644",
+   "source": "언론사RSS",
+   "hits": [
+    "화재"
+   ],
+   "published": "10/24 17:40"
+  },
+  {
+   "title": "서광주IC 도심 진입로서 승합차 빗길 사고…7명 부상 이송",
+   "link": "https://www.newsis.com/view/NISX20261024_0003839622",
+   "source": "언론사RSS",
+   "hits": [
+    "부상"
+   ],
+   "published": "10/24 17:13"
+  },
+  {
+   "title": "전주서 승용차가 가로수 충돌…30대 운전자 숨져",
+   "link": "https://www.newsis.com/view/NISX20261024_0003839611",
+   "source": "언론사RSS",
+   "hits": [
+    "충돌",
+    "숨져"
+   ],
+   "published": "10/24 16:22"
+  },
+  {
+   "title": "북한산서 50대 등산객 계단 난간 밖 굴러 중상, 헬기 이송",
+   "link": "https://www.newsis.com/view/NISX20261024_0003839603",
+   "source": "언론사RSS",
+   "hits": [
+    "중상"
+   ],
+   "published": "10/24 16:12"
+  },
+  {
+   "title": "\"실종자 찾았습니다\"…산책 중 실종 문자 기억한 시민 '매의 눈'",
+   "link": "https://www.newsis.com/view/NISX20261024_0003839597",
+   "source": "언론사RSS",
+   "hits": [
+    "실종"
+   ],
+   "published": "10/24 15:53"
+  },
+  {
+   "title": "고속도로 사고 수습하다 다친 경찰관…경찰청장 직무대행 \"회복 총력 지원\"",
+   "link": "https://www.newsis.com/view/NISX20261024_0003839554",
+   "source": "언론사RSS",
+   "hits": [
+    "다친"
+   ],
+   "published": "10/24 14:06"
+  },
+  {
+   "title": "포천 폐차장 화재, 검은 연기 뒤덮여…재난문자 발송",
+   "link": "https://www.newsis.com/view/NISX20261024_0003839549",
+   "source": "언론사RSS",
+   "hits": [
+    "화재"
+   ],
+   "published": "10/24 13:50"
+  },
+  {
+   "title": "포천 소흘읍 폐차장서 화재…소방 대응 1단계 발령",
+   "link": "https://www.newsis.com/view/NISX20261024_0003839538",
+   "source": "언론사RSS",
+   "hits": [
+    "화재"
+   ],
+   "published": "10/24 13:24"
+  },
+  {
+   "title": "양식장서 스리랑카인 작업자 감전 추정 사고, 심정지 이송",
+   "link": "https://www.newsis.com/view/NISX20261024_0003839529",
+   "source": "언론사RSS",
+   "hits": [
+    "감전"
+   ],
+   "published": "10/24 13:19"
+  },
+  {
+   "title": "테마파크 화재 배터리, KC 인증 허위…쿠팡, 판매자 고발",
+   "link": "https://www.newsis.com/view/NISX20261024_0003839528",
+   "source": "언론사RSS",
+   "hits": [
+    "화재"
+   ],
+   "published": "10/24 13:14"
+  },
+  {
+   "title": "가평 주택서 지붕 페인트 작업 중 9m 추락…의식불명",
+   "link": "https://www.newsis.com/view/NISX20261024_0003839518",
+   "source": "언론사RSS",
+   "hits": [
+    "추락",
+    "의식불명"
+   ],
+   "published": "10/24 12:30"
   }
  ],
  "company_recheck": []
