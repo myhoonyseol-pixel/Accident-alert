@@ -14269,6 +14269,18 @@
     "선제",
     "중대재해보험"
    ]
+  },
+  "c68663acbab3bf0f": {
+   "ts": 1792963104.224606,
+   "tok": [
+    "번째",
+    "사망",
+    "올해",
+    "외친",
+    "제로",
+    "중대재해",
+    "현대그룹"
+   ]
   }
  },
  "initialized": true,
@@ -14393,9 +14405,9 @@
  ],
  "sent_since_heartbeat": 0,
  "last_gpt_heartbeat": "2026-10-25",
- "gpt_alerts_since_heartbeat": 0,
+ "gpt_alerts_since_heartbeat": 1,
  "gpt_last_status": "ok",
- "gpt_last_status_at": "10/26 05:15",
+ "gpt_last_status_at": "10/26 06:18",
  "gpt_events": [
   {
    "ts": 1792510241.353117,
@@ -14531,6 +14543,15 @@
    "occurred": "10-24 10:18",
    "updates": 0,
    "co": ""
+  },
+  {
+   "ts": 1792963115.174423,
+   "when": "10/26 06:02",
+   "title": "\"중대재해 제로\" 외친 지 1년…HD현대그룹, 올해 8번째 사망사고",
+   "what": "울산 공사장 작업자 개구부 추락사",
+   "occurred": "10-19 08:52",
+   "updates": 0,
+   "co": "HD현대플라스포"
   }
  ],
  "gpt_silent": [
