@@ -1179,11 +1179,20 @@ def main():
         # Claude 운영 판정 = 단체방. 사고 여부와 사망·부상 수·회사는 AI가 뽑고,
         # 단체방 기준(config 참고)은 아래에서 코드가 적용합니다. (2026-10-21)
         picked = ai_judge.judge(picked, config, events)
+        # GPT가 '사고 아님·후속기사'(skip)로 본 기사는 Claude가 new라 해도 단체방에 안 보냅니다.
+        # 10/21~10/26 통계·분석 기사 3건을 Claude만 통과시켰고 GPT는 모두 걸렀습니다.
+        # GPT 오류·누락이면 이 표가 비어 있어 Claude 판단대로 갑니다.
+        gpt_skip = {id(r[0]): r[4].get("why", "") for r in gpt_results
+                    if r[4].get("v") == "skip"}
         kept = []
         for c in picked:
             verdict = c[4]
             if verdict.get("v") != "new":
                 kept.append(c)            # 이미 단체방에 보낸 사고의 후속
+                continue
+            if id(c[0]) in gpt_skip:
+                print(f"[단체방 기준] × {(c[0].get('title') or '')[:40]} — "
+                      f"GPT 제외 ({gpt_skip[id(c[0])][:30]})")
                 continue
             ok, why = group_decision(c[0], verdict)
             mark = "○" if ok else "×"
