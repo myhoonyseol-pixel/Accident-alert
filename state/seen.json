@@ -1,28 +1,5 @@
 {
  "seen": {
-  "8ca0dcfd1cc7fe25": {
-   "ts": 1792446867.89185,
-   "tok": [
-    "대전",
-    "도심",
-    "사망",
-    "오토바",
-    "충돌",
-    "택시"
-   ]
-  },
-  "6e85a9f8aa2f0c09": {
-   "ts": 1792446867.895216,
-   "tok": [
-    "건설현장",
-    "덮쳐",
-    "북대전",
-    "사망",
-    "신호수",
-    "인근",
-    "화물차"
-   ]
-  },
   "9b338d52598c0a50": {
    "ts": 1792447831.83178,
    "tok": [
@@ -14197,10 +14174,24 @@
     "중대재해",
     "책임"
    ]
+  },
+  "ff822286288fd8b1": {
+   "ts": 1793052129.454404,
+   "tok": [
+    "27",
+    "60",
+    "담벼락",
+    "붕괴",
+    "빈집",
+    "사망",
+    "안전상황실",
+    "작업자",
+    "철거하다"
+   ]
   }
  },
  "initialized": true,
- "last_heartbeat": "2026-10-26",
+ "last_heartbeat": "2026-10-27",
  "events": [
   {
    "ts": 1792454814.442311,
@@ -14338,9 +14329,9 @@
    "co": ""
   }
  ],
- "sent_since_heartbeat": 1,
- "last_gpt_heartbeat": "2026-10-26",
- "gpt_alerts_since_heartbeat": 4,
+ "sent_since_heartbeat": 0,
+ "last_gpt_heartbeat": "2026-10-27",
+ "gpt_alerts_since_heartbeat": 0,
  "gpt_last_status": "ok",
  "gpt_last_status_at": "10/27 06:46",
  "gpt_events": [
