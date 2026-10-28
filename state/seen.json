@@ -12012,7 +12012,7 @@
   }
  },
  "initialized": true,
- "last_heartbeat": "2026-10-28",
+ "last_heartbeat": "2026-10-29",
  "events": [
   {
    "ts": 1792744038.566552,
@@ -12056,8 +12056,8 @@
   }
  ],
  "sent_since_heartbeat": 0,
- "last_gpt_heartbeat": "2026-10-28",
- "gpt_alerts_since_heartbeat": 10,
+ "last_gpt_heartbeat": "2026-10-29",
+ "gpt_alerts_since_heartbeat": 0,
  "gpt_last_status": "ok",
  "gpt_last_status_at": "10/29 06:58",
  "gpt_events": [
