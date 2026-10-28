@@ -11933,6 +11933,22 @@
     "피해",
     "화재"
    ]
+  },
+  "b6f804e91f1c6abc": {
+   "ts": 1793218028.596964,
+   "tok": [
+    "03",
+    "10",
+    "14",
+    "29",
+    "53",
+    "744",
+    "공장",
+    "도화동",
+    "미추홀구",
+    "인천광역시",
+    "화재"
+   ]
   }
  },
  "initialized": true,
@@ -11981,9 +11997,9 @@
  ],
  "sent_since_heartbeat": 0,
  "last_gpt_heartbeat": "2026-10-28",
- "gpt_alerts_since_heartbeat": 9,
+ "gpt_alerts_since_heartbeat": 10,
  "gpt_last_status": "ok",
- "gpt_last_status_at": "10/29 04:51",
+ "gpt_last_status_at": "10/29 05:07",
  "gpt_events": [
   {
    "ts": 1792994441.844881,
@@ -12119,6 +12135,15 @@
    "occurred": "",
    "updates": 0,
    "co": "남해화학"
+  },
+  {
+   "ts": 1793218035.354743,
+   "when": "10/29 05:00",
+   "title": "인천광역시 미추홀구 10월 29일 03:53경 미추홀구 도화동 744-14 공장 화재 발생",
+   "what": "인천 미추홀구 공장 화재",
+   "occurred": "10-29 03:53",
+   "updates": 0,
+   "co": ""
   }
  ],
  "gpt_silent": [
