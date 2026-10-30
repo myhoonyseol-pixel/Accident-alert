@@ -12960,7 +12960,7 @@
   }
  },
  "initialized": true,
- "last_heartbeat": "2026-10-30",
+ "last_heartbeat": "2026-10-31",
  "events": [
   {
    "ts": 1792977146.397898,
@@ -12982,9 +12982,9 @@
    "co": "남해화학"
   }
  ],
- "sent_since_heartbeat": 1,
- "last_gpt_heartbeat": "2026-10-30",
- "gpt_alerts_since_heartbeat": 3,
+ "sent_since_heartbeat": 0,
+ "last_gpt_heartbeat": "2026-10-31",
+ "gpt_alerts_since_heartbeat": 0,
  "gpt_last_status": "ok",
  "gpt_last_status_at": "10/31 00:50",
  "gpt_events": [
