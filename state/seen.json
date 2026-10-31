@@ -12841,6 +12841,19 @@
     "진주",
     "추락해"
    ]
+  },
+  "d364d9bba4b00539": {
+   "ts": 1793447600.48149,
+   "tok": [
+    "20",
+    "60",
+    "사망",
+    "송전탑",
+    "작업",
+    "조사",
+    "중대재해법",
+    "추락해"
+   ]
   }
  },
  "initialized": true,
@@ -12870,7 +12883,7 @@
  "last_gpt_heartbeat": "2026-10-31",
  "gpt_alerts_since_heartbeat": 2,
  "gpt_last_status": "ok",
- "gpt_last_status_at": "10/31 20:21",
+ "gpt_last_status_at": "10/31 20:53",
  "gpt_events": [
   {
    "ts": 1793150467.917386,
