@@ -12838,6 +12838,20 @@
     "지게차",
     "총력"
    ]
+  },
+  "633cbbbb2077ea7a": {
+   "ts": 1793445701.212255,
+   "tok": [
+    "20",
+    "60",
+    "교체하던",
+    "사망",
+    "송전탑",
+    "작업자",
+    "전선",
+    "진주",
+    "추락해"
+   ]
   }
  },
  "initialized": true,
@@ -12865,9 +12879,9 @@
  ],
  "sent_since_heartbeat": 0,
  "last_gpt_heartbeat": "2026-10-31",
- "gpt_alerts_since_heartbeat": 1,
+ "gpt_alerts_since_heartbeat": 2,
  "gpt_last_status": "ok",
- "gpt_last_status_at": "10/31 16:57",
+ "gpt_last_status_at": "10/31 20:21",
  "gpt_events": [
   {
    "ts": 1793144647.111025,
@@ -13001,6 +13015,15 @@
    "title": "제주 도로 조경작업장 40대 신호수 차량에 치어 숨져",
    "what": "제주 도로 조경작업 신호수 차량 치여 사망",
    "occurred": "10-30 10:06",
+   "updates": 0,
+   "co": ""
+  },
+  {
+   "ts": 1793445711.753222,
+   "when": "10/31 20:17",
+   "title": "진주 송전탑서 전선 교체하던 60대 근로자 20m 추락해 숨져",
+   "what": "진주 송전탑 전선교체 근로자 추락 사망",
+   "occurred": "10-31 17:05",
    "updates": 0,
    "co": ""
   }
