@@ -1,16 +1,5 @@
 {
  "seen": {
-  "a680eadb4af3de62": {
-   "ts": 1792879179.953917,
-   "tok": [
-    "60",
-    "석재공장",
-    "작업하던",
-    "지붕",
-    "추락",
-    "포천"
-   ]
-  },
   "b348dad898d7793c": {
    "ts": 1792881089.362244,
    "tok": [
@@ -12917,7 +12906,7 @@
   }
  },
  "initialized": true,
- "last_heartbeat": "2026-10-31",
+ "last_heartbeat": "2026-11-01",
  "events": [
   {
    "ts": 1792977146.397898,
@@ -12940,8 +12929,8 @@
   }
  ],
  "sent_since_heartbeat": 0,
- "last_gpt_heartbeat": "2026-10-31",
- "gpt_alerts_since_heartbeat": 2,
+ "last_gpt_heartbeat": "2026-11-01",
+ "gpt_alerts_since_heartbeat": 0,
  "gpt_last_status": "ok",
  "gpt_last_status_at": "11/01 01:44",
  "gpt_events": [
