@@ -12876,6 +12876,19 @@
     "적발",
     "특별단속"
    ]
+  },
+  "373d22d87d40f351": {
+   "ts": 1793409248.827149,
+   "tok": [
+    "40",
+    "도로",
+    "사망",
+    "신호수",
+    "제주",
+    "조경작업장",
+    "차량에",
+    "치어"
+   ]
   }
  },
  "initialized": true,
@@ -12903,9 +12916,9 @@
  ],
  "sent_since_heartbeat": 0,
  "last_gpt_heartbeat": "2026-10-31",
- "gpt_alerts_since_heartbeat": 0,
+ "gpt_alerts_since_heartbeat": 1,
  "gpt_last_status": "ok",
- "gpt_last_status_at": "10/31 00:50",
+ "gpt_last_status_at": "10/31 10:14",
  "gpt_events": [
   {
    "ts": 1793094609.744019,
@@ -13039,6 +13052,15 @@
    "title": "“물류창고 화재에 건물 붕괴까지”…",
    "what": "물류창고 화재로 건물 붕괴",
    "occurred": "",
+   "updates": 0,
+   "co": ""
+  },
+  {
+   "ts": 1793409258.502363,
+   "when": "10/31 10:02",
+   "title": "제주 도로 조경작업장 40대 신호수 차량에 치어 숨져",
+   "what": "제주 도로 조경작업 신호수 차량 치여 사망",
+   "occurred": "10-30 10:06",
    "updates": 0,
    "co": ""
   }
