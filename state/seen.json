@@ -13315,6 +13315,18 @@
     "전국",
     "중대재해"
    ]
+  },
+  "224eb3e18512b069": {
+   "ts": 1793615469.017944,
+   "tok": [
+    "60",
+    "건설현장",
+    "사망",
+    "쏟아져",
+    "작업자",
+    "창원",
+    "철근"
+   ]
   }
  },
  "initialized": true,
@@ -13324,7 +13336,7 @@
  "last_gpt_heartbeat": "2026-11-02",
  "gpt_alerts_since_heartbeat": 3,
  "gpt_last_status": "ok",
- "gpt_last_status_at": "11/02 19:15",
+ "gpt_last_status_at": "11/02 19:31",
  "gpt_events": [
   {
    "ts": 1793173820.773417,
