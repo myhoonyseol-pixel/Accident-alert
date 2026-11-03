@@ -12927,6 +12927,16 @@
     "쿠팡",
     "화재"
    ]
+  },
+  "84346f7c93626b82": {
+   "ts": 1793746104.722757,
+   "tok": [
+    "공장",
+    "사망",
+    "승용차",
+    "학원버스",
+    "화재"
+   ]
   }
  },
  "initialized": true,
@@ -12953,9 +12963,9 @@
  ],
  "sent_since_heartbeat": 0,
  "last_gpt_heartbeat": "2026-11-04",
- "gpt_alerts_since_heartbeat": 0,
+ "gpt_alerts_since_heartbeat": 1,
  "gpt_last_status": "ok",
- "gpt_last_status_at": "11/04 07:16",
+ "gpt_last_status_at": "11/04 07:48",
  "gpt_events": [
   {
    "ts": 1793316095.330198,
@@ -13088,6 +13098,15 @@
    "when": "11/04 06:35",
    "title": "서울 장위동 봉제공장 화재…50대 남성 1명 숨져",
    "what": "서울 장위동 봉제공장 화재로 남성 숨져",
+   "occurred": "",
+   "updates": 0,
+   "co": ""
+  },
+  {
+   "ts": 1793746113.243681,
+   "when": "11/04 06:38",
+   "title": "승용차·학원버스 '쾅'‥공장 화재 1명 사망",
+   "what": "공장 화재로 1명 사망",
    "occurred": "",
    "updates": 0,
    "co": ""
