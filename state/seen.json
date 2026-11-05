@@ -1,19 +1,5 @@
 {
  "seen": {
-  "367dd8517af3aabc": {
-   "ts": 1793311298.272106,
-   "tok": [
-    "30",
-    "90",
-    "과열",
-    "사망",
-    "사천",
-    "안전상황실",
-    "전기장판",
-    "추정",
-    "화재"
-   ]
-  },
   "6b4ced8bdce4d6c8": {
    "ts": 1793312264.048342,
    "tok": [
@@ -11571,7 +11557,7 @@
   }
  },
  "initialized": true,
- "last_heartbeat": "2026-11-05",
+ "last_heartbeat": "2026-11-06",
  "events": [
   {
    "ts": 1793700945.778499,
@@ -11629,9 +11615,9 @@
    "co": "HD현대삼호중공업"
   }
  ],
- "sent_since_heartbeat": 1,
- "last_gpt_heartbeat": "2026-11-05",
- "gpt_alerts_since_heartbeat": 4,
+ "sent_since_heartbeat": 0,
+ "last_gpt_heartbeat": "2026-11-06",
+ "gpt_alerts_since_heartbeat": 0,
  "gpt_last_status": "ok",
  "gpt_last_status_at": "11/06 06:50",
  "gpt_events": [
