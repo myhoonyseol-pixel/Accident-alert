@@ -11531,6 +11531,20 @@
     "폭발",
     "화재"
    ]
+  },
+  "9c08b6f0f8b473c1": {
+   "ts": 1793886843.956376,
+   "tok": [
+    "28",
+    "60",
+    "부산",
+    "아파트",
+    "작업자",
+    "조사",
+    "중대재해법",
+    "추락",
+    "층서"
+   ]
   }
  },
  "initialized": true,
@@ -11594,9 +11608,9 @@
  ],
  "sent_since_heartbeat": 1,
  "last_gpt_heartbeat": "2026-11-05",
- "gpt_alerts_since_heartbeat": 3,
+ "gpt_alerts_since_heartbeat": 4,
  "gpt_last_status": "ok",
- "gpt_last_status_at": "11/05 21:50",
+ "gpt_last_status_at": "11/05 22:54",
  "gpt_events": [
   {
    "ts": 1793660324.261592,
@@ -11732,6 +11746,15 @@
    "occurred": "11-05 13:43",
    "updates": 0,
    "co": "정일스톨트헤븐울산"
+  },
+  {
+   "ts": 1793886852.603359,
+   "when": "11/05 22:41",
+   "title": "부산 아파트 28층서 60대 노동자 추락사…중대재해법 조사",
+   "what": "부산 아파트서 노동자 추락사",
+   "occurred": "",
+   "updates": 0,
+   "co": ""
   }
  ],
  "gpt_silent": [
