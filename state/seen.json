@@ -10672,6 +10672,17 @@
     "조선소",
     "통영"
    ]
+  },
+  "881dd73a76fbb3f1": {
+   "ts": 1793990381.25758,
+   "tok": [
+    "모르",
+    "붕괴",
+    "언제",
+    "죽을지",
+    "청년",
+    "현대삼호"
+   ]
   }
  },
  "initialized": true,
@@ -10737,7 +10748,7 @@
  "last_gpt_heartbeat": "2026-11-06",
  "gpt_alerts_since_heartbeat": 1,
  "gpt_last_status": "ok",
- "gpt_last_status_at": "11/07 02:04",
+ "gpt_last_status_at": "11/07 03:39",
  "gpt_events": [
   {
    "ts": 1793700943.422833,
