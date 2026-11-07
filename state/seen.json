@@ -11408,6 +11408,17 @@
     "중태",
     "파열"
    ]
+  },
+  "a4616ae9b47fab13": {
+   "ts": 1794087205.379113,
+   "tok": [
+    "60",
+    "건설현장",
+    "남성",
+    "사망",
+    "양주",
+    "추락"
+   ]
   }
  },
  "initialized": true,
@@ -11471,9 +11482,9 @@
  ],
  "sent_since_heartbeat": 0,
  "last_gpt_heartbeat": "2026-11-07",
- "gpt_alerts_since_heartbeat": 5,
+ "gpt_alerts_since_heartbeat": 6,
  "gpt_last_status": "ok",
- "gpt_last_status_at": "11/07 21:17",
+ "gpt_last_status_at": "11/08 06:33",
  "gpt_events": [
   {
    "ts": 1793755222.265344,
@@ -11607,6 +11618,15 @@
    "title": "경기 안성시 공장 증축공사 현장서 50대 추락해 숨져",
    "what": "용접 노동자 안성 현장서 추락사",
    "occurred": "11-07 10:20",
+   "updates": 0,
+   "co": ""
+  },
+  {
+   "ts": 1794087218.17225,
+   "when": "11/08 06:20",
+   "title": "양주 공사현장에서 60대 남성 추락 사망",
+   "what": "양주 군부대 공사장서 60대 추락사",
+   "occurred": "11-07 15:03",
    "updates": 0,
    "co": ""
   }
