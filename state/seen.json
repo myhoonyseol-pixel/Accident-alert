@@ -11308,6 +11308,19 @@
     "특보",
     "화재"
    ]
+  },
+  "aa7696e19c661a2c": {
+   "ts": 1794044362.811685,
+   "tok": [
+    "50",
+    "건설현장",
+    "반도체",
+    "안성",
+    "업체",
+    "작업자",
+    "장비",
+    "추락"
+   ]
   }
  },
  "initialized": true,
@@ -11373,7 +11386,7 @@
  "last_gpt_heartbeat": "2026-11-07",
  "gpt_alerts_since_heartbeat": 5,
  "gpt_last_status": "ok",
- "gpt_last_status_at": "11/07 18:07",
+ "gpt_last_status_at": "11/07 18:39",
  "gpt_events": [
   {
    "ts": 1793755222.265344,
