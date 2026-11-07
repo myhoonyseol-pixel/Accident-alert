@@ -11343,6 +11343,19 @@
     "중태",
     "화상"
    ]
+  },
+  "093070abe3e50d98": {
+   "ts": 1794046262.584347,
+   "tok": [
+    "50",
+    "건설현장",
+    "고소작업대에",
+    "부딪혀",
+    "사망",
+    "안성",
+    "용접하던",
+    "추락"
+   ]
   }
  },
  "initialized": true,
@@ -11408,7 +11421,7 @@
  "last_gpt_heartbeat": "2026-11-07",
  "gpt_alerts_since_heartbeat": 5,
  "gpt_last_status": "ok",
- "gpt_last_status_at": "11/07 18:39",
+ "gpt_last_status_at": "11/07 19:11",
  "gpt_events": [
   {
    "ts": 1793755222.265344,
