@@ -11103,6 +11103,18 @@
     "입는",
     "재활로봇"
    ]
+  },
+  "d0ca5443b8c25faa": {
+   "ts": 1794172834.493683,
+   "tok": [
+    "20",
+    "만에",
+    "번째",
+    "사망",
+    "올해",
+    "작업자",
+    "현대그룹"
+   ]
   }
  },
  "initialized": true,
@@ -11201,13 +11213,32 @@
    "reports": 1,
    "casualty": true,
    "co": ""
+  },
+  {
+   "ts": 1794172846.603912,
+   "when": "11/09 06:04",
+   "title": "HD현대그룹 올해 9번째 사망사고…2주 만에 또 20대 노동자 숨져",
+   "updates": 0,
+   "tok": [
+    "20",
+    "만에",
+    "번째",
+    "사망",
+    "올해",
+    "작업자",
+    "현대그룹"
+   ],
+   "link": "https://realty.chosun.com/site/data/html_dir/2026/11/06/2026110602588.html",
+   "reports": 1,
+   "casualty": true,
+   "co": "HD현대삼호"
   }
  ],
- "sent_since_heartbeat": 2,
+ "sent_since_heartbeat": 3,
  "last_gpt_heartbeat": "2026-11-08",
- "gpt_alerts_since_heartbeat": 5,
+ "gpt_alerts_since_heartbeat": 6,
  "gpt_last_status": "ok",
- "gpt_last_status_at": "11/09 05:26",
+ "gpt_last_status_at": "11/09 06:20",
  "gpt_events": [
   {
    "ts": 1793839347.979949,
@@ -11343,6 +11374,15 @@
    "occurred": "11-08 12:59",
    "updates": 0,
    "co": "산림조합중앙회"
+  },
+  {
+   "ts": 1794172844.156434,
+   "when": "11/09 06:04",
+   "title": "HD현대그룹 올해 9번째 사망사고…2주 만에 또 20대 노동자 숨져",
+   "what": "영암 HD현대삼호 조선소서 용접공 사망",
+   "occurred": "11-03 18:10",
+   "updates": 0,
+   "co": "HD현대삼호"
   }
  ],
  "gpt_silent": [
