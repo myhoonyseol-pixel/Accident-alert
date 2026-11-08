@@ -11098,10 +11098,22 @@
     "중대재해에",
     "집행유예"
    ]
+  },
+  "b806ddaa634ade85": {
+   "ts": 1794175708.354633,
+   "tok": [
+    "TBM",
+    "기록",
+    "예방",
+    "작업장",
+    "전문",
+    "중대재해",
+    "활용"
+   ]
   }
  },
  "initialized": true,
- "last_heartbeat": "2026-11-08",
+ "last_heartbeat": "2026-11-09",
  "events": [
   {
    "ts": 1793700945.778499,
@@ -11217,11 +11229,11 @@
    "co": "HD현대삼호"
   }
  ],
- "sent_since_heartbeat": 3,
- "last_gpt_heartbeat": "2026-11-08",
- "gpt_alerts_since_heartbeat": 6,
+ "sent_since_heartbeat": 0,
+ "last_gpt_heartbeat": "2026-11-09",
+ "gpt_alerts_since_heartbeat": 0,
  "gpt_last_status": "ok",
- "gpt_last_status_at": "11/09 06:36",
+ "gpt_last_status_at": "11/09 07:08",
  "gpt_events": [
   {
    "ts": 1793875430.514961,
@@ -11360,15 +11372,6 @@
   }
  ],
  "gpt_silent": [
-  {
-   "ts": 1794103606.452909,
-   "when": "11/08 11:02",
-   "title": "소독 확인부터 끼임사고 예방까지…농촌 현장문제 R&D로 푼다",
-   "what": "농촌 현장 끼임사고 예방기술 개발",
-   "occurred": "",
-   "co": "",
-   "why": "판단1·농업 연구개발 기사"
-  },
   {
    "ts": 1794103606.452914,
    "when": "11/08 10:54",
@@ -11539,6 +11542,15 @@
    "occurred": "",
    "co": "",
    "why": "판단2·중대재해 정책 좌담회"
+  },
+  {
+   "ts": 1794175715.750681,
+   "when": "11/09 07:00",
+   "title": "[전문가 視覺] 중대재해 예방 '작업장 TBM 기록', AI 활용을",
+   "what": "전문가가 건설현장 TBM AI 활용 제안",
+   "occurred": "",
+   "co": "",
+   "why": "판단2·사고 아닌 예방 칼럼"
   }
  ]
 }
