@@ -10270,6 +10270,48 @@
     "작업자",
     "치인"
    ]
+  },
+  "3db61beea7a200de": {
+   "ts": 1794215594.072094,
+   "tok": [
+    "건설현장",
+    "레미콘",
+    "사망",
+    "아파트",
+    "양산",
+    "작업자",
+    "차량",
+    "충돌"
+   ]
+  },
+  "d286c0cc1af94220": {
+   "ts": 1794215594.07365,
+   "tok": [
+    "50",
+    "건설현장",
+    "깔림사고",
+    "레미콘",
+    "사망",
+    "양산",
+    "작업자",
+    "차량",
+    "현대엔지니어링"
+   ]
+  },
+  "972a1d478dcdba56": {
+   "ts": 1794215594.074996,
+   "tok": [
+    "20",
+    "금지",
+    "모든",
+    "발판",
+    "사망",
+    "제거",
+    "청소차",
+    "청주시",
+    "탑승",
+    "환경미화원"
+   ]
   }
  },
  "initialized": true,
@@ -10426,7 +10468,7 @@
     "현대엔지니어링"
    ],
    "link": "https://news.google.com/rss/articles/CBMic0FVX3lxTE9mcVhSR0tPeElWRWItWnlybExIZTFacTU5Xy1WU0JINFI5TG0tUHhla0gteGhmYmRabUxwN182Qlh0Mkc1ZWZGRGoySGU4NHBsTlFjVUNiNkQ2dURUR2NJZjByRHRrU3lRRVRYcWF3TkJldWs?oc=5",
-   "reports": 2,
+   "reports": 3,
    "casualty": true,
    "co": "현대엔지니어링"
   }
