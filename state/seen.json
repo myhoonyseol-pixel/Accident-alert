@@ -10312,6 +10312,39 @@
     "탑승",
     "환경미화원"
    ]
+  },
+  "be321ebf5043d124": {
+   "ts": 1794216541.554196,
+   "tok": [
+    "동선",
+    "레미콘",
+    "사망",
+    "신호수",
+    "양산",
+    "이탈",
+    "지정",
+    "현대엔지니어링"
+   ]
+  },
+  "2b8743cdbdbd2747": {
+   "ts": 1794216541.555798,
+   "tok": [
+    "건설현장",
+    "사망",
+    "양산",
+    "작업자",
+    "현대엔지니어링"
+   ]
+  },
+  "c7ad03f8912de4d1": {
+   "ts": 1794216541.557894,
+   "tok": [
+    "공장",
+    "로보틱스",
+    "본사",
+    "사망",
+    "중대재해"
+   ]
   }
  },
  "initialized": true,
@@ -10468,16 +10501,16 @@
     "현대엔지니어링"
    ],
    "link": "https://news.google.com/rss/articles/CBMic0FVX3lxTE9mcVhSR0tPeElWRWItWnlybExIZTFacTU5Xy1WU0JINFI5TG0tUHhla0gteGhmYmRabUxwN182Qlh0Mkc1ZWZGRGoySGU4NHBsTlFjVUNiNkQ2dURUR2NJZjByRHRrU3lRRVRYcWF3TkJldWs?oc=5",
-   "reports": 3,
+   "reports": 4,
    "casualty": true,
    "co": "현대엔지니어링"
   }
  ],
  "sent_since_heartbeat": 2,
  "last_gpt_heartbeat": "2026-11-09",
- "gpt_alerts_since_heartbeat": 5,
+ "gpt_alerts_since_heartbeat": 6,
  "gpt_last_status": "ok",
- "gpt_last_status_at": "11/09 17:41",
+ "gpt_last_status_at": "11/09 18:29",
  "gpt_events": [
   {
    "ts": 1794014603.846315,
@@ -10613,6 +10646,15 @@
    "occurred": "",
    "updates": 0,
    "co": "현대엔지니어링"
+  },
+  {
+   "ts": 1794216548.578911,
+   "when": "11/09 18:11",
+   "title": "HT로보틱스, 본사 공장서 중대재해 발생…1명 사망",
+   "what": "HT로보틱스 본사 공장서 1명 사망",
+   "occurred": "",
+   "updates": 0,
+   "co": "HT로보틱스"
   }
  ],
  "gpt_silent": [
