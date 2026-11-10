@@ -1,29 +1,5 @@
 {
  "seen": {
-  "222beef04858da0c": {
-   "ts": 1793700932.857745,
-   "tok": [
-    "13",
-    "부상",
-    "사망",
-    "청주공장",
-    "폭발",
-    "화학"
-   ]
-  },
-  "90d28cc5fc43f312": {
-   "ts": 1793700932.859892,
-   "tok": [
-    "강화",
-    "로지스틱스",
-    "물류센터",
-    "인천시",
-    "잇단",
-    "청라",
-    "화재관리",
-    "화재에"
-   ]
-  },
   "7fd0909542bdc89c": {
    "ts": 1793701894.780808,
    "tok": [
@@ -10747,24 +10723,6 @@
  "initialized": true,
  "last_heartbeat": "2026-11-10",
  "events": [
-  {
-   "ts": 1793700945.778499,
-   "when": "11/03 12:12",
-   "title": "LG화학 청주공장서 폭발 사고…1명 사망·13명 중경상",
-   "updates": 0,
-   "tok": [
-    "13",
-    "부상",
-    "사망",
-    "청주공장",
-    "폭발",
-    "화학"
-   ],
-   "link": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE1jQTNoSDEzUkFqOWJIaVoyYmdfdXlsMEtxZml0dzF0eE1TT2QxMjlLb1Ftc3EwanZfd3NkSnVWLXdmZjl2alk4dENyN0llYUx2UTJCVg?oc=5",
-   "reports": 1,
-   "casualty": true,
-   "co": "LG화학"
-  },
   {
    "ts": 1793802046.694721,
    "when": "11/04 21:14",
