@@ -10890,6 +10890,19 @@
     "추락",
     "톤짜리"
    ]
+  },
+  "0b255528a908c298": {
+   "ts": 1794334334.647328,
+   "tok": [
+    "건설현장",
+    "됐다고",
+    "사망",
+    "세종",
+    "악몽",
+    "안성",
+    "얼마나",
+    "현대엔지니어링"
+   ]
   }
  },
  "initialized": true,
@@ -11035,9 +11048,9 @@
  ],
  "sent_since_heartbeat": 0,
  "last_gpt_heartbeat": "2026-11-10",
- "gpt_alerts_since_heartbeat": 10,
+ "gpt_alerts_since_heartbeat": 11,
  "gpt_last_status": "ok",
- "gpt_last_status_at": "11/10 23:58",
+ "gpt_last_status_at": "11/11 03:12",
  "gpt_events": [
   {
    "ts": 1794196601.948145,
@@ -11173,6 +11186,15 @@
    "occurred": "",
    "updates": 1,
    "co": "HD현대삼호"
+  },
+  {
+   "ts": 1794334342.28588,
+   "when": "11/10 19:08",
+   "title": "\"세종~안성 악몽 얼마나 됐다고\"… 현대엔지니어링 공사현장서 또 사망사고",
+   "what": "현대엔지니어링 공사현장서 노동자 사망",
+   "occurred": "",
+   "updates": 0,
+   "co": "현대엔지니어링"
   }
  ],
  "gpt_silent": [
