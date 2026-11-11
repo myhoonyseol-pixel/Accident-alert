@@ -1,16 +1,5 @@
 {
  "seen": {
-  "7fbf60cc6bd023ce": {
-   "ts": 1793829774.830308,
-   "tok": [
-    "고등학교",
-    "과학실",
-    "광주",
-    "부상",
-    "안전상황실",
-    "폭발"
-   ]
-  },
   "e9cbe4fc792e9aec": {
    "ts": 1793830731.173552,
    "tok": [
@@ -11463,7 +11452,7 @@
   }
  },
  "initialized": true,
- "last_heartbeat": "2026-11-11",
+ "last_heartbeat": "2026-11-12",
  "events": [
   {
    "ts": 1793842271.489419,
@@ -11604,9 +11593,9 @@
    "co": "LG화학"
   }
  ],
- "sent_since_heartbeat": 2,
- "last_gpt_heartbeat": "2026-11-11",
- "gpt_alerts_since_heartbeat": 8,
+ "sent_since_heartbeat": 0,
+ "last_gpt_heartbeat": "2026-11-12",
+ "gpt_alerts_since_heartbeat": 0,
  "gpt_last_status": "ok",
  "gpt_last_status_at": "11/12 06:16",
  "gpt_events": [
