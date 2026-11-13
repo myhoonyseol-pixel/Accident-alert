@@ -1,17 +1,5 @@
 {
  "seen": {
-  "ce86fc55c0fe3fd9": {
-   "ts": 1794001009.069853,
-   "tok": [
-    "28",
-    "미화원",
-    "발판",
-    "사망",
-    "쓰레기차",
-    "탔다",
-    "화물차에"
-   ]
-  },
   "805d2a69b9065b6c": {
    "ts": 1794010508.602967,
    "tok": [
@@ -13775,7 +13763,7 @@
   }
  },
  "initialized": true,
- "last_heartbeat": "2026-11-13",
+ "last_heartbeat": "2026-11-14",
  "events": [
   {
    "ts": 1794101666.502404,
@@ -13897,8 +13885,8 @@
   }
  ],
  "sent_since_heartbeat": 0,
- "last_gpt_heartbeat": "2026-11-13",
- "gpt_alerts_since_heartbeat": 4,
+ "last_gpt_heartbeat": "2026-11-14",
+ "gpt_alerts_since_heartbeat": 0,
  "gpt_last_status": "ok",
  "gpt_last_status_at": "11/14 02:58",
  "gpt_events": [
