@@ -13799,6 +13799,18 @@
     "작업자",
     "추락해"
    ]
+  },
+  "b5061ff99e109a25": {
+   "ts": 1794612824.181867,
+   "tok": [
+    "40",
+    "거제",
+    "건조",
+    "공장",
+    "선박",
+    "작업자",
+    "추락"
+   ]
   }
  },
  "initialized": true,
@@ -13927,7 +13939,7 @@
  "last_gpt_heartbeat": "2026-11-14",
  "gpt_alerts_since_heartbeat": 2,
  "gpt_last_status": "ok",
- "gpt_last_status_at": "11/14 07:46",
+ "gpt_last_status_at": "11/14 08:33",
  "gpt_events": [
   {
    "ts": 1794361814.591337,
