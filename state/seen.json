@@ -1,19 +1,5 @@
 {
  "seen": {
-  "a4716d6a0135d3ac": {
-   "ts": 1794089107.497899,
-   "tok": [
-    "CCTV",
-    "끓는",
-    "넘더니",
-    "물에",
-    "빠져",
-    "안전선",
-    "엇갈린",
-    "온수관",
-    "전신화상"
-   ]
-  },
   "8a7b09db6bab00cd": {
    "ts": 1794091011.518719,
    "tok": [
@@ -13013,10 +12999,25 @@
     "작업자",
     "크레"
    ]
+  },
+  "0d8ddd1dea2bf9ee": {
+   "ts": 1794694113.108926,
+   "tok": [
+    "60",
+    "경주",
+    "고리에",
+    "공장",
+    "맞아",
+    "부품",
+    "사망",
+    "선박",
+    "작업자",
+    "크레"
+   ]
   }
  },
  "initialized": true,
- "last_heartbeat": "2026-11-14",
+ "last_heartbeat": "2026-11-15",
  "events": [
   {
    "ts": 1794101666.502404,
@@ -13156,21 +13157,12 @@
    "co": "삼성중공업"
   }
  ],
- "sent_since_heartbeat": 1,
- "last_gpt_heartbeat": "2026-11-14",
- "gpt_alerts_since_heartbeat": 5,
+ "sent_since_heartbeat": 0,
+ "last_gpt_heartbeat": "2026-11-15",
+ "gpt_alerts_since_heartbeat": 0,
  "gpt_last_status": "ok",
  "gpt_last_status_at": "11/15 06:52",
  "gpt_events": [
-  {
-   "ts": 1794368546.256901,
-   "when": "11/11 12:27",
-   "title": "평택 도로공사 현장서 토사 매몰 사고…60대 추정 남성 심정지",
-   "what": "평택 도로공사 현장 토사 매몰",
-   "occurred": "11-11 11:26",
-   "updates": 0,
-   "co": ""
-  },
   {
    "ts": 1794376646.958242,
    "when": "11/11 14:34",
