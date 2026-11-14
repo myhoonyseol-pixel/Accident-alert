@@ -1,17 +1,5 @@
 {
  "seen": {
-  "07f6364bb2657029": {
-   "ts": 1794021245.011608,
-   "tok": [
-    "감독",
-    "강화",
-    "노동장관",
-    "무관용",
-    "반복",
-    "사업장",
-    "중대재해"
-   ]
-  },
   "5855c43b74a07ad2": {
    "ts": 1794022190.036819,
    "tok": [
@@ -13560,6 +13548,18 @@
     "제지업계",
     "한솔제지"
    ]
+  },
+  "beef962f929875da": {
+   "ts": 1794626335.838183,
+   "tok": [
+    "40",
+    "사망",
+    "사외협력사",
+    "삼성중공업",
+    "외국",
+    "작업자",
+    "추락"
+   ]
   }
  },
  "initialized": true,
@@ -13682,13 +13682,32 @@
    "reports": 1,
    "casualty": true,
    "co": "LG화학"
+  },
+  {
+   "ts": 1794626347.321054,
+   "when": "11/14 11:57",
+   "title": "삼성중공업 사외협력사서 40대 외국인 노동자 추락 사망",
+   "updates": 0,
+   "tok": [
+    "40",
+    "사망",
+    "사외협력사",
+    "삼성중공업",
+    "외국",
+    "작업자",
+    "추락"
+   ],
+   "link": "https://news.google.com/rss/articles/CBMibkFVX3lxTE42Zl83eXpDUHJSYlZJZDV2SmIxUFJPcXlycXFqY01kQjYxRTJaUjRUVHFpcGE2SDl5Yk16QUJGXzlsUFJKQzNkd2JwOEI2MVpZeVlwSVRCSEVzbGhmUkFZdkUtRHZVYlFFX0JJTXJ3?oc=5",
+   "reports": 1,
+   "casualty": true,
+   "co": "삼성중공업"
   }
  ],
- "sent_since_heartbeat": 0,
+ "sent_since_heartbeat": 1,
  "last_gpt_heartbeat": "2026-11-14",
- "gpt_alerts_since_heartbeat": 2,
+ "gpt_alerts_since_heartbeat": 3,
  "gpt_last_status": "ok",
- "gpt_last_status_at": "11/14 12:00",
+ "gpt_last_status_at": "11/14 12:19",
  "gpt_events": [
   {
    "ts": 1794361814.591337,
@@ -13822,8 +13841,8 @@
    "title": "거제 선박건조 사업장, 40대 외국인 근로자 자재 옮기다 추락 숨져",
    "what": "거제 선박건조장 근로자 자재 운반 중 추락사",
    "occurred": "11-13 18:24",
-   "updates": 0,
-   "co": ""
+   "updates": 1,
+   "co": "삼성중공업"
   }
  ],
  "gpt_silent": [
