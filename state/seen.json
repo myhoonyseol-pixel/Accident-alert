@@ -1,32 +1,5 @@
 {
  "seen": {
-  "68bad869446e23a0": {
-   "ts": 1794262079.814848,
-   "tok": [
-    "28",
-    "감독",
-    "대상",
-    "뒤에",
-    "반복",
-    "사망",
-    "오른",
-    "이어져",
-    "전국",
-    "현대건설"
-   ]
-  },
-  "8146445d0414b5cc": {
-   "ts": 1794262079.816591,
-   "tok": [
-    "10",
-    "33",
-    "경부고속도",
-    "동탄터널",
-    "부상",
-    "안전상황실",
-    "추돌"
-   ]
-  },
   "071939a0526da625": {
    "ts": 1794266840.475191,
    "tok": [
@@ -11892,7 +11865,7 @@
   }
  },
  "initialized": true,
- "last_heartbeat": "2026-11-16",
+ "last_heartbeat": "2026-11-17",
  "events": [
   {
    "ts": 1794359872.331137,
@@ -11933,8 +11906,8 @@
   }
  ],
  "sent_since_heartbeat": 0,
- "last_gpt_heartbeat": "2026-11-16",
- "gpt_alerts_since_heartbeat": 1,
+ "last_gpt_heartbeat": "2026-11-17",
+ "gpt_alerts_since_heartbeat": 0,
  "gpt_last_status": "ok",
  "gpt_last_status_at": "11/17 06:38",
  "gpt_events": [
