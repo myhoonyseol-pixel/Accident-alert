@@ -1,19 +1,5 @@
 {
  "seen": {
-  "0bb0e5607a3ef619": {
-   "ts": 1794348606.60503,
-   "tok": [
-    "40",
-    "공장",
-    "구조물",
-    "대형",
-    "부산",
-    "사망",
-    "작업자",
-    "철제",
-    "추락"
-   ]
-  },
   "dda441b384711ace": {
    "ts": 1794350509.423848,
    "tok": [
@@ -11285,7 +11271,7 @@
   }
  },
  "initialized": true,
- "last_heartbeat": "2026-11-17",
+ "last_heartbeat": "2026-11-18",
  "events": [
   {
    "ts": 1794359872.331137,
@@ -11326,8 +11312,8 @@
   }
  ],
  "sent_since_heartbeat": 0,
- "last_gpt_heartbeat": "2026-11-17",
- "gpt_alerts_since_heartbeat": 1,
+ "last_gpt_heartbeat": "2026-11-18",
+ "gpt_alerts_since_heartbeat": 0,
  "gpt_last_status": "ok",
  "gpt_last_status_at": "11/18 06:44",
  "gpt_events": [
