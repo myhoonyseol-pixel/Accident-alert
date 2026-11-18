@@ -10252,7 +10252,7 @@
   }
  },
  "initialized": true,
- "last_heartbeat": "2026-11-18",
+ "last_heartbeat": "2026-11-19",
  "events": [
   {
    "ts": 1794626347.321054,
@@ -10292,9 +10292,9 @@
    "co": "한화,태영건설"
   }
  ],
- "sent_since_heartbeat": 1,
- "last_gpt_heartbeat": "2026-11-18",
- "gpt_alerts_since_heartbeat": 3,
+ "sent_since_heartbeat": 0,
+ "last_gpt_heartbeat": "2026-11-19",
+ "gpt_alerts_since_heartbeat": 0,
  "gpt_last_status": "ok",
  "gpt_last_status_at": "11/19 06:36",
  "gpt_events": [
