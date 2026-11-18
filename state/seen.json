@@ -10860,6 +10860,17 @@
     "사망",
     "올해"
    ]
+  },
+  "649234c3159075b3": {
+   "ts": 1794974965.667738,
+   "tok": [
+    "30",
+    "건설현장",
+    "마포구",
+    "아파트",
+    "재건축",
+    "추락"
+   ]
   }
  },
  "initialized": true,
@@ -10887,9 +10898,9 @@
  ],
  "sent_since_heartbeat": 0,
  "last_gpt_heartbeat": "2026-11-18",
- "gpt_alerts_since_heartbeat": 0,
+ "gpt_alerts_since_heartbeat": 1,
  "gpt_last_status": "ok",
- "gpt_last_status_at": "11/18 11:34",
+ "gpt_last_status_at": "11/18 13:09",
  "gpt_events": [
   {
    "ts": 1794390109.809964,
@@ -11025,6 +11036,15 @@
    "occurred": "11-16",
    "updates": 0,
    "co": "태영건설"
+  },
+  {
+   "ts": 1794974974.999711,
+   "when": "11/18 12:58",
+   "title": "[단독] 마포구 재건축 아파트 공사장서 30대 추락사",
+   "what": "30대 작업자 마포구 공사장서 추락사",
+   "occurred": "11-18 08:50",
+   "updates": 0,
+   "co": ""
   }
  ],
  "gpt_silent": [
