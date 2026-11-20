@@ -9330,6 +9330,19 @@
     "점검받고",
     "추락방지조치"
    ]
+  },
+  "7512b2629c217fb1": {
+   "ts": 1795157000.749997,
+   "tok": [
+    "40",
+    "강변북",
+    "방음벽",
+    "사망",
+    "서울",
+    "작업",
+    "추락",
+    "헛디뎌"
+   ]
   }
  },
  "initialized": true,
@@ -9377,7 +9390,7 @@
  "last_gpt_heartbeat": "2026-11-20",
  "gpt_alerts_since_heartbeat": 1,
  "gpt_last_status": "ok",
- "gpt_last_status_at": "11/20 15:27",
+ "gpt_last_status_at": "11/20 15:43",
  "gpt_events": [
   {
    "ts": 1794569448.586522,
