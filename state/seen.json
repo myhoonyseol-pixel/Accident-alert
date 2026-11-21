@@ -9093,6 +9093,20 @@
     "안전",
     "추락"
    ]
+  },
+  "18425a2660969a05": {
+   "ts": 1795293049.174562,
+   "tok": [
+    "55",
+    "교체하다",
+    "노동",
+    "떨어졌길래",
+    "아래",
+    "어떻게",
+    "조명",
+    "천장",
+    "추락한"
+   ]
   }
  },
  "initialized": true,
@@ -9121,7 +9135,7 @@
  "last_gpt_heartbeat": "2026-11-21",
  "gpt_alerts_since_heartbeat": 3,
  "gpt_last_status": "ok",
- "gpt_last_status_at": "11/22 02:37",
+ "gpt_last_status_at": "11/22 05:31",
  "gpt_events": [
   {
    "ts": 1794693161.411589,
