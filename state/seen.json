@@ -1,31 +1,5 @@
 {
  "seen": {
-  "08e69dac030b6998": {
-   "ts": 1794693150.159607,
-   "tok": [
-    "60",
-    "경주",
-    "고리",
-    "공장",
-    "빠져",
-    "사망",
-    "선박부품",
-    "작업자",
-    "크레"
-   ]
-  },
-  "c1601bdb08d7dfde": {
-   "ts": 1794693150.161468,
-   "tok": [
-    "60",
-    "경주",
-    "공장",
-    "사망",
-    "작업",
-    "작업자",
-    "크레"
-   ]
-  },
   "0d8ddd1dea2bf9ee": {
    "ts": 1794694113.108926,
    "tok": [
@@ -9139,7 +9113,7 @@
   }
  },
  "initialized": true,
- "last_heartbeat": "2026-11-21",
+ "last_heartbeat": "2026-11-22",
  "events": [
   {
    "ts": 1794984596.154675,
@@ -9161,20 +9135,11 @@
   }
  ],
  "sent_since_heartbeat": 0,
- "last_gpt_heartbeat": "2026-11-21",
- "gpt_alerts_since_heartbeat": 3,
+ "last_gpt_heartbeat": "2026-11-22",
+ "gpt_alerts_since_heartbeat": 0,
  "gpt_last_status": "ok",
  "gpt_last_status_at": "11/22 06:18",
  "gpt_events": [
-  {
-   "ts": 1794693161.411589,
-   "when": "11/15 06:48",
-   "title": "경주 선박부품 공장서 크레인 고리 빠져…60대 작업자 사망",
-   "what": "경주 공장 작업자 크레인 고리에 맞아 사망",
-   "occurred": "11-14 09:02",
-   "updates": 0,
-   "co": ""
-  },
   {
    "ts": 1794860335.518063,
    "when": "11/17 00:56",
