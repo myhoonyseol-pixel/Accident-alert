@@ -9091,6 +9091,19 @@
     "작업자",
     "추락"
    ]
+  },
+  "714a95df569db842": {
+   "ts": 1795282616.223537,
+   "tok": [
+    "건설현장",
+    "국립",
+    "도마에",
+    "새만금",
+    "수목원",
+    "실태",
+    "안전",
+    "추락"
+   ]
   }
  },
  "initialized": true,
@@ -9119,7 +9132,7 @@
  "last_gpt_heartbeat": "2026-11-21",
  "gpt_alerts_since_heartbeat": 3,
  "gpt_last_status": "ok",
- "gpt_last_status_at": "11/22 02:21",
+ "gpt_last_status_at": "11/22 02:37",
  "gpt_events": [
   {
    "ts": 1794693161.411589,
