@@ -9061,6 +9061,20 @@
     "작업자",
     "추락해"
    ]
+  },
+  "36c1972090af9c3e": {
+   "ts": 1795234594.702084,
+   "tok": [
+    "43",
+    "공장",
+    "만에",
+    "시간",
+    "진화",
+    "천안",
+    "폐기물",
+    "플라스틱",
+    "화재"
+   ]
   }
  },
  "initialized": true,
@@ -9087,9 +9101,9 @@
  ],
  "sent_since_heartbeat": 0,
  "last_gpt_heartbeat": "2026-11-21",
- "gpt_alerts_since_heartbeat": 1,
+ "gpt_alerts_since_heartbeat": 2,
  "gpt_last_status": "ok",
- "gpt_last_status_at": "11/21 11:10",
+ "gpt_last_status_at": "11/21 13:16",
  "gpt_events": [
   {
    "ts": 1794678818.43644,
@@ -9216,6 +9230,15 @@
    "occurred": "",
    "updates": 0,
    "co": "한화건설"
+  },
+  {
+   "ts": 1795234606.221912,
+   "when": "11/21 12:42",
+   "title": "천안 플라스틱 폐기물 공장서 화재…2시간 43분 만에 진화",
+   "what": "천안 플라스틱 폐기물 공장서 화재 발생",
+   "occurred": "",
+   "updates": 0,
+   "co": ""
   }
  ],
  "gpt_silent": [
