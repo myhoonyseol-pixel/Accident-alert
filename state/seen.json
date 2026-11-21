@@ -1,17 +1,5 @@
 {
  "seen": {
-  "beef962f929875da": {
-   "ts": 1794626335.838183,
-   "tok": [
-    "40",
-    "사망",
-    "사외협력사",
-    "삼성중공업",
-    "외국",
-    "작업자",
-    "추락"
-   ]
-  },
   "37c6eae33ee52d9c": {
    "ts": 1794632014.107702,
    "tok": [
@@ -9061,30 +9049,23 @@
     "추락",
     "한화"
    ]
+  },
+  "db9f23d565466311": {
+   "ts": 1795231751.19472,
+   "tok": [
+    "60",
+    "건설현장",
+    "국립새만금수목원",
+    "김제",
+    "사망",
+    "작업자",
+    "추락해"
+   ]
   }
  },
  "initialized": true,
  "last_heartbeat": "2026-11-21",
  "events": [
-  {
-   "ts": 1794626347.321054,
-   "when": "11/14 11:57",
-   "title": "삼성중공업 사외협력사서 40대 외국인 노동자 추락 사망",
-   "updates": 0,
-   "tok": [
-    "40",
-    "사망",
-    "사외협력사",
-    "삼성중공업",
-    "외국",
-    "작업자",
-    "추락"
-   ],
-   "link": "https://news.google.com/rss/articles/CBMibkFVX3lxTE42Zl83eXpDUHJSYlZJZDV2SmIxUFJPcXlycXFqY01kQjYxRTJaUjRUVHFpcGE2SDl5Yk16QUJGXzlsUFJKQzNkd2JwOEI2MVpZeVlwSVRCSEVzbGhmUkFZdkUtRHZVYlFFX0JJTXJ3?oc=5",
-   "reports": 3,
-   "casualty": true,
-   "co": "삼성중공업"
-  },
   {
    "ts": 1794984596.154675,
    "when": "11/18 15:38",
