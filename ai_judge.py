@@ -63,6 +63,10 @@ import filters
 API_URL = "https://api.anthropic.com/v1/messages"
 API_VERSION = "2023-06-01"
 
+# 이번 실행에서 Claude 호출이 실패한 이유. None=부르지 않음, ""=정상.
+# main.py 가 이걸 보고 본인 방에 '판정 중단/복구'를 알립니다. (2026-11-23 크레딧 소진)
+LAST_ERROR = None
+
 SYSTEM_PROMPT = """너는 건설회사 안전보건 담당자다.
 방금 일어난 산업현장 사고를 몇 분 안에 사내에 알리는 것이 임무다.
 기사 제목과 본문 앞부분을 받는다. 본문이 없으면 제목만으로 판단한다.
@@ -251,14 +255,17 @@ def judge(candidates, cfg, recent_events=None):
       skip·dup 으로 판정된 건은 목록에서 빠집니다.
       알 수 없는 값이 오면 new 로 봅니다(놓치는 것보다 헛알림이 낫다).
     """
+    global LAST_ERROR
     recent_events = recent_events or []
 
     if not getattr(cfg, "AI_ENABLED", False) or not candidates:
         return [(c[0], c[1], c[2], c[3], {"v": "new", "e": -1, "chg": ""})
                 for c in candidates]
 
+    LAST_ERROR = ""
     api_key = os.environ.get("ANTHROPIC_API_KEY", "").strip()
     if not api_key:
+        LAST_ERROR = "ANTHROPIC_API_KEY 없음"
         # 열쇠가 없으면 AI는 못 쓰지만, 잡기사 전체를 속보로 보내지는 않습니다.
         print("[ai] ANTHROPIC_API_KEY 가 없어 제목 안전장치로 판단합니다", file=sys.stderr)
         out = []
@@ -485,6 +492,7 @@ def _validate_update(cand, v, recent_events, cfg, company, occurred):
 
 def _judge_batch(candidates, cfg, recent_events, api_key, retry_missing=True):
     """기사 몇 건을 한 번에 묻습니다. judge() 가 나눠서 부릅니다."""
+    global LAST_ERROR
     parts = []
     if recent_events:
         parts.append("[이미 보낸 사고]")
@@ -565,6 +573,7 @@ def _judge_batch(candidates, cfg, recent_events, api_key, retry_missing=True):
                 time.sleep(2)
 
     if verdicts is None:
+        LAST_ERROR = str(last_err)
         print(f"[ai] 판정 실패 — 제목 안전장치로 fail-open 여부를 결정합니다: "
               f"{last_err}", file=sys.stderr)
         out = []

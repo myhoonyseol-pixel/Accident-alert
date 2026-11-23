@@ -703,6 +703,49 @@ def record_gpt_status(state, results):
     state["gpt_last_status_at"] = datetime.now(KST).strftime("%m/%d %H:%M")
 
 
+def _claude_error_reason(err):
+    """Claude 실패 원인을 사람이 알아볼 말로 바꿉니다."""
+    if "credit balance" in err:
+        return "크레딧 부족 — Anthropic 콘솔 Plans & Billing에서 충전 필요"
+    if "ANTHROPIC_API_KEY 없음" in err or "HTTP 401" in err:
+        return "API 키 문제 — GitHub Secrets의 ANTHROPIC_API_KEY 확인"
+    return f"API 오류 — {err[:80]}"
+
+
+def report_claude_health(state):
+    """Claude 판정이 멈추거나 돌아오면 본인 방(GPT 방)에 한 번씩만 알립니다.
+
+    2026-11-23 크레딧이 바닥났을 때 수집·GPT 방은 돌았지만 단체방은 경고 없이
+    멈췄습니다. 실패 판정에는 사망자·회사가 없어 단체방 기준을 못 넘기 때문입니다.
+    크레딧·키 문제는 바로, 그 밖의 오류는 일시 장애일 수 있어 2회차 연속일 때 알립니다.
+    """
+    err = getattr(ai_judge, "LAST_ERROR", None)
+    if err is None:                      # 이번 회차에 Claude를 부르지 않음
+        return
+    down = state.get("claude_down")
+    if not err:
+        state.pop("claude_fail_streak", None)
+        if down and send_gpt_telegram(
+                f"✅ Claude 판정 복구 — {down.get('since', '')}부터 멈췄던 "
+                f"단체방 판정이 다시 돌아갑니다."):
+            state.pop("claude_down", None)
+        return
+
+    streak = state.get("claude_fail_streak", 0) + 1
+    state["claude_fail_streak"] = streak
+    reason = _claude_error_reason(err)
+    print(f"[ai] Claude 판정 실패 {streak}회차 연속 — {reason}", file=sys.stderr)
+    if down:
+        return
+    if reason.startswith("API 오류") and streak < 2:
+        return
+    since = datetime.now(KST).strftime("%m/%d %H:%M")
+    if send_gpt_telegram(
+            f"⚠ Claude 판정 중단 ({since})\n원인: {reason}\n"
+            f"단체방 발송이 멈춘 상태입니다. 기사 수집과 GPT 방은 계속 돌아갑니다."):
+        state["claude_down"] = {"since": since, "reason": reason}
+
+
 def maybe_gpt_heartbeat(state):
     """GPT 전용방에 하루 한 번 생존신고를 보냅니다."""
     if not getattr(config, "HEARTBEAT_ENABLED", False):
@@ -1179,6 +1222,7 @@ def main():
         # Claude 운영 판정 = 단체방. 사고 여부와 사망·부상 수·회사는 AI가 뽑고,
         # 단체방 기준(config 참고)은 아래에서 코드가 적용합니다. (2026-10-21)
         picked = ai_judge.judge(picked, config, events)
+        report_claude_health(state)
         # GPT가 '사고 아님·후속기사'(skip)로 본 기사는 Claude가 new라 해도 단체방에 안 보냅니다.
         # 10/21~10/26 통계·분석 기사 3건을 Claude만 통과시켰고 GPT는 모두 걸렀습니다.
         # GPT 오류·누락이면 이 표가 비어 있어 Claude 판단대로 갑니다.
