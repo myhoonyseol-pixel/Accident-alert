@@ -9515,10 +9515,22 @@
     "이미",
     "팔았다"
    ]
+  },
+  "0d03322e22e18a5b": {
+   "ts": 1795471211.914273,
+   "tok": [
+    "24",
+    "식품공장",
+    "안전상황실",
+    "없어",
+    "음성",
+    "인명피해",
+    "화재"
+   ]
   }
  },
  "initialized": true,
- "last_heartbeat": "2026-11-23",
+ "last_heartbeat": "2026-11-24",
  "events": [
   {
    "ts": 1794984596.154675,
@@ -9557,9 +9569,9 @@
    "co": "DL이앤씨"
   }
  ],
- "sent_since_heartbeat": 1,
- "last_gpt_heartbeat": "2026-11-23",
- "gpt_alerts_since_heartbeat": 5,
+ "sent_since_heartbeat": 0,
+ "last_gpt_heartbeat": "2026-11-24",
+ "gpt_alerts_since_heartbeat": 0,
  "gpt_last_status": "ok",
  "gpt_last_status_at": "11/24 06:12",
  "gpt_events": [
