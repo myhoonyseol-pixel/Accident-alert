@@ -1,662 +1,415 @@
 {
- "generated_at": "2026-11-22 11:29",
+ "generated_at": "2026-11-23 11:57",
  "missed_candidates": [
   {
    "title": "美 뉴욕 브루클린 3층 아파트 붕괴…최소 5명 사망·17명 부상 > 시애틀 뉴스/핫이슈",
-   "link": "https://news.google.com/rss/articles/CBMiSkFVX3lxTFBXeVRYelhaRVAydVB2SmxDZ2lUY09MSDZqbURzOXpab013eDlEUU1Uc3ZVanRweVllRlR3UXJOUGFuRFl3MDNaSXhB?oc=5",
+   "link": "https://news.google.com/rss/articles/CBMicEFVX3lxTE1hLXQxbVFnY1dRZ1VjMi1uUjRkeDY1NmhpSktUUUtpYm1jblRUX0k0ZlRVMjhscFdGSklFMERESVdwSktuSEdCSmVQMXgwUDZ2MWNGNmVua2VxNjZ4bzNwVWloRmZuVVlTSnZfM2diZnc?oc=5",
    "source": "구글뉴스",
    "hits": [
     "붕괴",
     "사망",
     "부상"
    ],
-   "published": "11/21 15:12"
+   "published": "11/22 15:50"
   },
   {
-   "title": "경주·김제서 작업 중 잇단 추락사고…근로자 2명 사망",
-   "link": "https://news.google.com/rss/articles/CBMicEFVX3lxTFA0WTd4RV9wZ1RoUXo2Z1M3d1hZMTlQS3VEbzJPTm5YYUJmZUIwMkVaNi1OekR0UXE5ZTViWTFfT0Y0T0dWYXIzQ0Qyd0VKc0c0Q2d0dXI2bFJKWE1ZOWtjbXpieUVGRjFJNlJ6Y3Fjalk?oc=5",
-   "source": "구글뉴스",
-   "hits": [
-    "추락",
-    "사망"
-   ],
-   "published": "11/22 09:04"
-  },
-  {
-   "title": "뉴욕 브루클린 3층 건물 붕괴...8명 사망·17명 부상",
-   "link": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE5STFJsdm9pdUoxQ3J0TUNRQ284eHlQNlBiYm5HYUtpaFdzLTREUFU4R3JTT1B6QXllUGN2UVJuQV8wV0pESFZFTjU0NEg5cFdhSjFFZTNYanhDckJnUVRTTV9WZ0U?oc=5",
-   "source": "구글뉴스",
-   "hits": [
-    "붕괴",
-    "사망",
-    "부상"
-   ],
-   "published": "11/22 08:18"
-  },
-  {
-   "title": "美 뉴욕 브루클린 3층 아파트 붕괴…최소 5명 사망·17명 부상 > 시애틀 뉴스/핫이슈",
-   "link": "https://news.google.com/rss/articles/CBMiSkFVX3lxTFBXeVRYelhaRVAydVB2SmxDZ2lUY09MSDZqbURzOXpab013eDlEUU1Uc3ZVanRweVllRlR3UXJOUGFuRFl3MDNaSXhB?oc=5",
-   "source": "구글뉴스",
-   "hits": [
-    "붕괴",
-    "사망",
-    "부상"
-   ],
-   "published": "11/21 15:12"
-  },
-  {
-   "title": "경주·김제서 작업 중 잇단 추락사고…근로자 2명 사망",
-   "link": "https://news.google.com/rss/articles/CBMicEFVX3lxTFA0WTd4RV9wZ1RoUXo2Z1M3d1hZMTlQS3VEbzJPTm5YYUJmZUIwMkVaNi1OekR0UXE5ZTViWTFfT0Y0T0dWYXIzQ0Qyd0VKc0c0Q2d0dXI2bFJKWE1ZOWtjbXpieUVGRjFJNlJ6Y3Fjalk?oc=5",
-   "source": "구글뉴스",
-   "hits": [
-    "추락",
-    "사망"
-   ],
-   "published": "11/22 09:04"
-  },
-  {
-   "title": "탄화발전소는 화재 예방, 소방 및 구조 기술을 강화합니다.",
-   "link": "https://news.google.com/rss/articles/CBMirAFBVV95cUxPajEyV3FBUmVLN2FnUjZ5SGg0MHFVXzVuem44alZZaWtUeVBvT2RDVEk0aldNR3l5TlRZUG5hdzUtaDJpZUN2UWV2c1Vxb2piSzVjUllja3BSXzV5S0ZDUFB3YkhSOXdXUF9zd1BWanZBcjU1b1JrbDRZcnItZ29tX2NnVkFSY3dXazNON2FhV0JPM3kzVVlKcFEwdFZ5b3pZNzdaMkZ6djRDZ1JR?oc=5",
-   "source": "구글뉴스",
-   "hits": [
-    "화재"
-   ],
-   "published": "11/21 17:33"
-  },
-  {
-   "title": "정신병원 사망 사건에 자그레브에서 수천 명 집결",
-   "link": "https://news.google.com/rss/articles/CBMimgFBVV95cUxQZHQ0ZDJRMHlNUzA3Zjd5WXlQN01KdWNmQVNKbTZVMTUyNl9WQ01WaVpjckt0WklVTUdqOElkaUZOZWxHSzRZTWxoaHBRRUN6anpCeFctbXpHVU84WEJKaUNuNmFBbVBOWlFlZEhSck1fZ0MxY0R6VW5SQVBjYS1jdHhuSzBxcGhPQm1kNlFJSHFpNC1EQnBncnpn?oc=5",
-   "source": "구글뉴스",
-   "hits": [
-    "사망"
-   ],
-   "published": "11/21 13:52"
-  },
-  {
-   "title": "부전마산 복선전철 낙동1터널 붕괴사고 건설사고조사위원회 조사결과",
-   "link": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE5RangxaVNsTDRadDhJbG1XM3BLb1RRN2J6Q1ozS1p1UzNOUTJRanpVT19YUzRnYmdZZDNETVhhdmljbkZNR0RUSXhVUXRLWFdwT0E?oc=5",
-   "source": "구글뉴스",
-   "hits": [
-    "붕괴"
-   ],
-   "published": "11/21 13:03"
-  },
-  {
-   "title": "장성대교서 1t 화물차 추락…70대 남성 사망·60대 여성 부상",
-   "link": "https://news.google.com/rss/articles/CBMiWEFVX3lxTFBIVFBMVjNBaU9vLWlrQnRSajM4TTVSTVFlWVg3LTRWd2hBdWdJZ2t5WV9TdmtTUkhUdlQtSXUyb0ZNQUg4T29Mb1lwS3Y2UkVWamFJN1ZPcGHSAWhBVV95cUxPZjJfd2NGVUZMVGlEek55U3ZyMWJ6eVNTbEpBdnFCdWwtaEk4cm45NjRtU3psT19rNGJDeTlzQ2RxU1NrTzdmUDMxX2pPYXFlZnU2VG8xZnB3aGRabXQ5aGhrNTVpYVBIcg?oc=5",
-   "source": "구글뉴스",
-   "hits": [
-    "추락",
-    "사망",
-    "부상"
-   ],
-   "published": "11/21 12:34"
-  },
-  {
-   "title": "경주·김제서 작업 중 잇단 추락사고…근로자 2명 사망",
-   "link": "https://news.google.com/rss/articles/CBMicEFVX3lxTFA0WTd4RV9wZ1RoUXo2Z1M3d1hZMTlQS3VEbzJPTm5YYUJmZUIwMkVaNi1OekR0UXE5ZTViWTFfT0Y0T0dWYXIzQ0Qyd0VKc0c0Q2d0dXI2bFJKWE1ZOWtjbXpieUVGRjFJNlJ6Y3Fjalk?oc=5",
-   "source": "구글뉴스",
-   "hits": [
-    "추락",
-    "사망"
-   ],
-   "published": "11/22 09:04"
-  },
-  {
-   "title": "제주 지게차 사망사고 잇따르자…2천943대 안전관리 강화",
-   "link": "https://news.google.com/rss/articles/CBMia0FVX3lxTE9KaGNESkRBXzVQdDRlUVlkNl9Qcm04QnV2a0RyNmV3dXpVSnExbXZfVHVaVy1ESE8tcU0zYUYyUVJpc0xTcTg0UEZ4Z1RGZmI5bGFJOTdLaWhZUzZpSTRuSWl1d0U4ekNJME9z0gFuQVVfeXFMTjBYRTg2bGRjMnFfQ0VaVzVFc2JST25vbDhnWGVIX0pURGpWMTB6Sk5QNnZtSTJCSW5hYkEwRkUtOHoyNnJsOHd5U0JvaGcwX25Lbktoc2lmRnNrWkxYY05mUkpVWm9Mb3dXcE5NRWc?oc=5",
-   "source": "구글뉴스",
-   "hits": [
-    "사망"
-   ],
-   "published": "11/22 09:11"
-  },
-  {
-   "title": "해수부 장관, 해광호 실종사고 현장 점검…실종자 가족 위로",
-   "link": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE5KejdJY2RxZUhMa1BldkwwZFVLTF93NEhnd2FxTlNHeldxSmY4WE51QUJuSUlhTE9tclNMNmlDRmlHX0hCQ291dUtwR0gxSXhUc1RnbUUxcm51NmfSAWBBVV95cUxOSjRsTmhtalAzcmsxZmNNSkhXQnRsemZ1SWQ5RzhKQ1VDZnRTNFIxdUhWTzlaZW9QSGV0bTg5ZnBYLUVDTXU3OGNiZzNIMUlUcWZpUzlsYk02RWdNUVFPUm0?oc=5",
-   "source": "구글뉴스",
-   "hits": [
-    "실종"
-   ],
-   "published": "11/21 15:40"
-  },
-  {
-   "title": "경주·김제서 작업 중 잇단 추락사고…근로자 2명 사망",
-   "link": "https://news.google.com/rss/articles/CBMicEFVX3lxTFA0WTd4RV9wZ1RoUXo2Z1M3d1hZMTlQS3VEbzJPTm5YYUJmZUIwMkVaNi1OekR0UXE5ZTViWTFfT0Y0T0dWYXIzQ0Qyd0VKc0c0Q2d0dXI2bFJKWE1ZOWtjbXpieUVGRjFJNlJ6Y3Fjalk?oc=5",
-   "source": "구글뉴스",
-   "hits": [
-    "추락",
-    "사망"
-   ],
-   "published": "11/22 09:04"
-  },
-  {
-   "title": "뉴욕 브루클린 3층 건물 붕괴...8명 사망·17명 부상",
-   "link": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE5STFJsdm9pdUoxQ3J0TUNRQ284eHlQNlBiYm5HYUtpaFdzLTREUFU4R3JTT1B6QXllUGN2UVJuQV8wV0pESFZFTjU0NEg5cFdhSjFFZTNYanhDckJnUVRTTV9WZ0U?oc=5",
-   "source": "구글뉴스",
-   "hits": [
-    "붕괴",
-    "사망",
-    "부상"
-   ],
-   "published": "11/22 08:18"
-  },
-  {
-   "title": "美 뉴욕 브루클린 3층 아파트 붕괴…최소 5명 사망·17명 부상 > 시애틀 뉴스/핫이슈",
-   "link": "https://news.google.com/rss/articles/CBMiSkFVX3lxTFBXeVRYelhaRVAydVB2SmxDZ2lUY09MSDZqbURzOXpab013eDlEUU1Uc3ZVanRweVllRlR3UXJOUGFuRFl3MDNaSXhB?oc=5",
-   "source": "구글뉴스",
-   "hits": [
-    "붕괴",
-    "사망",
-    "부상"
-   ],
-   "published": "11/21 15:12"
-  },
-  {
-   "title": "경부선 탈선사고 영상 보니…두차례 섬광 이후 선로 이탈 전철주 충돌",
-   "link": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE03T0tKSXRQSjJ2S3ZPNWtzZjNSa3JHeFd1NEFXdlY5WlJmLWdTdko3SWkwNlZEM1U5MTU5R19UTXQtTXQydHMyUS1hdFhnNW9GS2RSY1NSMVcxbmtrcGxOS9IBYEFVX3lxTE03T0tKSXRQSjJ2S3ZPNWtzZjNSa3JHeFd1NEFXdlY5WlJmLWdTdko3SWkwNlZEM1U5MTU5R19UTXQtTXQydHMyUS1hdFhnNW9GS2RSY1NSMVcxbmtrcGxOSw?oc=5",
-   "source": "구글뉴스",
-   "hits": [
-    "충돌"
-   ],
-   "published": "11/21 16:34"
-  },
-  {
-   "title": "뉴욕 브루클린 3층 건물 붕괴...8명 사망·17명 부상",
-   "link": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE5STFJsdm9pdUoxQ3J0TUNRQ284eHlQNlBiYm5HYUtpaFdzLTREUFU4R3JTT1B6QXllUGN2UVJuQV8wV0pESFZFTjU0NEg5cFdhSjFFZTNYanhDckJnUVRTTV9WZ0U?oc=5",
-   "source": "구글뉴스",
-   "hits": [
-    "붕괴",
-    "사망",
-    "부상"
-   ],
-   "published": "11/22 08:18"
-  },
-  {
-   "title": "美 뉴욕 브루클린 3층 아파트 붕괴…최소 5명 사망·17명 부상 > 시애틀 뉴스/핫이슈",
-   "link": "https://news.google.com/rss/articles/CBMiSkFVX3lxTFBXeVRYelhaRVAydVB2SmxDZ2lUY09MSDZqbURzOXpab013eDlEUU1Uc3ZVanRweVllRlR3UXJOUGFuRFl3MDNaSXhB?oc=5",
-   "source": "구글뉴스",
-   "hits": [
-    "붕괴",
-    "사망",
-    "부상"
-   ],
-   "published": "11/21 15:12"
-  },
-  {
-   "title": "뉴욕 브루클린 3층 건물 붕괴…최소 2명 사망·17명 부상 > 시애틀 뉴스/핫이슈",
-   "link": "https://news.google.com/rss/articles/CBMicEFVX3lxTE54WVF5UzJ2OVQ2dXdmUkxiRk0tbFpUT0JpYlNmS25UcEJEZExKNGFONFRaQXhjVjc1MVhuUXhqalBZWU1kTXplZ2xRVnNSUHJsNmdYc0h4V2dJQTZmYVdwUUg0UzdTcHpTdm9IVGlXU2Y?oc=5",
-   "source": "구글뉴스",
-   "hits": [
-    "붕괴",
-    "사망",
-    "부상"
-   ],
-   "published": "11/21 12:02"
-  },
-  {
-   "title": "美 뉴욕 브루클린 3층 아파트 붕괴…최소 5명 사망·17명 부상 > 시애틀 뉴스/핫이슈",
-   "link": "https://news.google.com/rss/articles/CBMiSkFVX3lxTFBXeVRYelhaRVAydVB2SmxDZ2lUY09MSDZqbURzOXpab013eDlEUU1Uc3ZVanRweVllRlR3UXJOUGFuRFl3MDNaSXhB?oc=5",
-   "source": "구글뉴스",
-   "hits": [
-    "붕괴",
-    "사망",
-    "부상"
-   ],
-   "published": "11/21 15:12"
-  },
-  {
-   "title": "뉴욕 브루클린 3층 건물 붕괴…최소 2명 사망·17명 부상 > 시애틀 뉴스/핫이슈",
-   "link": "https://news.google.com/rss/articles/CBMicEFVX3lxTE54WVF5UzJ2OVQ2dXdmUkxiRk0tbFpUT0JpYlNmS25UcEJEZExKNGFONFRaQXhjVjc1MVhuUXhqalBZWU1kTXplZ2xRVnNSUHJsNmdYc0h4V2dJQTZmYVdwUUg0UzdTcHpTdm9IVGlXU2Y?oc=5",
-   "source": "구글뉴스",
-   "hits": [
-    "붕괴",
-    "사망",
-    "부상"
-   ],
-   "published": "11/21 12:02"
-  },
-  {
-   "title": "문섬에서 스쿠버다이빙 하던 60대 사망",
-   "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTE5RVEVSM1puVTF3MWNGMmtoOWtEZXJ5NFltR1Utc055V01ESGl1OU43T3cyZkNBWktLUngzNmlQSGxod3VkcXktdkVpZ1ZSMTBPa0Y5bHpLVnRYZGJaQl9NQ1ZONkNuR2FCaEJEVw?oc=5",
-   "source": "구글뉴스",
-   "hits": [
-    "사망"
-   ],
-   "published": "11/22 09:55"
-  },
-  {
-   "title": "경주·김제서 작업 중 잇단 추락사고…근로자 2명 사망",
-   "link": "https://news.google.com/rss/articles/CBMicEFVX3lxTFA0WTd4RV9wZ1RoUXo2Z1M3d1hZMTlQS3VEbzJPTm5YYUJmZUIwMkVaNi1OekR0UXE5ZTViWTFfT0Y0T0dWYXIzQ0Qyd0VKc0c0Q2d0dXI2bFJKWE1ZOWtjbXpieUVGRjFJNlJ6Y3Fjalk?oc=5",
-   "source": "구글뉴스",
-   "hits": [
-    "추락",
-    "사망"
-   ],
-   "published": "11/22 09:04"
-  },
-  {
-   "title": "이상균·조민수 HD현대중공업 공동대표, 사망사고 '집행유예 확정' 1년 만에 그룹 조선 총괄로",
-   "link": "https://news.google.com/rss/articles/CBMia0FVX3lxTE92VmtXQ3lRRmVRZm8xRlJ5dDc3MjNESWVMRkpMak5Ga292X0pXeXZsRzR3TGlUWlY4UEtxaXUxNTE5dkZFcDFhVFI4UnFHQVRHcm01OXZKM0NXNmFuTlIycXp2Rm1XU2ZEQWww0gFrQVVfeXFMT3ZWa1dDeVFGZVFmbzFGUnl0NzcyM0RJZUxGSkxqTkZrb3ZfSld5dmxHNHdMaVRaVjhQS3FpdTE1MTl2RkVwMWFUUjhScUdBVEdybTU5dkozQ1c2YW5OUjJxenZGbVdTZkRBbDA?oc=5",
-   "source": "구글뉴스",
-   "hits": [
-    "사망"
-   ],
-   "published": "11/22 09:16"
-  },
-  {
-   "title": "HD현대삼호, 또 하청노동자 사망…어지럼 호소 20대 용접 노동자",
-   "link": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE81My1ra1I4dHRFbEJiSExsTmE0aU5scW1QcVVmM2JRaVZTMjQ4SUFFS1E1S2ZfWDJGSWpDNHlQZ2JpbHJIeUowRkZSbVRPc09DYTVpMEd6TVBzWGRDdHRXSXhYUQ?oc=5",
-   "source": "구글뉴스",
-   "hits": [
-    "사망"
-   ],
-   "published": "11/21 14:39"
-  },
-  {
-   "title": "뉴욕 브루클린 3층 건물 붕괴...8명 사망·17명 부상",
-   "link": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE5STFJsdm9pdUoxQ3J0TUNRQ284eHlQNlBiYm5HYUtpaFdzLTREUFU4R3JTT1B6QXllUGN2UVJuQV8wV0pESFZFTjU0NEg5cFdhSjFFZTNYanhDckJnUVRTTV9WZ0U?oc=5",
-   "source": "구글뉴스",
-   "hits": [
-    "붕괴",
-    "사망",
-    "부상"
-   ],
-   "published": "11/22 08:18"
-  },
-  {
-   "title": "경주·김제서 작업 중 잇단 추락사고…근로자 2명 사망",
-   "link": "https://news.google.com/rss/articles/CBMicEFVX3lxTFA0WTd4RV9wZ1RoUXo2Z1M3d1hZMTlQS3VEbzJPTm5YYUJmZUIwMkVaNi1OekR0UXE5ZTViWTFfT0Y0T0dWYXIzQ0Qyd0VKc0c0Q2d0dXI2bFJKWE1ZOWtjbXpieUVGRjFJNlJ6Y3Fjalk?oc=5",
-   "source": "구글뉴스",
-   "hits": [
-    "추락",
-    "사망"
-   ],
-   "published": "11/22 09:04"
-  },
-  {
-   "title": "[오늘(21일)의 사 건·사고] 열차탈선 복귀, 내일 재개·부산 버스 충돌.. 전국 곳곳서 화재",
-   "link": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE4zMHB4V1VwdS1ybWNQTU5nR09fX18tX01rVkk0WDA5V3h4VEhOVk1hakFNRE81YmJYSUg4SUdPUXNPRTJObWx4MkJUMDR1VWZqaGxhSHRjbXVvZjZsZkxUdg?oc=5",
-   "source": "구글뉴스",
-   "hits": [
-    "화재",
-    "충돌"
-   ],
-   "published": "11/21 20:32"
-  },
-  {
-   "title": "화재·모비스 자회사 매각 반발·임협까지…현대차그룹 덮친 리스크",
-   "link": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE1tRjFvZUluWUd0V3VIVWFVVjVhcmJ3TFZHTU1EN1VESjRqNVkxeFUtbUZDRF9rWVh6S3EyUm5raWZ4eUVEZ3ZTLXFFbUR0Xy15c1Z2NW80X0FHeHlFMUcxcXRkZw?oc=5",
-   "source": "구글뉴스",
-   "hits": [
-    "화재"
-   ],
-   "published": "11/22 05:21"
-  },
-  {
-   "title": "[오늘(21일)의 사 건·사고] 열차탈선 복귀, 내일 재개·부산 버스 충돌.. 전국 곳곳서 화재",
-   "link": "https://news.google.com/rss/articles/CBMiXkFVX3lxTFA4clJ6ZFBURFE4NHRsREl3S3RRQzFNNkhOcWZzM3QxRzBhTGpNcmFiRWdlWmNiWnRYcDhlX3V1emVWeTRrVV9vemxNU1F4WFJDRGRSWnhVX01BR0ozTlE?oc=5",
-   "source": "구글뉴스",
-   "hits": [
-    "화재",
-    "충돌"
-   ],
-   "published": "11/21 20:32"
-  },
-  {
-   "title": "‘쿠팡 화재’ 경보 울렸는데…방재실 직원이 6번 껐다",
-   "link": "https://news.google.com/rss/articles/CBMiVEFVX3lxTFA5Y3d0eVhoSUZVandVb2Z4bjJsRWx4anRRZ2lLajhEakpMX1o3bElzVkptT2laeHgtTFFhaDM2SzNuRmJ6bEsySUhQaWc5QUlOV05WVg?oc=5",
-   "source": "구글뉴스",
-   "hits": [
-    "화재"
-   ],
-   "published": "11/21 18:37"
-  },
-  {
-   "title": "배터리 한 개가 멈춘 국가 전산망…부산소방, 데이터센터 전용 화재 설계 기준 전국 첫 제정",
-   "link": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE1mNXNTUDgyeG1zb3VTQWxnT1ZDemFPX2VUYWtSX2JnMHE5TW5pSVF3V01zbXBOeHpsYTA0LVNEUThvV1ZaZkZRb0ZTVU1TemNhM015NHFoamJJSzhxMnJfY3Z5Zw?oc=5",
-   "source": "구글뉴스",
-   "hits": [
-    "화재"
-   ],
-   "published": "11/22 03:13"
-  },
-  {
-   "title": "[오늘(21일)의 사 건·사고] 열차탈선 복귀, 내일 재개·부산 버스 충돌.. 전국 곳곳서 화재",
-   "link": "https://news.google.com/rss/articles/CBMiXkFVX3lxTFA4clJ6ZFBURFE4NHRsREl3S3RRQzFNNkhOcWZzM3QxRzBhTGpNcmFiRWdlWmNiWnRYcDhlX3V1emVWeTRrVV9vemxNU1F4WFJDRGRSWnhVX01BR0ozTlE?oc=5",
-   "source": "구글뉴스",
-   "hits": [
-    "화재",
-    "충돌"
-   ],
-   "published": "11/21 20:32"
-  },
-  {
-   "title": "‘쿠팡 화재’ 경보 울렸는데…방재실 직원이 6번 껐다",
-   "link": "https://news.google.com/rss/articles/CBMiVEFVX3lxTFA5Y3d0eVhoSUZVandVb2Z4bjJsRWx4anRRZ2lLajhEakpMX1o3bElzVkptT2laeHgtTFFhaDM2SzNuRmJ6bEsySUhQaWc5QUlOV05WVg?oc=5",
-   "source": "구글뉴스",
-   "hits": [
-    "화재"
-   ],
-   "published": "11/21 18:37"
-  },
-  {
-   "title": "배터리 한 개가 멈춘 국가 전산망…부산소방, 데이터센터 전용 화재 설계 기준 전국 첫 제정",
-   "link": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE1mNXNTUDgyeG1zb3VTQWxnT1ZDemFPX2VUYWtSX2JnMHE5TW5pSVF3V01zbXBOeHpsYTA0LVNEUThvV1ZaZkZRb0ZTVU1TemNhM015NHFoamJJSzhxMnJfY3Z5Zw?oc=5",
-   "source": "구글뉴스",
-   "hits": [
-    "화재"
-   ],
-   "published": "11/22 03:13"
-  },
-  {
-   "title": "충남도의회, AI로 ‘맞춤형 화재예방체계’ 구축 나선다",
-   "link": "https://news.google.com/rss/articles/CBMimAFBVV95cUxPWnpjM0ROaC1Ba0dvdDBCNVZDSGgzU21KSkhfSl9hSkF6WVdkMWtVUDBQd0xHUno2U0t2Vk9JTE1POUtiY3dIcC15azB4V3FYaV95NkhHUFU1dkFLSktOM21xMzZRenpZMUJVVDVNMklIUnkxY0x4R0twcDlkalpHbmNGUWh0MjFaYnNKZjhhbHd2RFMwRGx3LQ?oc=5",
-   "source": "구글뉴스",
-   "hits": [
-    "화재"
-   ],
-   "published": "11/21 14:17"
-  },
-  {
-   "title": "배터리 한 개가 멈춘 국가 전산망…부산소방, 데이터센터 전용 화재 설계 기준 전국 첫 제정",
-   "link": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE1mNXNTUDgyeG1zb3VTQWxnT1ZDemFPX2VUYWtSX2JnMHE5TW5pSVF3V01zbXBOeHpsYTA0LVNEUThvV1ZaZkZRb0ZTVU1TemNhM015NHFoamJJSzhxMnJfY3Z5Zw?oc=5",
-   "source": "구글뉴스",
-   "hits": [
-    "화재"
-   ],
-   "published": "11/22 03:13"
-  },
-  {
-   "title": "제주 지게차 사망사고 잇따르자…2천943대 안전관리 강화",
-   "link": "https://news.google.com/rss/articles/CBMia0FVX3lxTE9KaGNESkRBXzVQdDRlUVlkNl9Qcm04QnV2a0RyNmV3dXpVSnExbXZfVHVaVy1ESE8tcU0zYUYyUVJpc0xTcTg0UEZ4Z1RGZmI5bGFJOTdLaWhZUzZpSTRuSWl1d0U4ekNJME9z0gFuQVVfeXFMTjBYRTg2bGRjMnFfQ0VaVzVFc2JST25vbDhnWGVIX0pURGpWMTB6Sk5QNnZtSTJCSW5hYkEwRkUtOHoyNnJsOHd5U0JvaGcwX25Lbktoc2lmRnNrWkxYY05mUkpVWm9Mb3dXcE5NRWc?oc=5",
-   "source": "구글뉴스",
-   "hits": [
-    "사망"
-   ],
-   "published": "11/22 09:11"
-  },
-  {
-   "title": "정도원 삼표그룹 회장, '중처법 1호' 전부터 켜진 경고등…삼표시멘트 3년간 5명 사망",
-   "link": "https://news.google.com/rss/articles/CBMia0FVX3lxTE1CQ1VOcDMydVdsLXRFVXU3WjlrdVQ2SEVTa2FKcm1OM0FtZml0ZExPTHNjVU1CQmRscXdZMWlTaldhSUkxOHZtSVl3S0kzd3FSVlBOOUVwaTBLUHlRTXhVOFZ1aGJIdDFvQ3NZ0gFrQVVfeXFMTUJDVU5wMzJ1V2wtdEVVdTdaOWt1VDZIRVNrYUpybU4zQW1maXRkTE9Mc2NVTUJCZGxxd1kxaVNqV2FJSTE4dm1JWXdLSTN3cVJWUE45RXBpMEtQeVFNeFU4VnVoYkh0MW9Dc1k?oc=5",
-   "source": "구글뉴스",
-   "hits": [
-    "사망"
-   ],
-   "published": "11/21 15:15"
-  },
-  {
-   "title": "경주 아파트서 조명 교체하던 50대 추락사…중처법 위반 조사",
-   "link": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE1aVzBIRl9nbjdlV01pRWJIZ0FxaUNtZUZxT1JCQ1haZ09FTU5VbVo0UGtzVXQ3TzVnZHdPd3AtcFByUjhpUnZPYkJUVnFDbU5YX1Q3ZVFpcEY?oc=5",
+   "title": "추락 사고 한 번이 구인 비용 전체를 무너뜨린다",
+   "link": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE5qREswVy1uYlhQcVVrRVhYQWpfV1Jabm90ZGpERWpla0lBN0xuWmY4MVBkeG9RODhGckg2bWV3Wi0ybnlvX1V5S3oyN3FseVU?oc=5",
    "source": "구글뉴스",
    "hits": [
     "추락"
    ],
-   "published": "11/22 06:39"
+   "published": "11/22 12:44"
   },
   {
-   "title": "경주·김제서 작업 중 잇단 추락사고…근로자 2명 사망",
-   "link": "https://news.google.com/rss/articles/CBMicEFVX3lxTFA0WTd4RV9wZ1RoUXo2Z1M3d1hZMTlQS3VEbzJPTm5YYUJmZUIwMkVaNi1OekR0UXE5ZTViWTFfT0Y0T0dWYXIzQ0Qyd0VKc0c0Q2d0dXI2bFJKWE1ZOWtjbXpieUVGRjFJNlJ6Y3Fjalk?oc=5",
+   "title": "박수현 충남지사, 실종 해광호 수색 현장 점검…가용 자원 총동원",
+   "link": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE9DOWlBSEtwT0haVXBDT04yQTNYdVNXRlVuUzdZQks5VDd0S0E4WUVxWFh5LXpFUkkxSDRtbEl5bUlDelBuV2dQNXdRUkFEbHMzbkhmSVJ5SGQwUzd1VFdWM2wtRms?oc=5",
    "source": "구글뉴스",
-   "hits": [
-    "추락",
-    "사망"
-   ],
-   "published": "11/22 09:04"
-  },
-  {
-   "title": "태백시, 도심 재해위험지역 정비…침수·경사지 붕괴 예방",
-   "link": "https://www.yna.co.kr/view/AKR20261120137100062",
-   "source": "언론사RSS",
-   "hits": [
-    "붕괴"
-   ],
-   "published": "11/22 11:12"
-  },
-  {
-   "title": "화재 대피부터 응급처치까지…울산서 외국인 주민 안전 체험",
-   "link": "https://www.yna.co.kr/view/AKR20261120103800057",
-   "source": "언론사RSS",
-   "hits": [
-    "화재"
-   ],
-   "published": "11/22 10:36"
-  },
-  {
-   "title": "진안 축사 화재로 4천만원 재산 피해",
-   "link": "https://www.yna.co.kr/view/AKR20261122017200055",
-   "source": "언론사RSS",
-   "hits": [
-    "화재"
-   ],
-   "published": "11/22 10:27"
-  },
-  {
-   "title": "해군, '태안 실종' 해광호 수색에 통영함·ROV 투입",
-   "link": "https://www.yna.co.kr/view/AKR20261122016100504",
-   "source": "언론사RSS",
    "hits": [
     "실종"
    ],
-   "published": "11/22 10:06"
+   "published": "11/23 08:29"
   },
   {
-   "title": "철인3종경기 중 참가자 익사…안전책임자 등 5명 2심도 무죄",
-   "link": "https://www.yna.co.kr/view/AKR20261120123300061",
-   "source": "언론사RSS",
+   "title": "부천 아파트 주차장 지붕 교체 중 추락...50대 노동자 숨져",
+   "link": "https://news.google.com/rss/articles/CBMiaEFVX3lxTFBaZmtKMk5UV3lIVmxST1VsMUxqb3FvdVB5d1ZTU2ZMTXhnODZmN2pQaTNRT1ZwaUVrX0hJYXVGY0cyb05TeTB3QlRfaENyOUpCMmZlUG43M1UwSkttWWxBZU5OYnVBakw0?oc=5",
+   "source": "구글뉴스",
    "hits": [
-    "익사"
-   ],
-   "published": "11/22 10:00"
-  },
-  {
-   "title": "이동목욕차서 내린 휠체어 넘어져 80대 사망…관계자들 집행유예",
-   "link": "https://www.yna.co.kr/view/AKR20261120144800065",
-   "source": "언론사RSS",
-   "hits": [
-    "사망"
-   ],
-   "published": "11/22 10:00"
-  },
-  {
-   "title": "부산 기장군 농장서 화재…1천800만원 재산 피해",
-   "link": "https://www.yna.co.kr/view/AKR20261122014700051",
-   "source": "언론사RSS",
-   "hits": [
-    "화재"
-   ],
-   "published": "11/22 09:42"
-  },
-  {
-   "title": "'피의자 사망' 살충제사건 풀었던 경찰 '리트만점 수사' 시험대",
-   "link": "https://www.yna.co.kr/view/AKR20261120178000004",
-   "source": "언론사RSS",
-   "hits": [
-    "사망"
-   ],
-   "published": "11/22 09:00"
-  },
-  {
-   "title": "무안 계절근로자 숙소서 화재…인명 피해 없어",
-   "link": "https://www.yna.co.kr/view/AKR20261122010000054",
-   "source": "언론사RSS",
-   "hits": [
-    "화재"
-   ],
-   "published": "11/22 08:33"
-  },
-  {
-   "title": "강릉 상가주택 2층서 새벽에 불…70대 세입자 숨져",
-   "link": "https://www.yna.co.kr/view/AKR20261122008700062",
-   "source": "언론사RSS",
-   "hits": [
+    "추락",
     "숨져"
    ],
-   "published": "11/22 08:14"
+   "published": "11/22 16:03"
   },
   {
-   "title": "서귀포 문섬 해상에서 다이빙하던 60대 숨져",
-   "link": "https://www.yna.co.kr/view/AKR20261122007800056",
-   "source": "언론사RSS",
+   "title": "[기고-신유림]위험성평가, 에너지와 통제로 중대재해 위험을 미리 찾는다",
+   "link": "https://news.google.com/rss/articles/CBMicEFVX3lxTE5qU0prQ3g5dWlVWXMxeWNYNnNiTGx1SDFoeUo0TWNjRHpXVW1XckZLS0ZuZU90NjNxdEkwUXpINXNYTU1DN2hCSUtlWVUwbG1RREszcENCRlcyUmM2NmlUdUgyWHVVT05WUkJ5Mm1GSms?oc=5",
+   "source": "구글뉴스",
    "hits": [
-    "숨져"
+    "중대재해"
    ],
-   "published": "11/22 08:07"
+   "published": "11/23 11:36"
   },
   {
-   "title": "체감안전도 만년 하위권 인천 경찰…올해 꼴찌 벗어날까",
-   "link": "https://www.yna.co.kr/view/AKR20261120089800065",
-   "source": "언론사RSS",
+   "title": "인천광역시교육청, 시설관리업무 종사자 산업재해 예방교육",
+   "link": "https://news.google.com/rss/articles/CBMibkFVX3lxTE9ITnlxVUgtZmFVVy1HVzZmTERNVFV3S0g4MGZ6MmVoaXZwSTB5N3lmci1lVlZEVGh4UXZJeW1FQmFWTzF0ZlJXa0hzRlhBN3ozVHRaUFNnOWhXQ3h1YmtUM1BlTUpRQ0lRWno0a3J3?oc=5",
+   "source": "구글뉴스",
    "hits": [
-    "전도"
+    "산업재해"
    ],
-   "published": "11/22 07:27"
+   "published": "11/23 11:49"
   },
   {
-   "title": "새벽 진안군 축사 화재, 4000여만원 재산피해…사상없어",
-   "link": "https://www.newsis.com/view/NISX20261122_0003878042",
-   "source": "언론사RSS",
-   "hits": [
-    "화재"
-   ],
-   "published": "11/22 11:16"
-  },
-  {
-   "title": "코스피 4800선 추락에 시총 3500조 증발…'1조 클럽'도 28곳 줄었다",
-   "link": "https://www.newsis.com/view/NISX20261122_0003878031",
-   "source": "언론사RSS",
+   "title": "추락 사고 한 번이 구인 비용 전체를 무너뜨린다",
+   "link": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE85RGlTUVlvbzV4NnpwV1hJY2o4UnJGOUZBekRhVjRISjg0WXY3a2lCWE11UUswWGxqUktLUFdaREQ4enJRYmZmdTVJVXFyaWM?oc=5",
+   "source": "구글뉴스",
    "hits": [
     "추락"
    ],
-   "published": "11/22 10:58"
+   "published": "11/22 12:42"
   },
   {
-   "title": "철인3종 대회 익사 사고…대회관계자 등 5명 2심도 무죄",
-   "link": "https://www.newsis.com/view/NISX20261122_0003877985",
-   "source": "언론사RSS",
+   "title": "美 뉴욕 브루클린 3층 아파트 붕괴…최소 5명 사망·17명 부상 > 시애틀 뉴스/핫이슈",
+   "link": "https://news.google.com/rss/articles/CBMicEFVX3lxTE1hLXQxbVFnY1dRZ1VjMi1uUjRkeDY1NmhpSktUUUtpYm1jblRUX0k0ZlRVMjhscFdGSklFMERESVdwSktuSEdCSmVQMXgwUDZ2MWNGNmVua2VxNjZ4bzNwVWloRmZuVVlTSnZfM2diZnc?oc=5",
+   "source": "구글뉴스",
    "hits": [
-    "익사"
-   ],
-   "published": "11/22 10:16"
-  },
-  {
-   "title": "서귀포 문섬 해상서 스쿠버다이빙하던 60대…끝내 사망",
-   "link": "https://www.newsis.com/view/NISX20261122_0003877978",
-   "source": "언론사RSS",
-   "hits": [
-    "사망"
-   ],
-   "published": "11/22 09:58"
-  },
-  {
-   "title": "새벽 진안군 축사 화재, 4000여만원 재산피해…사상없어",
-   "link": "https://www.newsis.com/view/NISX20261122_0003878042",
-   "source": "언론사RSS",
-   "hits": [
-    "화재"
-   ],
-   "published": "11/22 11:16"
-  },
-  {
-   "title": "철인3종 대회 익사 사고…대회관계자 등 5명 2심도 무죄",
-   "link": "https://www.newsis.com/view/NISX20261122_0003877985",
-   "source": "언론사RSS",
-   "hits": [
-    "익사"
-   ],
-   "published": "11/22 10:16"
-  },
-  {
-   "title": "서귀포 문섬 해상서 스쿠버다이빙하던 60대…끝내 사망",
-   "link": "https://www.newsis.com/view/NISX20261122_0003877978",
-   "source": "언론사RSS",
-   "hits": [
-    "사망"
-   ],
-   "published": "11/22 09:58"
-  },
-  {
-   "title": "1명 숨진 대곡댐 선박 침몰…공사 직원 징역·금고→벌금, 이유는?[죄와벌]",
-   "link": "https://www.newsis.com/view/NISX20261120_0003876396",
-   "source": "언론사RSS",
-   "hits": [
-    "숨진"
-   ],
-   "published": "11/22 09:00"
-  },
-  {
-   "title": "경북 봉화 도로서 3중 추돌…2명 부상",
-   "link": "https://www.newsis.com/view/NISX20261122_0003877901",
-   "source": "언론사RSS",
-   "hits": [
+    "붕괴",
+    "사망",
     "부상"
    ],
-   "published": "11/22 08:26"
+   "published": "11/22 15:50"
   },
   {
-   "title": "부산 기장군 농막화재, 사상자 없어…1840만원 재산피해",
-   "link": "https://www.newsis.com/view/NISX20261122_0003877893",
-   "source": "언론사RSS",
+   "title": "국가지정문화재 대전 계족산성 ‘4년 만에 탐방로 전면 개방’",
+   "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTE9XYjBZWnFla0t3VXVJRzBQczZxZWpGQXRkMmpYTkxhbk82TFZlWGlGREVqOU02OTFTUEl1S05kamsxZWZ2VTBJU2t2QkVRNkhZOXdlb1hHYkJZTm03c1NTMDZqR0s2elBITld2LQ?oc=5",
+   "source": "구글뉴스",
    "hits": [
     "화재"
    ],
-   "published": "11/22 08:09"
+   "published": "11/23 07:58"
   },
   {
-   "title": "서산 음식점서 화재·폭발로 2명 경상…48분 만에 진화",
-   "link": "https://www.newsis.com/view/NISX20261121_0003877844",
-   "source": "언론사RSS",
+   "title": "사고 6년 8개월 만에 밝혀진 부전~마산 터널 붕괴… “무리한 고압 시공이 부른 인재”",
+   "link": "https://news.google.com/rss/articles/CBMickFVX3lxTE1mWjY4UGRHeWkyNEJ1bWQybjlBUDhSRTlYUll0OTl2RDJsaXRZU0Z6MjdReGJ2U3ZNRXJiTm0tZ1p3Zy1DVlo3NV9EbnB0dldFQ0JPaE1lLS1nWVhOTW5GSWVQZjFtV1g0TWZNeFZVajZwZw?oc=5",
+   "source": "구글뉴스",
    "hits": [
-    "화재",
+    "붕괴"
+   ],
+   "published": "11/22 12:46"
+  },
+  {
+   "title": "충남도, 태안 해광호 실종사고 수색에 예비비 긴급 투입",
+   "link": "https://news.google.com/rss/articles/CBMiakFVX3lxTFBaUHo4b1pUS2lvMVcxREF2VTNYRGJkOU9YRnpRMS1taUZuSE5ZMzhWd1Q5clVZMWp3eVkzdlJJc1VLWjBQVTBLd29oU2tLVlFXX0pwRUxrcEViM2Zmb1Brc3g1QU9oQkdaT3c?oc=5",
+   "source": "구글뉴스",
+   "hits": [
+    "실종"
+   ],
+   "published": "11/22 17:00"
+  },
+  {
+   "title": "사고 6년 8개월 만에 밝혀진 부전~마산 터널 붕괴… “무리한 고압 시공이 부른 인재”",
+   "link": "https://news.google.com/rss/articles/CBMickFVX3lxTE1mWjY4UGRHeWkyNEJ1bWQybjlBUDhSRTlYUll0OTl2RDJsaXRZU0Z6MjdReGJ2U3ZNRXJiTm0tZ1p3Zy1DVlo3NV9EbnB0dldFQ0JPaE1lLS1nWVhOTW5GSWVQZjFtV1g0TWZNeFZVajZwZw?oc=5",
+   "source": "구글뉴스",
+   "hits": [
+    "붕괴"
+   ],
+   "published": "11/22 12:46"
+  },
+  {
+   "title": "美 뉴욕 브루클린 3층 아파트 붕괴…최소 5명 사망·17명 부상 > 시애틀 뉴스/핫이슈",
+   "link": "https://news.google.com/rss/articles/CBMicEFVX3lxTE1hLXQxbVFnY1dRZ1VjMi1uUjRkeDY1NmhpSktUUUtpYm1jblRUX0k0ZlRVMjhscFdGSklFMERESVdwSktuSEdCSmVQMXgwUDZ2MWNGNmVua2VxNjZ4bzNwVWloRmZuVVlTSnZfM2diZnc?oc=5",
+   "source": "구글뉴스",
+   "hits": [
+    "붕괴",
+    "사망",
+    "부상"
+   ],
+   "published": "11/22 15:50"
+  },
+  {
+   "title": "부천 아파트 주차장 지붕 교체 중 추락...50대 노동자 숨져",
+   "link": "https://news.google.com/rss/articles/CBMiaEFVX3lxTFBaZmtKMk5UV3lIVmxST1VsMUxqb3FvdVB5d1ZTU2ZMTXhnODZmN2pQaTNRT1ZwaUVrX0hJYXVGY0cyb05TeTB3QlRfaENyOUpCMmZlUG43M1UwSkttWWxBZU5OYnVBakw0?oc=5",
+   "source": "구글뉴스",
+   "hits": [
+    "추락",
+    "숨져"
+   ],
+   "published": "11/22 16:03"
+  },
+  {
+   "title": "시리아 북서부서 지뢰 폭발, 어린이 5명 사망",
+   "link": "https://news.google.com/rss/articles/CBMibkFVX3lxTE9DTmt2Q0VQdzVNV1l5dVlvZHNHOWhKRFloYTFSQWwzZGJGRDR5OXRKUnNPZVVxYWcxd0JydThQYndfOVltX25sQlV4SjNlbWtDaHNxYmxwZFROc0M4NTdtUHRNMFJweHJkWlBJYWxR?oc=5",
+   "source": "구글뉴스",
+   "hits": [
     "폭발",
-    "경상"
+    "사망"
    ],
-   "published": "11/21 23:43"
+   "published": "11/23 08:18"
   },
   {
-   "title": "평창서 공기총 사격 연습 중 행인 피격 사망…60대 입건",
-   "link": "https://www.newsis.com/view/NISX20261121_0003877839",
+   "title": "부천 아파트 주차장 지붕 교체 중 추락...50대 노동자 숨져",
+   "link": "https://news.google.com/rss/articles/CBMiaEFVX3lxTFBaZmtKMk5UV3lIVmxST1VsMUxqb3FvdVB5d1ZTU2ZMTXhnODZmN2pQaTNRT1ZwaUVrX0hJYXVGY0cyb05TeTB3QlRfaENyOUpCMmZlUG43M1UwSkttWWxBZU5OYnVBakw0?oc=5",
+   "source": "구글뉴스",
+   "hits": [
+    "추락",
+    "숨져"
+   ],
+   "published": "11/22 16:03"
+  },
+  {
+   "title": "창원 아파트서 모녀 추락…어머니 숨지고 5개월 딸 생존",
+   "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTE5JWlhOTlRIYUIxR18wRmtDR2NORUlPeWYzWnZOMFVHR1RIbURicEc4V2xWNk1JQXd5VnZta2Myc3VaVjNoVkt1NkpUNFJlaWlQaGdZVmJEQ0U0OFM3OXVMeGk3dzFtVTVnOVZpUtIBcEFVX3lxTE5RRVhkMnJzdTdIMUhFbEhyaWlabDQ0NVpMcmhkdzhzYXBTLVdRSXVhdjFaUmFoZ1gweUNONXo5X1Jmb1pKUG8ta295bGt4S1FCYzFqa3pKaU85S1BfcC1rQzA0R0ZHTzMtTUxILWZud2k?oc=5",
+   "source": "구글뉴스",
+   "hits": [
+    "추락"
+   ],
+   "published": "11/23 09:20"
+  },
+  {
+   "title": "\"아이 울고 있었다\" 창원의 한 아파트서 40대·생후 5개월 母女 추락",
+   "link": "https://news.google.com/rss/articles/CBMijAJBVV95cUxNcHFFTW95RmNDNUFtN0JfSGxTV0lqQVhrZGNtNkE0M0dPY2V4OHFmNjB5enZKYUFROEFNRTFzM3QtUjdiS0VYRWRyd1g2ek1hX1BHYUpkSGk4Y2hucDZWMG5aX2NJOUw4cWZWN3F5UVFuNE82ZUwydUhkelpvQVdMc2JiQ3puQW9IOXo1Q3BFWExQa0trc2Z3OHY2QVJvVWNzeEJFeGMxa1JwbnFLb1MwRDRiMUNmeURUSnNmR3doc1JVMWR3enY2WDR6NDQ4VTVCeW0wc21JVk5pcDJ0OVU4QnJBQTllSFh6UXFzZDdLUWVvM3JITWFUeF8zT2RIMEU4TVl5dVZKU2N0T0ZH?oc=5",
+   "source": "구글뉴스",
+   "hits": [
+    "추락"
+   ],
+   "published": "11/23 07:07"
+  },
+  {
+   "title": "창원 아파트 추락사 40대 여성 사망 속 생후 5개월 아기 생존",
+   "link": "https://news.google.com/rss/articles/CBMirAFBVV95cUxQNnR3NE1NLVlaZUZhdzNnTmlJeHJBTkN2YU1pMVdqVGZVQ2l1RE41dnJhVDBPN1J0SFhNOExkSXd0V0FNbkc2RWdaVURNX0pPcllSOWlNSTY5emJoSXNvRVVBRVhqMGNvZVdRR2hJNlJwM05PdlFHa0tTTE94NXdXSVdiX2NsTHBhdm5qZzhkc3N1SnNBaVAzS2ZvdXVYaU5HbnhqN005RGJyYmQz?oc=5",
+   "source": "구글뉴스",
+   "hits": [
+    "추락",
+    "사망"
+   ],
+   "published": "11/22 23:37"
+  },
+  {
+   "title": "인도에서 최소 11명이 사망하고 300명 이상이 알코올 중독 의심 증상으로 병원에 입원했습니다.",
+   "link": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxOX3VRODYxTDZwN202MEp2ZjM2RnUzYzZqVjNwY2U2WGhTSmR0NzFnaUZQLWtaSnVnemVOYUswMjE0RjBBN01wc1h5Q0FEUnY5X2lCeWR6YURkSHNrZGpFbEtYLThJeUwzU015clVuOE5nYXJMYWptaUE3NU03M0VlM09yRXM3Zm04Ynp2b3BiUUIwQkNwTC1RU0RlSWVSLXZ4eHg3LVYxMS0?oc=5",
+   "source": "구글뉴스",
+   "hits": [
+    "사망"
+   ],
+   "published": "11/22 14:12"
+  },
+  {
+   "title": "화재보험협회, AI 화재 예방기술에 보험료 할인 연계 모색",
+   "link": "https://news.google.com/rss/articles/CBMia0FVX3lxTE1hRS02T0djQnBiQnNpaXUyNFByVFlkS2Q2UVlYaFMwUXBYclJvY1hLSFA2V09WcWJQRFZiTHF6YWtyMk1aUGk4ZGRMMUcyVHQyMlFacXF2c2xENGV5Y0NFV19PSHZHMjdFUTJB0gFvQVVfeXFMTUZYNkU3TXFEa0djX0haRzROM0pBRjlkX0h2Ujl6ZjFDVno3QVlDdHRlRl96YnRaZUtpY1BkZzFzTjllak9SSklWSTN3NHJWMXdBNUVKZ0wzZVhPVGlZSFFWSVVTdU5KbEhVRXBaMTZn?oc=5",
+   "source": "구글뉴스",
+   "hits": [
+    "화재"
+   ],
+   "published": "11/23 00:00"
+  },
+  {
+   "title": "정읍소방서, 내년 2월까지 ‘겨울철 화재예방대책’ 추진",
+   "link": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE41VlpUZFVZZzd3TGt3SmZaRERJbF9BbDk4VkFIWGt1ZnJRczdlTzZqeUtNRWtEUk9qelhPYXhMT29ZQWhPckxvSXdoZlB2UHE5TENwZ2U4LWZUSDZ2RWpjSXhiUWxpQQ?oc=5",
+   "source": "구글뉴스",
+   "hits": [
+    "화재"
+   ],
+   "published": "11/22 22:07"
+  },
+  {
+   "title": "[오늘(22일)의 사건·사고] 실종어선 해광호 발견.. 농장화재로 새끼돼지 600여마리 폐사",
+   "link": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE5ZNEpVZWhuUzQtalZXYUsyc3h3MWc0R3lOQXZKSEJQeTBJTDJDZ20zcmFGNGxwYTlyQU1waFN5SU1jVnpLUGwzU05YSURocXY4RjdlbmtVYWx6UEpq?oc=5",
+   "source": "구글뉴스",
+   "hits": [
+    "화재",
+    "실종"
+   ],
+   "published": "11/22 21:04"
+  },
+  {
+   "title": "화재보험협회, AI 화재 예방기술에 보험료 할인 연계 모색",
+   "link": "https://news.google.com/rss/articles/CBMia0FVX3lxTE1hRS02T0djQnBiQnNpaXUyNFByVFlkS2Q2UVlYaFMwUXBYclJvY1hLSFA2V09WcWJQRFZiTHF6YWtyMk1aUGk4ZGRMMUcyVHQyMlFacXF2c2xENGV5Y0NFV19PSHZHMjdFUTJB0gFvQVVfeXFMTUZYNkU3TXFEa0djX0haRzROM0pBRjlkX0h2Ujl6ZjFDVno3QVlDdHRlRl96YnRaZUtpY1BkZzFzTjllak9SSklWSTN3NHJWMXdBNUVKZ0wzZVhPVGlZSFFWSVVTdU5KbEhVRXBaMTZn?oc=5",
+   "source": "구글뉴스",
+   "hits": [
+    "화재"
+   ],
+   "published": "11/23 00:00"
+  },
+  {
+   "title": "[오늘(22일)의 사건·사고] 실종어선 해광호 발견.. 농장화재로 새끼돼지 600여마리 폐사",
+   "link": "https://news.google.com/rss/articles/CBMiXkFVX3lxTFBiRmRpdGZFakEwdUFqNnlWakxJd0I0RnFJV2R6eFBWUlRlRHczY1owWGZ2MkNIYndTeFJoS1BfOGk5YlN2R2NnNDR2SUJYelJMbWNJNjVIaVJOM3AtREE?oc=5",
+   "source": "구글뉴스",
+   "hits": [
+    "화재",
+    "실종"
+   ],
+   "published": "11/22 21:04"
+  },
+  {
+   "title": "돈사 화재 사흘 연속 발생…일요일 괴산서 자돈 600마리 폐사",
+   "link": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE1fNFJMT2pOMmQ5al9UNGlsTTlnaFFocXVORlNpWHRaLWZjWWtWQ0ozY2VlU0ZwcEZIcWtNQjJ4MHJ1cktyTFlGRS0zYnZsNzl1NVdfNkd2ZWNKbEk5MVI4?oc=5",
+   "source": "구글뉴스",
+   "hits": [
+    "화재"
+   ],
+   "published": "11/22 16:16"
+  },
+  {
+   "title": "\"불 나기 전에 잡는다\"…충남도의회, AI 화재예방체계 구축 시동",
+   "link": "https://news.google.com/rss/articles/CBMicEFVX3lxTFB5WlVFeTVCQUFJX00teVFVMFBNRlJPdWNDLWVKMFBwQU4waWNMLUpPQlE5aFROanFBbnBPdE1ZSE5KQWF3VTlsYkFvdEs4NkRrUG9IN2p1MGgwX2RYaGxrcUtUZ09YZ2NFR3NPRHM1MjE?oc=5",
+   "source": "구글뉴스",
+   "hits": [
+    "화재"
+   ],
+   "published": "11/22 14:20"
+  },
+  {
+   "title": "[특별기고] 겨울철 화재, 작은 관심과 실천이 소중한 생명을 지킵니다",
+   "link": "https://news.google.com/rss/articles/CBMiakFVX3lxTE03Q3FhREZWa3QtcF9NbEZJVVNRSkVqUTk0dkRFWUJuUG1ROXQzbTBHakxDZDhnTFJSMEFCZGNUVGJnQThfTmZpWnN4M29qdXViQlRycGtmZ2RMMmFZSTkyRDlhQU1Oa3VHOEE?oc=5",
+   "source": "구글뉴스",
+   "hits": [
+    "화재"
+   ],
+   "published": "11/22 14:24"
+  },
+  {
+   "title": "[포토] 충남도의회, AI로 맞춤형 화재예방체계 구축 나선다",
+   "link": "https://news.google.com/rss/articles/CBMickFVX3lxTE5IMHh4MGZaZXFQaFV5cGMyaVdTUE51QUlEbm0zaEtjSlNpWHRDN2hoNGpITXJUdFFmQkRsYmk5aUtFXzVtYzZIRklSel9CMVViN0pDdkYzQTd0WXFtSXVET3FYcENreVAxOWhtcDhmeFRDZw?oc=5",
+   "source": "구글뉴스",
+   "hits": [
+    "화재"
+   ],
+   "published": "11/22 14:32"
+  },
+  {
+   "title": "강원 산림사업장 사망사고 반복.. 안전대책 촉구 > 뉴스데스크",
+   "link": "https://news.google.com/rss/articles/CBMiS0FVX3lxTE9YTmN1QVBaVW9LWml1d3luRU1lMkJjTjd1b25lOXRqQ29NMHQtb0RobG11TGFtLVRjVXgyY05leEJTbWZROGlISGV6RQ?oc=5",
+   "source": "구글뉴스",
+   "hits": [
+    "사망"
+   ],
+   "published": "11/22 20:10"
+  },
+  {
+   "title": "제주, 잇단 지게차 사망사고에 특별 안전 점검 추진",
+   "link": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE03bGt6dlpJTUtNZDFoU25BcjBUanpvd3FDLUZ3bGlKNGhIdV9TazRPOExaNERTY2dJRm5MUWtEQTdaT1VqYVRkVlR1QUZzN3R6R1JlMzdPdmozUTJkS2ZuRlk3U1c4TnRk?oc=5",
+   "source": "구글뉴스",
+   "hits": [
+    "사망"
+   ],
+   "published": "11/22 14:12"
+  },
+  {
+   "title": "오산시, 도급·용역 담당 공무원 대상 중대재해 예방 교육…지자체 사례로 법적 의무 익혀 > 뉴스",
+   "link": "https://news.google.com/rss/articles/CBMiS0FVX3lxTFBJa3VrN1FiX2VEeFNtQU05b1FsSmhhZ2Qtczd6NVA5MThnSWNkMzk5SlUxcVVqdkNrNTRLcFZlRVlnYUNYSkhueV95Yw?oc=5",
+   "source": "구글뉴스",
+   "hits": [
+    "중대재해"
+   ],
+   "published": "11/22 18:38"
+  },
+  {
+   "title": "노동조합, 중대재해 예방 주체로 나서야…노동자 참여·안전문화 정착 강조",
+   "link": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE12ZDdOZG5EQ29OQXpDMUdWZjlpdEhYRGpTZ18tclFYdU84VnJIUV9uRnhueVg4MVpHd2pidlNHZ1VFRkhtdm5nNm1TNlpITFpqSmJvN2E4OEc0cm5QSjhlcFlOZFlyeVVt?oc=5",
+   "source": "구글뉴스",
+   "hits": [
+    "중대재해"
+   ],
+   "published": "11/22 20:33"
+  },
+  {
+   "title": "상하수도본부, 산업재해 예방 안전보건 특별교육",
+   "link": "https://news.google.com/rss/articles/CBMibkFVX3lxTFA1MVVMVUR0SFNoUFV3alYxRjdzRWVnWF9COF9RZTRHSGF2YVhOcEpCajdqX1NKS1hnZXBLMkxqX2RnMDdXbDdJZ2Ryd3FDTE9lOERtSzhYb21xTFpyVk9UZmVieVlWUHllZFpBUTJ3?oc=5",
+   "source": "구글뉴스",
+   "hits": [
+    "산업재해"
+   ],
+   "published": "11/22 20:35"
+  },
+  {
+   "title": "신세계百, '폭발물 설치' 위협에 \"전 점포 현장점검…정상 개점\"",
+   "link": "https://www.yna.co.kr/view/AKR20261123081500030",
+   "source": "언론사RSS",
+   "hits": [
+    "폭발"
+   ],
+   "published": "11/23 11:34"
+  },
+  {
+   "title": "침몰 해광호 선체 잠수수색서 실종자 못 찾아…25일 재시도",
+   "link": "https://www.yna.co.kr/view/AKR20261123071600063",
+   "source": "언론사RSS",
+   "hits": [
+    "실종"
+   ],
+   "published": "11/23 11:02"
+  },
+  {
+   "title": "천안 축사서 외국인 노동자 몰던 차에 농장주 치여 숨져",
+   "link": "https://www.yna.co.kr/view/AKR20261123068300063",
+   "source": "언론사RSS",
+   "hits": [
+    "숨져"
+   ],
+   "published": "11/23 10:49"
+  },
+  {
+   "title": "횡성 중앙고속도로서 버스 등 6대 추돌…33명 부상",
+   "link": "https://www.newsis.com/view/NISX20261123_0003879085",
+   "source": "언론사RSS",
+   "hits": [
+    "부상"
+   ],
+   "published": "11/23 11:31"
+  },
+  {
+   "title": "횡성 중앙고속도로서 버스 등 6대 추돌…33명 부상",
+   "link": "https://www.newsis.com/view/NISX20261123_0003879085",
+   "source": "언론사RSS",
+   "hits": [
+    "부상"
+   ],
+   "published": "11/23 11:31"
+  },
+  {
+   "title": "경기 광주 병원 '간호사 태움 사망' 가해자 3명 송치",
+   "link": "https://www.newsis.com/view/NISX20261123_0003878826",
    "source": "언론사RSS",
    "hits": [
     "사망"
    ],
-   "published": "11/21 22:25"
+   "published": "11/23 10:10"
   },
   {
-   "title": "해남 두륜산서 50대 등산객 추락…헬기 이송",
-   "link": "https://www.newsis.com/view/NISX20261121_0003877836",
+   "title": "경북 영천서 70대 음식물 먹다 기도 막혔다…끝내 사망",
+   "link": "https://www.newsis.com/view/NISX20261123_0003878535",
    "source": "언론사RSS",
    "hits": [
-    "추락"
+    "사망"
    ],
-   "published": "11/21 21:52"
+   "published": "11/23 08:59"
   },
   {
-   "title": "홍대입구역 인근서 3중 추돌로 버스 인도 돌진…6명 경상",
-   "link": "https://www.newsis.com/view/NISX20261121_0003877817",
+   "title": "완도서 실종 50대 12일 만에 숨진 채 발견…실족사 추정",
+   "link": "https://www.newsis.com/view/NISX20261123_0003878599",
    "source": "언론사RSS",
    "hits": [
-    "경상"
+    "숨진",
+    "실종"
    ],
-   "published": "11/21 20:21"
+   "published": "11/23 08:54"
   },
   {
-   "title": "평창서 공기총 손질중 실수로 격발…행인 1명 다쳐",
-   "link": "https://www.newsis.com/view/NISX20261121_0003877753",
-   "source": "언론사RSS",
-   "hits": [
-    "다쳐"
-   ],
-   "published": "11/21 16:07"
-  },
-  {
-   "title": "발 헛디뎌 찜질방 90도 고온탕 빠진 60대 화상",
-   "link": "https://www.newsis.com/view/NISX20261121_0003877706",
+   "title": "순창 비닐하우스 불…진화 시도 80대 얼굴·손등 2도 화상",
+   "link": "https://www.newsis.com/view/NISX20261123_0003878433",
    "source": "언론사RSS",
    "hits": [
     "화상"
    ],
-   "published": "11/21 14:31"
+   "published": "11/23 07:19"
+  },
+  {
+   "title": "닷새만에 '해광호' 선체 발견 … 실종 선원 7명은 아직",
+   "link": "https://www.safetimes.co.kr/news/articleView.html?idxno=247767",
+   "source": "언론사RSS",
+   "hits": [
+    "실종"
+   ],
+   "published": "11/23 04:09"
   }
  ],
  "company_recheck": []
