@@ -545,11 +545,12 @@ def _judge_batch(candidates, cfg, recent_events, api_key, retry_missing=True):
                     "content-type": "application/json",
                 },
                 json={
-                    "model": getattr(cfg, "AI_MODEL", "claude-haiku-4-5-20251001"),
+                    "model": getattr(cfg, "AI_MODEL", "claude-haiku-5-5"),
                     # 칸이 7개로 늘며 답 한 줄이 약 147자가 됐습니다. 1200이면 후보 5건쯤에서
                     # 답이 중간에 잘려 판정이 통째로 실패합니다(=전부 무검증 발송).
+                    # Haiku 5.5는 답 전에 생각하고 그 토큰도 이 한도에 들어갑니다(1건당 약 800).
                     # 요금은 실제로 쓴 만큼만 나가므로 한도를 올려도 비용은 같습니다.
-                    "max_tokens": 4000,
+                    "max_tokens": 16000,
                     "system": SYSTEM_PROMPT,
                     "messages": [{"role": "user", "content": user_msg}],
                 },
@@ -558,7 +559,10 @@ def _judge_batch(candidates, cfg, recent_events, api_key, retry_missing=True):
             if r.status_code != 200:
                 raise RuntimeError(f"HTTP {r.status_code}: {r.text[:200]}")
             body = r.json()
-            raw = (body.get("content") or [{}])[0].get("text", "") or ""
+            # Haiku 5.5부터 답 앞에 thinking 블록이 먼저 옵니다. 첫 블록이 아니라
+            # text 블록을 읽어야 합니다. (첫 블록만 읽으면 판정이 전부 실패)
+            raw = next((b.get("text", "") for b in body.get("content") or []
+                        if b.get("type") == "text"), "") or ""
             verdicts = _extract_json(raw)
             break
         except Exception as e:                          # noqa: BLE001

@@ -438,8 +438,11 @@ EMAIL_ENABLED = True
 TELEGRAM_ENABLED = True
 
 AI_ENABLED = True
-AI_MODEL = "claude-haiku-4-5-20251001"
-AI_TIMEOUT = 30
+# 2026-11-23 Haiku 4.5 → 5.5. 지난 단체방·GPT 방 기사 38건 비교에서 통계기사 오탐 1건,
+# 본문 없는 사망 기사 놓침 3건이 줄었고 단체방 판정은 Sonnet 5.5와 같았습니다.
+# 비용은 약 1/6. 답 전에 생각하느라 응답이 길어져 시간 한도를 늘렸습니다.
+AI_MODEL = "claude-haiku-5-5"
+AI_TIMEOUT = 60
 # 0이면 후보 전체를 처리합니다. 예전 20건 하드캡은 21번째 이후 후보를 seen 처리한 채
 # 영구적으로 버릴 수 있어 제거했습니다. 긴 목록은 AI_BATCH_SIZE 단위로 나눠 처리합니다.
 AI_MAX_CANDIDATES = 0
