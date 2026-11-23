@@ -22,7 +22,7 @@ OPENAI_API_KEY
 
 선택 환경변수
 --------------
-OPENAI_MODEL  (기본값: gpt-5.6-luna)
+OPENAI_MODEL  (기본값: gpt-6-luna)
 """
 
 import json
@@ -35,7 +35,7 @@ import requests
 import ai_judge
 
 API_URL = "https://api.openai.com/v1/responses"
-DEFAULT_MODEL = "gpt-5.6-luna"
+DEFAULT_MODEL = "gpt-6-luna"
 VALID = ("skip", "dup", "update", "new")
 
 # Responses API Structured Outputs는 최상위 schema를 object로 둡니다.
