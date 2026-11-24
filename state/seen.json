@@ -9749,6 +9749,19 @@
     "제조업",
     "화재"
    ]
+  },
+  "f6a33b91f65a4214": {
+   "ts": 1795559421.907065,
+   "tok": [
+    "경기",
+    "공장",
+    "사곡동",
+    "사무실",
+    "안성시",
+    "주의",
+    "피해",
+    "화재"
+   ]
   }
  },
  "initialized": true,
@@ -9793,9 +9806,9 @@
  ],
  "sent_since_heartbeat": 0,
  "last_gpt_heartbeat": "2026-11-25",
- "gpt_alerts_since_heartbeat": 0,
+ "gpt_alerts_since_heartbeat": 1,
  "gpt_last_status": "ok",
- "gpt_last_status_at": "11/25 07:14",
+ "gpt_last_status_at": "11/25 07:30",
  "gpt_events": [
   {
    "ts": 1795124333.353294,
@@ -9929,6 +9942,15 @@
    "title": "단양 다누리커뮤니티플라자 신축 공사장서 70대 부상",
    "what": "단양 신축공사장 70대 작업자 추락",
    "occurred": "11-24 11:30",
+   "updates": 0,
+   "co": ""
+  },
+  {
+   "ts": 1795559431.812842,
+   "when": "11/25 07:20",
+   "title": "[속보] 경기 안성시 사곡동 공장 사무실서 화재 발생… 불 피해 주의",
+   "what": "안성 공장 사무실 화재",
+   "occurred": "11-25 06:52",
    "updates": 0,
    "co": ""
   }
