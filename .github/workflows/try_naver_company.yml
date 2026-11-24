@@ -1,0 +1,59 @@
+name: try-naver-company
+
+# 임시 시험 — 네이버 뉴스 검색에서 회사명 검색어를 어떻게 묶어야 사고 기사가 잡히는지 확인.
+# 결과는 로그에만 찍습니다. 병합 전에 지웁니다.
+
+on:
+  push:
+    branches: [claude/construction-alert-token-optimization-2uvn7c]
+    paths: [.github/workflows/try_naver_company.yml]
+
+permissions:
+  contents: read
+
+jobs:
+  try:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: pip install -r requirements.txt
+      - name: Try
+        env:
+          NAVER_CLIENT_ID: ${{ secrets.NAVER_CLIENT_ID }}
+          NAVER_CLIENT_SECRET: ${{ secrets.NAVER_CLIENT_SECRET }}
+          KAKAO_REST_API_KEY: unused
+          KAKAO_REFRESH_TOKEN: unused
+        run: |
+          python - <<'PY'
+          import requests, config, main, filters
+          url, (hid, hsec) = main.NAVER_ENDPOINTS[config.NAVER_MODE]
+          H = {hid: main.NAVER_ID, hsec: main.NAVER_SECRET}
+          forms = {
+              "A 회사만":        "{c}",
+              "B 회사+사망":     "{c} 사망",
+              "C 회사+OR":       "{c} 사망|숨져|추락|끼임|중상|폭발|사고",
+              "D 회사+(OR)":     "{c} (사망|숨져|추락|끼임|중상|폭발|사고)",
+          }
+          for c in ["현대제철", "DL이앤씨", "삼성전자", "현대건설", "SK하이닉스"]:
+              print(f"\n######## {c}")
+              for label, f in forms.items():
+                  q = f.format(c=c)
+                  r = requests.get(url, headers=H, params={"query": q, "display": 30, "sort": "date"}, timeout=10)
+                  if r.status_code != 200:
+                      print(f"  {label}: HTTP {r.status_code} {r.text[:120]}"); continue
+                  j = r.json(); items = j.get("items", [])
+                  hits = 0; lines = []
+                  for it in items:
+                      t = main.clean(it.get("title", "")); s = main.clean(it.get("description", ""))
+                      m = filters.match(config, t, s)
+                      if m: hits += 1
+                      lines.append(f"      {'○' if m else '·'} {it.get('pubDate','')[5:22]} {t[:55]}")
+                  oldest = items[-1].get("pubDate", "")[5:22] if items else "-"
+                  print(f"  {label:12s} 총 {j.get('total')}건 · 받은 {len(items)}건(가장 오래된 {oldest}) · 필터 통과 {hits}건  [{q}]")
+                  for l in lines[:8]: print(l)
+          PY
