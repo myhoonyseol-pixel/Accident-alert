@@ -322,8 +322,81 @@ def fetch_rss(url: str, label: str):
     return out
 
 
-def collect():
+def fetch_naver_companies(state):
+    """단체방 대상 회사를 '회사명 사망'으로 따로 찾습니다. NAVER_COMPANY_EVERY_MIN 마다.
+
+    2026-11-24 시험에서 네이버 허브가 연결 시간초과를 연달아 낸 적이 있어
+    짧게 기다리고, 3번 연속 실패하면 멈췄다가 다음 회차에 다시 합니다.
+    """
+    names = getattr(config, "NAVER_COMPANY_QUERIES", ())
+    mode = getattr(config, "NAVER_MODE", "hub")
+    if not names or not (NAVER_ID and NAVER_SECRET) or mode not in NAVER_ENDPOINTS:
+        return []
+    now = now_utc().timestamp()
+    every = getattr(config, "NAVER_COMPANY_EVERY_MIN", 60) * 60
+    if now - state.get("last_company_search", 0) < every - 60:
+        return []
+    state["last_company_search"] = now
+
+    url, (id_header, secret_header) = NAVER_ENDPOINTS[mode]
+    headers = {id_header: NAVER_ID, secret_header: NAVER_SECRET}
+    suffix = getattr(config, "NAVER_COMPANY_SUFFIX", "사망")
+    out, fails = [], 0
+    for name in names:
+        try:
+            r = requests.get(
+                url,
+                headers=headers,
+                params={"query": f"{name} {suffix}",
+                        "display": getattr(config, "NAVER_COMPANY_DISPLAY", 20),
+                        "sort": "date"},
+                timeout=5,
+            )
+            r.raise_for_status()
+            fails = 0
+            for it in r.json().get("items", []):
+                out.append({
+                    "title": clean(it.get("title", "")),
+                    "summary": clean(it.get("description", "")),
+                    "link": it.get("originallink") or it.get("link", ""),
+                    "published": parse_rfc822(it.get("pubDate")),
+                    "source": "네이버(회사)",
+                    "company_query": name,
+                })
+        except Exception as e:                          # noqa: BLE001
+            fails += 1
+            print(f"[naver-회사] {name}: {e}", file=sys.stderr)
+            if fails >= 3:
+                print("[naver-회사] 3번 연속 실패 — 다음 회차에 다시 합니다", file=sys.stderr)
+                state["last_company_search"] = 0
+                break
+        time.sleep(config.NAVER_SLEEP)
+    print(f"[naver-회사] 회사 {len(names)}곳 검색 → {len(out)}건")
+    return out
+
+
+def company_match(item):
+    """회사 검색으로 들어온 기사: 제목에 그 회사명과 사고 단어가 함께 있으면 통과.
+
+    기존 필터(filters.match)는 장소 단어나 COMPANY_WORDS(건설사·삼성)가 있어야 통과합니다.
+    그래서 "현대제철서 또 하청노동자 끼임 사망"처럼 장소 단어 없이 제조 계열사 이름만
+    있는 제목은 걸러졌습니다. 회사 검색 결과에만 이 길을 엽니다.
+    """
+    name = item.get("company_query")
+    title = item.get("title") or ""
+    if not name or name not in re.sub(r"\s+", "", title):
+        return None
+    if any(w in title for w in config.EXCLUDE_WORDS):
+        return None
+    hits = [w for w in config.ACCIDENT_WORDS if w in title]
+    return (name, hits, "company") if hits else None
+
+
+def collect(state=None):
     items = fetch_naver()
+    if state is not None:
+        known = {it["link"] for it in items}
+        items += [it for it in fetch_naver_companies(state) if it["link"] not in known]
     if config.GOOGLE_NEWS_ENABLED:
         for q in config.GOOGLE_NEWS_QUERIES:
             url = ("https://news.google.com/rss/search?q="
@@ -1028,13 +1101,13 @@ def pick_candidates(state, events):
     # 몇 개 매체가 동시에 다루는지 세기 위해서입니다. 그 숫자를 AI에게
     # 넘기면 "9곳이 함께 쓰는 걸 보니 실제 사고구나"를 판단에 쓸 수 있습니다.
     matched = []
-    for item in collect():
+    for item in collect(state):
         if not item["title"] or not item["link"]:
             continue
         if not fresh(item["published"]):
             continue
         m = filters.match(config, item["title"], item["summary"],
-                          item.get("outlet", ""))
+                          item.get("outlet", "")) or company_match(item)
         if not m:
             continue
         matched.append((item, m, filters.tokenize(item["title"])))
