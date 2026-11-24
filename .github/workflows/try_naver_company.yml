@@ -43,7 +43,13 @@ jobs:
               print(f"\n######## {c}")
               for label, f in forms.items():
                   q = f.format(c=c)
-                  r = requests.get(url, headers=H, params={"query": q, "display": 30, "sort": "date"}, timeout=10)
+                  import time
+                  t0 = time.time()
+                  try:
+                      r = requests.get(url, headers=H, params={"query": q, "display": 30, "sort": "date"}, timeout=25)
+                  except Exception as e:
+                      print(f"  {label}: 실패 {type(e).__name__} ({time.time()-t0:.1f}초) [{q}]"); continue
+                  dt = time.time() - t0
                   if r.status_code != 200:
                       print(f"  {label}: HTTP {r.status_code} {r.text[:120]}"); continue
                   j = r.json(); items = j.get("items", [])
@@ -54,6 +60,6 @@ jobs:
                       if m: hits += 1
                       lines.append(f"      {'○' if m else '·'} {it.get('pubDate','')[5:22]} {t[:55]}")
                   oldest = items[-1].get("pubDate", "")[5:22] if items else "-"
-                  print(f"  {label:12s} 총 {j.get('total')}건 · 받은 {len(items)}건(가장 오래된 {oldest}) · 필터 통과 {hits}건  [{q}]")
+                  print(f"  {label:12s} 총 {j.get('total')}건 · 받은 {len(items)}건(가장 오래된 {oldest}) · 필터 통과 {hits}건 · {dt:.1f}초  [{q}]")
                   for l in lines[:8]: print(l)
           PY
