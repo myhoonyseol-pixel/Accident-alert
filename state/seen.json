@@ -10303,6 +10303,17 @@
     "폭발물",
     "폭파"
    ]
+  },
+  "51dfaf65acb8dce8": {
+   "ts": 1795647379.320441,
+   "tok": [
+    "건설현장",
+    "사망",
+    "삼부토건",
+    "작업자",
+    "추락사고",
+    "호남고속철"
+   ]
   }
  },
  "initialized": true,
@@ -10364,9 +10375,9 @@
  ],
  "sent_since_heartbeat": 0,
  "last_gpt_heartbeat": "2026-11-26",
- "gpt_alerts_since_heartbeat": 0,
+ "gpt_alerts_since_heartbeat": 1,
  "gpt_last_status": "ok",
- "gpt_last_status_at": "11/26 07:24",
+ "gpt_last_status_at": "11/26 07:56",
  "gpt_events": [
   {
    "ts": 1795345458.407846,
@@ -10502,6 +10513,15 @@
    "occurred": "",
    "updates": 0,
    "co": "LG화학"
+  },
+  {
+   "ts": 1795647386.978938,
+   "when": "11/26 07:41",
+   "title": "삼부토건, 호남고속철도 공사현장서 추락사고로 근로자 1명 사망",
+   "what": "삼부토건 호남고속철도 현장서 근로자 추락사망",
+   "occurred": "",
+   "updates": 0,
+   "co": "삼부토건"
   }
  ],
  "gpt_silent": [
