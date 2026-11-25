@@ -1,16 +1,5 @@
 {
  "seen": {
-  "a1bbd4c78d4df65c": {
-   "ts": 1795014304.324255,
-   "tok": [
-    "경기",
-    "도약",
-    "만에",
-    "삼성화재",
-    "여자배구",
-    "현대건설"
-   ]
-  },
   "346a193f20022915": {
    "ts": 1795015255.82952,
    "tok": [
@@ -10191,6 +10180,33 @@
     "축산농",
     "화재예방"
    ]
+  },
+  "3a56d399c972e404": {
+   "ts": 1795619794.459576,
+   "tok": [
+    "건설현장",
+    "경위",
+    "경찰",
+    "반도체",
+    "사망",
+    "사업장",
+    "용인",
+    "작업자",
+    "조사",
+    "착수",
+    "클러스터"
+   ]
+  },
+  "222beef04858da0c": {
+   "ts": 1795619794.461444,
+   "tok": [
+    "13",
+    "부상",
+    "사망",
+    "청주공장",
+    "폭발",
+    "화학"
+   ]
   }
  },
  "initialized": true,
@@ -10230,13 +10246,31 @@
    "reports": 9,
    "casualty": true,
    "co": "SK하이닉스"
+  },
+  {
+   "ts": 1795619804.077575,
+   "when": "11/25 22:35",
+   "title": "LG화학 청주공장서 폭발 사고…1명 사망·13명 중경상",
+   "updates": 0,
+   "tok": [
+    "13",
+    "부상",
+    "사망",
+    "청주공장",
+    "폭발",
+    "화학"
+   ],
+   "link": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE1jQTNoSDEzUkFqOWJIaVoyYmdfdXlsMEtxZml0dzF0eE1TT2QxMjlLb1Ftc3EwanZfd3NkSnVWLXdmZjl2alk4dENyN0llYUx2UTJCVg?oc=5",
+   "reports": 1,
+   "casualty": true,
+   "co": "LG화학"
   }
  ],
- "sent_since_heartbeat": 1,
+ "sent_since_heartbeat": 2,
  "last_gpt_heartbeat": "2026-11-25",
- "gpt_alerts_since_heartbeat": 7,
+ "gpt_alerts_since_heartbeat": 8,
  "gpt_last_status": "ok",
- "gpt_last_status_at": "11/25 23:13",
+ "gpt_last_status_at": "11/26 00:16",
  "gpt_events": [
   {
    "ts": 1795253820.8186,
@@ -10372,6 +10406,15 @@
    "occurred": "11-25 14:03",
    "updates": 0,
    "co": "삼부토건"
+  },
+  {
+   "ts": 1795619801.790144,
+   "when": "11/25 22:35",
+   "title": "LG화학 청주공장서 폭발 사고…1명 사망·13명 중경상",
+   "what": "LG화학 청주공장 폭발로 1명 사망",
+   "occurred": "",
+   "updates": 0,
+   "co": "LG화학"
   }
  ],
  "gpt_silent": [
