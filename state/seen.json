@@ -11523,6 +11523,19 @@
     "잡아",
     "화재"
    ]
+  },
+  "a6b06db662c8dc3a": {
+   "ts": 1795837643.220101,
+   "tok": [
+    "공장",
+    "광주시",
+    "목현동",
+    "번져",
+    "산불",
+    "투입",
+    "헬기",
+    "화재"
+   ]
   }
  },
  "initialized": true,
@@ -11601,9 +11614,9 @@
  ],
  "sent_since_heartbeat": 0,
  "last_gpt_heartbeat": "2026-11-28",
- "gpt_alerts_since_heartbeat": 2,
+ "gpt_alerts_since_heartbeat": 3,
  "gpt_last_status": "ok",
- "gpt_last_status_at": "11/28 12:00",
+ "gpt_last_status_at": "11/28 12:47",
  "gpt_events": [
   {
    "ts": 1795589308.702756,
@@ -11736,6 +11749,15 @@
    "when": "11/28 11:46",
    "title": "경기 광주 육가공 공장 화재…대응 1단계 발령",
    "what": "경기 광주 육가공공장 화재",
+   "occurred": "",
+   "updates": 0,
+   "co": ""
+  },
+  {
+   "ts": 1795837652.024224,
+   "when": "11/28 12:34",
+   "title": "광주시 목현동 공장 화재 산불로 번져…헬기 3대 투입",
+   "what": "광주 목현동 공장 화재 산불 확산",
    "occurred": "",
    "updates": 0,
    "co": ""
